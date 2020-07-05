@@ -15,6 +15,15 @@
 		8E0A212F24AD44E700D36E20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0A212D24AD44E700D36E20 /* LaunchScreen.storyboard */; };
 		8E0A213A24AD44E700D36E20 /* DeviantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A213924AD44E700D36E20 /* DeviantTests.swift */; };
 		8E0A214524AD44E700D36E20 /* DeviantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A214424AD44E700D36E20 /* DeviantUITests.swift */; };
+		8E70834C24B003C9005E66ED /* DeviantBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70834B24B003C9005E66ED /* DeviantBaseViewController.swift */; };
+		8E70836E24B01D67005E66ED /* DeviantLocalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70836D24B01D67005E66ED /* DeviantLocalStrings.swift */; };
+		8E70837024B01FF1005E66ED /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E70836F24B01FF1005E66ED /* UIViewController+Extension.swift */; };
+		8E8328C024B1E459002CD291 /* PopularListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8328BA24B1E459002CD291 /* PopularListPresenter.swift */; };
+		8E8328C124B1E459002CD291 /* PopularListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8328BB24B1E459002CD291 /* PopularListRouter.swift */; };
+		8E8328C224B1E459002CD291 /* PopularListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8328BC24B1E459002CD291 /* PopularListInterface.swift */; };
+		8E8328C324B1E459002CD291 /* PopularListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8328BD24B1E459002CD291 /* PopularListViewController.swift */; };
+		8E8328C424B1E459002CD291 /* PopularListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8328BE24B1E459002CD291 /* PopularListInteractor.swift */; };
+		8E8328C524B1E459002CD291 /* PopularListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8328BF24B1E459002CD291 /* PopularListConfigurator.swift */; };
 		8ED622F024AFE79800D3FDD9 /* Request.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8ED622EF24AFE79800D3FDD9 /* Request.plist */; };
 		99FC469BC124E12DA6FE8BCE /* Pods_Deviant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277F790EC1D7F489A5FC1074 /* Pods_Deviant.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +62,15 @@
 		8E0A214024AD44E700D36E20 /* DeviantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeviantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E0A214424AD44E700D36E20 /* DeviantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantUITests.swift; sourceTree = "<group>"; };
 		8E0A214624AD44E700D36E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E70834B24B003C9005E66ED /* DeviantBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantBaseViewController.swift; sourceTree = "<group>"; };
+		8E70836D24B01D67005E66ED /* DeviantLocalStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantLocalStrings.swift; sourceTree = "<group>"; };
+		8E70836F24B01FF1005E66ED /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		8E8328BA24B1E459002CD291 /* PopularListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListPresenter.swift; sourceTree = "<group>"; };
+		8E8328BB24B1E459002CD291 /* PopularListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListRouter.swift; sourceTree = "<group>"; };
+		8E8328BC24B1E459002CD291 /* PopularListInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListInterface.swift; sourceTree = "<group>"; };
+		8E8328BD24B1E459002CD291 /* PopularListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListViewController.swift; sourceTree = "<group>"; };
+		8E8328BE24B1E459002CD291 /* PopularListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListInteractor.swift; sourceTree = "<group>"; };
+		8E8328BF24B1E459002CD291 /* PopularListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListConfigurator.swift; sourceTree = "<group>"; };
 		8ED622EF24AFE79800D3FDD9 /* Request.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Request.plist; sourceTree = "<group>"; };
 		AD100191393D598F98B1F1A0 /* Pods-Deviant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deviant.debug.xcconfig"; path = "Target Support Files/Pods-Deviant/Pods-Deviant.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +167,7 @@
 		8E5716D124AD4EED007ADBDD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8E70834A24B0037C005E66ED /* CommonUI */,
 				8ED622ED24AFE75200D3FDD9 /* DeviantDetail */,
 				8ED622EC24AFE73600D3FDD9 /* TopicDetail */,
 				8ED622EB24AFE71000D3FDD9 /* TopicList */,
@@ -156,6 +175,29 @@
 				8ED622E924AFE42F00D3FDD9 /* PopularList */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8E70834A24B0037C005E66ED /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				8E70834B24B003C9005E66ED /* DeviantBaseViewController.swift */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		8E70835D24B01BEB005E66ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8E70836C24B01D4C005E66ED /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				8E70836D24B01D67005E66ED /* DeviantLocalStrings.swift */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 		8ED622E224AFE37B00D3FDD9 /* Resource */ = {
@@ -172,6 +214,7 @@
 		8ED622E324AFE3CF00D3FDD9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8E70836C24B01D4C005E66ED /* Strings */,
 				8ED622E824AFE42400D3FDD9 /* Common */,
 				8ED622E724AFE41600D3FDD9 /* NetworkUtils */,
 				8ED622E624AFE40B00D3FDD9 /* FormatUtils */,
@@ -184,6 +227,7 @@
 		8ED622E424AFE3F500D3FDD9 /* ViewUtils */ = {
 			isa = PBXGroup;
 			children = (
+				8E70836F24B01FF1005E66ED /* UIViewController+Extension.swift */,
 			);
 			path = ViewUtils;
 			sourceTree = "<group>";
@@ -220,6 +264,13 @@
 		8ED622E924AFE42F00D3FDD9 /* PopularList */ = {
 			isa = PBXGroup;
 			children = (
+				8E8328BF24B1E459002CD291 /* PopularListConfigurator.swift */,
+				8E8328BE24B1E459002CD291 /* PopularListInteractor.swift */,
+				8E8328BC24B1E459002CD291 /* PopularListInterface.swift */,
+				8E8328BA24B1E459002CD291 /* PopularListPresenter.swift */,
+				8E8328BB24B1E459002CD291 /* PopularListRouter.swift */,
+				8E8328BD24B1E459002CD291 /* PopularListViewController.swift */,
+				8E70835D24B01BEB005E66ED /* View */,
 			);
 			path = PopularList;
 			sourceTree = "<group>";
@@ -451,9 +502,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E8328C224B1E459002CD291 /* PopularListInterface.swift in Sources */,
+				8E70837024B01FF1005E66ED /* UIViewController+Extension.swift in Sources */,
+				8E8328C324B1E459002CD291 /* PopularListViewController.swift in Sources */,
 				8E0A212724AD44E500D36E20 /* ViewController.swift in Sources */,
+				8E8328C124B1E459002CD291 /* PopularListRouter.swift in Sources */,
+				8E8328C424B1E459002CD291 /* PopularListInteractor.swift in Sources */,
 				8E0A212324AD44E500D36E20 /* AppDelegate.swift in Sources */,
 				8E0A212524AD44E500D36E20 /* SceneDelegate.swift in Sources */,
+				8E70836E24B01D67005E66ED /* DeviantLocalStrings.swift in Sources */,
+				8E70834C24B003C9005E66ED /* DeviantBaseViewController.swift in Sources */,
+				8E8328C524B1E459002CD291 /* PopularListConfigurator.swift in Sources */,
+				8E8328C024B1E459002CD291 /* PopularListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
