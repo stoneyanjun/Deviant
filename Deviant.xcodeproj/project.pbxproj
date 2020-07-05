@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8E0A212324AD44E500D36E20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A212224AD44E500D36E20 /* AppDelegate.swift */; };
 		8E0A212524AD44E500D36E20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A212424AD44E500D36E20 /* SceneDelegate.swift */; };
-		8E0A212724AD44E500D36E20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A212624AD44E500D36E20 /* ViewController.swift */; };
+		8E0A212724AD44E500D36E20 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A212624AD44E500D36E20 /* HomeViewController.swift */; };
 		8E0A212A24AD44E500D36E20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0A212824AD44E500D36E20 /* Main.storyboard */; };
 		8E0A212C24AD44E700D36E20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E0A212B24AD44E700D36E20 /* Assets.xcassets */; };
 		8E0A212F24AD44E700D36E20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0A212D24AD44E700D36E20 /* LaunchScreen.storyboard */; };
@@ -24,6 +24,9 @@
 		8E8328C324B1E459002CD291 /* PopularListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8328BD24B1E459002CD291 /* PopularListViewController.swift */; };
 		8E8328C424B1E459002CD291 /* PopularListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8328BE24B1E459002CD291 /* PopularListInteractor.swift */; };
 		8E8328C524B1E459002CD291 /* PopularListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8328BF24B1E459002CD291 /* PopularListConfigurator.swift */; };
+		8E9CBA0224B22755001BE678 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CBA0124B22755001BE678 /* NetworkManager.swift */; };
+		8E9CBA0624B234F2001BE678 /* DevinatError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CBA0524B234F2001BE678 /* DevinatError.swift */; };
+		8E9CBA0924B237F0001BE678 /* NetworkDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9CBA0824B237F0001BE678 /* NetworkDefines.swift */; };
 		8ED622F024AFE79800D3FDD9 /* Request.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8ED622EF24AFE79800D3FDD9 /* Request.plist */; };
 		99FC469BC124E12DA6FE8BCE /* Pods_Deviant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277F790EC1D7F489A5FC1074 /* Pods_Deviant.framework */; };
 /* End PBXBuildFile section */
@@ -51,7 +54,7 @@
 		8E0A211F24AD44E500D36E20 /* Deviant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deviant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E0A212224AD44E500D36E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E0A212424AD44E500D36E20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8E0A212624AD44E500D36E20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8E0A212624AD44E500D36E20 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8E0A212924AD44E500D36E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E0A212B24AD44E700D36E20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E0A212E24AD44E700D36E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,6 +74,9 @@
 		8E8328BD24B1E459002CD291 /* PopularListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListViewController.swift; sourceTree = "<group>"; };
 		8E8328BE24B1E459002CD291 /* PopularListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListInteractor.swift; sourceTree = "<group>"; };
 		8E8328BF24B1E459002CD291 /* PopularListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListConfigurator.swift; sourceTree = "<group>"; };
+		8E9CBA0124B22755001BE678 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8E9CBA0524B234F2001BE678 /* DevinatError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevinatError.swift; sourceTree = "<group>"; };
+		8E9CBA0824B237F0001BE678 /* NetworkDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDefines.swift; sourceTree = "<group>"; };
 		8ED622EF24AFE79800D3FDD9 /* Request.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Request.plist; sourceTree = "<group>"; };
 		AD100191393D598F98B1F1A0 /* Pods-Deviant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deviant.debug.xcconfig"; path = "Target Support Files/Pods-Deviant/Pods-Deviant.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,7 +146,6 @@
 				8E5716D124AD4EED007ADBDD /* View */,
 				8E0A212224AD44E500D36E20 /* AppDelegate.swift */,
 				8E0A212424AD44E500D36E20 /* SceneDelegate.swift */,
-				8E0A212624AD44E500D36E20 /* ViewController.swift */,
 				8E0A213024AD44E700D36E20 /* Info.plist */,
 			);
 			path = Deviant;
@@ -167,6 +172,7 @@
 		8E5716D124AD4EED007ADBDD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8E9CB9FF24B21D02001BE678 /* Home */,
 				8E70834A24B0037C005E66ED /* CommonUI */,
 				8ED622ED24AFE75200D3FDD9 /* DeviantDetail */,
 				8ED622EC24AFE73600D3FDD9 /* TopicDetail */,
@@ -200,6 +206,38 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
+		8E9CB9FF24B21D02001BE678 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8E0A212624AD44E500D36E20 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8E9CBA0024B22710001BE678 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8E9CBA0124B22755001BE678 /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8E9CBA0424B234E4001BE678 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				8E9CBA0524B234F2001BE678 /* DevinatError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		8E9CBA0724B237C4001BE678 /* NetworkDefines */ = {
+			isa = PBXGroup;
+			children = (
+				8E9CBA0824B237F0001BE678 /* NetworkDefines.swift */,
+			);
+			path = NetworkDefines;
+			sourceTree = "<group>";
+		};
 		8ED622E224AFE37B00D3FDD9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +252,7 @@
 		8ED622E324AFE3CF00D3FDD9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8E9CBA0424B234E4001BE678 /* Error */,
 				8E70836C24B01D4C005E66ED /* Strings */,
 				8ED622E824AFE42400D3FDD9 /* Common */,
 				8ED622E724AFE41600D3FDD9 /* NetworkUtils */,
@@ -249,6 +288,8 @@
 		8ED622E724AFE41600D3FDD9 /* NetworkUtils */ = {
 			isa = PBXGroup;
 			children = (
+				8E9CBA0724B237C4001BE678 /* NetworkDefines */,
+				8E9CBA0024B22710001BE678 /* Manager */,
 				8ED622F124AFEAE800D3FDD9 /* Services */,
 			);
 			path = NetworkUtils;
@@ -338,6 +379,7 @@
 				8E0A211C24AD44E500D36E20 /* Frameworks */,
 				8E0A211D24AD44E500D36E20 /* Resources */,
 				C69E8BB287A4A3FA705AE4EF /* [CP] Embed Pods Frameworks */,
+				8E9CBA0324B227EA001BE678 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -478,6 +520,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8E9CBA0324B227EA001BE678 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		C69E8BB287A4A3FA705AE4EF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -505,10 +565,13 @@
 				8E8328C224B1E459002CD291 /* PopularListInterface.swift in Sources */,
 				8E70837024B01FF1005E66ED /* UIViewController+Extension.swift in Sources */,
 				8E8328C324B1E459002CD291 /* PopularListViewController.swift in Sources */,
-				8E0A212724AD44E500D36E20 /* ViewController.swift in Sources */,
+				8E9CBA0224B22755001BE678 /* NetworkManager.swift in Sources */,
+				8E0A212724AD44E500D36E20 /* HomeViewController.swift in Sources */,
 				8E8328C124B1E459002CD291 /* PopularListRouter.swift in Sources */,
+				8E9CBA0624B234F2001BE678 /* DevinatError.swift in Sources */,
 				8E8328C424B1E459002CD291 /* PopularListInteractor.swift in Sources */,
 				8E0A212324AD44E500D36E20 /* AppDelegate.swift in Sources */,
+				8E9CBA0924B237F0001BE678 /* NetworkDefines.swift in Sources */,
 				8E0A212524AD44E500D36E20 /* SceneDelegate.swift in Sources */,
 				8E70836E24B01D67005E66ED /* DeviantLocalStrings.swift in Sources */,
 				8E70834C24B003C9005E66ED /* DeviantBaseViewController.swift in Sources */,

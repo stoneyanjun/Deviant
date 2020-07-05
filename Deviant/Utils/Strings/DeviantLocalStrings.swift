@@ -12,6 +12,5 @@ class DeviantLocalStrings {
     static let shared = DeviantLocalStrings()
 
     private init() {
-        
     }
 }

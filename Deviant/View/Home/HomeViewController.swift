@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  Deviant
 //
 //  Created by Stone on 2/7/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController {
+extension HomeViewController {
     func testTemp()  {
         let config = PopularListConfig()
         let vc = PopularListConfigurator(config: config).createViewController()
