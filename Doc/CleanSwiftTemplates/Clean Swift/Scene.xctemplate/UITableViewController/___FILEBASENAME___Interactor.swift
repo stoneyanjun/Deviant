@@ -11,9 +11,9 @@ import UIKit
 class ___VARIABLE_sceneName___Interactor
 {
     var presenter: ___VARIABLE_sceneName___PresenterInterface?
-    private(set) var config: ___VARIABLE_sceneName___Config
+    private(set) var config: ___VARIABLE_sceneName___Configuration
 
-    init(config: ___VARIABLE_sceneName___Config) {
+    init(config: ___VARIABLE_sceneName___Configuration) {
         self.config = config
     }
 }
