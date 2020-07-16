@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>browseNewest</key>
+	<string>browse/newest</string>
+	<key>browseMorelikethisPreview</key>
+	<string>browse/morelikethis/preview</string>
+	<key>browseMorelikethis</key>
+	<string>browse/morelikethis</string>
+	<key>browseHot</key>
+	<string>browse/hot</string>
+	<key>browseDailydeviations</key>
+	<string>browse/dailydeviations</string>
+	<key>browseCategorytree</key>
+	<string>browse/categorytree</string>
+	<key>oauth2Token</key>
+	<string>oauth2/token</string>
+	<key>browsePopular</key>
+	<string>browse/popular</string>
+	<key>browseRecommended</key>
+	<string>browse/recommended</string>
+	<key>browseTags</key>
+	<string>browse/tags</string>
+	<key>browseTagsSearch</key>
+	<string>browse/tags/search</string>
+	<key>browseTopic</key>
+	<string>browse/topic</string>
+	<key>browseTopics</key>
+	<string>browse/topics</string>
+	<key>browseUndiscovered</key>
+	<string>browse/undiscovered</string>
+	<key>browseUserJournals</key>
+	<string>browse/user/journals</string>
+	<key>deviation</key>
+	<string>deviation/%@</string>
+	<key>deviationContent</key>
+	<string>deviation/content</string>
+	<key>deviationDownload</key>
+	<string>deviation/download/%@</string>
+	<key>deviationEmbeddedcontent</key>
+	<string>deviation/embeddedcontent</string>
+	<key>deviationMetadata</key>
+	<string>deviation/metadata</string>
+	<key>deviationWhofaved</key>
+	<string>deviation/whofaved</string>
+</dict>
+</plist>

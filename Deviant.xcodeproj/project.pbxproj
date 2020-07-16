@@ -24,6 +24,8 @@
 		8E1B803624C0AD47008C059C /* PopularListVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B802F24C0AD47008C059C /* PopularListVCViewController.swift */; };
 		8E1B803724C0AD47008C059C /* PopularListVCInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B803024C0AD47008C059C /* PopularListVCInteractor.swift */; };
 		8E1B803824C0AD47008C059C /* PopularListVCConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B803124C0AD47008C059C /* PopularListVCConfigurator.swift */; };
+		8E1B803B24C0B422008C059C /* Request.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B803A24C0B422008C059C /* Request.plist */; };
+		8E1B803D24C0B42C008C059C /* ServerInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B803C24C0B42C008C059C /* ServerInfo.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		8E1B802F24C0AD47008C059C /* PopularListVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListVCViewController.swift; sourceTree = "<group>"; };
 		8E1B803024C0AD47008C059C /* PopularListVCInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListVCInteractor.swift; sourceTree = "<group>"; };
 		8E1B803124C0AD47008C059C /* PopularListVCConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListVCConfigurator.swift; sourceTree = "<group>"; };
+		8E1B803A24C0B422008C059C /* Request.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Request.plist; sourceTree = "<group>"; };
+		8E1B803C24C0B42C008C059C /* ServerInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ServerInfo.plist; sourceTree = "<group>"; };
 		D686C8D192EFD0D9DAD1D56B /* Pods-Deviant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deviant.release.xcconfig"; path = "Target Support Files/Pods-Deviant/Pods-Deviant.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +143,7 @@
 		8E1B7FE924C0A4C9008C059C /* Deviant */ = {
 			isa = PBXGroup;
 			children = (
+				8E1B803924C0B405008C059C /* Config */,
 				8E1B7FEA24C0A4C9008C059C /* AppDelegate.swift */,
 				8E1B7FF824C0A4CB008C059C /* Info.plist */,
 				8E1B802524C0A712008C059C /* Models */,
@@ -272,6 +277,15 @@
 			path = CommonUI;
 			sourceTree = "<group>";
 		};
+		8E1B803924C0B405008C059C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				8E1B803A24C0B422008C059C /* Request.plist */,
+				8E1B803C24C0B42C008C059C /* ServerInfo.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -379,6 +393,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E1B803D24C0B42C008C059C /* ServerInfo.plist in Resources */,
+				8E1B803B24C0B422008C059C /* Request.plist in Resources */,
 				8E1B7FF724C0A4CB008C059C /* LaunchScreen.storyboard in Resources */,
 				8E1B7FF424C0A4CB008C059C /* Assets.xcassets in Resources */,
 				8E1B7FF224C0A4C9008C059C /* Main.storyboard in Resources */,
@@ -435,7 +451,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		F40C7BBE1B0D097C227B8D34 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
