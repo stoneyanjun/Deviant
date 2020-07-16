@@ -25,7 +25,6 @@ extension ___VARIABLE_sceneName___ViewController {
 
     func makeView()
     {
-
     }
 }
 

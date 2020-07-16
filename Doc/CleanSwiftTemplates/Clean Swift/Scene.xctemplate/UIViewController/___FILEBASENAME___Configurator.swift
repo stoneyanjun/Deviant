@@ -8,15 +8,11 @@
 
 import UIKit
 
-struct ___VARIABLE_sceneName___Config
-{
-}
-
 struct ___VARIABLE_sceneName___Configurator
 {
-    let configuration: ___VARIABLE_sceneName___Config
+    let configuration: ___VARIABLE_sceneName___Configuration
 
-    init(config: ___VARIABLE_sceneName___Config) {
+    init(config: ___VARIABLE_sceneName___Configuration) {
         configuration = config
     }
 
