@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Deviant
 //
-//  Created by Stone on 2/7/2020.
+//  Created by Stone on 16/7/2020.
 //  Copyright © 2020 JustNow. All rights reserved.
 //
 
