@@ -26,6 +26,16 @@
 		8E1B803824C0AD47008C059C /* PopularListVCConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B803124C0AD47008C059C /* PopularListVCConfigurator.swift */; };
 		8E1B803B24C0B422008C059C /* Request.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B803A24C0B422008C059C /* Request.plist */; };
 		8E1B803D24C0B42C008C059C /* ServerInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B803C24C0B42C008C059C /* ServerInfo.plist */; };
+		8E40969224C0CAC900AE8D35 /* ServerInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40969124C0CAC900AE8D35 /* ServerInfoManager.swift */; };
+		8E40969424C0CEF400AE8D35 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40969324C0CEF400AE8D35 /* TokenManager.swift */; };
+		8EBB91E924C3E4D900223F51 /* DeviantError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91E824C3E4D900223F51 /* DeviantError.swift */; };
+		8EBB91EB24C3E50B00223F51 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91EA24C3E50B00223F51 /* TokenService.swift */; };
+		8EBB91EF24C3E81400223F51 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91EE24C3E81400223F51 /* String+Extension.swift */; };
+		8EBB91F124C3F81800223F51 /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91F024C3F81800223F51 /* Optional+Extension.swift */; };
+		8EBB91F324C3FB0900223F51 /* NetworkDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91F224C3FB0900223F51 /* NetworkDefines.swift */; };
+		8EBB91F824C426D100223F51 /* TokenBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91F724C426D100223F51 /* TokenBase.swift */; };
+		8EBB91FA24C4430E00223F51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91F924C4430E00223F51 /* NetworkManager.swift */; };
+		8EBB91FD24C4461100223F51 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91FC24C4461100223F51 /* ApiError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +82,16 @@
 		8E1B803124C0AD47008C059C /* PopularListVCConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListVCConfigurator.swift; sourceTree = "<group>"; };
 		8E1B803A24C0B422008C059C /* Request.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Request.plist; sourceTree = "<group>"; };
 		8E1B803C24C0B42C008C059C /* ServerInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ServerInfo.plist; sourceTree = "<group>"; };
+		8E40969124C0CAC900AE8D35 /* ServerInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInfoManager.swift; sourceTree = "<group>"; };
+		8E40969324C0CEF400AE8D35 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		8EBB91E824C3E4D900223F51 /* DeviantError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantError.swift; sourceTree = "<group>"; };
+		8EBB91EA24C3E50B00223F51 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
+		8EBB91EE24C3E81400223F51 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		8EBB91F024C3F81800223F51 /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
+		8EBB91F224C3FB0900223F51 /* NetworkDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDefines.swift; sourceTree = "<group>"; };
+		8EBB91F724C426D100223F51 /* TokenBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenBase.swift; sourceTree = "<group>"; };
+		8EBB91F924C4430E00223F51 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8EBB91FC24C4461100223F51 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		D686C8D192EFD0D9DAD1D56B /* Pods-Deviant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deviant.release.xcconfig"; path = "Target Support Files/Pods-Deviant/Pods-Deviant.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,8 +163,8 @@
 		8E1B7FE924C0A4C9008C059C /* Deviant */ = {
 			isa = PBXGroup;
 			children = (
-				8E1B803924C0B405008C059C /* Config */,
 				8E1B7FEA24C0A4C9008C059C /* AppDelegate.swift */,
+				8E1B803924C0B405008C059C /* Config */,
 				8E1B7FF824C0A4CB008C059C /* Info.plist */,
 				8E1B802524C0A712008C059C /* Models */,
 				8E1B802224C0A67A008C059C /* Network */,
@@ -251,6 +271,12 @@
 		8E1B802224C0A67A008C059C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8EBB91E824C3E4D900223F51 /* DeviantError.swift */,
+				8EBB91F224C3FB0900223F51 /* NetworkDefines.swift */,
+				8EBB91F924C4430E00223F51 /* NetworkManager.swift */,
+				8E40969124C0CAC900AE8D35 /* ServerInfoManager.swift */,
+				8E40969324C0CEF400AE8D35 /* TokenManager.swift */,
+				8E40969724C0D3FD00AE8D35 /* Services */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -258,6 +284,8 @@
 		8E1B802424C0A6E9008C059C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8EBB91ED24C3E80300223F51 /* UIUtils */,
+				8EBB91EC24C3E7FA00223F51 /* Base */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -265,6 +293,8 @@
 		8E1B802524C0A712008C059C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8EBB91FB24C445EF00223F51 /* ApiError */,
+				8EBB91F624C426C100223F51 /* Token */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +314,46 @@
 				8E1B803C24C0B42C008C059C /* ServerInfo.plist */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		8E40969724C0D3FD00AE8D35 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8EBB91EA24C3E50B00223F51 /* TokenService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8EBB91EC24C3E7FA00223F51 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8EBB91EE24C3E81400223F51 /* String+Extension.swift */,
+				8EBB91F024C3F81800223F51 /* Optional+Extension.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		8EBB91ED24C3E80300223F51 /* UIUtils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIUtils;
+			sourceTree = "<group>";
+		};
+		8EBB91F624C426C100223F51 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				8EBB91F724C426D100223F51 /* TokenBase.swift */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		8EBB91FB24C445EF00223F51 /* ApiError */ = {
+			isa = PBXGroup;
+			children = (
+				8EBB91FC24C4461100223F51 /* ApiError.swift */,
+			);
+			path = ApiError;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,15 +552,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBB91EF24C3E81400223F51 /* String+Extension.swift in Sources */,
 				8E1B803524C0AD47008C059C /* PopularListVCInterface.swift in Sources */,
 				8E1B803724C0AD47008C059C /* PopularListVCInteractor.swift in Sources */,
+				8EBB91F324C3FB0900223F51 /* NetworkDefines.swift in Sources */,
+				8E40969224C0CAC900AE8D35 /* ServerInfoManager.swift in Sources */,
 				8E1B803224C0AD47008C059C /* PopularListVCConfiguration.swift in Sources */,
 				8E1B803824C0AD47008C059C /* PopularListVCConfigurator.swift in Sources */,
 				8E1B803424C0AD47008C059C /* PopularListVCRouter.swift in Sources */,
 				8E1B7FEF24C0A4C9008C059C /* ViewController.swift in Sources */,
 				8E1B802924C0A8B2008C059C /* DeviantBaseVC.swift in Sources */,
+				8EBB91E924C3E4D900223F51 /* DeviantError.swift in Sources */,
+				8EBB91EB24C3E50B00223F51 /* TokenService.swift in Sources */,
+				8EBB91FA24C4430E00223F51 /* NetworkManager.swift in Sources */,
+				8E40969424C0CEF400AE8D35 /* TokenManager.swift in Sources */,
+				8EBB91FD24C4461100223F51 /* ApiError.swift in Sources */,
 				8E1B7FEB24C0A4C9008C059C /* AppDelegate.swift in Sources */,
 				8E1B803624C0AD47008C059C /* PopularListVCViewController.swift in Sources */,
+				8EBB91F124C3F81800223F51 /* Optional+Extension.swift in Sources */,
+				8EBB91F824C426D100223F51 /* TokenBase.swift in Sources */,
 				8E1B7FED24C0A4C9008C059C /* SceneDelegate.swift in Sources */,
 				8E1B803324C0AD47008C059C /* PopularListVCPresenter.swift in Sources */,
 			);

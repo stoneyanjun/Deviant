@@ -9,12 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print(#function)
+        TokenManager.shared.fetchToken { result in
+            switch result {
+            case .success(let tokenBase):
+                print(#function + " accessToken: \(tokenBase.accessToken)")
+                self.title = tokenBase.accessToken
+            case .failure(let error):
+                print(#function +  "\(error.deviantError.localizedDescription)")
+            }
+        }
     }
-
-
 }
-
