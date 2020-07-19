@@ -12,32 +12,33 @@ enum DeviantError: Error {
     case failure(_ error: Error)
 }
 
-enum DeviantErrorType {
-    case network
-    case unknown
-    case
-}
 struct DeviantGeneralError: Error {
-    enum ErrorType {
+    enum ErrorType: String {
         case network
         case unknown
+        case oauth
     }
 
-    var errorCode: String?
-    var errorType:
-    var localizedDescription: String {
-        switch errorCode {
-        case .noAccountInfo:
-            return "Fail to get access token"
-        case .unknownError:
-            return "Unknown error"
+    var errorType: ErrorType = .unknown {
+        didSet {
+            errorDescription = defaultDescription()
+        }
+    }
+    var error: String?
+    var errorDescription: String?
+
+    private func defaultDescription() -> String {
+        switch errorType {
+        case .network:
+            return "Fail to connect server!"
         default:
-            return "Unknown error"
+            return "Unkown error!"
         }
     }
 
-    static let accountError = DeviantGeneralError(errorCode: ErrorCode.noAccountInfo)
-    static let unknownError = DeviantGeneralError(errorCode: ErrorCode.noAccountInfo)
+    static let oauthError = DeviantGeneralError(errorType: .oauth)
+    static let unknownError = DeviantGeneralError(errorType: .unknown)
+    static let networkError = DeviantGeneralError(errorType: .network)
 }
 
 extension Error {

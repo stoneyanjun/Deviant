@@ -39,7 +39,7 @@ class TokenManager {
         let clientID = ServerInfoManager.shared.clientID.wrap()
         let clientSecret = ServerInfoManager.shared.clientSecret.wrap()
         guard !(clientID.isEmpty || clientSecret.isEmpty) else {
-            completion(.failure(DeviantError.failure(DeviantGeneralError.accountError)))
+            completion(.failure(DeviantError.failure(DeviantGeneralError.oauthError)))
             return
         }
 
@@ -58,7 +58,7 @@ class TokenManager {
                     default:
                         break
                     }
-                    completion(.failure(DeviantError.failure(DeviantGeneralError.accountError)))
+                    completion(.failure(DeviantError.failure(DeviantGeneralError.oauthError)))
         }
     }
 }

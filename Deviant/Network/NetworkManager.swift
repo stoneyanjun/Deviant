@@ -6,6 +6,7 @@
 //  Copyright © 2020 JustNow. All rights reserved.
 //
 
+/*
 import Alamofire
 import Foundation
 import Localize_Swift
@@ -44,3 +45,4 @@ class NetworkManager<Target: TargetType>: NSObject {
         }
     }
 }
+*/
