@@ -6,7 +6,6 @@
 //  Copyright © 2020 JustNow. All rights reserved.
 //
 
-/*
 import Alamofire
 import Foundation
 import Localize_Swift
@@ -21,28 +20,18 @@ class NetworkManager<Target: TargetType>: NSObject {
     }
 
     func networkRequest(target: Target, completion: @escaping DeviantApiCallback<JSON>) {
-        guard isReachable else {
-            completion(.failure(<#T##DeviantError#>))
+        guard isReachable else { completion(.failure(DeviantError.failure(DeviantGeneralError.networkError)))
             return
         }
 
         provider.request(target) { result in
             switch result {
-                case .success(let response):
-                    #if DEBUG
-                    print(#function + " absoluteString: \(response.request?.url?.absoluteString)")
-                    #endif
-                    let jsonData = JSON(response.data)
-                    print(#function + jsonData.description)
-                    if let errorInfo = jsonData[ResponseParams.errorString.rawValue] as? String, !errorInfo.isEmpty {
-                        failure?(errorInfo)
-                    } else {
-                        success(jsonData)
-                }
-                case .failure(let err):
-                    failure?(err.localizedDescription)
+            case .success(let response):
+                let jsonData = JSON(response.data)
+                completion(.success(jsonData))
+            case .failure(let err): completion(.failure(DeviantError.failure(DeviantGeneralError.unknownError)))
             }
         }
     }
 }
-*/
+

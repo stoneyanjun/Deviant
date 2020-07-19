@@ -21,7 +21,9 @@ struct DeviantGeneralError: Error {
 
     var errorType: ErrorType = .unknown {
         didSet {
-            errorDescription = defaultDescription()
+            if errorDescription == nil {
+                errorDescription = defaultDescription()
+            }
         }
     }
     var error: String?
