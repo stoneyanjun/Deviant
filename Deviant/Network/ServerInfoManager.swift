@@ -10,6 +10,7 @@ import Foundation
 
 enum UriResource: String {
     case oauth2Token
+    case browsePopular
     case browseTopics
 }
 
@@ -22,10 +23,11 @@ class ServerInfoManager {
     }
 
     static let shared = ServerInfoManager()
-    private(set) var serverBaseUrl: String!
-    private(set) var apiBasePath: String!
-    private(set) var clientID: String!
-    private(set) var clientSecret: String!
+
+    private(set) var serverBaseUrl: String = ""
+    private(set) var apiPath: String = ""
+    private(set) var clientID: String = ""
+    private(set) var clientSecret: String = ""
 
     private var serverInfo = [String: String]()
     private var pathInfo = [String: String]()
@@ -60,7 +62,7 @@ extension ServerInfoManager {
         }
         serverInfo = requestDict
         serverBaseUrl = serverInfo[ServerInfoKey.serverBaseURL.rawValue].wrap()
-        apiBasePath = serverInfo[ServerInfoKey.apiBasePath.rawValue].wrap()
+        apiPath = serverBaseUrl + serverInfo[ServerInfoKey.apiBasePath.rawValue].wrap()
         clientID = serverInfo[ServerInfoKey.clientID.rawValue].wrap()
         clientSecret = serverInfo[ServerInfoKey.clientSecret.rawValue].wrap()
     }

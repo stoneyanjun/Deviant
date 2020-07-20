@@ -1,5 +1,5 @@
 //
-//  DeviantError.swift
+//  DeviantFailure.swift
 //  Deviant
 //
 //  Created by Stone on 19/7/2020.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum DeviantError: Error {
-    case failure(_ error: Error)
+enum DeviantFailure: Error {
+    case devFailure(_ error: Error)
 }
 
 struct DeviantGeneralError: Error {
@@ -45,11 +45,20 @@ struct DeviantGeneralError: Error {
 
 extension Error {
     var deviantError: DeviantGeneralError {
-        if case .failure(let error) = self as? DeviantError {
+        if case .devFailure(let error) = self as? DeviantFailure {
             if let mpfError = error as? DeviantGeneralError {
                 return mpfError
             }
         }
         return DeviantGeneralError.unknownError
+    }
+}
+
+extension DeviantGeneralError {
+    var localizedDescription: String {
+        if let errorDescription = self.errorDescription {
+            return errorDescription
+        }
+        return defaultDescription()
     }
 }

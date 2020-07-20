@@ -1,14 +1,15 @@
 //
-//  ApiError.swift
+//  DeviantFailure.swift
+//  Deviant
 //
-//  Created by Stone on 19/7/2020
-//  Copyright (c) . All rights reserved.
+//  Created by Stone on 19/7/2020.
+//  Copyright © 2020 JustNow. All rights reserved.
 //
 
 import Foundation
 import HandyJSON
 
-struct ApiError {
+struct APIError: HandyJSON {
 
     enum CodingKeys: String {
         case status
@@ -24,4 +25,3 @@ struct ApiError {
         mapper <<< self.errorDescription <-- CodingKeys.errorDescription.rawValue
     }
 }
-

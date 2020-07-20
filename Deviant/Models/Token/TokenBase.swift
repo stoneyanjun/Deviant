@@ -1,5 +1,5 @@
 //
-//  DeviantError.swift
+//  DeviantFailure.swift
 //  Deviant
 //
 //  Created by Stone on 19/7/2020.

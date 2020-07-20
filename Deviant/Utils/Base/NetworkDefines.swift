@@ -8,13 +8,15 @@
 
 import Foundation
 
-enum RequestConst {
+enum NetworkConst {
     #if DEBUG
-    static let limit = 10
+    static let limit: Int = 10
     static let numDeviationsPerTopic = 10
+    static let defaultExpiredSecond = 3600
     #else
-    static let limit = 10
+    static let limit: Int = 10
     static let numDeviationsPerTopic = 10
+    static let defaultExpiredSecond = 3600
     #endif
 }
 
@@ -57,9 +59,18 @@ enum RequestParams: String {
 
     // /browse/morelikethis/preview
     case seed
-
 }
 
 enum ResponseParams: String {
     case errorString = "error"
+}
+
+//valid values(8hr, 24hr, 3days, 1week, 1month, alltime) default: 24hr
+enum Timerange: String {
+    case eightHour = "8hr"
+    case twentyFoutHour = "24hr"
+    case threeDays = "3days"
+    case oneWeek = "1week"
+    case oneMonth = "1month"
+    case alltime = "alltime"
 }

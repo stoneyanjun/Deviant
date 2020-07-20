@@ -8,10 +8,10 @@
 
 import Alamofire
 import Foundation
+import HandyJSON
 import Localize_Swift
 import Moya
 import SwiftyJSON
-
 
 class NetworkManager<Target: TargetType>: NSObject {
     private var provider = MoyaProvider<Target>()
@@ -20,18 +20,29 @@ class NetworkManager<Target: TargetType>: NSObject {
     }
 
     func networkRequest(target: Target, completion: @escaping DeviantApiCallback<JSON>) {
-        guard isReachable else { completion(.failure(DeviantError.failure(DeviantGeneralError.networkError)))
+        guard isReachable else { completion(.failure(DeviantFailure.devFailure(DeviantGeneralError.networkError)))
             return
         }
 
         provider.request(target) { result in
             switch result {
             case .success(let response):
+                print(response.request?.url?.absoluteString)
                 let jsonData = JSON(response.data)
-                completion(.success(jsonData))
-            case .failure(let err): completion(.failure(DeviantError.failure(DeviantGeneralError.unknownError)))
+                if let apiError = JSONDeserializer<APIError>.deserializeFrom(json: jsonData.description),
+                    let error = apiError.error,
+                    !error.isEmpty {
+                    let generalError = DeviantGeneralError(errorType: .unknown,
+                                                           error: error,
+                                                           errorDescription: apiError.errorDescription)
+                    completion(.failure(DeviantFailure.devFailure(generalError)))
+                } else {
+                    completion(.success(jsonData))
+                }
+            case .failure(let error):
+                print(#function + " meet error: \r\n \(error.localizedDescription)")
+                completion(.failure(DeviantFailure.devFailure(DeviantGeneralError.networkError)))
             }
         }
     }
 }
-

@@ -7,69 +7,73 @@
 //
 
 import Foundation
+import HandyJSON
 import Moya
 import SwiftyJSON
-import HandyJSON
 
-typealias DeviantApiCallback<T> = (_ result: Result<T, DeviantError>) -> Void
+typealias DeviantApiCallback<T> = (_ result: Result<T, DeviantFailure>) -> Void
 
-class TokenManager {
+class TokenManager: NetworkManager<TokenService> {
     static let shared = TokenManager()
-    private var token: String?
-    private var expiredTime: Date?
-    private var provider = Moya.MoyaProvider<TokenService>()
+    private var tokenBase: TokenBase?
+    private var tokenExpiredDate: Date?
 
     var currentToken: String? {
-        guard let token = self.token,
-            !token.isEmpty,
+        guard let accessToken = self.tokenBase?.accessToken,
+            !accessToken.isEmpty,
             !isTokenExpried() else {
                 return nil
         }
-        return token
+        return accessToken
     }
 
-    private init() {
+    override private init() {
     }
 
     func needFetchToken() -> Bool {
         return currentToken == nil
     }
 
-    func fetchToken(completion: @escaping DeviantApiCallback<TokenBase>) {
-        let clientID = ServerInfoManager.shared.clientID.wrap()
-        let clientSecret = ServerInfoManager.shared.clientSecret.wrap()
+    func fetchToken(completion: @escaping DeviantApiCallback<String>) {
+        clearTokenInfo()
+
+        let clientID = ServerInfoManager.shared.clientID
+        let clientSecret = ServerInfoManager.shared.clientSecret
         guard !(clientID.isEmpty || clientSecret.isEmpty) else {
-            completion(.failure(DeviantError.failure(DeviantGeneralError.oauthError)))
+            completion(.failure(DeviantFailure.devFailure(DeviantGeneralError.oauthError)))
             return
         }
 
-        provider.request(
-            TokenService.fetchToken(
-                clientID: clientID,
-                clientSecret: clientSecret)) { result in
-                    switch result {
-                    case .success(let response):
-                        let jsonData = JSON(response.data)
-                        if let base = JSONDeserializer<TokenBase>.deserializeFrom(json:jsonData.description ) {
-                            if let token = base.accessToken, !token.isEmpty { completion(.success(base))
-                                return
-                            }
-                    }
-                    default:
-                        break
-                    }
-                    completion(.failure(DeviantError.failure(DeviantGeneralError.oauthError)))
+        networkRequest(target: .fetchToken(clientID: clientID, clientSecret: clientSecret)) { result in
+            switch result {
+            case .success(let json):
+                print(#function + " json\r\n\(json.description)")
+                if let tokenBase = JSONDeserializer<TokenBase>.deserializeFrom(json: json.description ), let accessToken = tokenBase.accessToken, !accessToken.isEmpty {
+                    self.tokenBase = tokenBase
+                    let timeInterval = TimeInterval(tokenBase.expiresIn ?? NetworkConst.defaultExpiredSecond)
+                    self.tokenExpiredDate = Date().addingTimeInterval(timeInterval)
+                    completion(.success(accessToken))
+                } else {
+                    completion(.failure(DeviantFailure.devFailure(DeviantGeneralError.oauthError)))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 }
 
 extension TokenManager {
+    private func clearTokenInfo() {
+        tokenBase = nil
+        tokenExpiredDate = nil
+    }
+
     private func isTokenExpried() -> Bool {
-        guard let expiredTime = self.expiredTime else {
-            return false
+        guard let tokenExpiredDate = self.tokenExpiredDate else {
+            return true
         }
-        return Date() < expiredTime
+
+        return Date() > tokenExpiredDate
     }
 }
-
-

@@ -1,19 +1,21 @@
 //
-//  TokenService.swift
+//  TopicService.swift
 //  Deviant
 //
 //  Created by Stone on 19/7/2020.
 //  Copyright © 2020 JustNow. All rights reserved.
 //
 
+
+//TODO
 import Foundation
 import Moya
 
-enum TokenService {
+enum TopicService {
     case fetchToken(clientID: String, clientSecret: String)
 }
 
-extension TokenService: TargetType {
+extension TopicService: TargetType {
     var baseURL: URL {
         switch self {
         case .fetchToken:

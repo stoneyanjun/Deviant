@@ -10,7 +10,7 @@
 		1FD1B41E440AA0E7B00EB104 /* Pods_Deviant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51567E4DEFD8B1D2471A373E /* Pods_Deviant.framework */; };
 		8E1B7FEB24C0A4C9008C059C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B7FEA24C0A4C9008C059C /* AppDelegate.swift */; };
 		8E1B7FED24C0A4C9008C059C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B7FEC24C0A4C9008C059C /* SceneDelegate.swift */; };
-		8E1B7FEF24C0A4C9008C059C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B7FEE24C0A4C9008C059C /* ViewController.swift */; };
+		8E1B7FEF24C0A4C9008C059C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B7FEE24C0A4C9008C059C /* RootViewController.swift */; };
 		8E1B7FF224C0A4C9008C059C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B7FF024C0A4C9008C059C /* Main.storyboard */; };
 		8E1B7FF424C0A4CB008C059C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B7FF324C0A4CB008C059C /* Assets.xcassets */; };
 		8E1B7FF724C0A4CB008C059C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B7FF524C0A4CB008C059C /* LaunchScreen.storyboard */; };
@@ -26,6 +26,15 @@
 		8E1B803824C0AD47008C059C /* PopularListVCConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B803124C0AD47008C059C /* PopularListVCConfigurator.swift */; };
 		8E1B803B24C0B422008C059C /* Request.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B803A24C0B422008C059C /* Request.plist */; };
 		8E1B803D24C0B42C008C059C /* ServerInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B803C24C0B42C008C059C /* ServerInfo.plist */; };
+		8E277D0324C55A880003798A /* TopicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E277D0224C55A880003798A /* TopicService.swift */; };
+		8E277D0524C55BDB0003798A /* PopularService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E277D0424C55BDB0003798A /* PopularService.swift */; };
+		8E277D0E24C587260003798A /* PopularPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E277D0724C587250003798A /* PopularPreview.swift */; };
+		8E277D0F24C587260003798A /* PopularAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E277D0824C587250003798A /* PopularAuthor.swift */; };
+		8E277D1024C587260003798A /* PopularBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E277D0924C587250003798A /* PopularBase.swift */; };
+		8E277D1124C587260003798A /* PopularResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E277D0A24C587260003798A /* PopularResults.swift */; };
+		8E277D1224C587260003798A /* PopularThumbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E277D0B24C587260003798A /* PopularThumbs.swift */; };
+		8E277D1324C587260003798A /* PopularStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E277D0C24C587260003798A /* PopularStats.swift */; };
+		8E277D1424C587260003798A /* PopularContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E277D0D24C587260003798A /* PopularContent.swift */; };
 		8E40969224C0CAC900AE8D35 /* ServerInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40969124C0CAC900AE8D35 /* ServerInfoManager.swift */; };
 		8E40969424C0CEF400AE8D35 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40969324C0CEF400AE8D35 /* TokenManager.swift */; };
 		8EBB91E924C3E4D900223F51 /* DeviantError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91E824C3E4D900223F51 /* DeviantError.swift */; };
@@ -35,7 +44,7 @@
 		8EBB91F324C3FB0900223F51 /* NetworkDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91F224C3FB0900223F51 /* NetworkDefines.swift */; };
 		8EBB91F824C426D100223F51 /* TokenBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91F724C426D100223F51 /* TokenBase.swift */; };
 		8EBB91FA24C4430E00223F51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91F924C4430E00223F51 /* NetworkManager.swift */; };
-		8EBB91FD24C4461100223F51 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91FC24C4461100223F51 /* ApiError.swift */; };
+		8EBB91FD24C4461100223F51 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91FC24C4461100223F51 /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +70,7 @@
 		8E1B7FE724C0A4C9008C059C /* Deviant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deviant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1B7FEA24C0A4C9008C059C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E1B7FEC24C0A4C9008C059C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8E1B7FEE24C0A4C9008C059C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8E1B7FEE24C0A4C9008C059C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		8E1B7FF124C0A4C9008C059C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E1B7FF324C0A4CB008C059C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E1B7FF624C0A4CB008C059C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,6 +91,15 @@
 		8E1B803124C0AD47008C059C /* PopularListVCConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListVCConfigurator.swift; sourceTree = "<group>"; };
 		8E1B803A24C0B422008C059C /* Request.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Request.plist; sourceTree = "<group>"; };
 		8E1B803C24C0B42C008C059C /* ServerInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ServerInfo.plist; sourceTree = "<group>"; };
+		8E277D0224C55A880003798A /* TopicService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicService.swift; sourceTree = "<group>"; };
+		8E277D0424C55BDB0003798A /* PopularService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularService.swift; sourceTree = "<group>"; };
+		8E277D0724C587250003798A /* PopularPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularPreview.swift; sourceTree = "<group>"; };
+		8E277D0824C587250003798A /* PopularAuthor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularAuthor.swift; sourceTree = "<group>"; };
+		8E277D0924C587250003798A /* PopularBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularBase.swift; sourceTree = "<group>"; };
+		8E277D0A24C587260003798A /* PopularResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularResults.swift; sourceTree = "<group>"; };
+		8E277D0B24C587260003798A /* PopularThumbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularThumbs.swift; sourceTree = "<group>"; };
+		8E277D0C24C587260003798A /* PopularStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularStats.swift; sourceTree = "<group>"; };
+		8E277D0D24C587260003798A /* PopularContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularContent.swift; sourceTree = "<group>"; };
 		8E40969124C0CAC900AE8D35 /* ServerInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInfoManager.swift; sourceTree = "<group>"; };
 		8E40969324C0CEF400AE8D35 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		8EBB91E824C3E4D900223F51 /* DeviantError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantError.swift; sourceTree = "<group>"; };
@@ -91,7 +109,7 @@
 		8EBB91F224C3FB0900223F51 /* NetworkDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDefines.swift; sourceTree = "<group>"; };
 		8EBB91F724C426D100223F51 /* TokenBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenBase.swift; sourceTree = "<group>"; };
 		8EBB91F924C4430E00223F51 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		8EBB91FC24C4461100223F51 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		8EBB91FC24C4461100223F51 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		D686C8D192EFD0D9DAD1D56B /* Pods-Deviant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deviant.release.xcconfig"; path = "Target Support Files/Pods-Deviant/Pods-Deviant.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -263,7 +281,7 @@
 		8E1B802124C0A5EB008C059C /* RootVC */ = {
 			isa = PBXGroup;
 			children = (
-				8E1B7FEE24C0A4C9008C059C /* ViewController.swift */,
+				8E1B7FEE24C0A4C9008C059C /* RootViewController.swift */,
 			);
 			path = RootVC;
 			sourceTree = "<group>";
@@ -271,8 +289,6 @@
 		8E1B802224C0A67A008C059C /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				8EBB91E824C3E4D900223F51 /* DeviantError.swift */,
-				8EBB91F224C3FB0900223F51 /* NetworkDefines.swift */,
 				8EBB91F924C4430E00223F51 /* NetworkManager.swift */,
 				8E40969124C0CAC900AE8D35 /* ServerInfoManager.swift */,
 				8E40969324C0CEF400AE8D35 /* TokenManager.swift */,
@@ -293,6 +309,7 @@
 		8E1B802524C0A712008C059C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8E277D0624C5870D0003798A /* Popular */,
 				8EBB91FB24C445EF00223F51 /* ApiError */,
 				8EBB91F624C426C100223F51 /* Token */,
 			);
@@ -316,10 +333,26 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		8E277D0624C5870D0003798A /* Popular */ = {
+			isa = PBXGroup;
+			children = (
+				8E277D0824C587250003798A /* PopularAuthor.swift */,
+				8E277D0924C587250003798A /* PopularBase.swift */,
+				8E277D0D24C587260003798A /* PopularContent.swift */,
+				8E277D0724C587250003798A /* PopularPreview.swift */,
+				8E277D0A24C587260003798A /* PopularResults.swift */,
+				8E277D0C24C587260003798A /* PopularStats.swift */,
+				8E277D0B24C587260003798A /* PopularThumbs.swift */,
+			);
+			path = Popular;
+			sourceTree = "<group>";
+		};
 		8E40969724C0D3FD00AE8D35 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8E277D0424C55BDB0003798A /* PopularService.swift */,
 				8EBB91EA24C3E50B00223F51 /* TokenService.swift */,
+				8E277D0224C55A880003798A /* TopicService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -327,6 +360,8 @@
 		8EBB91EC24C3E7FA00223F51 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				8EBB91E824C3E4D900223F51 /* DeviantError.swift */,
+				8EBB91F224C3FB0900223F51 /* NetworkDefines.swift */,
 				8EBB91EE24C3E81400223F51 /* String+Extension.swift */,
 				8EBB91F024C3F81800223F51 /* Optional+Extension.swift */,
 			);
@@ -351,7 +386,7 @@
 		8EBB91FB24C445EF00223F51 /* ApiError */ = {
 			isa = PBXGroup;
 			children = (
-				8EBB91FC24C4461100223F51 /* ApiError.swift */,
+				8EBB91FC24C4461100223F51 /* APIError.swift */,
 			);
 			path = ApiError;
 			sourceTree = "<group>";
@@ -555,23 +590,32 @@
 				8EBB91EF24C3E81400223F51 /* String+Extension.swift in Sources */,
 				8E1B803524C0AD47008C059C /* PopularListVCInterface.swift in Sources */,
 				8E1B803724C0AD47008C059C /* PopularListVCInteractor.swift in Sources */,
+				8E277D0324C55A880003798A /* TopicService.swift in Sources */,
+				8E277D0524C55BDB0003798A /* PopularService.swift in Sources */,
 				8EBB91F324C3FB0900223F51 /* NetworkDefines.swift in Sources */,
 				8E40969224C0CAC900AE8D35 /* ServerInfoManager.swift in Sources */,
 				8E1B803224C0AD47008C059C /* PopularListVCConfiguration.swift in Sources */,
+				8E277D1224C587260003798A /* PopularThumbs.swift in Sources */,
+				8E277D1424C587260003798A /* PopularContent.swift in Sources */,
 				8E1B803824C0AD47008C059C /* PopularListVCConfigurator.swift in Sources */,
 				8E1B803424C0AD47008C059C /* PopularListVCRouter.swift in Sources */,
-				8E1B7FEF24C0A4C9008C059C /* ViewController.swift in Sources */,
+				8E1B7FEF24C0A4C9008C059C /* RootViewController.swift in Sources */,
 				8E1B802924C0A8B2008C059C /* DeviantBaseVC.swift in Sources */,
 				8EBB91E924C3E4D900223F51 /* DeviantError.swift in Sources */,
+				8E277D1124C587260003798A /* PopularResults.swift in Sources */,
+				8E277D0F24C587260003798A /* PopularAuthor.swift in Sources */,
 				8EBB91EB24C3E50B00223F51 /* TokenService.swift in Sources */,
 				8EBB91FA24C4430E00223F51 /* NetworkManager.swift in Sources */,
 				8E40969424C0CEF400AE8D35 /* TokenManager.swift in Sources */,
-				8EBB91FD24C4461100223F51 /* ApiError.swift in Sources */,
+				8EBB91FD24C4461100223F51 /* APIError.swift in Sources */,
 				8E1B7FEB24C0A4C9008C059C /* AppDelegate.swift in Sources */,
 				8E1B803624C0AD47008C059C /* PopularListVCViewController.swift in Sources */,
 				8EBB91F124C3F81800223F51 /* Optional+Extension.swift in Sources */,
+				8E277D0E24C587260003798A /* PopularPreview.swift in Sources */,
+				8E277D1024C587260003798A /* PopularBase.swift in Sources */,
 				8EBB91F824C426D100223F51 /* TokenBase.swift in Sources */,
 				8E1B7FED24C0A4C9008C059C /* SceneDelegate.swift in Sources */,
+				8E277D1324C587260003798A /* PopularStats.swift in Sources */,
 				8E1B803324C0AD47008C059C /* PopularListVCPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
