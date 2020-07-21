@@ -8,9 +8,7 @@
 
 import UIKit
 
-
-class ___VARIABLE_sceneName___ViewController: UIViewController
-{
+class ___VARIABLE_sceneName___ViewController: UIViewController {
     var interactor: ___VARIABLE_sceneName___InteractorInterface?
 
     private(set) var tableView: UITableView!
@@ -26,13 +24,11 @@ class ___VARIABLE_sceneName___ViewController: UIViewController
 
 extension ___VARIABLE_sceneName___ViewController {
 
-    func makeView()
-    {
+    func makeView()  {
         makeTableView()
     }
 
-    func makeTableView()
-    {
+    func makeTableView() {
         tableView = UITableView(frame: .zero, style: .grouped)
         view.addSubview(tableView)
         
@@ -42,7 +38,6 @@ extension ___VARIABLE_sceneName___ViewController {
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
     }
-
 }
 
 extension ___VARIABLE_sceneName___ViewController: UITableViewDataSource {
@@ -60,11 +55,9 @@ extension ___VARIABLE_sceneName___ViewController: UITableViewDataSource {
 }
 
 extension ___VARIABLE_sceneName___ViewController: UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }
 
 extension ___VARIABLE_sceneName___ViewController: ___VARIABLE_sceneName___ViewControllerInterface {
-
 }

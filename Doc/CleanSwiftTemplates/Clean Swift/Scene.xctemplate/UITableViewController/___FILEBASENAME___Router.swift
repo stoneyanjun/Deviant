@@ -8,11 +8,9 @@
 
 import UIKit
 
-class ___VARIABLE_sceneName___Router: NSObject
-{
+class ___VARIABLE_sceneName___Router: NSObject {
     weak var viewController: ___VARIABLE_sceneName___ViewControllerInterface?
 }
 
 extension ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterInterface {
-
 }

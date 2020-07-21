@@ -27,7 +27,7 @@ class NetworkManager<Target: TargetType>: NSObject {
         provider.request(target) { result in
             switch result {
             case .success(let response):
-                print(response.request?.url?.absoluteString)
+                print("URL: " + "\(response.request?.url?.absoluteString)")
                 let jsonData = JSON(response.data)
                 if let apiError = JSONDeserializer<APIError>.deserializeFrom(json: jsonData.description),
                     let error = apiError.error,

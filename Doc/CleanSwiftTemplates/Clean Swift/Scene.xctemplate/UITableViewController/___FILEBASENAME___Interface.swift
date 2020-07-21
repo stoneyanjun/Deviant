@@ -8,19 +8,14 @@
 
 import UIKit
 
-protocol ___VARIABLE_sceneName___InteractorInterface
-{
+protocol ___VARIABLE_sceneName___InteractorInterface {
 }
 
-protocol ___VARIABLE_sceneName___RouterInterface
-{
-
+protocol ___VARIABLE_sceneName___RouterInterface {
 }
 
-protocol ___VARIABLE_sceneName___PresenterInterface
-{
+protocol ___VARIABLE_sceneName___PresenterInterface {
 }
 
-protocol ___VARIABLE_sceneName___ViewControllerInterface: UIViewController
-{
+protocol ___VARIABLE_sceneName___ViewControllerInterface: UIViewController {
 }

@@ -8,8 +8,7 @@
 
 import UIKit
 
-class ___VARIABLE_sceneName___Interactor
-{
+class ___VARIABLE_sceneName___Interactor {
     var presenter: ___VARIABLE_sceneName___PresenterInterface?
     private(set) var config: ___VARIABLE_sceneName___Configuration
 
@@ -19,5 +18,4 @@ class ___VARIABLE_sceneName___Interactor
 }
 
 extension ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___InteractorInterface {
-
 }

@@ -8,8 +8,7 @@
 
 import UIKit
 
-struct ___VARIABLE_sceneName___Configurator
-{
+struct ___VARIABLE_sceneName___Configurator {
     let configuration: ___VARIABLE_sceneName___Configuration
 
     init(config: ___VARIABLE_sceneName___Configuration) {
@@ -17,16 +16,16 @@ struct ___VARIABLE_sceneName___Configurator
     }
 
     func createViewController() -> UIViewController {
-        let vc = ___VARIABLE_sceneName___ViewController()
+        let viewController = ___VARIABLE_sceneName___ViewController()
         let interactor = ___VARIABLE_sceneName___Interactor(config: configuration)
         let presenter = ___VARIABLE_sceneName___Presenter()
         let router = ___VARIABLE_sceneName___Router()
 
-        vc.interactor = interactor
+        viewController.interactor = interactor
         interactor.presenter = presenter
         presenter.router = router
-        presenter.viewController = vc
-        router.viewController = vc
-        return vc
+        presenter.viewController = viewController
+        router.viewController = viewController
+        return viewController
     }
 }

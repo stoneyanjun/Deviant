@@ -8,12 +8,10 @@
 
 import UIKit
 
-class ___VARIABLE_sceneName___Presenter
-{
+class ___VARIABLE_sceneName___Presenter {
     weak var viewController: ___VARIABLE_sceneName___ViewControllerInterface?
     var router: ___VARIABLE_sceneName___RouterInterface?
 }
 
 extension ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresenterInterface{
-
 }

@@ -48,11 +48,11 @@ class TokenManager: NetworkManager<TokenService> {
             switch result {
             case .success(let json):
                 print(#function + " json\r\n\(json.description)")
-                if let tokenBase = JSONDeserializer<TokenBase>.deserializeFrom(json: json.description ), let accessToken = tokenBase.accessToken, !accessToken.isEmpty {
+                if let tokenBase = JSONDeserializer<TokenBase>.deserializeFrom(json: json.description ), !tokenBase.accessToken.wrap().isEmpty {
                     self.tokenBase = tokenBase
                     let timeInterval = TimeInterval(tokenBase.expiresIn ?? NetworkConst.defaultExpiredSecond)
                     self.tokenExpiredDate = Date().addingTimeInterval(timeInterval)
-                    completion(.success(accessToken))
+                    completion(.success(tokenBase.accessToken.wrap()))
                 } else {
                     completion(.failure(DeviantFailure.devFailure(DeviantGeneralError.oauthError)))
                 }

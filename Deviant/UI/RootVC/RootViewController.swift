@@ -6,13 +6,11 @@
 //  Copyright © 2020 JustNow. All rights reserved.
 //
 
-import UIKit
 import HandyJSON
-//import Moya
-//import SwiftyJSON
+import UIKit
 
 class RootViewController: UIViewController {
-    private var offset: Int = 0
+    private var offset = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +38,10 @@ extension RootViewController {
                     if let nextOffset = popularBase.nextOffset, nextOffset > self.offset {
                         self.offset = nextOffset
                     }
-                    print(#function + " count: \(popularBase.results?.count)")
+                    print(#function + " count: \(popularBase.results?.count ?? 0)")
                 }
             case .failure(let error):
-                print(#function +  " error  - \(error.deviantError.localizedDescription)")
+                print(#function +  " UI error  - \(error.deviantError.localizedDescription)")
             }
         }
     }
