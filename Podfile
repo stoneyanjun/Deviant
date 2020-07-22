@@ -19,7 +19,8 @@ target 'Deviant' do
   pod 'SwiftMessages'
   pod 'PKHUD'
   pod 'Segmentio'
-
+  pod 'CHTCollectionViewWaterfallLayout/Swift'
+  
   pod 'Localize-Swift'
 
 end

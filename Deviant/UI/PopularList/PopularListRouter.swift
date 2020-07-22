@@ -8,11 +8,9 @@
 
 import UIKit
 
-class PopularListRouter: NSObject
-{
+class PopularListRouter: NSObject {
     weak var viewController: PopularListViewControllerInterface?
 }
 
 extension PopularListRouter: PopularListRouterInterface {
-
 }

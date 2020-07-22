@@ -13,5 +13,5 @@ class ___VARIABLE_sceneName___Presenter {
     var router: ___VARIABLE_sceneName___RouterInterface?
 }
 
-extension ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresenterInterface{
+extension ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresenterInterface {
 }

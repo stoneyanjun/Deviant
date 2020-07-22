@@ -15,23 +15,20 @@ class ___VARIABLE_sceneName___ViewController: UIViewController {
     private lazy var defaultCell = UITableViewCell()
 
     // MARK: View lifecycle
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         makeView()
     }
 }
 
 extension ___VARIABLE_sceneName___ViewController {
-
-    func makeView()  {
+    func makeView() {
         makeTableView()
     }
 
     func makeTableView() {
         tableView = UITableView(frame: .zero, style: .grouped)
         view.addSubview(tableView)
-        
         tableView.delegate = self
         tableView.dataSource = self
 

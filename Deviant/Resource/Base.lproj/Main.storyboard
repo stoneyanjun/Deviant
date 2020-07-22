@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Mr-uW-0U1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -14,13 +14,70 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhd-zx-UbD" customClass="Segmentio" customModule="Segmentio">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="haA-BK-mJw"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUQ-hE-62p">
+                                <rect key="frame" x="0.0" y="138" width="414" height="724"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nu-cC-PEb">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="724"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="7nu-cC-PEb" firstAttribute="top" secondItem="RUQ-hE-62p" secondAttribute="top" id="FFz-qd-bay"/>
+                                    <constraint firstItem="7nu-cC-PEb" firstAttribute="leading" secondItem="RUQ-hE-62p" secondAttribute="leading" id="GdY-8v-snc"/>
+                                    <constraint firstAttribute="bottom" secondItem="7nu-cC-PEb" secondAttribute="bottom" id="RqM-3H-WAl"/>
+                                    <constraint firstAttribute="trailing" secondItem="7nu-cC-PEb" secondAttribute="trailing" id="jRQ-c0-X42"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RUQ-hE-62p" secondAttribute="trailing" id="4cb-yh-FG5"/>
+                            <constraint firstItem="fhd-zx-UbD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DMw-F4-KoO"/>
+                            <constraint firstItem="RUQ-hE-62p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="J0N-qE-IDc"/>
+                            <constraint firstItem="RUQ-hE-62p" firstAttribute="top" secondItem="fhd-zx-UbD" secondAttribute="bottom" id="K56-FS-RJn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RUQ-hE-62p" secondAttribute="bottom" id="TX0-Ss-mbH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fhd-zx-UbD" secondAttribute="trailing" id="iH5-kl-PTG"/>
+                            <constraint firstItem="fhd-zx-UbD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lGZ-9d-bdy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Myz-jP-YCk"/>
+                    <connections>
+                        <outlet property="containView" destination="RUQ-hE-62p" id="dTA-uR-lnu"/>
+                        <outlet property="scrollView" destination="7nu-cC-PEb" id="B8O-6A-MeI"/>
+                        <outlet property="segmentioView" destination="fhd-zx-UbD" id="3KG-yC-1Kk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="113"/>
+            <point key="canvasLocation" x="1042.0289855072465" y="112.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1k0-JO-DPO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Mr-uW-0U1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iLQ-Yg-b6f">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Hqf-rm-tWc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fEz-jP-wlM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="112.5"/>
         </scene>
     </scenes>
 </document>

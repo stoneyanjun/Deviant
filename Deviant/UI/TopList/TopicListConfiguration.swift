@@ -1,5 +1,5 @@
 //
-//  PopularListConfiguration.swift
+//  TopicListConfiguration.swift
 //  Deviant
 //
 //  Created by Stone on 21/7/2020.
@@ -8,5 +8,5 @@
 
 import UIKit
 
-struct PopularListConfiguration {
+struct TopicListConfiguration {
 }

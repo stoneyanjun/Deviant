@@ -30,6 +30,30 @@
 		8E277D1424C587260003798A /* PopularContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E277D0D24C587260003798A /* PopularContent.swift */; };
 		8E40969224C0CAC900AE8D35 /* ServerInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40969124C0CAC900AE8D35 /* ServerInfoManager.swift */; };
 		8E40969424C0CEF400AE8D35 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40969324C0CEF400AE8D35 /* TokenManager.swift */; };
+		8E944EAA24C88C490050B76B /* PopularListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EA824C88C490050B76B /* PopularListViewController.swift */; };
+		8E944EAB24C88C490050B76B /* PopularListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E944EA924C88C490050B76B /* PopularListViewController.xib */; };
+		8E944EAF24C88DF40050B76B /* ImageUICollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E944EAD24C88DF30050B76B /* ImageUICollectionViewCell.xib */; };
+		8E944EB024C88DF40050B76B /* ImageUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EAE24C88DF30050B76B /* ImageUICollectionViewCell.swift */; };
+		8E944EDB24C89F330050B76B /* TopicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED324C89F330050B76B /* TopicListViewController.swift */; };
+		8E944EDC24C89F330050B76B /* TopicListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E944ED424C89F330050B76B /* TopicListViewController.xib */; };
+		8E944EDD24C89F330050B76B /* TopicListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED524C89F330050B76B /* TopicListPresenter.swift */; };
+		8E944EDE24C89F330050B76B /* TopicListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED624C89F330050B76B /* TopicListInterface.swift */; };
+		8E944EDF24C89F330050B76B /* TopicListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED724C89F330050B76B /* TopicListConfigurator.swift */; };
+		8E944EE024C89F330050B76B /* TopicListConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED824C89F330050B76B /* TopicListConfiguration.swift */; };
+		8E944EE124C89F330050B76B /* TopicListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED924C89F330050B76B /* TopicListInteractor.swift */; };
+		8E944EE224C89F330050B76B /* TopicListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EDA24C89F330050B76B /* TopicListRouter.swift */; };
+		8E944EF024C8A1720050B76B /* TopicListBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EE424C8A1710050B76B /* TopicListBase.swift */; };
+		8E944EF124C8A1720050B76B /* TopicListDailyDeviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EE524C8A1710050B76B /* TopicListDailyDeviation.swift */; };
+		8E944EF224C8A1720050B76B /* TopicListPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EE624C8A1720050B76B /* TopicListPreview.swift */; };
+		8E944EF324C8A1720050B76B /* TopicListResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EE724C8A1720050B76B /* TopicListResults.swift */; };
+		8E944EF424C8A1720050B76B /* TopicListStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EE824C8A1720050B76B /* TopicListStats.swift */; };
+		8E944EF524C8A1720050B76B /* TopicListExampleDeviations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EE924C8A1720050B76B /* TopicListExampleDeviations.swift */; };
+		8E944EF624C8A1720050B76B /* TopicListGiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EEA24C8A1720050B76B /* TopicListGiver.swift */; };
+		8E944EF724C8A1720050B76B /* TopicListThumbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EEB24C8A1720050B76B /* TopicListThumbs.swift */; };
+		8E944EF824C8A1720050B76B /* TopicListSuggester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EEC24C8A1720050B76B /* TopicListSuggester.swift */; };
+		8E944EF924C8A1720050B76B /* TopicListAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EED24C8A1720050B76B /* TopicListAuthor.swift */; };
+		8E944EFA24C8A1720050B76B /* TopicListContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EEE24C8A1720050B76B /* TopicListContent.swift */; };
+		8E944EFB24C8A1720050B76B /* TopicListDeviations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EEF24C8A1720050B76B /* TopicListDeviations.swift */; };
 		8EBB91E924C3E4D900223F51 /* DeviantError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91E824C3E4D900223F51 /* DeviantError.swift */; };
 		8EBB91EB24C3E50B00223F51 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91EA24C3E50B00223F51 /* TokenService.swift */; };
 		8EBB91EF24C3E81400223F51 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91EE24C3E81400223F51 /* String+Extension.swift */; };
@@ -38,13 +62,17 @@
 		8EBB91F824C426D100223F51 /* TokenBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91F724C426D100223F51 /* TokenBase.swift */; };
 		8EBB91FA24C4430E00223F51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91F924C4430E00223F51 /* NetworkManager.swift */; };
 		8EBB91FD24C4461100223F51 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91FC24C4461100223F51 /* APIError.swift */; };
-		8EFB596A24C66C90005DE580 /* PopularListConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB596324C66C90005DE580 /* PopularListConfiguration.swift */; };
-		8EFB596B24C66C90005DE580 /* PopularListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB596424C66C90005DE580 /* PopularListPresenter.swift */; };
-		8EFB596C24C66C90005DE580 /* PopularListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB596524C66C90005DE580 /* PopularListRouter.swift */; };
-		8EFB596D24C66C90005DE580 /* PopularListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB596624C66C90005DE580 /* PopularListInterface.swift */; };
-		8EFB596E24C66C90005DE580 /* PopularListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB596724C66C90005DE580 /* PopularListViewController.swift */; };
-		8EFB596F24C66C90005DE580 /* PopularListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB596824C66C90005DE580 /* PopularListInteractor.swift */; };
-		8EFB597024C66C90005DE580 /* PopularListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB596924C66C90005DE580 /* PopularListConfigurator.swift */; };
+		8EFB599424C66F6A005DE580 /* PopularListConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB598D24C66F6A005DE580 /* PopularListConfiguration.swift */; };
+		8EFB599524C66F6A005DE580 /* PopularListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB598E24C66F6A005DE580 /* PopularListPresenter.swift */; };
+		8EFB599624C66F6A005DE580 /* PopularListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB598F24C66F6A005DE580 /* PopularListRouter.swift */; };
+		8EFB599724C66F6A005DE580 /* PopularListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB599024C66F6A005DE580 /* PopularListInterface.swift */; };
+		8EFB599924C66F6A005DE580 /* PopularListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB599224C66F6A005DE580 /* PopularListInteractor.swift */; };
+		8EFB599A24C66F6A005DE580 /* PopularListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB599324C66F6A005DE580 /* PopularListConfigurator.swift */; };
+		8EFB599C24C68D21005DE580 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB599B24C68D21005DE580 /* UIScreen+Extension.swift */; };
+		8EFB599F24C6905D005DE580 /* SegmentioBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB599E24C6905D005DE580 /* SegmentioBuilder.swift */; };
+		8EFB59A224C691E2005DE580 /* UIFont+ExampleFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB59A124C691E2005DE580 /* UIFont+ExampleFonts.swift */; };
+		8EFB59A524C69436005DE580 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB59A424C69436005DE580 /* ColorPalette.swift */; };
+		8EFB59A824C6A9F6005DE580 /* DeviantBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB59A724C6A9F6005DE580 /* DeviantBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +123,30 @@
 		8E277D0D24C587260003798A /* PopularContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularContent.swift; sourceTree = "<group>"; };
 		8E40969124C0CAC900AE8D35 /* ServerInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInfoManager.swift; sourceTree = "<group>"; };
 		8E40969324C0CEF400AE8D35 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		8E944EA824C88C490050B76B /* PopularListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListViewController.swift; sourceTree = "<group>"; };
+		8E944EA924C88C490050B76B /* PopularListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularListViewController.xib; sourceTree = "<group>"; };
+		8E944EAD24C88DF30050B76B /* ImageUICollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageUICollectionViewCell.xib; sourceTree = "<group>"; };
+		8E944EAE24C88DF30050B76B /* ImageUICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUICollectionViewCell.swift; sourceTree = "<group>"; };
+		8E944ED324C89F330050B76B /* TopicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListViewController.swift; sourceTree = "<group>"; };
+		8E944ED424C89F330050B76B /* TopicListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicListViewController.xib; sourceTree = "<group>"; };
+		8E944ED524C89F330050B76B /* TopicListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListPresenter.swift; sourceTree = "<group>"; };
+		8E944ED624C89F330050B76B /* TopicListInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListInterface.swift; sourceTree = "<group>"; };
+		8E944ED724C89F330050B76B /* TopicListConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListConfigurator.swift; sourceTree = "<group>"; };
+		8E944ED824C89F330050B76B /* TopicListConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListConfiguration.swift; sourceTree = "<group>"; };
+		8E944ED924C89F330050B76B /* TopicListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListInteractor.swift; sourceTree = "<group>"; };
+		8E944EDA24C89F330050B76B /* TopicListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListRouter.swift; sourceTree = "<group>"; };
+		8E944EE424C8A1710050B76B /* TopicListBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListBase.swift; sourceTree = "<group>"; };
+		8E944EE524C8A1710050B76B /* TopicListDailyDeviation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListDailyDeviation.swift; sourceTree = "<group>"; };
+		8E944EE624C8A1720050B76B /* TopicListPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListPreview.swift; sourceTree = "<group>"; };
+		8E944EE724C8A1720050B76B /* TopicListResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListResults.swift; sourceTree = "<group>"; };
+		8E944EE824C8A1720050B76B /* TopicListStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListStats.swift; sourceTree = "<group>"; };
+		8E944EE924C8A1720050B76B /* TopicListExampleDeviations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListExampleDeviations.swift; sourceTree = "<group>"; };
+		8E944EEA24C8A1720050B76B /* TopicListGiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListGiver.swift; sourceTree = "<group>"; };
+		8E944EEB24C8A1720050B76B /* TopicListThumbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListThumbs.swift; sourceTree = "<group>"; };
+		8E944EEC24C8A1720050B76B /* TopicListSuggester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListSuggester.swift; sourceTree = "<group>"; };
+		8E944EED24C8A1720050B76B /* TopicListAuthor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListAuthor.swift; sourceTree = "<group>"; };
+		8E944EEE24C8A1720050B76B /* TopicListContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListContent.swift; sourceTree = "<group>"; };
+		8E944EEF24C8A1720050B76B /* TopicListDeviations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListDeviations.swift; sourceTree = "<group>"; };
 		8EBB91E824C3E4D900223F51 /* DeviantError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantError.swift; sourceTree = "<group>"; };
 		8EBB91EA24C3E50B00223F51 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		8EBB91EE24C3E81400223F51 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -103,13 +155,17 @@
 		8EBB91F724C426D100223F51 /* TokenBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenBase.swift; sourceTree = "<group>"; };
 		8EBB91F924C4430E00223F51 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8EBB91FC24C4461100223F51 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		8EFB596324C66C90005DE580 /* PopularListConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListConfiguration.swift; sourceTree = "<group>"; };
-		8EFB596424C66C90005DE580 /* PopularListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListPresenter.swift; sourceTree = "<group>"; };
-		8EFB596524C66C90005DE580 /* PopularListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListRouter.swift; sourceTree = "<group>"; };
-		8EFB596624C66C90005DE580 /* PopularListInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListInterface.swift; sourceTree = "<group>"; };
-		8EFB596724C66C90005DE580 /* PopularListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListViewController.swift; sourceTree = "<group>"; };
-		8EFB596824C66C90005DE580 /* PopularListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListInteractor.swift; sourceTree = "<group>"; };
-		8EFB596924C66C90005DE580 /* PopularListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListConfigurator.swift; sourceTree = "<group>"; };
+		8EFB598D24C66F6A005DE580 /* PopularListConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListConfiguration.swift; sourceTree = "<group>"; };
+		8EFB598E24C66F6A005DE580 /* PopularListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListPresenter.swift; sourceTree = "<group>"; };
+		8EFB598F24C66F6A005DE580 /* PopularListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListRouter.swift; sourceTree = "<group>"; };
+		8EFB599024C66F6A005DE580 /* PopularListInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListInterface.swift; sourceTree = "<group>"; };
+		8EFB599224C66F6A005DE580 /* PopularListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListInteractor.swift; sourceTree = "<group>"; };
+		8EFB599324C66F6A005DE580 /* PopularListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListConfigurator.swift; sourceTree = "<group>"; };
+		8EFB599B24C68D21005DE580 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
+		8EFB599E24C6905D005DE580 /* SegmentioBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentioBuilder.swift; sourceTree = "<group>"; };
+		8EFB59A124C691E2005DE580 /* UIFont+ExampleFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+ExampleFonts.swift"; sourceTree = "<group>"; };
+		8EFB59A424C69436005DE580 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		8EFB59A724C6A9F6005DE580 /* DeviantBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantBaseViewController.swift; sourceTree = "<group>"; };
 		D686C8D192EFD0D9DAD1D56B /* Pods-Deviant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deviant.release.xcconfig"; path = "Target Support Files/Pods-Deviant/Pods-Deviant.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,13 +285,15 @@
 		8E1B801B24C0A575008C059C /* PopularList */ = {
 			isa = PBXGroup;
 			children = (
-				8EFB596324C66C90005DE580 /* PopularListConfiguration.swift */,
-				8EFB596424C66C90005DE580 /* PopularListPresenter.swift */,
-				8EFB596524C66C90005DE580 /* PopularListRouter.swift */,
-				8EFB596624C66C90005DE580 /* PopularListInterface.swift */,
-				8EFB596724C66C90005DE580 /* PopularListViewController.swift */,
-				8EFB596824C66C90005DE580 /* PopularListInteractor.swift */,
-				8EFB596924C66C90005DE580 /* PopularListConfigurator.swift */,
+				8E944EAC24C88DDF0050B76B /* View */,
+				8EFB598D24C66F6A005DE580 /* PopularListConfiguration.swift */,
+				8EFB599324C66F6A005DE580 /* PopularListConfigurator.swift */,
+				8EFB599224C66F6A005DE580 /* PopularListInteractor.swift */,
+				8EFB599024C66F6A005DE580 /* PopularListInterface.swift */,
+				8EFB598E24C66F6A005DE580 /* PopularListPresenter.swift */,
+				8EFB598F24C66F6A005DE580 /* PopularListRouter.swift */,
+				8E944EA824C88C490050B76B /* PopularListViewController.swift */,
+				8E944EA924C88C490050B76B /* PopularListViewController.xib */,
 			);
 			path = PopularList;
 			sourceTree = "<group>";
@@ -243,6 +301,14 @@
 		8E1B801C24C0A5A4008C059C /* TopList */ = {
 			isa = PBXGroup;
 			children = (
+				8E944ED824C89F330050B76B /* TopicListConfiguration.swift */,
+				8E944ED724C89F330050B76B /* TopicListConfigurator.swift */,
+				8E944ED924C89F330050B76B /* TopicListInteractor.swift */,
+				8E944ED624C89F330050B76B /* TopicListInterface.swift */,
+				8E944ED524C89F330050B76B /* TopicListPresenter.swift */,
+				8E944EDA24C89F330050B76B /* TopicListRouter.swift */,
+				8E944ED324C89F330050B76B /* TopicListViewController.swift */,
+				8E944ED424C89F330050B76B /* TopicListViewController.xib */,
 			);
 			path = TopList;
 			sourceTree = "<group>";
@@ -309,6 +375,7 @@
 		8E1B802524C0A712008C059C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8E944EE324C8A14E0050B76B /* TopicList */,
 				8E277D0624C5870D0003798A /* Popular */,
 				8EBB91FB24C445EF00223F51 /* ApiError */,
 				8EBB91F624C426C100223F51 /* Token */,
@@ -357,6 +424,34 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		8E944EAC24C88DDF0050B76B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E944EAE24C88DF30050B76B /* ImageUICollectionViewCell.swift */,
+				8E944EAD24C88DF30050B76B /* ImageUICollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8E944EE324C8A14E0050B76B /* TopicList */ = {
+			isa = PBXGroup;
+			children = (
+				8E944EED24C8A1720050B76B /* TopicListAuthor.swift */,
+				8E944EE424C8A1710050B76B /* TopicListBase.swift */,
+				8E944EEE24C8A1720050B76B /* TopicListContent.swift */,
+				8E944EE524C8A1710050B76B /* TopicListDailyDeviation.swift */,
+				8E944EEF24C8A1720050B76B /* TopicListDeviations.swift */,
+				8E944EE924C8A1720050B76B /* TopicListExampleDeviations.swift */,
+				8E944EEA24C8A1720050B76B /* TopicListGiver.swift */,
+				8E944EE624C8A1720050B76B /* TopicListPreview.swift */,
+				8E944EE724C8A1720050B76B /* TopicListResults.swift */,
+				8E944EE824C8A1720050B76B /* TopicListStats.swift */,
+				8E944EEC24C8A1720050B76B /* TopicListSuggester.swift */,
+				8E944EEB24C8A1720050B76B /* TopicListThumbs.swift */,
+			);
+			path = TopicList;
+			sourceTree = "<group>";
+		};
 		8EBB91EC24C3E7FA00223F51 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +466,11 @@
 		8EBB91ED24C3E80300223F51 /* UIUtils */ = {
 			isa = PBXGroup;
 			children = (
+				8EFB59A624C6A9CC005DE580 /* BaseUIViewController */,
+				8EFB59A324C693FD005DE580 /* Color */,
+				8EFB59A024C691D3005DE580 /* Font */,
+				8EFB599D24C69035005DE580 /* Segmentio */,
+				8EFB599B24C68D21005DE580 /* UIScreen+Extension.swift */,
 			);
 			path = UIUtils;
 			sourceTree = "<group>";
@@ -389,6 +489,38 @@
 				8EBB91FC24C4461100223F51 /* APIError.swift */,
 			);
 			path = ApiError;
+			sourceTree = "<group>";
+		};
+		8EFB599D24C69035005DE580 /* Segmentio */ = {
+			isa = PBXGroup;
+			children = (
+				8EFB599E24C6905D005DE580 /* SegmentioBuilder.swift */,
+			);
+			path = Segmentio;
+			sourceTree = "<group>";
+		};
+		8EFB59A024C691D3005DE580 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				8EFB59A124C691E2005DE580 /* UIFont+ExampleFonts.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		8EFB59A324C693FD005DE580 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				8EFB59A424C69436005DE580 /* ColorPalette.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		8EFB59A624C6A9CC005DE580 /* BaseUIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8EFB59A724C6A9F6005DE580 /* DeviantBaseViewController.swift */,
+			);
+			path = BaseUIViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,10 +630,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E944EAB24C88C490050B76B /* PopularListViewController.xib in Resources */,
 				8E1B803D24C0B42C008C059C /* ServerInfo.plist in Resources */,
 				8E1B803B24C0B422008C059C /* Request.plist in Resources */,
+				8E944EAF24C88DF40050B76B /* ImageUICollectionViewCell.xib in Resources */,
 				8E1B7FF724C0A4CB008C059C /* LaunchScreen.storyboard in Resources */,
 				8E1B7FF424C0A4CB008C059C /* Assets.xcassets in Resources */,
+				8E944EDC24C89F330050B76B /* TopicListViewController.xib in Resources */,
 				8E1B7FF224C0A4C9008C059C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,35 +722,60 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E944EF324C8A1720050B76B /* TopicListResults.swift in Sources */,
+				8EFB59A824C6A9F6005DE580 /* DeviantBaseViewController.swift in Sources */,
 				8EBB91EF24C3E81400223F51 /* String+Extension.swift in Sources */,
+				8E944EB024C88DF40050B76B /* ImageUICollectionViewCell.swift in Sources */,
+				8EFB599C24C68D21005DE580 /* UIScreen+Extension.swift in Sources */,
+				8E944EDF24C89F330050B76B /* TopicListConfigurator.swift in Sources */,
 				8E277D0324C55A880003798A /* TopicService.swift in Sources */,
+				8EFB599F24C6905D005DE580 /* SegmentioBuilder.swift in Sources */,
 				8E277D0524C55BDB0003798A /* PopularService.swift in Sources */,
+				8E944EF424C8A1720050B76B /* TopicListStats.swift in Sources */,
 				8EBB91F324C3FB0900223F51 /* NetworkDefines.swift in Sources */,
-				8EFB596E24C66C90005DE580 /* PopularListViewController.swift in Sources */,
 				8E40969224C0CAC900AE8D35 /* ServerInfoManager.swift in Sources */,
 				8E277D1224C587260003798A /* PopularThumbs.swift in Sources */,
+				8E944EF624C8A1720050B76B /* TopicListGiver.swift in Sources */,
+				8E944EF124C8A1720050B76B /* TopicListDailyDeviation.swift in Sources */,
 				8E277D1424C587260003798A /* PopularContent.swift in Sources */,
 				8E1B7FEF24C0A4C9008C059C /* RootViewController.swift in Sources */,
+				8E944EFA24C8A1720050B76B /* TopicListContent.swift in Sources */,
 				8E1B802924C0A8B2008C059C /* DeviantBaseVC.swift in Sources */,
-				8EFB596D24C66C90005DE580 /* PopularListInterface.swift in Sources */,
+				8E944EF724C8A1720050B76B /* TopicListThumbs.swift in Sources */,
+				8EFB599724C66F6A005DE580 /* PopularListInterface.swift in Sources */,
+				8E944EFB24C8A1720050B76B /* TopicListDeviations.swift in Sources */,
 				8EBB91E924C3E4D900223F51 /* DeviantError.swift in Sources */,
 				8E277D1124C587260003798A /* PopularResults.swift in Sources */,
 				8E277D0F24C587260003798A /* PopularAuthor.swift in Sources */,
+				8E944EE024C89F330050B76B /* TopicListConfiguration.swift in Sources */,
 				8EBB91EB24C3E50B00223F51 /* TokenService.swift in Sources */,
+				8E944EF024C8A1720050B76B /* TopicListBase.swift in Sources */,
+				8EFB59A524C69436005DE580 /* ColorPalette.swift in Sources */,
 				8EBB91FA24C4430E00223F51 /* NetworkManager.swift in Sources */,
-				8EFB596C24C66C90005DE580 /* PopularListRouter.swift in Sources */,
+				8E944EF524C8A1720050B76B /* TopicListExampleDeviations.swift in Sources */,
+				8EFB599624C66F6A005DE580 /* PopularListRouter.swift in Sources */,
 				8E40969424C0CEF400AE8D35 /* TokenManager.swift in Sources */,
-				8EFB596B24C66C90005DE580 /* PopularListPresenter.swift in Sources */,
+				8E944EF824C8A1720050B76B /* TopicListSuggester.swift in Sources */,
+				8EFB599524C66F6A005DE580 /* PopularListPresenter.swift in Sources */,
 				8EBB91FD24C4461100223F51 /* APIError.swift in Sources */,
-				8EFB596A24C66C90005DE580 /* PopularListConfiguration.swift in Sources */,
+				8EFB599424C66F6A005DE580 /* PopularListConfiguration.swift in Sources */,
+				8E944EDE24C89F330050B76B /* TopicListInterface.swift in Sources */,
 				8E1B7FEB24C0A4C9008C059C /* AppDelegate.swift in Sources */,
-				8EFB597024C66C90005DE580 /* PopularListConfigurator.swift in Sources */,
+				8E944EF924C8A1720050B76B /* TopicListAuthor.swift in Sources */,
+				8E944EDD24C89F330050B76B /* TopicListPresenter.swift in Sources */,
+				8EFB599A24C66F6A005DE580 /* PopularListConfigurator.swift in Sources */,
 				8EBB91F124C3F81800223F51 /* Optional+Extension.swift in Sources */,
-				8EFB596F24C66C90005DE580 /* PopularListInteractor.swift in Sources */,
+				8E944EDB24C89F330050B76B /* TopicListViewController.swift in Sources */,
+				8EFB599924C66F6A005DE580 /* PopularListInteractor.swift in Sources */,
+				8E944EE124C89F330050B76B /* TopicListInteractor.swift in Sources */,
 				8E277D0E24C587260003798A /* PopularPreview.swift in Sources */,
 				8E277D1024C587260003798A /* PopularBase.swift in Sources */,
 				8EBB91F824C426D100223F51 /* TokenBase.swift in Sources */,
+				8E944EF224C8A1720050B76B /* TopicListPreview.swift in Sources */,
+				8E944EE224C89F330050B76B /* TopicListRouter.swift in Sources */,
 				8E1B7FED24C0A4C9008C059C /* SceneDelegate.swift in Sources */,
+				8E944EAA24C88C490050B76B /* PopularListViewController.swift in Sources */,
+				8EFB59A224C691E2005DE580 /* UIFont+ExampleFonts.swift in Sources */,
 				8E277D1324C587260003798A /* PopularStats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

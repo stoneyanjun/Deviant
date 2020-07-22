@@ -1,5 +1,5 @@
 //
-//  PopularListPresenter.swift
+//  TopicListPresenter.swift
 //  Deviant
 //
 //  Created by Stone on 21/7/2020.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class PopularListPresenter {
-    weak var viewController: PopularListViewControllerInterface?
-    var router: PopularListRouterInterface?
+class TopicListPresenter {
+    weak var viewController: TopicListViewControllerInterface?
+    var router: TopicListRouterInterface?
 }
 
-extension PopularListPresenter: PopularListPresenterInterface {
+extension TopicListPresenter: TopicListPresenterInterface {
     func setLoadingView(with status: Bool) {
         viewController?.setLoadingView(with: status)
     }
@@ -22,7 +22,7 @@ extension PopularListPresenter: PopularListPresenterInterface {
         viewController?.showError(with: error)
     }
     
-    func update(with results: [PopularResults], nextOffset: Int) {
+    func update(with results: [TopicListResults], nextOffset: Int) {
         viewController?.update(with: results, nextOffset: nextOffset)
     }
 }

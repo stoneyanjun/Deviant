@@ -6,27 +6,25 @@
 //  Copyright © 2020 JustNow. All rights reserved.
 //
 
-
-//TODO
 import Foundation
 import Moya
 
 enum TopicService {
-    case fetchToken(clientID: String, clientSecret: String)
+    case fetchTopic(numDeviationsPerTopic : Int, limit: Int, offset: Int)
 }
 
 extension TopicService: TargetType {
     var baseURL: URL {
         switch self {
-        case .fetchToken:
-            return URL(string: ServerInfoManager.shared.serverBaseUrl)!
+        case .fetchTopic:
+            return URL(string: ServerInfoManager.shared.apiPath)!
         }
     }
 
     var path: String {
         switch self {
-        case .fetchToken:
-        return ServerInfoManager.shared.getUri(with: UriResource.oauth2Token).wrap()
+        case .fetchTopic:
+        return ServerInfoManager.shared.getUri(with: UriResource.browseTopics).wrap()
         }
     }
 
@@ -36,18 +34,20 @@ extension TopicService: TargetType {
 
     var sampleData: Data {
         switch self {
-        case .fetchToken:
+        case .fetchTopic:
             return Date().description.utf8Encoded
         }
     }
 
     var task: Task {
         switch self {
-        case .fetchToken(let clientID, let clientSecret):
-            let parameters: [String: Any] = [RequestParams.grantType.rawValue: RequestParams.clientCredentials.rawValue,
-                                             RequestParams.clientID.rawValue: clientID,
-                                             RequestParams.clientSecret.rawValue: clientSecret]
+            case .fetchTopic(let numDeviationsPerTopic, let limit, let offset):
+                var parameters: [String: Any] = [RequestParams.numDeviationsPerTopic.rawValue: numDeviationsPerTopic,
+                                                 RequestParams.limit.rawValue: limit,
+                                                 RequestParams.offset.rawValue: offset,
+                                                 RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? ""]
 
+                print(#function + "\(parameters)")
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }

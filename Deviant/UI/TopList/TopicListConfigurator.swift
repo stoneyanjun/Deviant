@@ -1,5 +1,5 @@
 //
-//  PopularListConfigurator.swift
+//  TopicListConfigurator.swift
 //  Deviant
 //
 //  Created by Stone on 21/7/2020.
@@ -8,18 +8,18 @@
 
 import UIKit
 
-struct PopularListConfigurator {
-    let configuration: PopularListConfiguration
+struct TopicListConfigurator {
+    let configuration: TopicListConfiguration
 
-    init(config: PopularListConfiguration) {
+    init(config: TopicListConfiguration) {
         configuration = config
     }
 
     func createViewController() -> UIViewController {
-        let viewController = PopularListViewController()
-        let interactor = PopularListInteractor(config: configuration)
-        let presenter = PopularListPresenter()
-        let router = PopularListRouter()
+        let viewController = TopicListViewController()
+        let interactor = TopicListInteractor(config: configuration)
+        let presenter = TopicListPresenter()
+        let router = TopicListRouter()
 
         viewController.interactor = interactor
         interactor.presenter = presenter
