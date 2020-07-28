@@ -47,7 +47,6 @@ extension TopicService: TargetType {
                                                  RequestParams.offset.rawValue: offset,
                                                  RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? ""]
 
-                print(#function + "\(parameters)")
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }

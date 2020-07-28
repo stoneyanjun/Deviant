@@ -35,8 +35,8 @@ extension RootViewController {
     private func prepareViewControllers() -> [UIViewController] {
         let popularVC = PopularListConfigurator(config: PopularListConfiguration()).createViewController()
         let topicListVC = TopicListConfigurator(config: TopicListConfiguration()).createViewController()
-        let popularVC2 = PopularListConfigurator(config: PopularListConfiguration()).createViewController()
-        return [popularVC, topicListVC, popularVC2]
+//        let popularVC2 = PopularListConfigurator(config: PopularListConfiguration()).createViewController()
+        return [popularVC, topicListVC]
     }
 
     private func setupScrollView() {
@@ -56,7 +56,6 @@ extension RootViewController {
 
     private func setupSegment() {
         SegmentioBuilder.buildSegmentioView(segmentioView: segmentioView, segmentioStyle: .onlyLabel)
-//        SegmentioBuilder.setupBadgeCountForIndex(segmentioView, index: 1)
 
         segmentioView.valueDidChange = { [weak self] _, segmentIndex in
             if let scrollWidth = self?.scrollView.frame.width {
@@ -86,7 +85,9 @@ extension RootViewController {
         TokenManager.shared.fetchToken { result in
             switch result {
             case .success(let token):
+                #if DEBUG
                 print(#function + " token: \r\n\(token)")
+                #endif
                 self.fetchPopular()
 
             case .failure(let error):
@@ -99,12 +100,10 @@ extension RootViewController {
         NetworkManager<PopularService>().networkRequest(target: .fetchPopular(categoryPath: "", query: "", timeRange: "", limit: NetworkConst.limit, offset: offset)) { result in
             switch result {
             case .success(let json):
-                print(#function + " json\r\n \(json.description)")
                 if let popularBase = JSONDeserializer<PopularBase>.deserializeFrom(json: json.description ) {
                     if let nextOffset = popularBase.nextOffset, nextOffset > self.offset {
                         self.offset = nextOffset
                     }
-                    print(#function + " count: \(popularBase.results?.count ?? 0)")
                 }
             case .failure(let error):
                 print(#function +  " UI error  - \(error.deviantError.localizedDescription)")

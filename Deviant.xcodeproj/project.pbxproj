@@ -30,6 +30,8 @@
 		8E277D1424C587260003798A /* PopularContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E277D0D24C587260003798A /* PopularContent.swift */; };
 		8E40969224C0CAC900AE8D35 /* ServerInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40969124C0CAC900AE8D35 /* ServerInfoManager.swift */; };
 		8E40969424C0CEF400AE8D35 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40969324C0CEF400AE8D35 /* TokenManager.swift */; };
+		8E4FA46A24CFB8B000742432 /* TopicListHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4FA46824CFB8B000742432 /* TopicListHeadView.swift */; };
+		8E4FA46B24CFB8B000742432 /* TopicListHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E4FA46924CFB8B000742432 /* TopicListHeadView.xib */; };
 		8E944EAA24C88C490050B76B /* PopularListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EA824C88C490050B76B /* PopularListViewController.swift */; };
 		8E944EAB24C88C490050B76B /* PopularListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E944EA924C88C490050B76B /* PopularListViewController.xib */; };
 		8E944EAF24C88DF40050B76B /* ImageUICollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E944EAD24C88DF30050B76B /* ImageUICollectionViewCell.xib */; };
@@ -123,6 +125,8 @@
 		8E277D0D24C587260003798A /* PopularContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularContent.swift; sourceTree = "<group>"; };
 		8E40969124C0CAC900AE8D35 /* ServerInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInfoManager.swift; sourceTree = "<group>"; };
 		8E40969324C0CEF400AE8D35 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		8E4FA46824CFB8B000742432 /* TopicListHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListHeadView.swift; sourceTree = "<group>"; };
+		8E4FA46924CFB8B000742432 /* TopicListHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicListHeadView.xib; sourceTree = "<group>"; };
 		8E944EA824C88C490050B76B /* PopularListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListViewController.swift; sourceTree = "<group>"; };
 		8E944EA924C88C490050B76B /* PopularListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularListViewController.xib; sourceTree = "<group>"; };
 		8E944EAD24C88DF30050B76B /* ImageUICollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageUICollectionViewCell.xib; sourceTree = "<group>"; };
@@ -301,6 +305,7 @@
 		8E1B801C24C0A5A4008C059C /* TopList */ = {
 			isa = PBXGroup;
 			children = (
+				8E4FA46724CFB88900742432 /* View */,
 				8E944ED824C89F330050B76B /* TopicListConfiguration.swift */,
 				8E944ED724C89F330050B76B /* TopicListConfigurator.swift */,
 				8E944ED924C89F330050B76B /* TopicListInteractor.swift */,
@@ -422,6 +427,15 @@
 				8E277D0224C55A880003798A /* TopicService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8E4FA46724CFB88900742432 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E4FA46824CFB8B000742432 /* TopicListHeadView.swift */,
+				8E4FA46924CFB8B000742432 /* TopicListHeadView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8E944EAC24C88DDF0050B76B /* View */ = {
@@ -638,6 +652,7 @@
 				8E1B7FF424C0A4CB008C059C /* Assets.xcassets in Resources */,
 				8E944EDC24C89F330050B76B /* TopicListViewController.xib in Resources */,
 				8E1B7FF224C0A4C9008C059C /* Main.storyboard in Resources */,
+				8E4FA46B24CFB8B000742432 /* TopicListHeadView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,6 +755,7 @@
 				8E277D1424C587260003798A /* PopularContent.swift in Sources */,
 				8E1B7FEF24C0A4C9008C059C /* RootViewController.swift in Sources */,
 				8E944EFA24C8A1720050B76B /* TopicListContent.swift in Sources */,
+				8E4FA46A24CFB8B000742432 /* TopicListHeadView.swift in Sources */,
 				8E1B802924C0A8B2008C059C /* DeviantBaseVC.swift in Sources */,
 				8E944EF724C8A1720050B76B /* TopicListThumbs.swift in Sources */,
 				8EFB599724C66F6A005DE580 /* PopularListInterface.swift in Sources */,

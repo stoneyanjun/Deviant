@@ -47,7 +47,9 @@ class TokenManager: NetworkManager<TokenService> {
         networkRequest(target: .fetchToken(clientID: clientID, clientSecret: clientSecret)) { result in
             switch result {
             case .success(let json):
+                #if DEBUG
                 print(#function + " json\r\n\(json.description)")
+                #endif
                 if let tokenBase = JSONDeserializer<TokenBase>.deserializeFrom(json: json.description ), !tokenBase.accessToken.wrap().isEmpty {
                     self.tokenBase = tokenBase
                     let timeInterval = TimeInterval(tokenBase.expiresIn ?? NetworkConst.defaultExpiredSecond)

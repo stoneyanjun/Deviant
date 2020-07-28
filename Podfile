@@ -12,6 +12,7 @@ target 'Deviant' do
   
   pod "AsyncSwift"
   pod 'SwifterSwift'
+  pod 'Reusable'
 
   pod 'SnapKit'
   pod 'Kingfisher'

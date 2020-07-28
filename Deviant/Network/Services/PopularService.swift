@@ -55,7 +55,6 @@ extension PopularService: TargetType {
                     parameters[RequestParams.timerange.rawValue] = timeRange
                 }
 
-                print(#function + "\(parameters)")
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import CHTCollectionViewWaterfallLayout
+import Reusable
 import UIKit
 import Kingfisher
 
@@ -44,7 +45,7 @@ extension PopularListViewController {
         collectionView.collectionViewLayout = layout
 
         let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
-        collectionView.register(viewNib, forCellWithReuseIdentifier: "cell")
+        collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
     }
 }
 
@@ -59,7 +60,7 @@ extension PopularListViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ImageUICollectionViewCell,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier, for: indexPath) as? ImageUICollectionViewCell,
             let src = results[indexPath.row].thumbs?.first?.src,
             let url = URL(string: src) else {
             return UICollectionViewCell()

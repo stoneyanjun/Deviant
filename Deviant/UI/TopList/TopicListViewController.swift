@@ -2,13 +2,12 @@
 //  TopicListViewController.swift
 //  Deviant
 //
-//  Created by Stone on 21/7/2020.
 //  Copyright (c) 2020 JustNow. All rights reserved.
 //
 
 import CHTCollectionViewWaterfallLayout
-import UIKit
 import Kingfisher
+import UIKit
 
 class TopicListViewController: DeviantBaseViewController {
     enum Const {
@@ -44,7 +43,7 @@ extension TopicListViewController {
         collectionView.collectionViewLayout = layout
 
         let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
-        collectionView.register(viewNib, forCellWithReuseIdentifier: "cell")
+        collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
     }
 }
 
@@ -63,7 +62,7 @@ extension TopicListViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ImageUICollectionViewCell,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier, for: indexPath) as? ImageUICollectionViewCell,
             let src = results[indexPath.section].deviations?[indexPath.row].thumbs?.first?.src ,
             let url = URL(string: src) else {
             return UICollectionViewCell()
