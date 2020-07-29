@@ -73,12 +73,14 @@ class DailyTableViewCell: UITableViewCell, Reusable {
     }
 
     private func initImageView() {
+        srcImageView.image = nil
+        loadingImageView.image = UIImage(named: "loading")
         loadingImageView.isHidden = false
     }
 
     private func setImageViewWhenFailure() {
-        srcImageView.image = UIImage(named: "NotFound")
-        loadingImageView.isHidden = true
+        loadingImageView.image = UIImage(named: "NotFound")
+        loadingImageView.isHidden = false
     }
 
     private func setImageViewWhenSuccess() {
