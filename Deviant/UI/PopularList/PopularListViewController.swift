@@ -28,6 +28,10 @@ class PopularListViewController: DeviantBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         interactor?.tryFetchPopular(with: offset)
     }
 }

@@ -31,6 +31,8 @@
 		8E40969424C0CEF400AE8D35 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40969324C0CEF400AE8D35 /* TokenManager.swift */; };
 		8E4FA46A24CFB8B000742432 /* TopicListHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4FA46824CFB8B000742432 /* TopicListHeadView.swift */; };
 		8E4FA46B24CFB8B000742432 /* TopicListHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E4FA46924CFB8B000742432 /* TopicListHeadView.xib */; };
+		8E54E6CD24D1771C00339EFA /* DailyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E54E6CC24D1771C00339EFA /* DailyResult.swift */; };
+		8E54E6D024D1A88000339EFA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E54E6CF24D1A88000339EFA /* UIView+Extension.swift */; };
 		8E7A0FF724D140C800C42B29 /* BrowseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A0FF624D140C800C42B29 /* BrowseService.swift */; };
 		8E7A100324D1493100C42B29 /* DailyGiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A0FF924D1493100C42B29 /* DailyGiver.swift */; };
 		8E7A100424D1493100C42B29 /* DailyContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A0FFA24D1493100C42B29 /* DailyContent.swift */; };
@@ -38,7 +40,6 @@
 		8E7A100624D1493100C42B29 /* DailyDailyDeviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A0FFC24D1493100C42B29 /* DailyDailyDeviation.swift */; };
 		8E7A100724D1493100C42B29 /* DailyBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A0FFD24D1493100C42B29 /* DailyBase.swift */; };
 		8E7A100824D1493100C42B29 /* DailyAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A0FFE24D1493100C42B29 /* DailyAuthor.swift */; };
-		8E7A100924D1493100C42B29 /* DailyResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A0FFF24D1493100C42B29 /* DailyResults.swift */; };
 		8E7A100A24D1493100C42B29 /* DailyStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A100024D1493100C42B29 /* DailyStats.swift */; };
 		8E7A100B24D1493100C42B29 /* DailySuggester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A100124D1493100C42B29 /* DailySuggester.swift */; };
 		8E7A100C24D1493100C42B29 /* DailyThumbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7A100224D1493100C42B29 /* DailyThumbs.swift */; };
@@ -153,6 +154,8 @@
 		8E40969324C0CEF400AE8D35 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		8E4FA46824CFB8B000742432 /* TopicListHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListHeadView.swift; sourceTree = "<group>"; };
 		8E4FA46924CFB8B000742432 /* TopicListHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicListHeadView.xib; sourceTree = "<group>"; };
+		8E54E6CC24D1771C00339EFA /* DailyResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyResult.swift; sourceTree = "<group>"; };
+		8E54E6CF24D1A88000339EFA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8E7A0FF624D140C800C42B29 /* BrowseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseService.swift; sourceTree = "<group>"; };
 		8E7A0FF924D1493100C42B29 /* DailyGiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyGiver.swift; sourceTree = "<group>"; };
 		8E7A0FFA24D1493100C42B29 /* DailyContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyContent.swift; sourceTree = "<group>"; };
@@ -160,7 +163,6 @@
 		8E7A0FFC24D1493100C42B29 /* DailyDailyDeviation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyDailyDeviation.swift; sourceTree = "<group>"; };
 		8E7A0FFD24D1493100C42B29 /* DailyBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyBase.swift; sourceTree = "<group>"; };
 		8E7A0FFE24D1493100C42B29 /* DailyAuthor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyAuthor.swift; sourceTree = "<group>"; };
-		8E7A0FFF24D1493100C42B29 /* DailyResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyResults.swift; sourceTree = "<group>"; };
 		8E7A100024D1493100C42B29 /* DailyStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyStats.swift; sourceTree = "<group>"; };
 		8E7A100124D1493100C42B29 /* DailySuggester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailySuggester.swift; sourceTree = "<group>"; };
 		8E7A100224D1493100C42B29 /* DailyThumbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyThumbs.swift; sourceTree = "<group>"; };
@@ -509,6 +511,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8E54E6CE24D1A86E00339EFA /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				8E54E6CF24D1A88000339EFA /* UIView+Extension.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		8E7A0FF824D148FE00C42B29 /* Daily */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,7 +528,7 @@
 				8E7A0FFC24D1493100C42B29 /* DailyDailyDeviation.swift */,
 				8E7A0FF924D1493100C42B29 /* DailyGiver.swift */,
 				8E7A0FFB24D1493100C42B29 /* DailyPreview.swift */,
-				8E7A0FFF24D1493100C42B29 /* DailyResults.swift */,
+				8E54E6CC24D1771C00339EFA /* DailyResult.swift */,
 				8E7A100024D1493100C42B29 /* DailyStats.swift */,
 				8E7A100124D1493100C42B29 /* DailySuggester.swift */,
 				8E7A100224D1493100C42B29 /* DailyThumbs.swift */,
@@ -577,6 +587,7 @@
 		8EBB91ED24C3E80300223F51 /* UIUtils */ = {
 			isa = PBXGroup;
 			children = (
+				8E54E6CE24D1A86E00339EFA /* UIView */,
 				8EFB59A624C6A9CC005DE580 /* BaseUIViewController */,
 				8EFB59A324C693FD005DE580 /* Color */,
 				8EFB59A024C691D3005DE580 /* Font */,
@@ -848,6 +859,7 @@
 				8E7A100C24D1493100C42B29 /* DailyThumbs.swift in Sources */,
 				8EA310CC24D10C58008813B7 /* DailyListConfigurator.swift in Sources */,
 				8E944EB024C88DF40050B76B /* ImageUICollectionViewCell.swift in Sources */,
+				8E54E6D024D1A88000339EFA /* UIView+Extension.swift in Sources */,
 				8E7A100B24D1493100C42B29 /* DailySuggester.swift in Sources */,
 				8EFB599C24C68D21005DE580 /* UIScreen+Extension.swift in Sources */,
 				8E944EDF24C89F330050B76B /* TopicListConfigurator.swift in Sources */,
@@ -900,6 +912,7 @@
 				8EBB91F124C3F81800223F51 /* Optional+Extension.swift in Sources */,
 				8E944EDB24C89F330050B76B /* TopicListViewController.swift in Sources */,
 				8EA310CA24D10C58008813B7 /* DailyListViewController.swift in Sources */,
+				8E54E6CD24D1771C00339EFA /* DailyResult.swift in Sources */,
 				8EFB599924C66F6A005DE580 /* PopularListInteractor.swift in Sources */,
 				8E7A100324D1493100C42B29 /* DailyGiver.swift in Sources */,
 				8E944EE124C89F330050B76B /* TopicListInteractor.swift in Sources */,
@@ -915,7 +928,6 @@
 				8EA310B824D0FA37008813B7 /* TopDetailConfiguration.swift in Sources */,
 				8E944EAA24C88C490050B76B /* PopularListViewController.swift in Sources */,
 				8EFB59A224C691E2005DE580 /* UIFont+ExampleFonts.swift in Sources */,
-				8E7A100924D1493100C42B29 /* DailyResults.swift in Sources */,
 				8E277D1324C587260003798A /* PopularStats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

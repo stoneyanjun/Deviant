@@ -45,14 +45,14 @@ extension TopicService: TargetType {
     var task: Task {
         switch self {
             case .fetchTopicList(let numDeviationsPerTopic, let limit, let offset):
-                var parameters: [String: Any] = [RequestParams.numDeviationsPerTopic.rawValue: numDeviationsPerTopic,
+                let parameters: [String: Any] = [RequestParams.numDeviationsPerTopic.rawValue: numDeviationsPerTopic,
                                                  RequestParams.limit.rawValue: limit,
                                                  RequestParams.offset.rawValue: offset,
                                                  RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? ""]
 
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
             case .fetchTopicDetail(let name, let limit, let offset):
-                var parameters: [String: Any] = [RequestParams.topic.rawValue: name,
+                let parameters: [String: Any] = [RequestParams.topic.rawValue: name,
                                                  RequestParams.limit.rawValue: limit,
                                                  RequestParams.offset.rawValue: offset,
                                                  RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? ""]

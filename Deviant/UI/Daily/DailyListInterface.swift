@@ -18,9 +18,11 @@ protocol DailyListRouterInterface {
 protocol DailyListPresenterInterface {
     func setLoadingView(with status: Bool)
     func showError(with error: Error)
+    func update(with results: [DailyResult])
 }
 
 protocol DailyListViewControllerInterface: UIViewController {
     func setLoadingView(with status: Bool)
     func showError(with error: Error)
+    func update(with results: [DailyResult])
 }

@@ -49,9 +49,6 @@ extension TopicListInteractor {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)
                         return
                 }
-                #if DEBUG
-                print(json.description)
-                #endif
                 self.presenter?.update(with: results, nextOffset: topicListBase.nextOffset ?? offset)
             case .failure(let error):
                 self.presenter?.showError(with: error)

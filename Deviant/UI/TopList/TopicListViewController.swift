@@ -27,6 +27,10 @@ class TopicListViewController: DeviantBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         interactor?.tryFetchTopicList(with: offset)
     }
 }
@@ -80,7 +84,6 @@ extension TopicListViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        print(#function + " \(kind) section: \(indexPath.section)")
         if kind == UICollectionView.elementKindSectionHeader {
             if let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TopicListHeadView.reuseIdentifier, for: indexPath) as? TopicListHeadView {
                 let record = results[indexPath.section]

@@ -6,20 +6,30 @@
 //  Copyright (c) 2020 JustNow. All rights reserved.
 //
 
+import Kingfisher
 import Reusable
 import UIKit
-import Kingfisher
+import SnapKit
 
 class DailyListViewController: DeviantBaseViewController {
-    var interactor: DailyListInteractorInterface?
+    private struct Const {
+        static let estimatedRowHeight = CGFloat(280)
+        static let edge = CGFloat(8)
+    }
 
-    private(set) var tableView: UITableView!
+    var interactor: DailyListInteractorInterface?
+    private(set) var dailyTableView: UITableView!
     private lazy var defaultCell = UITableViewCell()
+    private var datas: [DailyResult] = []
 
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         makeView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         interactor?.tryFetchDaily(with: "")
     }
 }
@@ -30,27 +40,34 @@ extension DailyListViewController {
     }
 
     func makeTableView() {
-        tableView = UITableView(frame: .zero, style: .grouped)
-        view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
+        dailyTableView = UITableView(frame: .zero, style: .plain)
+        view.addSubview(dailyTableView)
+        dailyTableView.delegate = self
+        dailyTableView.dataSource = self
 
-        tableView.separatorStyle = .none
-        tableView.rowHeight = UITableView.automaticDimension
+        dailyTableView.separatorStyle = .none
+        dailyTableView.estimatedRowHeight = Const.estimatedRowHeight
+        dailyTableView.rowHeight = UITableView.automaticDimension
+        dailyTableView.register(DailyTableViewCell.createNib(), forCellReuseIdentifier: DailyTableViewCell.reuseIdentifier)
+
+        dailyTableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 }
 
 extension DailyListViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return datas.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return defaultCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.reuseIdentifier, for: indexPath) as? DailyTableViewCell {
+            cell.update(with: datas[indexPath.row])
+            return cell
+        } else {
+            return defaultCell
+        }
     }
 }
 
@@ -65,5 +82,11 @@ extension DailyListViewController: DailyListViewControllerInterface {
     }
     func showError(with error: Error) {
         showError(errorMsg: error.localizedDescription)
+    }
+
+    func update(with results: [DailyResult]) {
+        datas = results
+        dailyTableView.reloadData()
+        print(#function + " datas \(datas.count)")
     }
 }

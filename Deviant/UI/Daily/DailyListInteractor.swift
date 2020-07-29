@@ -24,10 +24,10 @@ extension DailyListInteractor: DailyListInteractorInterface {
         if TokenManager.shared.needFetchToken() {
             TokenManager.shared.fetchToken { result in
                 switch result {
-                    case .success:
-                        self.fetchDaily(with: date)
-                    case .failure(let error):
-                        self.presenter?.showError(with: error)
+                case .success:
+                    self.fetchDaily(with: date)
+                case .failure(let error):
+                    self.presenter?.showError(with: error)
                 }
             }
         } else {
@@ -40,17 +40,17 @@ extension DailyListInteractor {
     private func fetchDaily(with date: String) {
         NetworkManager<BrowseService>().networkRequest(target: .fetchDaily(date: date)) { result in
             switch result {
-                case .success(let json):
-                    print(#function + "\r\n \(json.description)")
-//                    guard let popularBase = JSONDeserializer<PopularBase>.deserializeFrom(json: json.description),
-//                        let results = popularBase.results
-//                        else {
-//                            self.presenter?.showError(with: DeviantGeneralError.unknownError)
-//                            return
-//                    }
-//                    self.presenter?.update(with: results, nextOffset: popularBase.nextOffset ?? offset)
-                case .failure(let error):
-                    self.presenter?.showError(with: error)
+            case .success(let json):
+                print(#function + "\r\n \(json.description)")
+                guard let dailyBase = JSONDeserializer<DailyBase>.deserializeFrom(json: json.description),
+                    let results = dailyBase.results
+                    else {
+                        self.presenter?.showError(with: DeviantGeneralError.unknownError)
+                        return
+                }
+                self.presenter?.update(with: results)
+            case .failure(let error):
+                self.presenter?.showError(with: error)
             }
         }
     }
