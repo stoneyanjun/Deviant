@@ -71,7 +71,7 @@ extension TopicListViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier, for: indexPath) as? ImageUICollectionViewCell,
-            let src = results[indexPath.section].deviations?[indexPath.row].thumbs?.first?.src ,
+            let src = results[indexPath.section].deviations?[indexPath.row].preview?.src ,
             let url = URL(string: src) else {
             return UICollectionViewCell()
         }
