@@ -10,12 +10,15 @@ import UIKit
 
 protocol TopicListInteractorInterface {
     func tryFetchTopicList(with offset: Int)
+    func showTopic(with topicName: String)
 }
 
 protocol TopicListRouterInterface {
+    func showTopic(with topicName: String)
 }
 
 protocol TopicListPresenterInterface {
+    func showTopic(with topicName: String)
     func setLoadingView(with status: Bool)
     func showError(with error: Error)
     func update(with results: [TopicListResults], nextOffset: Int)

@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="TopicListHeadView" customModule="Deviant" customModuleProvider="target">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TopicListHeadView" id="U6b-Vx-4bR" customClass="TopicListHeadView" customModule="Deviant" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
@@ -19,16 +19,26 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ka-yb-iIy">
+                    <rect key="frame" x="16" y="8" width="288" height="34"/>
+                    <connections>
+                        <action selector="topicAction:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="EVe-rh-c1U"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
+                <constraint firstItem="6Ka-yb-iIy" firstAttribute="trailing" secondItem="OaR-ZG-mvt" secondAttribute="trailing" id="1nh-Bz-3ry"/>
                 <constraint firstItem="OaR-ZG-mvt" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="8" id="70I-XZ-yo7"/>
                 <constraint firstAttribute="trailing" secondItem="OaR-ZG-mvt" secondAttribute="trailing" constant="16" id="CgE-Ls-AIf"/>
+                <constraint firstItem="6Ka-yb-iIy" firstAttribute="top" secondItem="OaR-ZG-mvt" secondAttribute="top" id="FYb-uE-Eg9"/>
+                <constraint firstItem="6Ka-yb-iIy" firstAttribute="leading" secondItem="OaR-ZG-mvt" secondAttribute="leading" id="MCA-yZ-56L"/>
+                <constraint firstItem="6Ka-yb-iIy" firstAttribute="bottom" secondItem="OaR-ZG-mvt" secondAttribute="bottom" id="pje-ZJ-LO7"/>
                 <constraint firstItem="OaR-ZG-mvt" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="16" id="s0W-u5-Yvf"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="OaR-ZG-mvt" secondAttribute="bottom" constant="8" id="wnb-Xu-joa"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
-                <outlet property="titleLabel" destination="OaR-ZG-mvt" id="H53-hd-jrK"/>
+                <outlet property="topicLabel" destination="OaR-ZG-mvt" id="tEf-7b-a0d"/>
             </connections>
             <point key="canvasLocation" x="132" y="128"/>
         </collectionReusableView>

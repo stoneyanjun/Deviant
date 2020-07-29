@@ -38,7 +38,7 @@ extension TopicListInteractor: TopicListInteractorInterface {
 
 extension TopicListInteractor {
     private func fetchTopicList(with offset: Int) {
-        NetworkManager<TopicService>().networkRequest(target: .fetchTopic(numDeviationsPerTopic: NetworkConst.numDeviationsPerTopic,
+        NetworkManager<TopicService>().networkRequest(target: .fetchTopicList(numDeviationsPerTopic: NetworkConst.numDeviationsPerTopic,
                                                                           limit: NetworkConst.limit,
                                                                           offset: offset) ) { result in
             switch result {
@@ -57,5 +57,9 @@ extension TopicListInteractor {
                 self.presenter?.showError(with: error)
             }
         }
+    }
+
+    func showTopic(with topicName: String) {
+        self.presenter?.showTopic(with: topicName)
     }
 }

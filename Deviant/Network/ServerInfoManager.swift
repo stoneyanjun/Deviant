@@ -12,6 +12,8 @@ enum UriResource: String {
     case oauth2Token
     case browsePopular
     case browseTopics
+    case browseTopic
+    case browseDailydeviations
 }
 
 class ServerInfoManager {

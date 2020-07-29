@@ -11,14 +11,14 @@ import UIKit
 
 class TopicListHeadView: UICollectionReusableView, Reusable {
     var tapHandle: (() -> Void)?
-    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var topicLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    @objc func tapAction() {
+    @IBAction func topicAction(_ sender: Any) {
         tapHandle?()
     }
 }

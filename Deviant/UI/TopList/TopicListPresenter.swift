@@ -25,4 +25,8 @@ extension TopicListPresenter: TopicListPresenterInterface {
     func update(with results: [TopicListResults], nextOffset: Int) {
         viewController?.update(with: results, nextOffset: nextOffset)
     }
+
+    func showTopic(with topicName: String) {
+        self.router?.showTopic(with: topicName)
+    }
 }

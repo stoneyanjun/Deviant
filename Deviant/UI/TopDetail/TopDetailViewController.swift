@@ -1,37 +1,38 @@
 //
-//  TopicListViewController.swift
+//  TopicDetailViewController.swift
 //  Deviant
 //
+//  Created by Stone on 21/7/2020.
 //  Copyright (c) 2020 JustNow. All rights reserved.
 //
 
 import CHTCollectionViewWaterfallLayout
-import Kingfisher
+import Reusable
 import UIKit
+import Kingfisher
 
-class TopicListViewController: DeviantBaseViewController {
+class TopicDetailViewController: DeviantBaseViewController {
     enum Const {
         static let minColumnSpace: CGFloat = 1.0
         static let minItemSpace: CGFloat = 1.0
         static let minSpace: CGFloat = 1.0
-        static let headerHeight: CGFloat = 50.0
     }
 
-    var interactor: TopicListInteractorInterface?
+    var interactor: TopicDetailInteractorInterface?
     @IBOutlet private weak var collectionView: UICollectionView!
     private lazy var defaultCell = UICollectionViewCell()
-    private var results: [TopicListResults] = []
+    private var results: [PopularResults] = []
     private var offset = 0
 
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        interactor?.tryFetchTopicList(with: offset)
+        interactor?.tryFetchTopicDetail(with: offset)
     }
 }
 
-extension TopicListViewController {
+extension TopicDetailViewController {
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -45,62 +46,34 @@ extension TopicListViewController {
 
         let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
         collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
-        let headNib = UINib(nibName: "TopicListHeadView", bundle: nil)
-        collectionView.register(headNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TopicListHeadView.reuseIdentifier)
     }
 }
 
-extension TopicListViewController: UICollectionViewDelegate {
+extension TopicDetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.interactor?.showTopic(with: record.name.wrap())
     }
 }
 
-extension TopicListViewController: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return results.count
-    }
-
+extension TopicDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return results[section].deviations?.count ?? 0
+        return results.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier, for: indexPath) as? ImageUICollectionViewCell,
-            let src = results[indexPath.section].deviations?[indexPath.row].thumbs?.first?.src ,
+            let src = results[indexPath.row].thumbs?.first?.src,
             let url = URL(string: src) else {
             return UICollectionViewCell()
         }
         cell.image.kf.setImage(with: url, placeholder: nil)
         return cell
     }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, heightForHeaderIn section: Int) -> CGFloat {
-        return Const.headerHeight
-    }
-
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        print(#function + " \(kind) section: \(indexPath.section)")
-        if kind == UICollectionView.elementKindSectionHeader {
-            if let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TopicListHeadView.reuseIdentifier, for: indexPath) as? TopicListHeadView {
-                let record = results[indexPath.section]
-                headView.topicLabel.text = record.name
-                headView.tapHandle = {
-                    self.interactor?.showTopic(with: record.name.wrap())
-                }
-                return headView
-            }
-            return UICollectionReusableView()
-        } else {
-            return UICollectionReusableView()
-        }
-    }
 }
 
-extension TopicListViewController: CHTCollectionViewDelegateWaterfallLayout {
+extension TopicDetailViewController: CHTCollectionViewDelegateWaterfallLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var imageSize = CGSize()
-        if let thumb = results[indexPath.section].deviations?[indexPath.row].thumbs?.first {
+        if let thumb = results[indexPath.row].thumbs?.first {
             imageSize.width = CGFloat(thumb.width ?? 0)
             imageSize.height = CGFloat(thumb.height ?? 0)
         }
@@ -109,7 +82,7 @@ extension TopicListViewController: CHTCollectionViewDelegateWaterfallLayout {
     }
 }
 
-extension TopicListViewController: TopicListViewControllerInterface {
+extension TopicDetailViewController: TopicDetailViewControllerInterface {
     func setLoadingView(with status: Bool) {
         setHUD(with: status)
     }
@@ -117,7 +90,7 @@ extension TopicListViewController: TopicListViewControllerInterface {
         showError(errorMsg: error.localizedDescription)
     }
 
-    func update(with results: [TopicListResults], nextOffset: Int) {
+    func update(with results: [PopularResults], nextOffset: Int) {
         if self.offset <= 0 {
             self.results.removeAll()
         }

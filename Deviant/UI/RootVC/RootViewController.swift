@@ -35,8 +35,8 @@ extension RootViewController {
     private func prepareViewControllers() -> [UIViewController] {
         let popularVC = PopularListConfigurator(config: PopularListConfiguration()).createViewController()
         let topicListVC = TopicListConfigurator(config: TopicListConfiguration()).createViewController()
-//        let popularVC2 = PopularListConfigurator(config: PopularListConfiguration()).createViewController()
-        return [popularVC, topicListVC]
+        let dailyVC = DailyListConfigurator(config: DailyListConfiguration()).createViewController()
+        return [popularVC, topicListVC, dailyVC]
     }
 
     private func setupScrollView() {
@@ -77,37 +77,5 @@ extension RootViewController: UIScrollViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 0)
-    }
-}
-
-extension RootViewController {
-    private func testAPI() {
-        TokenManager.shared.fetchToken { result in
-            switch result {
-            case .success(let token):
-                #if DEBUG
-                print(#function + " token: \r\n\(token)")
-                #endif
-                self.fetchPopular()
-
-            case .failure(let error):
-                print(#function +  " error  - \(error.deviantError.localizedDescription)")
-            }
-        }
-    }
-
-    private func fetchPopular() {
-        NetworkManager<PopularService>().networkRequest(target: .fetchPopular(categoryPath: "", query: "", timeRange: "", limit: NetworkConst.limit, offset: offset)) { result in
-            switch result {
-            case .success(let json):
-                if let popularBase = JSONDeserializer<PopularBase>.deserializeFrom(json: json.description ) {
-                    if let nextOffset = popularBase.nextOffset, nextOffset > self.offset {
-                        self.offset = nextOffset
-                    }
-                }
-            case .failure(let error):
-                print(#function +  " UI error  - \(error.deviantError.localizedDescription)")
-            }
-        }
     }
 }

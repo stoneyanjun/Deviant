@@ -13,4 +13,6 @@ class TopicListRouter: NSObject {
 }
 
 extension TopicListRouter: TopicListRouterInterface {
+    func showTopic(with topicName: String) {
+    }
 }
