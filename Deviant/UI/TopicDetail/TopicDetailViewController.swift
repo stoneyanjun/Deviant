@@ -7,9 +7,9 @@
 //
 
 import CHTCollectionViewWaterfallLayout
+import Kingfisher
 import Reusable
 import UIKit
-import Kingfisher
 
 class TopicDetailViewController: DeviantBaseViewController {
     enum Const {
@@ -21,14 +21,19 @@ class TopicDetailViewController: DeviantBaseViewController {
     var interactor: TopicDetailInteractorInterface?
     @IBOutlet private weak var collectionView: UICollectionView!
     private lazy var defaultCell = UICollectionViewCell()
-    private var results: [PopularResults] = []
+    private var results: [TopicDetailResult] = []
     private var offset = 0
 
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        customLeftBarButton()
         setupCollectionView()
-        interactor?.tryFetchTopicDetail(with: offset)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor?.tryFetchTopic(with: offset)
     }
 }
 
@@ -61,7 +66,7 @@ extension TopicDetailViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier, for: indexPath) as? ImageUICollectionViewCell,
-            let src = results[indexPath.row].thumbs?.first?.src,
+            let src = results[indexPath.row].preview?.src,
             let url = URL(string: src) else {
             return UICollectionViewCell()
         }
@@ -90,7 +95,7 @@ extension TopicDetailViewController: TopicDetailViewControllerInterface {
         showError(errorMsg: error.localizedDescription)
     }
 
-    func update(with results: [PopularResults], nextOffset: Int) {
+    func update(with results: [TopicDetailResult], nextOffset: Int) {
         if self.offset <= 0 {
             self.results.removeAll()
         }

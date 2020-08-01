@@ -21,7 +21,7 @@ extension PopularListPresenter: PopularListPresenterInterface {
     func showError(with error: Error) {
         viewController?.showError(with: error)
     }
-    
+
     func update(with results: [PopularResults], nextOffset: Int) {
         viewController?.update(with: results, nextOffset: nextOffset)
     }

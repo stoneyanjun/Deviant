@@ -38,8 +38,7 @@ class NetworkManager<Target: TargetType>: NSObject {
                 } else {
                     completion(.success(jsonData))
                 }
-            case .failure(let error):
-                print(#function + " meet error: \r\n \(error.localizedDescription)")
+            case .failure:
                 completion(.failure(DeviantFailure.devFailure(DeviantGeneralError.networkError)))
             }
         }

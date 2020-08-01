@@ -9,4 +9,5 @@
 import UIKit
 
 struct TopicListConfiguration {
+    var navigationController: UINavigationController?
 }

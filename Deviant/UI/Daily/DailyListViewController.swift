@@ -8,8 +8,8 @@
 
 import Kingfisher
 import Reusable
-import UIKit
 import SnapKit
+import UIKit
 
 class DailyListViewController: DeviantBaseViewController {
     private struct Const {
@@ -87,6 +87,5 @@ extension DailyListViewController: DailyListViewControllerInterface {
     func update(with results: [DailyResult]) {
         datas = results
         dailyTableView.reloadData()
-        print(#function + " datas \(datas.count)")
     }
 }

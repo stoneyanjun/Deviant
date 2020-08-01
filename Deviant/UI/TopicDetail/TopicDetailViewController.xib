@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopicDetailViewController" customModule="Deviant" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="xiv-uB-GfY" id="ohP-zY-B80"/>
+                <outlet property="collectionView" destination="xiv-uB-GfY" id="yet-CI-Z0t"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

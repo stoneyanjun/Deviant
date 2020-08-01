@@ -7,9 +7,9 @@
 //
 
 import CHTCollectionViewWaterfallLayout
+import Kingfisher
 import Reusable
 import UIKit
-import Kingfisher
 
 class PopularListViewController: DeviantBaseViewController {
     enum Const {
@@ -29,7 +29,7 @@ class PopularListViewController: DeviantBaseViewController {
         super.viewDidLoad()
         setupCollectionView()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         interactor?.tryFetchPopular(with: offset)

@@ -9,5 +9,6 @@
 import UIKit
 
 struct TopicDetailConfiguration {
+    var navigationController: UINavigationController?
     var topicName: String
 }

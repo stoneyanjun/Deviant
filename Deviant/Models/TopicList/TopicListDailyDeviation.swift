@@ -1,8 +1,8 @@
 //
 //  TopicListDailyDeviation.swift
 //
-//  Created by Stone on 23/7/2020
-//  Copyright (c) . All rights reserved.
+//  Created by Stone on 21/7/2020.
+//  Copyright (c) 2020 JustNow. All rights reserved.
 //
 
 import Foundation

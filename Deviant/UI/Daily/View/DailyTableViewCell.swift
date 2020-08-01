@@ -58,10 +58,8 @@ class DailyTableViewCell: UITableViewCell, Reusable {
                 }
                 switch result {
                 case .success:
-                    print(#function + "\(strongSelf.titleLabel.text ?? "") \(src)")
                     strongSelf.setImageViewWhenSuccess()
-                case .failure(let error):
-                    print(#function + " kferror  \(src) \r\n \(error.localizedDescription)")
+                case .failure:
                     strongSelf.setImageViewWhenFailure()
                 }
             }

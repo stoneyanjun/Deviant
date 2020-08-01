@@ -10,14 +10,14 @@ import Foundation
 import Moya
 
 enum TopicService {
-    case fetchTopicList(numDeviationsPerTopic : Int, limit: Int, offset: Int)
-    case fetchTopicDetail(name : String, limit: Int, offset: Int)
+    case fetchTopicList(numDeviationsPerTopic: Int, limit: Int, offset: Int)
+    case fetchTopicDetail(name: String, limit: Int, offset: Int)
 }
 
 extension TopicService: TargetType {
     var baseURL: URL {
         switch self {
-            case .fetchTopicList, .fetchTopicDetail:
+        default:
             return URL(string: ServerInfoManager.shared.apiPath)!
         }
     }

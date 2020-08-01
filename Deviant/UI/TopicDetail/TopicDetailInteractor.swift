@@ -20,38 +20,35 @@ class TopicDetailInteractor {
 }
 
 extension TopicDetailInteractor: TopicDetailInteractorInterface {
-    func tryFetchTopicDetail(with offset: Int) {
+    func tryFetchTopic(with offset: Int) {
         if TokenManager.shared.needFetchToken() {
             TokenManager.shared.fetchToken { result in
                 switch result {
                 case .success:
-                    self.fetchTopicDetail(offset: offset)
+                    self.fetchTopic(with: self.config.topicName, offset: offset)
                 case .failure(let error):
                     self.presenter?.showError(with: error)
                 }
             }
         } else {
-            fetchTopicDetail(offset: offset)
+            self.fetchTopic(with: config.topicName, offset: offset)
         }
     }
 }
 
 extension TopicDetailInteractor {
-    private func fetchTopicDetail(offset: Int) {
-        NetworkManager<TopicService>().networkRequest(target: .fetchTopicDetail(name: config.topicName, limit: NetworkConst.limit, offset: offset)) { result in
+    private func fetchTopic(with name: String, offset: Int) {
+        NetworkManager<TopicService>().networkRequest(target: .fetchTopicDetail(name: name, limit: NetworkConst.limit, offset: offset)) { result in
             switch result {
             case .success(let json):
-                #if DEBUG
-                #endif
-                /*
-                guard let popularBase = JSONDeserializer<TopicDetailBase>.deserializeFrom(json: json.description),
-                    let results = popularBase.results
+                print(#function + "\r\n" + json.description)
+                guard let topicDetailBase = JSONDeserializer<TopicDetailBase>.deserializeFrom(json: json.description),
+                    let results = topicDetailBase.results
                     else {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)
                         return
                 }
-                self.presenter?.update(with: results, nextOffset: popularBase.nextOffset ?? offset)
-                */
+                self.presenter?.update(with: results, nextOffset: topicDetailBase.nextOffset ?? offset)
             case .failure(let error):
                 self.presenter?.showError(with: error)
             }

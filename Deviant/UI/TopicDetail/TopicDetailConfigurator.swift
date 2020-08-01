@@ -21,6 +21,7 @@ struct TopicDetailConfigurator {
         let presenter = TopicDetailPresenter()
         let router = TopicDetailRouter()
 
+        viewController.title = configuration.topicName
         viewController.interactor = interactor
         interactor.presenter = presenter
         presenter.router = router

@@ -17,13 +17,14 @@ extension String {
         return data(using: .utf8)!
     }
 
-    static func getDateFormatString(timeStamp:String) ->String{
-                                    let  interval:TimeInterval = TimeInterval.init(timeStamp)!
-                      let date = Date(timeIntervalSince1970: interval)
-                      let dateformatter = DateFormatter()
-                      //自定义日期格式
-                      dateformatter.dateFormat = "yyyy-MM-dd"
-                        return dateformatter.string(from: date as Date)
-
-              }
+    static func getDateFormatString(timeStamp: String) -> String {
+        guard let interval = TimeInterval(timeStamp) else {
+            return ""
+        }
+        let date = Date(timeIntervalSince1970: interval)
+        let dateformatter = DateFormatter()
+        //自定义日期格式
+        dateformatter.dateFormat = "yyyy-MM-dd"
+        return dateformatter.string(from: date as Date)
+    }
 }

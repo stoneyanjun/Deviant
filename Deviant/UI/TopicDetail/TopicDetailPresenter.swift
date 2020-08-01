@@ -22,7 +22,7 @@ extension TopicDetailPresenter: TopicDetailPresenterInterface {
         viewController?.showError(with: error)
     }
 
-    func update(with results: [PopularResults], nextOffset: Int) {
+    func update(with results: [TopicDetailResult], nextOffset: Int) {
         viewController?.update(with: results, nextOffset: nextOffset)
     }
 }
