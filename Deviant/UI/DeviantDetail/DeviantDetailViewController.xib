@@ -9,6 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeviantDetailViewController" customModule="Deviant" customModuleProvider="target">
             <connections>
+                <outlet property="commentButton" destination="4oo-UE-r58" id="3JV-lw-hp9"/>
+                <outlet property="contentImageView" destination="N33-rF-baw" id="ut5-Ur-Dv8"/>
+                <outlet property="starButton" destination="wmG-Ne-WdX" id="uI9-sS-toe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,9 +19,69 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ST4-OC-4ZJ">
+                    <rect key="frame" x="16" y="830" width="93" height="32"/>
+                    <state key="normal" image="infomark"/>
+                    <connections>
+                        <action selector="infoAction:" destination="-1" eventType="touchUpInside" id="gFI-JT-JLT"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oo-UE-r58">
+                    <rect key="frame" x="125" y="830" width="93" height="32"/>
+                    <state key="normal" title="comment" image="commentWhite"/>
+                    <connections>
+                        <action selector="commentAction:" destination="-1" eventType="touchUpInside" id="SWu-MW-gcS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmG-Ne-WdX">
+                    <rect key="frame" x="234" y="830" width="74" height="32"/>
+                    <state key="normal" title="star" image="starWhite"/>
+                    <connections>
+                        <action selector="starAction:" destination="-1" eventType="touchUpInside" id="9hP-Lk-eWz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoK-to-F2M">
+                    <rect key="frame" x="324" y="830" width="74" height="32"/>
+                    <state key="normal" image="more"/>
+                    <connections>
+                        <action selector="moreAction:" destination="-1" eventType="touchUpInside" id="KqJ-4Z-DjB"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N33-rF-baw">
+                    <rect key="frame" x="0.0" y="44" width="414" height="770"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.023529411764705882" green="0.027450980392156862" blue="0.047058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wmG-Ne-WdX" firstAttribute="width" secondItem="4oo-UE-r58" secondAttribute="width" multiplier="0.795699" id="2fF-mM-Cyh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="N33-rF-baw" secondAttribute="trailing" id="4qY-N9-r7s"/>
+                <constraint firstItem="N33-rF-baw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6Tq-3p-rV3"/>
+                <constraint firstItem="4oo-UE-r58" firstAttribute="width" secondItem="ST4-OC-4ZJ" secondAttribute="width" id="AV9-Uh-nyv"/>
+                <constraint firstItem="NoK-to-F2M" firstAttribute="width" secondItem="wmG-Ne-WdX" secondAttribute="width" id="Cx8-g7-tcO"/>
+                <constraint firstItem="wmG-Ne-WdX" firstAttribute="leading" secondItem="4oo-UE-r58" secondAttribute="trailing" constant="16" id="GdA-sh-Ce3"/>
+                <constraint firstItem="wmG-Ne-WdX" firstAttribute="centerY" secondItem="4oo-UE-r58" secondAttribute="centerY" id="TPu-M2-zV7"/>
+                <constraint firstItem="NoK-to-F2M" firstAttribute="centerY" secondItem="wmG-Ne-WdX" secondAttribute="centerY" id="VOX-gB-fOJ"/>
+                <constraint firstItem="4oo-UE-r58" firstAttribute="height" secondItem="ST4-OC-4ZJ" secondAttribute="height" id="aWh-r1-dSJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NoK-to-F2M" secondAttribute="trailing" constant="16" id="awM-bm-y33"/>
+                <constraint firstItem="ST4-OC-4ZJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="bng-vc-3ad"/>
+                <constraint firstItem="4oo-UE-r58" firstAttribute="leading" secondItem="ST4-OC-4ZJ" secondAttribute="trailing" constant="16" id="c8P-wy-kym"/>
+                <constraint firstItem="NoK-to-F2M" firstAttribute="leading" secondItem="wmG-Ne-WdX" secondAttribute="trailing" constant="16" id="dBF-os-SiE"/>
+                <constraint firstItem="ST4-OC-4ZJ" firstAttribute="top" secondItem="N33-rF-baw" secondAttribute="bottom" constant="16" id="iCB-BV-uGV"/>
+                <constraint firstItem="wmG-Ne-WdX" firstAttribute="height" secondItem="4oo-UE-r58" secondAttribute="height" id="jvB-uq-jpl"/>
+                <constraint firstItem="N33-rF-baw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jvy-mn-sU7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ST4-OC-4ZJ" secondAttribute="bottom" id="rEk-8D-NEi"/>
+                <constraint firstItem="NoK-to-F2M" firstAttribute="height" secondItem="wmG-Ne-WdX" secondAttribute="height" id="xZt-MF-VFD"/>
+                <constraint firstItem="4oo-UE-r58" firstAttribute="centerY" secondItem="ST4-OC-4ZJ" secondAttribute="centerY" id="yBE-7R-sMi"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="128"/>
+            <point key="canvasLocation" x="131.8840579710145" y="127.90178571428571"/>
         </view>
     </objects>
+    <resources>
+        <image name="commentWhite" width="16" height="16"/>
+        <image name="infomark" width="32" height="32"/>
+        <image name="more" width="32" height="32"/>
+        <image name="starWhite" width="16" height="15.5"/>
+    </resources>
 </document>

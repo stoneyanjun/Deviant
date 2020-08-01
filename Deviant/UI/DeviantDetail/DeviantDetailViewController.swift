@@ -11,13 +11,10 @@ import Reusable
 import UIKit
 
 class DeviantDetailViewController: DeviantBaseViewController {
-    enum Const {
-        static let minColumnSpace: CGFloat = 1.0
-        static let minItemSpace: CGFloat = 1.0
-        static let minSpace: CGFloat = 1.0
-    }
-
     var interactor: DeviantDetailInteractorInterface?
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var starButton: UIButton!
+    @IBOutlet weak var contentImageView: UIImageView!
 
     private var deviantDetail: DeviantDetailBase?
     // MARK: View lifecycle
@@ -42,5 +39,36 @@ extension DeviantDetailViewController: DeviantDetailViewControllerInterface {
 
     func update(with deviantDetail: DeviantDetailBase) {
         self.deviantDetail = deviantDetail
+        updateUI()
+    }
+}
+
+extension DeviantDetailViewController {
+    func updateUI() {
+        guard let detail = deviantDetail else { return }
+        if let url = URL(string: (detail.content?.src ?? "")) {
+            contentImageView.kf.setImage(with: url, placeholder: nil)
+        }
+
+        if let comments = detail.stats?.comments, comments > 0 {
+            commentButton.setTitle(" \(comments)", for: .normal)
+        }
+        if let favourites = detail.stats?.favourites, favourites > 0 {
+            starButton.setTitle(" \(favourites)", for: .normal)
+        }
+    }
+}
+
+extension DeviantDetailViewController {
+    @IBAction func infoAction(_ sender: Any) {
+    }
+
+    @IBAction func commentAction(_ sender: Any) {
+    }
+
+    @IBAction func starAction(_ sender: Any) {
+    }
+
+    @IBAction func moreAction(_ sender: Any) {
     }
 }
