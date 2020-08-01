@@ -41,7 +41,6 @@ extension TopicDetailInteractor {
         NetworkManager<TopicService>().networkRequest(target: .fetchTopicDetail(name: name, limit: NetworkConst.limit, offset: offset)) { result in
             switch result {
             case .success(let json):
-                print(#function + "\r\n" + json.description)
                 guard let topicDetailBase = JSONDeserializer<TopicDetailBase>.deserializeFrom(json: json.description),
                     let results = topicDetailBase.results
                     else {
@@ -53,5 +52,9 @@ extension TopicDetailInteractor {
                 self.presenter?.showError(with: error)
             }
         }
+    }
+
+    func showDeviation(with topicDetail: TopicDetailResult) {
+        presenter?.showDeviation(with: topicDetail)
     }
 }

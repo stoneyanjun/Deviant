@@ -10,15 +10,18 @@ import UIKit
 
 protocol TopicDetailInteractorInterface {
     func tryFetchTopic(with offset: Int)
+    func showDeviation(with topicDetail: TopicDetailResult)
 }
 
 protocol TopicDetailRouterInterface {
+    func showDeviation(with topicDetail: TopicDetailResult)
 }
 
 protocol TopicDetailPresenterInterface {
     func setLoadingView(with status: Bool)
     func showError(with error: Error)
     func update(with results: [TopicDetailResult], nextOffset: Int)
+    func showDeviation(with topicDetail: TopicDetailResult)
 }
 
 protocol TopicDetailViewControllerInterface: UIViewController {

@@ -1,5 +1,5 @@
 //
-//  TopicListDeviations.swift
+//  TopicListDeviation.swift
 //
 //  Created by Stone on 23/7/2020
 //  Copyright (c) . All rights reserved.
@@ -8,7 +8,7 @@
 import Foundation
 import HandyJSON
 
-struct TopicListDeviations: HandyJSON {
+struct TopicListDeviation: HandyJSON {
 
     enum CodingKeys: String, CodingKey {
         case isDownloadable = "is_downloadable"

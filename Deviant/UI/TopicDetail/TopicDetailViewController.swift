@@ -56,6 +56,7 @@ extension TopicDetailViewController {
 
 extension TopicDetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.interactor?.showDeviation(with: results[indexPath.row])
     }
 }
 

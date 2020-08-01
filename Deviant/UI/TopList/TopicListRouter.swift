@@ -14,11 +14,22 @@ class TopicListRouter: NSObject {
 }
 
 extension TopicListRouter: TopicListRouterInterface {
+    func showDeviation(with deviation: TopicListDeviation) {
+        guard let navi = navigationController else { return }
+        let detailParams = DeviantDetailParams(deviationid: deviation.deviationid.wrap(),
+                                               username: deviation.author?.username,
+                                               title: deviation.title,
+                                               favourites: deviation.stats?.favourites,
+                                               comments: deviation.stats?.comments)
+        let config = DeviantDetailConfiguration(navigationController: navi, detailParams: detailParams)
+        let deviantDetailVC = DeviantDetailConfigurator(config: config).createViewController()
+        navi.pushViewController(deviantDetailVC, animated: true)
+    }
+
     func showTopic(with topicName: String) {
-        if let navi = navigationController {
-            let config = TopicDetailConfiguration(navigationController: navi, topicName: topicName)
-            let topicDetailVC = TopicDetailConfigurator(config: config).createViewController()
-            navi.pushViewController(topicDetailVC, animated: true)
-        }
+        guard let navi = navigationController else { return }
+        let config = TopicDetailConfiguration(navigationController: navi, topicName: topicName)
+        let topicDetailVC = TopicDetailConfigurator(config: config).createViewController()
+        navi.pushViewController(topicDetailVC, animated: true)
     }
 }

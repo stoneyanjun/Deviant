@@ -25,4 +25,7 @@ extension TopicDetailPresenter: TopicDetailPresenterInterface {
     func update(with results: [TopicDetailResult], nextOffset: Int) {
         viewController?.update(with: results, nextOffset: nextOffset)
     }
+    func showDeviation(with topicDetail: TopicDetailResult) {
+        router?.showDeviation(with: topicDetail)
+    }
 }

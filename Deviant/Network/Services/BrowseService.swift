@@ -12,12 +12,13 @@ import Moya
 enum BrowseService {
     case fetchPopular(categoryPath: String, query: String, timeRange: String, limit: Int, offset: Int)
     case fetchDaily(date: String)
+    case fetchDeviantDetail(deviationid: String)
 }
 
 extension BrowseService: TargetType {
     var baseURL: URL {
         switch self {
-        case .fetchPopular, .fetchDaily:
+        default:
             return URL(string: ServerInfoManager.shared.apiPath)!
         }
     }
@@ -28,6 +29,13 @@ extension BrowseService: TargetType {
             return ServerInfoManager.shared.getUri(with: UriResource.browsePopular).wrap()
         case .fetchDaily:
             return ServerInfoManager.shared.getUri(with: UriResource.browseDailydeviations).wrap()
+        case .fetchDeviantDetail(let deviationid):
+            let pathFormat = ServerInfoManager.shared.getUri(with: UriResource.deviation).wrap()
+            guard !pathFormat.isEmpty else {
+                return pathFormat
+            }
+            print(String(format: pathFormat, deviationid))
+            return String(format: pathFormat, deviationid)
         }
     }
 
@@ -64,6 +72,9 @@ extension BrowseService: TargetType {
                 parameters[RequestParams.timerange.rawValue] = timeRange
             }
 
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+        case .fetchDeviantDetail:
+            let parameters: [String: Any] = [RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? ""]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }

@@ -59,4 +59,8 @@ extension TopicListInteractor {
     func showTopic(with topicName: String) {
         self.presenter?.showTopic(with: topicName)
     }
+
+    func showDeviation(with deviation: TopicListDeviation) {
+        self.presenter?.showDeviation(with: deviation)
+    }
 }

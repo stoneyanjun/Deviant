@@ -56,7 +56,10 @@ extension TopicListViewController {
 
 extension TopicListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.interactor?.showTopic(with: record.name.wrap())
+        guard let topicListDeviation = results[indexPath.section].deviations?[indexPath.row] else {
+            return
+        }
+        self.interactor?.showDeviation(with: topicListDeviation)
     }
 }
 

@@ -14,6 +14,7 @@ enum UriResource: String {
     case browseTopics
     case browseTopic
     case browseDailydeviations
+    case deviation
 }
 
 class ServerInfoManager {

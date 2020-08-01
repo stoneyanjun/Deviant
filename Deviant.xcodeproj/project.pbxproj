@@ -92,6 +92,22 @@
 		8EAED43324D533A2004E8AC3 /* TopicDetailStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED42A24D533A2004E8AC3 /* TopicDetailStats.swift */; };
 		8EAED43424D533A2004E8AC3 /* TopicDetailThumbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED42B24D533A2004E8AC3 /* TopicDetailThumbs.swift */; };
 		8EAED43524D533A2004E8AC3 /* TopicDetailGiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED42C24D533A2004E8AC3 /* TopicDetailGiver.swift */; };
+		8EAED43E24D545C1004E8AC3 /* DeviantDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED43624D545C0004E8AC3 /* DeviantDetailPresenter.swift */; };
+		8EAED43F24D545C1004E8AC3 /* DeviantDetailConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED43724D545C0004E8AC3 /* DeviantDetailConfiguration.swift */; };
+		8EAED44024D545C1004E8AC3 /* DeviantDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EAED43824D545C0004E8AC3 /* DeviantDetailViewController.xib */; };
+		8EAED44124D545C1004E8AC3 /* DeviantDetailInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED43924D545C0004E8AC3 /* DeviantDetailInterface.swift */; };
+		8EAED44224D545C1004E8AC3 /* DeviantDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED43A24D545C0004E8AC3 /* DeviantDetailInteractor.swift */; };
+		8EAED44324D545C1004E8AC3 /* DeviantDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED43B24D545C0004E8AC3 /* DeviantDetailRouter.swift */; };
+		8EAED44424D545C1004E8AC3 /* DeviantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED43C24D545C0004E8AC3 /* DeviantDetailViewController.swift */; };
+		8EAED44524D545C1004E8AC3 /* DeviantDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED43D24D545C1004E8AC3 /* DeviantDetailConfigurator.swift */; };
+		8EAED45124D55289004E8AC3 /* DeviantDetailPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44924D55288004E8AC3 /* DeviantDetailPreview.swift */; };
+		8EAED45224D55289004E8AC3 /* DeviantDetailGiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44A24D55288004E8AC3 /* DeviantDetailGiver.swift */; };
+		8EAED45324D55289004E8AC3 /* DeviantDetailAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44B24D55288004E8AC3 /* DeviantDetailAuthor.swift */; };
+		8EAED45424D55289004E8AC3 /* DeviantDetailThumbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44C24D55288004E8AC3 /* DeviantDetailThumbs.swift */; };
+		8EAED45524D55289004E8AC3 /* DeviantDetailDailyDeviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44D24D55288004E8AC3 /* DeviantDetailDailyDeviation.swift */; };
+		8EAED45624D55289004E8AC3 /* DeviantDetailStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44E24D55289004E8AC3 /* DeviantDetailStats.swift */; };
+		8EAED45724D55289004E8AC3 /* DeviantDetailContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44F24D55289004E8AC3 /* DeviantDetailContent.swift */; };
+		8EAED45824D55289004E8AC3 /* DeviantDetailBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED45024D55289004E8AC3 /* DeviantDetailBase.swift */; };
 		8EBB91E924C3E4D900223F51 /* DeviantError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91E824C3E4D900223F51 /* DeviantError.swift */; };
 		8EBB91EB24C3E50B00223F51 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91EA24C3E50B00223F51 /* TokenService.swift */; };
 		8EBB91EF24C3E81400223F51 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91EE24C3E81400223F51 /* String+Extension.swift */; };
@@ -223,6 +239,22 @@
 		8EAED42A24D533A2004E8AC3 /* TopicDetailStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailStats.swift; sourceTree = "<group>"; };
 		8EAED42B24D533A2004E8AC3 /* TopicDetailThumbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailThumbs.swift; sourceTree = "<group>"; };
 		8EAED42C24D533A2004E8AC3 /* TopicDetailGiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailGiver.swift; sourceTree = "<group>"; };
+		8EAED43624D545C0004E8AC3 /* DeviantDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailPresenter.swift; sourceTree = "<group>"; };
+		8EAED43724D545C0004E8AC3 /* DeviantDetailConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailConfiguration.swift; sourceTree = "<group>"; };
+		8EAED43824D545C0004E8AC3 /* DeviantDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviantDetailViewController.xib; sourceTree = "<group>"; };
+		8EAED43924D545C0004E8AC3 /* DeviantDetailInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailInterface.swift; sourceTree = "<group>"; };
+		8EAED43A24D545C0004E8AC3 /* DeviantDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailInteractor.swift; sourceTree = "<group>"; };
+		8EAED43B24D545C0004E8AC3 /* DeviantDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailRouter.swift; sourceTree = "<group>"; };
+		8EAED43C24D545C0004E8AC3 /* DeviantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailViewController.swift; sourceTree = "<group>"; };
+		8EAED43D24D545C1004E8AC3 /* DeviantDetailConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailConfigurator.swift; sourceTree = "<group>"; };
+		8EAED44924D55288004E8AC3 /* DeviantDetailPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailPreview.swift; sourceTree = "<group>"; };
+		8EAED44A24D55288004E8AC3 /* DeviantDetailGiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailGiver.swift; sourceTree = "<group>"; };
+		8EAED44B24D55288004E8AC3 /* DeviantDetailAuthor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailAuthor.swift; sourceTree = "<group>"; };
+		8EAED44C24D55288004E8AC3 /* DeviantDetailThumbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailThumbs.swift; sourceTree = "<group>"; };
+		8EAED44D24D55288004E8AC3 /* DeviantDetailDailyDeviation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailDailyDeviation.swift; sourceTree = "<group>"; };
+		8EAED44E24D55289004E8AC3 /* DeviantDetailStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailStats.swift; sourceTree = "<group>"; };
+		8EAED44F24D55289004E8AC3 /* DeviantDetailContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailContent.swift; sourceTree = "<group>"; };
+		8EAED45024D55289004E8AC3 /* DeviantDetailBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailBase.swift; sourceTree = "<group>"; };
 		8EBB91E824C3E4D900223F51 /* DeviantError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantError.swift; sourceTree = "<group>"; };
 		8EBB91EA24C3E50B00223F51 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		8EBB91EE24C3E81400223F51 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -348,7 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				8E1B801D24C0A5AD008C059C /* Daily */,
-				8E1B801F24C0A5C4008C059C /* DevaitDetail */,
+				8E1B801F24C0A5C4008C059C /* DeviantDetail */,
 				8E1B801B24C0A575008C059C /* PopularList */,
 				8E1B802124C0A5EB008C059C /* RootVC */,
 				8EAED41224D524F6004E8AC3 /* TopicDetail */,
@@ -404,11 +436,19 @@
 			path = Daily;
 			sourceTree = "<group>";
 		};
-		8E1B801F24C0A5C4008C059C /* DevaitDetail */ = {
+		8E1B801F24C0A5C4008C059C /* DeviantDetail */ = {
 			isa = PBXGroup;
 			children = (
+				8EAED43724D545C0004E8AC3 /* DeviantDetailConfiguration.swift */,
+				8EAED43D24D545C1004E8AC3 /* DeviantDetailConfigurator.swift */,
+				8EAED43A24D545C0004E8AC3 /* DeviantDetailInteractor.swift */,
+				8EAED43924D545C0004E8AC3 /* DeviantDetailInterface.swift */,
+				8EAED43624D545C0004E8AC3 /* DeviantDetailPresenter.swift */,
+				8EAED43B24D545C0004E8AC3 /* DeviantDetailRouter.swift */,
+				8EAED43C24D545C0004E8AC3 /* DeviantDetailViewController.swift */,
+				8EAED43824D545C0004E8AC3 /* DeviantDetailViewController.xib */,
 			);
-			path = DevaitDetail;
+			path = DeviantDetail;
 			sourceTree = "<group>";
 		};
 		8E1B802024C0A5D6008C059C /* Resource */ = {
@@ -452,6 +492,7 @@
 		8E1B802524C0A712008C059C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8EAED44624D54617004E8AC3 /* DeviantDetail */,
 				8EBB91FB24C445EF00223F51 /* ApiError */,
 				8E7A0FF824D148FE00C42B29 /* Daily */,
 				8E277D0624C5870D0003798A /* Popular */,
@@ -595,6 +636,21 @@
 				8EAED42B24D533A2004E8AC3 /* TopicDetailThumbs.swift */,
 			);
 			path = TopicDetail;
+			sourceTree = "<group>";
+		};
+		8EAED44624D54617004E8AC3 /* DeviantDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8EAED44B24D55288004E8AC3 /* DeviantDetailAuthor.swift */,
+				8EAED45024D55289004E8AC3 /* DeviantDetailBase.swift */,
+				8EAED44F24D55289004E8AC3 /* DeviantDetailContent.swift */,
+				8EAED44D24D55288004E8AC3 /* DeviantDetailDailyDeviation.swift */,
+				8EAED44A24D55288004E8AC3 /* DeviantDetailGiver.swift */,
+				8EAED44924D55288004E8AC3 /* DeviantDetailPreview.swift */,
+				8EAED44E24D55289004E8AC3 /* DeviantDetailStats.swift */,
+				8EAED44C24D55288004E8AC3 /* DeviantDetailThumbs.swift */,
+			);
+			path = DeviantDetail;
 			sourceTree = "<group>";
 		};
 		8EBB91EC24C3E7FA00223F51 /* Base */ = {
@@ -781,6 +837,7 @@
 				8E1B803D24C0B42C008C059C /* ServerInfo.plist in Resources */,
 				8E1B803B24C0B422008C059C /* Request.plist in Resources */,
 				8E944EAF24C88DF40050B76B /* ImageUICollectionViewCell.xib in Resources */,
+				8EAED44024D545C1004E8AC3 /* DeviantDetailViewController.xib in Resources */,
 				8E1B7FF724C0A4CB008C059C /* LaunchScreen.storyboard in Resources */,
 				8E1B7FF424C0A4CB008C059C /* Assets.xcassets in Resources */,
 				8E944EDC24C89F330050B76B /* TopicListViewController.xib in Resources */,
@@ -871,7 +928,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EAED45824D55289004E8AC3 /* DeviantDetailBase.swift in Sources */,
 				8EAED43324D533A2004E8AC3 /* TopicDetailStats.swift in Sources */,
+				8EAED44224D545C1004E8AC3 /* DeviantDetailInteractor.swift in Sources */,
 				8E944EF324C8A1720050B76B /* TopicListResults.swift in Sources */,
 				8EFB59A824C6A9F6005DE580 /* DeviantBaseViewController.swift in Sources */,
 				8E7A100624D1493100C42B29 /* DailyDailyDeviation.swift in Sources */,
@@ -880,19 +939,25 @@
 				8EA310CC24D10C58008813B7 /* DailyListConfigurator.swift in Sources */,
 				8E944EB024C88DF40050B76B /* ImageUICollectionViewCell.swift in Sources */,
 				8EAED41E24D52547004E8AC3 /* TopicDetailPresenter.swift in Sources */,
+				8EAED45624D55289004E8AC3 /* DeviantDetailStats.swift in Sources */,
 				8EAED42E24D533A2004E8AC3 /* TopicDetailContent.swift in Sources */,
 				8E54E6D024D1A88000339EFA /* UIView+Extension.swift in Sources */,
 				8E7A100B24D1493100C42B29 /* DailySuggester.swift in Sources */,
 				8EFB599C24C68D21005DE580 /* UIScreen+Extension.swift in Sources */,
 				8E944EDF24C89F330050B76B /* TopicListConfigurator.swift in Sources */,
 				8EAED43024D533A2004E8AC3 /* TopicDetailAuthor.swift in Sources */,
+				8EAED45424D55289004E8AC3 /* DeviantDetailThumbs.swift in Sources */,
+				8EAED43E24D545C1004E8AC3 /* DeviantDetailPresenter.swift in Sources */,
 				8E277D0324C55A880003798A /* TopicService.swift in Sources */,
+				8EAED44524D545C1004E8AC3 /* DeviantDetailConfigurator.swift in Sources */,
 				8EA310D024D10CB3008813B7 /* DailyTableViewCell.swift in Sources */,
 				8EFB599F24C6905D005DE580 /* SegmentioBuilder.swift in Sources */,
 				8EA310C724D10C58008813B7 /* DailyListPresenter.swift in Sources */,
 				8E944EF424C8A1720050B76B /* TopicListStats.swift in Sources */,
+				8EAED44124D545C1004E8AC3 /* DeviantDetailInterface.swift in Sources */,
 				8EBB91F324C3FB0900223F51 /* NetworkDefines.swift in Sources */,
 				8E40969224C0CAC900AE8D35 /* ServerInfoManager.swift in Sources */,
+				8EAED44324D545C1004E8AC3 /* DeviantDetailRouter.swift in Sources */,
 				8E7A100724D1493100C42B29 /* DailyBase.swift in Sources */,
 				8E277D1224C587260003798A /* PopularThumbs.swift in Sources */,
 				8E944EF624C8A1720050B76B /* TopicListGiver.swift in Sources */,
@@ -911,8 +976,11 @@
 				8E944EFB24C8A1720050B76B /* TopicListDeviations.swift in Sources */,
 				8EBB91E924C3E4D900223F51 /* DeviantError.swift in Sources */,
 				8E277D1124C587260003798A /* PopularResults.swift in Sources */,
+				8EAED45124D55289004E8AC3 /* DeviantDetailPreview.swift in Sources */,
 				8EA310C624D10C58008813B7 /* DailyListConfiguration.swift in Sources */,
+				8EAED45224D55289004E8AC3 /* DeviantDetailGiver.swift in Sources */,
 				8E277D0F24C587260003798A /* PopularAuthor.swift in Sources */,
+				8EAED45324D55289004E8AC3 /* DeviantDetailAuthor.swift in Sources */,
 				8E944EE024C89F330050B76B /* TopicListConfiguration.swift in Sources */,
 				8EBB91EB24C3E50B00223F51 /* TokenService.swift in Sources */,
 				8E944EF024C8A1720050B76B /* TopicListBase.swift in Sources */,
@@ -923,6 +991,7 @@
 				8E7A0FF724D140C800C42B29 /* BrowseService.swift in Sources */,
 				8E944EF524C8A1720050B76B /* TopicListExampleDeviations.swift in Sources */,
 				8EAED42024D52547004E8AC3 /* TopicDetailConfigurator.swift in Sources */,
+				8EAED45724D55289004E8AC3 /* DeviantDetailContent.swift in Sources */,
 				8EAED42224D52547004E8AC3 /* TopicDetailViewController.swift in Sources */,
 				8EFB599624C66F6A005DE580 /* PopularListRouter.swift in Sources */,
 				8E40969424C0CEF400AE8D35 /* TokenManager.swift in Sources */,
@@ -936,18 +1005,21 @@
 				8EFB599424C66F6A005DE580 /* PopularListConfiguration.swift in Sources */,
 				8E944EDE24C89F330050B76B /* TopicListInterface.swift in Sources */,
 				8E7A100A24D1493100C42B29 /* DailyStats.swift in Sources */,
+				8EAED45524D55289004E8AC3 /* DeviantDetailDailyDeviation.swift in Sources */,
 				8E1B7FEB24C0A4C9008C059C /* AppDelegate.swift in Sources */,
 				8E944EF924C8A1720050B76B /* TopicListAuthor.swift in Sources */,
 				8E944EDD24C89F330050B76B /* TopicListPresenter.swift in Sources */,
 				8EFB599A24C66F6A005DE580 /* PopularListConfigurator.swift in Sources */,
 				8EBB91F124C3F81800223F51 /* Optional+Extension.swift in Sources */,
 				8E944EDB24C89F330050B76B /* TopicListViewController.swift in Sources */,
+				8EAED44424D545C1004E8AC3 /* DeviantDetailViewController.swift in Sources */,
 				8EA310CA24D10C58008813B7 /* DailyListViewController.swift in Sources */,
 				8E54E6CD24D1771C00339EFA /* DailyResult.swift in Sources */,
 				8EFB599924C66F6A005DE580 /* PopularListInteractor.swift in Sources */,
 				8E7A100324D1493100C42B29 /* DailyGiver.swift in Sources */,
 				8E944EE124C89F330050B76B /* TopicListInteractor.swift in Sources */,
 				8E277D0E24C587260003798A /* PopularPreview.swift in Sources */,
+				8EAED43F24D545C1004E8AC3 /* DeviantDetailConfiguration.swift in Sources */,
 				8E277D1024C587260003798A /* PopularBase.swift in Sources */,
 				8E7A100424D1493100C42B29 /* DailyContent.swift in Sources */,
 				8E7A100824D1493100C42B29 /* DailyAuthor.swift in Sources */,
