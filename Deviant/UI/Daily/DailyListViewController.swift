@@ -73,6 +73,7 @@ extension DailyListViewController: UITableViewDataSource {
 
 extension DailyListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        interactor?.showDeviation(with: datas[indexPath.row])
     }
 }
 

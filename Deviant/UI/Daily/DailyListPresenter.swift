@@ -25,4 +25,8 @@ extension DailyListPresenter: DailyListPresenterInterface {
     func update(with results: [DailyResult]) {
         viewController?.update(with: results)
     }
+
+    func showDeviation(with dailyResult: DailyResult) {
+        router?.showDeviation(with: dailyResult)
+    }
 }

@@ -9,4 +9,5 @@
 import UIKit
 
 struct DailyListConfiguration {
+    var navigationController: UINavigationController?
 }

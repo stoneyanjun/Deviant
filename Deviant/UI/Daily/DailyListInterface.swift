@@ -10,15 +10,18 @@ import UIKit
 
 protocol DailyListInteractorInterface {
     func tryFetchDaily(with date: String)
+    func showDeviation(with dailyResult: DailyResult)
 }
 
 protocol DailyListRouterInterface {
+    func showDeviation(with dailyResult: DailyResult)
 }
 
 protocol DailyListPresenterInterface {
     func setLoadingView(with status: Bool)
     func showError(with error: Error)
     func update(with results: [DailyResult])
+    func showDeviation(with dailyResult: DailyResult)
 }
 
 protocol DailyListViewControllerInterface: UIViewController {

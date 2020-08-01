@@ -26,6 +26,7 @@ struct DailyListConfigurator {
         presenter.router = router
         presenter.viewController = viewController
         router.viewController = viewController
+        router.navigationController = configuration.navigationController
         return viewController
     }
 }

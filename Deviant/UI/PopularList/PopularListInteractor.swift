@@ -53,4 +53,8 @@ extension PopularListInteractor {
             }
         }
     }
+
+    func showDeviation(with popularResult: PopularResult) {
+        presenter?.showDeviation(with: popularResult)
+    }
 }

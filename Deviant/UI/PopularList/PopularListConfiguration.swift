@@ -9,4 +9,5 @@
 import UIKit
 
 struct PopularListConfiguration {
+    var navigationController: UINavigationController?
 }

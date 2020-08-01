@@ -1,5 +1,5 @@
 //
-//  PopularResults.swift
+//  PopularResult.swift
 //
 //  Created by Stone on 20/7/2020
 //  Copyright (c) . All rights reserved.
@@ -8,7 +8,7 @@
 import Foundation
 import HandyJSON
 
-struct PopularResults: HandyJSON {
+struct PopularResult: HandyJSON {
 
     enum CodingKeys: String, CodingKey {
         case publishedTime = "published_time"

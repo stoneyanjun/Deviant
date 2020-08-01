@@ -22,7 +22,11 @@ extension PopularListPresenter: PopularListPresenterInterface {
         viewController?.showError(with: error)
     }
 
-    func update(with results: [PopularResults], nextOffset: Int) {
+    func update(with results: [PopularResult], nextOffset: Int) {
         viewController?.update(with: results, nextOffset: nextOffset)
+    }
+
+    func showDeviation(with popularResult: PopularResult) {
+        router?.showDeviation(with: popularResult)
     }
 }

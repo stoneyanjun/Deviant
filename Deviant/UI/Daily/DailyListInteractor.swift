@@ -34,6 +34,10 @@ extension DailyListInteractor: DailyListInteractorInterface {
             self.fetchDaily(with: date)
         }
     }
+
+    func showDeviation(with dailyResult: DailyResult) {
+        presenter?.showDeviation(with: dailyResult)
+    }
 }
 
 extension DailyListInteractor {
