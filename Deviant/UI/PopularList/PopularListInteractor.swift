@@ -38,7 +38,7 @@ extension PopularListInteractor: PopularListInteractorInterface {
 
 extension PopularListInteractor {
     private func fetchPopular(with offset: Int) {
-        NetworkManager<BrowseService>().networkRequest(target: .fetchPopular(categoryPath: "", query: "", timeRange: "", limit: NetworkConst.limit, offset: offset)) { result in
+        NetworkManager<DeviantService>().networkRequest(target: .fetchPopular(categoryPath: "", query: "", timeRange: "", limit: NetworkConst.limit, offset: offset)) { result in
             switch result {
             case .success(let json):
                 guard let popularBase = JSONDeserializer<PopularBase>.deserializeFrom(json: json.description),

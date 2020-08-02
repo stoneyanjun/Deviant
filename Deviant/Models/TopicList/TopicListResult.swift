@@ -1,5 +1,5 @@
 //
-//  TopicListResults.swift
+//  TopicListResult.swift
 //
 //  Created by Stone on 23/7/2020
 //  Copyright (c) . All rights reserved.
@@ -8,7 +8,7 @@
 import Foundation
 import HandyJSON
 
-struct TopicListResults: HandyJSON {
+struct TopicListResult: HandyJSON {
 
     enum CodingKeys: String, CodingKey {
         case exampleDeviations = "example_deviations"

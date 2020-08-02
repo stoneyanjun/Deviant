@@ -25,11 +25,11 @@ protocol TopicListPresenterInterface {
     func showTopic(with topicName: String)
     func setLoadingView(with status: Bool)
     func showError(with error: Error)
-    func update(with results: [TopicListResults], nextOffset: Int)
+    func update(with results: [TopicListResult], nextOffset: Int)
 }
 
 protocol TopicListViewControllerInterface: UIViewController {
     func showError(with error: Error)
     func setLoadingView(with status: Bool)
-    func update(with results: [TopicListResults], nextOffset: Int)
+    func update(with results: [TopicListResult], nextOffset: Int)
 }

@@ -62,4 +62,3 @@ struct DeviantDetailBase: HandyJSON {
         mapper <<< self.isFavourited <-- CodingKeys.isFavourited.rawValue
     }
 }
-

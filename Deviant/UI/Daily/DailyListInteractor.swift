@@ -42,7 +42,7 @@ extension DailyListInteractor: DailyListInteractorInterface {
 
 extension DailyListInteractor {
     private func fetchDaily(with date: String) {
-        NetworkManager<BrowseService>().networkRequest(target: .fetchDaily(date: date)) { result in
+        NetworkManager<DeviantService>().networkRequest(target: .fetchDaily(date: date)) { result in
             switch result {
             case .success(let json):
                 guard let dailyBase = JSONDeserializer<DailyBase>.deserializeFrom(json: json.description),

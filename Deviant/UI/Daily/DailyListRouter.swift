@@ -25,6 +25,5 @@ extension DailyListRouter: DailyListRouterInterface {
         let config = DeviantDetailConfiguration(navigationController: navi, detailParams: detailParams)
         let deviantDetailVC = DeviantDetailConfigurator(config: config).createViewController()
         navi.pushViewController(deviantDetailVC, animated: true)
-
     }
 }

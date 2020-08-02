@@ -17,7 +17,7 @@ struct TopicListBase: HandyJSON {
   }
 
   var nextOffset: Int?
-  var results: [TopicListResults]?
+  var results: [TopicListResult]?
   var hasMore: Bool?
 
     mutating func mapping(mapper: HelpingMapper) {

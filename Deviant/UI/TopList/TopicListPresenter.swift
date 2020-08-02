@@ -22,7 +22,7 @@ extension TopicListPresenter: TopicListPresenterInterface {
         viewController?.showError(with: error)
     }
     
-    func update(with results: [TopicListResults], nextOffset: Int) {
+    func update(with results: [TopicListResult], nextOffset: Int) {
         viewController?.update(with: results, nextOffset: nextOffset)
     }
 

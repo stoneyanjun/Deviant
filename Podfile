@@ -21,6 +21,7 @@ target 'Deviant' do
   pod 'PKHUD'
   pod 'Segmentio'
   pod 'CHTCollectionViewWaterfallLayout/Swift'
+  pod 'PanModal'
   
   pod 'Localize-Swift'
 

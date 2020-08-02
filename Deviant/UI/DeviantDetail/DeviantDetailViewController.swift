@@ -7,6 +7,7 @@
 //
 
 import Kingfisher
+import PanModal
 import Reusable
 import UIKit
 
@@ -61,6 +62,12 @@ extension DeviantDetailViewController {
 
 extension DeviantDetailViewController {
     @IBAction func infoAction(_ sender: Any) {
+        guard let deviantDetail = self.deviantDetail else {
+                return
+        }
+        let moreDetailContainerVC = MoreDetailContainerVC()
+        moreDetailContainerVC.deviantDetail = deviantDetail
+        presentPanModal(moreDetailContainerVC)
     }
 
     @IBAction func commentAction(_ sender: Any) {

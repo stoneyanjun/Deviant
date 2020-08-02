@@ -20,7 +20,7 @@ class TopicListViewController: DeviantBaseViewController {
     var interactor: TopicListInteractorInterface?
     @IBOutlet private weak var collectionView: UICollectionView!
     private lazy var defaultCell = UICollectionViewCell()
-    private var results: [TopicListResults] = []
+    private var results: [TopicListResult] = []
     private var offset = 0
 
     // MARK: View lifecycle
@@ -51,6 +51,7 @@ extension TopicListViewController {
         collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
         let headNib = UINib(nibName: "TopicListHeadView", bundle: nil)
         collectionView.register(headNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TopicListHeadView.reuseIdentifier)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
     }
 }
 
@@ -76,7 +77,7 @@ extension TopicListViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier, for: indexPath) as? ImageUICollectionViewCell,
             let src = results[indexPath.section].deviations?[indexPath.row].preview?.src ,
             let url = URL(string: src) else {
-            return UICollectionViewCell()
+               return collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
         }
         cell.image.kf.setImage(with: url, placeholder: nil)
         return cell
@@ -123,7 +124,7 @@ extension TopicListViewController: TopicListViewControllerInterface {
         showError(errorMsg: error.localizedDescription)
     }
 
-    func update(with results: [TopicListResults], nextOffset: Int) {
+    func update(with results: [TopicListResult], nextOffset: Int) {
         if self.offset <= 0 {
             self.results.removeAll()
         }

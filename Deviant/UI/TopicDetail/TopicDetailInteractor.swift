@@ -38,7 +38,7 @@ extension TopicDetailInteractor: TopicDetailInteractorInterface {
 
 extension TopicDetailInteractor {
     private func fetchTopic(with name: String, offset: Int) {
-        NetworkManager<TopicService>().networkRequest(target: .fetchTopicDetail(name: name, limit: NetworkConst.limit, offset: offset)) { result in
+        NetworkManager<DeviantService>().networkRequest(target: .fetchTopicDetail(name: name, limit: NetworkConst.limit, offset: offset)) { result in
             switch result {
             case .success(let json):
                 guard let topicDetailBase = JSONDeserializer<TopicDetailBase>.deserializeFrom(json: json.description),
