@@ -6,7 +6,6 @@
 //  Copyright (c) 2020 JustNow. All rights reserved.
 //
 
-import CHTCollectionViewWaterfallLayout
 import Kingfisher
 import PanModal
 import Reusable
@@ -73,14 +72,15 @@ extension MetadataViewController {
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        let layout = CHTCollectionViewWaterfallLayout()
-        layout.minimumColumnSpacing = Const.minColumnSpace
-        layout.minimumInteritemSpacing = Const.minItemSpace
 
-        collectionView.autoresizingMask = [.flexibleWidth]
-        collectionView.alwaysBounceVertical = true
-        collectionView.collectionViewLayout = layout
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        collectionView.setCollectionViewLayout(flowLayout, animated: false)
 
+//        collectionView.autoresizingMask = [.flexibleWidth]
+//        collectionView.alwaysBounceVertical = true
+
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         let viewNib = UINib(nibName: "TagCollectionViewCell", bundle: nil)
         collectionView.register(viewNib, forCellWithReuseIdentifier: TagCollectionViewCell.reuseIdentifier)
     }
@@ -102,21 +102,6 @@ extension MetadataViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
         }
         cell.tagLabel.text = tags[indexPath.row].tagName
-        print(tags[indexPath.row].tagName)
         return cell
-    }
-}
-
-extension MetadataViewController: CHTCollectionViewDelegateWaterfallLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        /*
-        var imageSize = CGSize()
-        if let thumb = results[indexPath.row].thumbs?.first {
-            imageSize.width = CGFloat(thumb.width ?? 0)
-            imageSize.height = CGFloat(thumb.height ?? 0)
-        }
- */
-
-        return CGSize(width: 50, height: 36)
     }
 }
