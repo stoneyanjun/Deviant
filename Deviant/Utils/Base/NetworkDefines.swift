@@ -61,6 +61,7 @@ enum RequestParams: String {
     case seed
 
     case maxdepth
+    case username
 }
 
 enum ResponseParams: String {

@@ -18,6 +18,8 @@ enum DeviantService {
     case fetchUserProfile(username: String)
     case fetchMetadata(params: MetadataParams)
     case fetchComment(params: CommentParams)
+    case fetchUserStatuses(username: String)
+    case fetchMoreLikeThis(seed: String)
 }
 
 extension DeviantService: TargetType {
@@ -58,6 +60,10 @@ extension DeviantService: TargetType {
                 return pathFormat
             }
             return String(format: pathFormat, params.deviationid)
+        case .fetchUserStatuses:
+            return ServerInfoManager.shared.getUri(with: UriResource.userStatuses).wrap()
+        case .fetchMoreLikeThis:
+            return ServerInfoManager.shared.getUri(with: UriResource.moreLikeThis).wrap()
         }
     }
 
@@ -133,6 +139,15 @@ extension DeviantService: TargetType {
                                              RequestParams.offset.rawValue: params.offset,
                                              RequestParams.limit.rawValue: params.limit
             ]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+
+        case .fetchUserStatuses(let username):
+            let parameters: [String: Any] = [RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? "",
+                                             RequestParams.username.rawValue: username ]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+        case .fetchMoreLikeThis(let seed):
+            let parameters: [String: Any] = [RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? "",
+                                             RequestParams.seed.rawValue: seed ]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }

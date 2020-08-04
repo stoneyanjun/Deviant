@@ -41,7 +41,6 @@ extension DeviantDetailInteractor {
         NetworkManager<DeviantService>().networkRequest(target: .fetchDeviantDetail(deviationid: config.detailParams.deviationid)) { result in
             switch result {
             case .success(let json):
-                print(#function + "\r\n\(json.description)")
                 guard let deviantDetailBase = JSONDeserializer<DeviantDetailBase>.deserializeFrom(json: json.description)
                     else {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)

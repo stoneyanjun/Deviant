@@ -45,8 +45,8 @@ extension MoreDetailContainerVC {
     private func prepareViewControllers() -> [UIViewController] {
         let metadataVC = MetadataConfigurator(config: MetadataConfiguration(navigationController: navigationController, deviantDetail: deviantDetail)).createViewController()
         let commentVC = CommentConfigurator(config: CommentConfiguration(navigationController: navigationController, deviantDetail: deviantDetail)).createViewController()
-        let dailyVC = DailyListConfigurator(config: DailyListConfiguration(navigationController: navigationController)).createViewController()
-        return [metadataVC, commentVC, dailyVC]
+        let moreLikjeVC = MoreLikeConfigurator(config: MoreLikeConfiguration(navigationController: navigationController, deviantDetail: deviantDetail)).createViewController()
+        return [metadataVC, commentVC, moreLikjeVC]
     }
 
     private func setupScrollView() {
