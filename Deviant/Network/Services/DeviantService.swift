@@ -17,6 +17,7 @@ enum DeviantService {
     case fetchTopicDetail(name: String, limit: Int, offset: Int)
     case fetchUserProfile(username: String)
     case fetchMetadata(params: MetadataParams)
+    case fetchComment(params: CommentParams)
 }
 
 extension DeviantService: TargetType {
@@ -51,6 +52,12 @@ extension DeviantService: TargetType {
             return String(format: pathFormat, username)
         case .fetchMetadata:
             return ServerInfoManager.shared.getUri(with: UriResource.deviationMetadata).wrap()
+        case .fetchComment(let params):
+            let pathFormat = ServerInfoManager.shared.getUri(with: UriResource.fetchComment).wrap()
+            guard !pathFormat.isEmpty else {
+                return pathFormat
+            }
+            return String(format: pathFormat, params.deviationid)
         }
     }
 
@@ -118,6 +125,15 @@ extension DeviantService: TargetType {
                                              RequestParams.extCollection.rawValue: params.extCollection
             ]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+
+        case .fetchComment(let params):
+            let parameters: [String: Any] = [RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? "",
+                                             RequestParams.deviationid.rawValue: params.deviationid,
+                                             RequestParams.maxdepth.rawValue: params.maxdepth ,
+                                             RequestParams.offset.rawValue: params.offset,
+                                             RequestParams.limit.rawValue: params.limit
+            ]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }
 
@@ -125,3 +141,14 @@ extension DeviantService: TargetType {
         return ["Content-type": "application/json"]
     }
 }
+
+/*
+
+ struct CommentParams {
+ var deviationid: String
+ var commentid: String?
+ var maxdepth: Int?
+ var offset: Int
+ var limit: Int
+ }
+ */

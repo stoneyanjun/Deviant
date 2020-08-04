@@ -59,6 +59,8 @@ enum RequestParams: String {
 
     // /browse/morelikethis/preview
     case seed
+
+    case maxdepth
 }
 
 enum ResponseParams: String {

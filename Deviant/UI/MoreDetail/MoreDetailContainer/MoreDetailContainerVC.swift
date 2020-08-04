@@ -44,9 +44,9 @@ class MoreDetailContainerVC: DeviantBaseViewController, PanModalPresentable {
 extension MoreDetailContainerVC {
     private func prepareViewControllers() -> [UIViewController] {
         let metadataVC = MetadataConfigurator(config: MetadataConfiguration(navigationController: navigationController, deviantDetail: deviantDetail)).createViewController()
-        let topicListVC = TopicListConfigurator(config: TopicListConfiguration(navigationController: navigationController)).createViewController()
+        let commentVC = CommentConfigurator(config: CommentConfiguration(navigationController: navigationController, deviantDetail: deviantDetail)).createViewController()
         let dailyVC = DailyListConfigurator(config: DailyListConfiguration(navigationController: navigationController)).createViewController()
-        return [metadataVC, topicListVC, dailyVC]
+        return [metadataVC, commentVC, dailyVC]
     }
 
     private func setupScrollView() {

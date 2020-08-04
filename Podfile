@@ -9,6 +9,7 @@ target 'Deviant' do
   pod 'Moya'
   pod 'HandyJSON'
   pod 'SwiftyJSON'
+  pod 'SwiftSoup'
   
   pod "AsyncSwift"
   pod 'SwifterSwift'

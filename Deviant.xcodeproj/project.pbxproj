@@ -26,6 +26,15 @@
 		8E277D1424C587260003798A /* PopularContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E277D0D24C587260003798A /* PopularContent.swift */; };
 		8E40969224C0CAC900AE8D35 /* ServerInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40969124C0CAC900AE8D35 /* ServerInfoManager.swift */; };
 		8E40969424C0CEF400AE8D35 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40969324C0CEF400AE8D35 /* TokenManager.swift */; };
+		8E4C18A024D84D030001186F /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C189924D84D030001186F /* CommentPresenter.swift */; };
+		8E4C18A124D84D030001186F /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C189A24D84D030001186F /* CommentViewController.swift */; };
+		8E4C18A224D84D030001186F /* CommentConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C189B24D84D030001186F /* CommentConfigurator.swift */; };
+		8E4C18A324D84D030001186F /* CommentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C189C24D84D030001186F /* CommentConfiguration.swift */; };
+		8E4C18A424D84D030001186F /* CommentInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C189D24D84D030001186F /* CommentInterface.swift */; };
+		8E4C18A524D84D030001186F /* CommentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C189E24D84D030001186F /* CommentRouter.swift */; };
+		8E4C18A624D84D030001186F /* CommentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C189F24D84D030001186F /* CommentInteractor.swift */; };
+		8E4C18AD24D850B50001186F /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C18AB24D850B50001186F /* CommentTableViewCell.swift */; };
+		8E4C18AE24D850B50001186F /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E4C18AC24D850B50001186F /* CommentTableViewCell.xib */; };
 		8E4FA46A24CFB8B000742432 /* TopicListHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4FA46824CFB8B000742432 /* TopicListHeadView.swift */; };
 		8E4FA46B24CFB8B000742432 /* TopicListHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E4FA46924CFB8B000742432 /* TopicListHeadView.xib */; };
 		8E54E6CD24D1771C00339EFA /* DailyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E54E6CC24D1771C00339EFA /* DailyResult.swift */; };
@@ -37,7 +46,6 @@
 		8E66AC3324D65EA200A384AE /* TopicListDeviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3124D65EA200A384AE /* TopicListDeviation.swift */; };
 		8E66AC3424D65EA200A384AE /* TopicListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3224D65EA200A384AE /* TopicListResult.swift */; };
 		8E66AC3624D65ECC00A384AE /* DeviantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3524D65ECC00A384AE /* DeviantService.swift */; };
-		8E66AC3B24D6637600A384AE /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3A24D6637600A384AE /* DetailModel.swift */; };
 		8E66AC4424D679B200A384AE /* MetadataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E66AC3C24D679B200A384AE /* MetadataViewController.xib */; };
 		8E66AC4524D679B200A384AE /* MetadataConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3D24D679B200A384AE /* MetadataConfigurator.swift */; };
 		8E66AC4624D679B200A384AE /* MetadataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3E24D679B200A384AE /* MetadataConfiguration.swift */; };
@@ -125,6 +133,7 @@
 		8EAED45624D55289004E8AC3 /* DeviantDetailStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44E24D55289004E8AC3 /* DeviantDetailStats.swift */; };
 		8EAED45724D55289004E8AC3 /* DeviantDetailContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44F24D55289004E8AC3 /* DeviantDetailContent.swift */; };
 		8EAED45824D55289004E8AC3 /* DeviantDetailBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED45024D55289004E8AC3 /* DeviantDetailBase.swift */; };
+		8EB1416324D90320001FA48F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB1416224D90320001FA48F /* Date+Extension.swift */; };
 		8EBB91E924C3E4D900223F51 /* DeviantError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91E824C3E4D900223F51 /* DeviantError.swift */; };
 		8EBB91EB24C3E50B00223F51 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91EA24C3E50B00223F51 /* TokenService.swift */; };
 		8EBB91EF24C3E81400223F51 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91EE24C3E81400223F51 /* String+Extension.swift */; };
@@ -144,6 +153,9 @@
 		8EFB59A224C691E2005DE580 /* UIFont+ExampleFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB59A124C691E2005DE580 /* UIFont+ExampleFonts.swift */; };
 		8EFB59A524C69436005DE580 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB59A424C69436005DE580 /* ColorPalette.swift */; };
 		8EFB59A824C6A9F6005DE580 /* DeviantBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB59A724C6A9F6005DE580 /* DeviantBaseViewController.swift */; };
+		8EFC857724D8E5FA00EA8023 /* CommentThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFC857424D8E5F900EA8023 /* CommentThread.swift */; };
+		8EFC857824D8E5FA00EA8023 /* CommentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFC857524D8E5FA00EA8023 /* CommentUser.swift */; };
+		8EFC857924D8E5FA00EA8023 /* CommentBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFC857624D8E5FA00EA8023 /* CommentBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +202,15 @@
 		8E277D0D24C587260003798A /* PopularContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularContent.swift; sourceTree = "<group>"; };
 		8E40969124C0CAC900AE8D35 /* ServerInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerInfoManager.swift; sourceTree = "<group>"; };
 		8E40969324C0CEF400AE8D35 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		8E4C189924D84D030001186F /* CommentPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentPresenter.swift; sourceTree = "<group>"; };
+		8E4C189A24D84D030001186F /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		8E4C189B24D84D030001186F /* CommentConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentConfigurator.swift; sourceTree = "<group>"; };
+		8E4C189C24D84D030001186F /* CommentConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentConfiguration.swift; sourceTree = "<group>"; };
+		8E4C189D24D84D030001186F /* CommentInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentInterface.swift; sourceTree = "<group>"; };
+		8E4C189E24D84D030001186F /* CommentRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentRouter.swift; sourceTree = "<group>"; };
+		8E4C189F24D84D030001186F /* CommentInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentInteractor.swift; sourceTree = "<group>"; };
+		8E4C18AB24D850B50001186F /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		8E4C18AC24D850B50001186F /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		8E4FA46824CFB8B000742432 /* TopicListHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListHeadView.swift; sourceTree = "<group>"; };
 		8E4FA46924CFB8B000742432 /* TopicListHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicListHeadView.xib; sourceTree = "<group>"; };
 		8E54E6CC24D1771C00339EFA /* DailyResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyResult.swift; sourceTree = "<group>"; };
@@ -201,7 +222,6 @@
 		8E66AC3124D65EA200A384AE /* TopicListDeviation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListDeviation.swift; sourceTree = "<group>"; };
 		8E66AC3224D65EA200A384AE /* TopicListResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListResult.swift; sourceTree = "<group>"; };
 		8E66AC3524D65ECC00A384AE /* DeviantService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantService.swift; sourceTree = "<group>"; };
-		8E66AC3A24D6637600A384AE /* DetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		8E66AC3C24D679B200A384AE /* MetadataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MetadataViewController.xib; sourceTree = "<group>"; };
 		8E66AC3D24D679B200A384AE /* MetadataConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataConfigurator.swift; sourceTree = "<group>"; };
 		8E66AC3E24D679B200A384AE /* MetadataConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataConfiguration.swift; sourceTree = "<group>"; };
@@ -289,6 +309,7 @@
 		8EAED44E24D55289004E8AC3 /* DeviantDetailStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailStats.swift; sourceTree = "<group>"; };
 		8EAED44F24D55289004E8AC3 /* DeviantDetailContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailContent.swift; sourceTree = "<group>"; };
 		8EAED45024D55289004E8AC3 /* DeviantDetailBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailBase.swift; sourceTree = "<group>"; };
+		8EB1416224D90320001FA48F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		8EBB91E824C3E4D900223F51 /* DeviantError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantError.swift; sourceTree = "<group>"; };
 		8EBB91EA24C3E50B00223F51 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		8EBB91EE24C3E81400223F51 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -308,6 +329,9 @@
 		8EFB59A124C691E2005DE580 /* UIFont+ExampleFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+ExampleFonts.swift"; sourceTree = "<group>"; };
 		8EFB59A424C69436005DE580 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		8EFB59A724C6A9F6005DE580 /* DeviantBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantBaseViewController.swift; sourceTree = "<group>"; };
+		8EFC857424D8E5F900EA8023 /* CommentThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentThread.swift; sourceTree = "<group>"; };
+		8EFC857524D8E5FA00EA8023 /* CommentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentUser.swift; sourceTree = "<group>"; };
+		8EFC857624D8E5FA00EA8023 /* CommentBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentBase.swift; sourceTree = "<group>"; };
 		D686C8D192EFD0D9DAD1D56B /* Pods-Deviant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deviant.release.xcconfig"; path = "Target Support Files/Pods-Deviant/Pods-Deviant.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -413,7 +437,7 @@
 		8E1B801A24C0A56D008C059C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				8E66AC1724D63FDF00A384AE /* MoreDetailContainer */,
+				8E66AC1724D63FDF00A384AE /* MoreDetail */,
 				8E1B801D24C0A5AD008C059C /* Daily */,
 				8E1B801F24C0A5C4008C059C /* DeviantDetail */,
 				8E1B801B24C0A575008C059C /* PopularList */,
@@ -527,10 +551,11 @@
 		8E1B802524C0A712008C059C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8E66AC4E24D680C500A384AE /* Metadata */,
-				8EAED44624D54617004E8AC3 /* DeviantDetail */,
 				8EBB91FB24C445EF00223F51 /* ApiError */,
+				8EFC857324D8E5E100EA8023 /* Comment */,
 				8E7A0FF824D148FE00C42B29 /* Daily */,
+				8EAED44624D54617004E8AC3 /* DeviantDetail */,
+				8E66AC4E24D680C500A384AE /* Metadata */,
 				8E277D0624C5870D0003798A /* Popular */,
 				8EBB91F624C426C100223F51 /* Token */,
 				8EAED42324D5338C004E8AC3 /* TopicDetail */,
@@ -572,6 +597,39 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		8E4A204D24D6FAF900788B86 /* MoreDetailContainer */ = {
+			isa = PBXGroup;
+			children = (
+				8E66AC1824D6449800A384AE /* MoreDetailContainerVC.swift */,
+				8E66AC1924D6449800A384AE /* MoreDetailContainerVC.xib */,
+			);
+			path = MoreDetailContainer;
+			sourceTree = "<group>";
+		};
+		8E4A204E24D6FB1100788B86 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				8E4C189C24D84D030001186F /* CommentConfiguration.swift */,
+				8E4C189B24D84D030001186F /* CommentConfigurator.swift */,
+				8E4C189F24D84D030001186F /* CommentInteractor.swift */,
+				8E4C189D24D84D030001186F /* CommentInterface.swift */,
+				8E4C189924D84D030001186F /* CommentPresenter.swift */,
+				8E4C189E24D84D030001186F /* CommentRouter.swift */,
+				8E4C189A24D84D030001186F /* CommentViewController.swift */,
+				8E4C189824D84C1D0001186F /* View */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		8E4C189824D84C1D0001186F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E4C18AB24D850B50001186F /* CommentTableViewCell.swift */,
+				8E4C18AC24D850B50001186F /* CommentTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8E4FA46724CFB88900742432 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,15 +647,14 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
-		8E66AC1724D63FDF00A384AE /* MoreDetailContainer */ = {
+		8E66AC1724D63FDF00A384AE /* MoreDetail */ = {
 			isa = PBXGroup;
 			children = (
-				8E66AC3924D6635D00A384AE /* Model */,
+				8E4A204E24D6FB1100788B86 /* Comment */,
 				8E66AC1C24D65C3B00A384AE /* Metadata */,
-				8E66AC1824D6449800A384AE /* MoreDetailContainerVC.swift */,
-				8E66AC1924D6449800A384AE /* MoreDetailContainerVC.xib */,
+				8E4A204D24D6FAF900788B86 /* MoreDetailContainer */,
 			);
-			path = MoreDetailContainer;
+			path = MoreDetail;
 			sourceTree = "<group>";
 		};
 		8E66AC1C24D65C3B00A384AE /* Metadata */ = {
@@ -614,14 +671,6 @@
 				8E66AC6724D68C0800A384AE /* View */,
 			);
 			path = Metadata;
-			sourceTree = "<group>";
-		};
-		8E66AC3924D6635D00A384AE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8E66AC3A24D6637600A384AE /* DetailModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		8E66AC4E24D680C500A384AE /* Metadata */ = {
@@ -751,6 +800,7 @@
 				8EBB91F224C3FB0900223F51 /* NetworkDefines.swift */,
 				8EBB91EE24C3E81400223F51 /* String+Extension.swift */,
 				8EBB91F024C3F81800223F51 /* Optional+Extension.swift */,
+				8EB1416224D90320001FA48F /* Date+Extension.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -814,6 +864,16 @@
 				8EFB59A724C6A9F6005DE580 /* DeviantBaseViewController.swift */,
 			);
 			path = BaseUIViewController;
+			sourceTree = "<group>";
+		};
+		8EFC857324D8E5E100EA8023 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				8EFC857624D8E5FA00EA8023 /* CommentBase.swift */,
+				8EFC857424D8E5F900EA8023 /* CommentThread.swift */,
+				8EFC857524D8E5FA00EA8023 /* CommentUser.swift */,
+			);
+			path = Comment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -938,6 +998,7 @@
 				8E66AC6B24D68C1D00A384AE /* TagCollectionViewCell.xib in Resources */,
 				8E1B7FF224C0A4C9008C059C /* Main.storyboard in Resources */,
 				8E4FA46B24CFB8B000742432 /* TopicListHeadView.xib in Resources */,
+				8E4C18AE24D850B50001186F /* CommentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1037,6 +1098,7 @@
 				8EAED41E24D52547004E8AC3 /* TopicDetailPresenter.swift in Sources */,
 				8EAED45624D55289004E8AC3 /* DeviantDetailStats.swift in Sources */,
 				8EAED42E24D533A2004E8AC3 /* TopicDetailContent.swift in Sources */,
+				8EB1416324D90320001FA48F /* Date+Extension.swift in Sources */,
 				8E54E6D024D1A88000339EFA /* UIView+Extension.swift in Sources */,
 				8E7A100B24D1493100C42B29 /* DailySuggester.swift in Sources */,
 				8EFB599C24C68D21005DE580 /* UIScreen+Extension.swift in Sources */,
@@ -1050,16 +1112,21 @@
 				8EFB599F24C6905D005DE580 /* SegmentioBuilder.swift in Sources */,
 				8EA310C724D10C58008813B7 /* DailyListPresenter.swift in Sources */,
 				8E944EF424C8A1720050B76B /* TopicListStats.swift in Sources */,
+				8EFC857924D8E5FA00EA8023 /* CommentBase.swift in Sources */,
 				8E66AC4524D679B200A384AE /* MetadataConfigurator.swift in Sources */,
 				8EAED44124D545C1004E8AC3 /* DeviantDetailInterface.swift in Sources */,
+				8EFC857724D8E5FA00EA8023 /* CommentThread.swift in Sources */,
 				8E66AC3024D65E6A00A384AE /* TopicDetailResult.swift in Sources */,
 				8E66AC6A24D68C1D00A384AE /* TagCollectionViewCell.swift in Sources */,
 				8EBB91F324C3FB0900223F51 /* NetworkDefines.swift in Sources */,
+				8E4C18A624D84D030001186F /* CommentInteractor.swift in Sources */,
 				8E40969224C0CAC900AE8D35 /* ServerInfoManager.swift in Sources */,
 				8EAED44324D545C1004E8AC3 /* DeviantDetailRouter.swift in Sources */,
 				8E7A100724D1493100C42B29 /* DailyBase.swift in Sources */,
 				8E277D1224C587260003798A /* PopularThumbs.swift in Sources */,
 				8E944EF624C8A1720050B76B /* TopicListGiver.swift in Sources */,
+				8E4C18A524D84D030001186F /* CommentRouter.swift in Sources */,
+				8E4C18A324D84D030001186F /* CommentConfiguration.swift in Sources */,
 				8E66AC4D24D67DC800A384AE /* ServiceParams.swift in Sources */,
 				8E944EF124C8A1720050B76B /* TopicListDailyDeviation.swift in Sources */,
 				8E277D1424C587260003798A /* PopularContent.swift in Sources */,
@@ -1069,6 +1136,7 @@
 				8E66AC6624D6812500A384AE /* MetadataBase.swift in Sources */,
 				8EAED41B24D52547004E8AC3 /* TopicDetailRouter.swift in Sources */,
 				8E66AC4B24D679B200A384AE /* MetadataInteractor.swift in Sources */,
+				8E4C18A424D84D030001186F /* CommentInterface.swift in Sources */,
 				8E4FA46A24CFB8B000742432 /* TopicListHeadView.swift in Sources */,
 				8E944EF724C8A1720050B76B /* TopicListThumbs.swift in Sources */,
 				8EAED42124D52547004E8AC3 /* TopicDetailConfiguration.swift in Sources */,
@@ -1083,13 +1151,15 @@
 				8EAED45324D55289004E8AC3 /* DeviantDetailAuthor.swift in Sources */,
 				8E944EE024C89F330050B76B /* TopicListConfiguration.swift in Sources */,
 				8EBB91EB24C3E50B00223F51 /* TokenService.swift in Sources */,
-				8E66AC3B24D6637600A384AE /* DetailModel.swift in Sources */,
+				8E4C18A224D84D030001186F /* CommentConfigurator.swift in Sources */,
 				8E944EF024C8A1720050B76B /* TopicListBase.swift in Sources */,
+				8E4C18AD24D850B50001186F /* CommentTableViewCell.swift in Sources */,
 				8EAED43424D533A2004E8AC3 /* TopicDetailThumbs.swift in Sources */,
 				8E66AC2E24D65E4C00A384AE /* PopularResult.swift in Sources */,
 				8E7A100524D1493100C42B29 /* DailyPreview.swift in Sources */,
 				8E66AC1A24D6449800A384AE /* MoreDetailContainerVC.swift in Sources */,
 				8EFB59A524C69436005DE580 /* ColorPalette.swift in Sources */,
+				8E4C18A024D84D030001186F /* CommentPresenter.swift in Sources */,
 				8E66AC6324D6812500A384AE /* MetadataTags.swift in Sources */,
 				8EBB91FA24C4430E00223F51 /* NetworkManager.swift in Sources */,
 				8E944EF524C8A1720050B76B /* TopicListExampleDeviations.swift in Sources */,
@@ -1102,12 +1172,14 @@
 				8EAED42F24D533A2004E8AC3 /* TopicDetailPreview.swift in Sources */,
 				8EA310CB24D10C58008813B7 /* DailyListInteractor.swift in Sources */,
 				8E944EF824C8A1720050B76B /* TopicListSuggester.swift in Sources */,
+				8E4C18A124D84D030001186F /* CommentViewController.swift in Sources */,
 				8EAED43124D533A2004E8AC3 /* TopicDetailBase.swift in Sources */,
 				8EFB599524C66F6A005DE580 /* PopularListPresenter.swift in Sources */,
 				8EBB91FD24C4461100223F51 /* APIError.swift in Sources */,
 				8EFB599424C66F6A005DE580 /* PopularListConfiguration.swift in Sources */,
 				8E944EDE24C89F330050B76B /* TopicListInterface.swift in Sources */,
 				8E7A100A24D1493100C42B29 /* DailyStats.swift in Sources */,
+				8EFC857824D8E5FA00EA8023 /* CommentUser.swift in Sources */,
 				8E66AC3324D65EA200A384AE /* TopicListDeviation.swift in Sources */,
 				8EAED45524D55289004E8AC3 /* DeviantDetailDailyDeviation.swift in Sources */,
 				8E1B7FEB24C0A4C9008C059C /* AppDelegate.swift in Sources */,

@@ -15,3 +15,11 @@ struct MetadataParams {
     var extStats: Bool
     var extCollection: Bool
 }
+
+struct CommentParams {
+    var deviationid: String
+    var commentid: String?
+    var maxdepth: Int?
+    var offset: Int
+    var limit: Int
+}
