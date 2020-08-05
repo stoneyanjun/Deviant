@@ -16,7 +16,7 @@ struct TopicDetailBase: HandyJSON {
         case nextOffset = "next_offset"
     }
 
-    var results: [TopicDetailResult]?
+    var results: [DeviantDetailBase]?
     var hasMore: Bool?
     var nextOffset: Int?
 

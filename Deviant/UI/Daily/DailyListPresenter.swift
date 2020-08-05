@@ -22,11 +22,11 @@ extension DailyListPresenter: DailyListPresenterInterface {
         viewController?.showError(with: error)
     }
     
-    func update(with results: [DailyResult]) {
+    func update(with results: [DeviantDetailBase]) {
         viewController?.update(with: results)
     }
 
-    func showDeviation(with dailyResult: DailyResult) {
+    func showDeviation(with dailyResult: DeviantDetailBase) {
         router?.showDeviation(with: dailyResult)
     }
 }

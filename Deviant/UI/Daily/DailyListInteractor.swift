@@ -35,7 +35,7 @@ extension DailyListInteractor: DailyListInteractorInterface {
         }
     }
 
-    func showDeviation(with dailyResult: DailyResult) {
+    func showDeviation(with dailyResult: DeviantDetailBase) {
         presenter?.showDeviation(with: dailyResult)
     }
 }

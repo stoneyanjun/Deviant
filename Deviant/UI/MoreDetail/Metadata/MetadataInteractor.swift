@@ -42,10 +42,15 @@ extension MetadataInteractor {
             !deviationid.isEmpty else {
             return
         }
-        let params = MetadataParams(deviationids: [deviationid], extSubmission: false, extCamera: false, extStats: false, extCollection: false)
+        let params = MetadataParams(deviationids: [deviationid],
+                                    extSubmission: true,
+                                    extCamera: true,
+                                    extStats: true,
+                                    extCollection: false)
         NetworkManager<DeviantService>().networkRequest(target: .fetchMetadata(params: params)) { result in
             switch result {
             case .success(let json):
+//                print(#function + "\r\n\(json.description)")
                 guard let metadataBase = JSONDeserializer<MetadataBase>.deserializeFrom(json: json.description)
                     else {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)
@@ -53,6 +58,7 @@ extension MetadataInteractor {
                 }
                 self.presenter?.update(with: metadataBase)
             case .failure(let error):
+                print(#function + "\r\n\(error.localizedDescription )")
                 self.presenter?.showError(with: error)
             }
         }

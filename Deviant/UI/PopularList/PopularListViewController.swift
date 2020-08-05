@@ -21,7 +21,7 @@ class PopularListViewController: DeviantBaseViewController {
     var interactor: PopularListInteractorInterface?
     @IBOutlet private weak var collectionView: UICollectionView!
     private lazy var defaultCell = UICollectionViewCell()
-    private var results: [PopularResult] = []
+    private var results: [DeviantDetailBase] = []
     private var offset = 0
 
     // MARK: View lifecycle
@@ -95,7 +95,7 @@ extension PopularListViewController: PopularListViewControllerInterface {
         showError(errorMsg: error.localizedDescription)
     }
 
-    func update(with results: [PopularResult], nextOffset: Int) {
+    func update(with results: [DeviantDetailBase], nextOffset: Int) {
         if self.offset <= 0 {
             self.results.removeAll()
         }

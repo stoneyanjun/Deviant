@@ -18,13 +18,11 @@ protocol MoreLikeRouterInterface {
 protocol MoreLikePresenterInterface {
     func setLoadingView(with status: Bool)
     func showError(with error: Error)
-    func updateMoreLikeThis(with results: [DeviantDetailBase])
-    func updateUserStatus(with results: [UserStatusResults])
+    func update(with moreFromArtist: [DeviantDetailBase], moreFromDa: [DeviantDetailBase])
 }
 
 protocol MoreLikeViewControllerInterface: UIViewController {
     func showError(with error: Error)
     func setLoadingView(with status: Bool)
-    func updateMoreLikeThis(with results: [DeviantDetailBase])
-    func updateUserStatus(with results: [UserStatusResults])
+    func update(with moreFromArtist: [DeviantDetailBase], moreFromDa: [DeviantDetailBase])
 }

@@ -30,4 +30,3 @@ struct CommentBase: HandyJSON {
         mapper <<< self.nextOffset <-- CodingKeys.nextOffset.rawValue
     }
 }
-

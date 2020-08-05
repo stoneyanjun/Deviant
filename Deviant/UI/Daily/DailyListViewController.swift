@@ -20,7 +20,7 @@ class DailyListViewController: DeviantBaseViewController {
     var interactor: DailyListInteractorInterface?
     private(set) var dailyTableView: UITableView!
     private lazy var defaultCell = UITableViewCell()
-    private var datas: [DailyResult] = []
+    private var datas: [DeviantDetailBase] = []
 
     // MARK: View lifecycle
     override func viewDidLoad() {
@@ -85,7 +85,7 @@ extension DailyListViewController: DailyListViewControllerInterface {
         showError(errorMsg: error.localizedDescription)
     }
 
-    func update(with results: [DailyResult]) {
+    func update(with results: [DeviantDetailBase]) {
         datas = results
         dailyTableView.reloadData()
     }

@@ -25,53 +25,30 @@ extension MoreLikeInteractor: MoreLikeInteractorInterface {
             TokenManager.shared.fetchToken { result in
                 switch result {
                 case .success:
-                    self.fetchInfo()
+                    self.fetchMoreLike()
                 case .failure(let error):
                     self.presenter?.showError(with: error)
                 }
             }
         } else {
-            fetchInfo()
+            fetchMoreLike()
         }
     }
 }
 
 extension MoreLikeInteractor {
-    private func fetchInfo() {
-        self.fetchMoreLike()
-        self.fetchUserStatuses()
-    }
-
     private func fetchMoreLike() {
-        NetworkManager<DeviantService>().networkRequest(target: .fetchMoreLikeThis(seed: config.deviantDetail?.deviationid ?? "")) { result in
+        NetworkManager<DeviantService>().networkRequest(target: .fetchMoreLikeThisPreview(seed: config.deviantDetail?.deviationid ?? "")) { result in
             switch result {
             case .success(let json):
-                //                print(#function + "\r\n\(json.description)")
-                guard let moreLikeThis = JSONDeserializer<MoreLikeThisBase>.deserializeFrom(json: json.description),
-                    let results = moreLikeThis.results
+                guard let moreLikeThis = JSONDeserializer<MoreLikeThisPreview>.deserializeFrom(json: json.description),
+                    let moreFromDa = moreLikeThis.moreFromDa,
+                    let moreFromArtist = moreLikeThis.moreFromArtist
                     else {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)
                         return
                 }
-                self.presenter?.updateMoreLikeThis(with: results)
-            case .failure(let error):
-                self.presenter?.showError(with: error)
-            }
-        }
-    }
-
-    private func fetchUserStatuses() {
-        NetworkManager<DeviantService>().networkRequest(target: .fetchUserStatuses(username: config.deviantDetail?.author?.username ?? "")) { result in
-            switch result {
-            case .success(let json):
-                print(#function + "\r\n\(json.description)")
-                guard let userStatus = JSONDeserializer<UserStatusBase>.deserializeFrom(json: json.description),
-                    let results = userStatus.results
-                    else {
-                        self.presenter?.showError(with: DeviantGeneralError.unknownError)
-                        return
-                }
-                self.presenter?.updateUserStatus(with: results)
+                self.presenter?.update(with: moreFromArtist, moreFromDa: moreFromDa)
             case .failure(let error):
                 self.presenter?.showError(with: error)
             }

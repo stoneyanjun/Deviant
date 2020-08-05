@@ -27,4 +27,13 @@ extension String {
         dateformatter.dateFormat = "yyyy-MM-dd"
         return dateformatter.string(from: date as Date)
     }
+
+    static func decimalFormat(with number: NSNumber) -> String {
+        let formatter = NumberFormatter()
+        formatter.usesGroupingSeparator = true
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+
+        return formatter.string(from: number) ?? ""
+    }
 }

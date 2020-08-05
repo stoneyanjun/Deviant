@@ -20,7 +20,7 @@ struct PopularBase: HandyJSON {
   var nextOffset: Int?
   var hasMore: Bool?
   var estimatedTotal: Int?
-  var results: [PopularResult]?
+  var results: [DeviantDetailBase]?
 
     mutating func mapping(mapper: HelpingMapper) {
         mapper <<< self.nextOffset <-- CodingKeys.nextOffset.rawValue

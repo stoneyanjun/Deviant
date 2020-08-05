@@ -30,7 +30,7 @@ class DailyTableViewCell: UITableViewCell, Reusable {
         super.setSelected(selected, animated: animated)
     }
 
-    func update(with result: DailyResult) {
+    func update(with result: DeviantDetailBase) {
         if let usericon = result.author?.usericon,
             let url = URL(string: usericon) {
             usericonImageView.kf.setImage(with: url)

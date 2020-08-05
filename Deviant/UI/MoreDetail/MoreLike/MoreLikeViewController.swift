@@ -21,8 +21,8 @@ class MoreLikeViewController: DeviantBaseViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     private lazy var defaultCell = UICollectionViewCell()
 
-    private var userStatusResults: [UserStatusResults] = []
-    private var moreLikeThisrResults: [DeviantDetailBase] = []
+    private var moreFromArtist: [DeviantDetailBase] = []
+    private var moreFromDa: [DeviantDetailBase] = []
 
     private var offset = 0
 
@@ -70,9 +70,9 @@ extension MoreLikeViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return userStatusResults.count
+            return moreFromArtist.count
         } else {
-            return moreLikeThisrResults.count
+            return moreFromDa.count
         }
     }
 
@@ -89,16 +89,16 @@ extension MoreLikeViewController: UICollectionViewDataSource {
     func getURL(indexPath: IndexPath) -> URL? {
         var urlString = ""
         if indexPath.section == 0 {
-            if let src = userStatusResults[indexPath.row].items?.first?.deviation?.preview?.src {
+            if let src = moreFromArtist[indexPath.row].preview?.src {
                 urlString = src
             } else {
-                urlString = userStatusResults[indexPath.row].url ?? ""
+                urlString = moreFromArtist[indexPath.row].url ?? ""
             }
         } else {
-            if let src = moreLikeThisrResults[indexPath.row].preview?.src {
+            if let src = moreFromDa[indexPath.row].preview?.src {
                 urlString = src
             } else {
-                urlString = moreLikeThisrResults[indexPath.row].url ?? ""
+                urlString = moreFromDa[indexPath.row].url ?? ""
             }
         }
         return URL(string: urlString)
@@ -107,12 +107,12 @@ extension MoreLikeViewController: UICollectionViewDataSource {
     func getImageSize(indexPath: IndexPath) -> CGSize {
         var size = CGSize()
         if indexPath.section == 0 {
-            if let preview = userStatusResults[indexPath.row].items?.first?.deviation?.preview {
+            if let preview = moreFromArtist[indexPath.row].preview {
                 size.width = CGFloat(preview.width ?? 0)
                 size.height = CGFloat(preview.height ?? 0)
             }
         } else {
-            if let preview = moreLikeThisrResults[indexPath.row].preview {
+            if let preview = moreFromDa[indexPath.row].preview {
                 size.width = CGFloat(preview.width ?? 0)
                 size.height = CGFloat(preview.height ?? 0)
             }
@@ -157,13 +157,9 @@ extension MoreLikeViewController: MoreLikeViewControllerInterface {
         showError(errorMsg: error.localizedDescription)
     }
 
-    func updateMoreLikeThis(with results: [DeviantDetailBase]) {
-        moreLikeThisrResults = results
-        collectionView.reloadData()
-    }
-
-    func updateUserStatus(with results: [UserStatusResults]) {
-        self.userStatusResults = results
+    func update(with moreFromArtist: [DeviantDetailBase], moreFromDa: [DeviantDetailBase]) {
+        self.moreFromArtist = moreFromArtist
+        self.moreFromDa = moreFromDa
         collectionView.reloadData()
     }
 }

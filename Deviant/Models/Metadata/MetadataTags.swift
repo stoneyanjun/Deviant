@@ -1,7 +1,7 @@
 //
 //  MetadataTags.swift
 //
-//  Created by Stone on 2/8/2020
+//  Created by Stone on 5/8/2020
 //  Copyright (c) . All rights reserved.
 //
 
@@ -11,15 +11,14 @@ import HandyJSON
 struct MetadataTags: HandyJSON {
 
     enum CodingKeys: String, CodingKey {
-        case sponsored
-        case tagName = "tag_name"
         case sponsor
+        case tagName = "tag_name"
+        case sponsored
     }
 
-    var sponsored: Bool?
-    var tagName: String?
     var sponsor: String?
-
+    var tagName: String?
+    var sponsored: Bool?
     mutating func mapping(mapper: HelpingMapper) {
         mapper <<< self.tagName <-- CodingKeys.tagName.rawValue
     }

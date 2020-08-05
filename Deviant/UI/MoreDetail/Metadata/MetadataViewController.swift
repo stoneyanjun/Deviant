@@ -9,6 +9,7 @@
 import Kingfisher
 import PanModal
 import Reusable
+import SwifterSwift
 import UIKit
 
 class MetadataViewController: DeviantBaseViewController {
@@ -20,6 +21,16 @@ class MetadataViewController: DeviantBaseViewController {
         static let minSpace: CGFloat = 4.0
     }
 
+    let formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.usesGroupingSeparator = true
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+        return formatter
+    }()
+
+    @IBOutlet weak var viewsLabel: UILabel!
+    @IBOutlet weak var creationTimeLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var avatorImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -65,6 +76,21 @@ extension MetadataViewController {
         }
         userNameLabel.text = meta?.metadata?.first?.author?.username
         collectionView.reloadData()
+
+        if let date = Date(deviantDateString: meta?.metadata?.first?.submission?.creationTime ?? "") {
+            creationTimeLabel.text = date.formatString()
+        } else {
+            creationTimeLabel.text = ""
+        }
+
+        if let views = meta?.metadata?.first?.stats?.views,
+            let viewToday = meta?.metadata?.first?.stats?.viewsToday {
+            let viewsString = String.decimalFormat(with: NSNumber(value: views))
+            let viewTodayString = String.decimalFormat(with: NSNumber(value: viewToday))
+            viewsLabel.text = "\(viewsString) (\(viewTodayString) today)"
+        } else {
+            viewsLabel.text = ""
+        }
     }
 }
 

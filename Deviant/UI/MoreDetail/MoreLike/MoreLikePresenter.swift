@@ -22,11 +22,7 @@ extension MoreLikePresenter: MoreLikePresenterInterface {
         viewController?.showError(with: error)
     }
 
-    func updateMoreLikeThis(with results: [DeviantDetailBase]) {
-        viewController?.updateMoreLikeThis(with: results)
-
-    }
-    func updateUserStatus(with results: [UserStatusResults]){
-        viewController?.updateUserStatus(with: results)
+    func update(with moreFromArtist: [DeviantDetailBase], moreFromDa: [DeviantDetailBase]) {
+        viewController?.update(with: moreFromArtist, moreFromDa: moreFromDa)
     }
 }

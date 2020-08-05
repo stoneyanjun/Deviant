@@ -17,10 +17,10 @@ struct TopicListResult: HandyJSON {
         case deviations
     }
 
-    var exampleDeviations: [TopicListExampleDeviations]?
+    var exampleDeviations: [DeviantDetailBase]?
     var name: String?
     var canonicalName: String?
-    var deviations: [TopicListDeviation]?
+    var deviations: [DeviantDetailBase]?
 
     mutating func mapping(mapper: HelpingMapper) {
         mapper <<< self.exampleDeviations <-- CodingKeys.exampleDeviations.rawValue

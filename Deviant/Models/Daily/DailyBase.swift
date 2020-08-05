@@ -13,5 +13,5 @@ struct DailyBase: HandyJSON {
     case results
   }
 
-  var results: [DailyResult]?
+  var results: [DeviantDetailBase]?
 }

@@ -53,7 +53,6 @@ extension CommentInteractor {
                 }
                 self.presenter?.update(with: comment)
             case .failure(let error):
-                print(#function + "\r\n\(error.localizedDescription )")
                 self.presenter?.showError(with: error)
             }
         }

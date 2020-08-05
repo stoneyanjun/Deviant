@@ -14,7 +14,7 @@ class TopicDetailRouter: NSObject {
 }
 
 extension TopicDetailRouter: TopicDetailRouterInterface {
-    func showDeviation(with topicDetail: TopicDetailResult) {
+    func showDeviation(with topicDetail: DeviantDetailBase) {
         guard let navi = navigationController else { return }
 
         let detailParams = DeviantDetailParams(deviationid: topicDetail.deviationid.wrap() ,

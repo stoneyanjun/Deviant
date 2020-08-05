@@ -54,7 +54,7 @@ extension TopicDetailInteractor {
         }
     }
 
-    func showDeviation(with topicDetail: TopicDetailResult) {
+    func showDeviation(with topicDetail: DeviantDetailBase) {
         presenter?.showDeviation(with: topicDetail)
     }
 }

@@ -19,7 +19,7 @@ enum UriResource: String {
     case deviationMetadata
     case fetchComment
     case userStatuses
-    case moreLikeThis
+    case moreLikeThisPreview
 }
 
 class ServerInfoManager {

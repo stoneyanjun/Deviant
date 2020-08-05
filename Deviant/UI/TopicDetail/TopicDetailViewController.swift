@@ -21,7 +21,7 @@ class TopicDetailViewController: DeviantBaseViewController {
     var interactor: TopicDetailInteractorInterface?
     @IBOutlet private weak var collectionView: UICollectionView!
     private lazy var defaultCell = UICollectionViewCell()
-    private var results: [TopicDetailResult] = []
+    private var results: [DeviantDetailBase] = []
     private var offset = 0
 
     // MARK: View lifecycle
@@ -96,7 +96,7 @@ extension TopicDetailViewController: TopicDetailViewControllerInterface {
         showError(errorMsg: error.localizedDescription)
     }
 
-    func update(with results: [TopicDetailResult], nextOffset: Int) {
+    func update(with results: [DeviantDetailBase], nextOffset: Int) {
         if self.offset <= 0 {
             self.results.removeAll()
         }

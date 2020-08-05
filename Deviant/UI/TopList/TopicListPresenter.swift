@@ -30,7 +30,7 @@ extension TopicListPresenter: TopicListPresenterInterface {
         self.router?.showTopic(with: topicName)
     }
 
-    func showDeviation(with deviation: TopicListDeviation) {
+    func showDeviation(with deviation: DeviantDetailBase) {
         self.router?.showDeviation(with: deviation)
     }
 }

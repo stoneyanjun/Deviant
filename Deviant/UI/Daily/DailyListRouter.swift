@@ -14,7 +14,7 @@ class DailyListRouter: NSObject {
 }
 
 extension DailyListRouter: DailyListRouterInterface {
-    func showDeviation(with dailyResult: DailyResult) {
+    func showDeviation(with dailyResult: DeviantDetailBase) {
         guard let navi = navigationController else { return }
 
         let detailParams = DeviantDetailParams(deviationid: dailyResult.deviationid.wrap() ,

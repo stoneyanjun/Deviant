@@ -23,7 +23,7 @@ struct CommentThread: HandyJSON {
     var replies: Int?
     var hidden: String?
     var body: String?
-    var user: CommentUser?
+    var user: DeviantDetailAuthor?
     var commentid: String?
     var posted: String?
 }

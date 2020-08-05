@@ -42,7 +42,7 @@ struct DeviantDetailBase: HandyJSON {
     var title: String?
     var isDownloadable: Bool?
     var isMature: Bool?
-    var thumbs: [DeviantDetailThumbs]?
+    var thumbs: [DeviantDetailThumb]?
     var downloadFilesize: Int?
     var category: String?
     var preview: DeviantDetailPreview?
