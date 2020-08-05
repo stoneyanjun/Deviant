@@ -1,8 +1,8 @@
 //
 //  DeviantDetailPreview.swift
+//  Deviant
 //
-//  Created by Stone on 1/8/2020
-//  Copyright (c) . All rights reserved.
+//  Copyright © 2020 Stone. All rights reserved.
 //
 
 import Foundation

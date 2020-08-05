@@ -1,8 +1,8 @@
 //
 //  CommentThread.swift
+//  Deviant
 //
-//  Created by Stone on 4/8/2020
-//  Copyright (c) . All rights reserved.
+//  Copyright © 2020 Stone. All rights reserved.
 //
 
 import Foundation
@@ -10,7 +10,6 @@ import HandyJSON
 import SwiftSoup
 
 struct CommentThread: HandyJSON {
-
     enum CodingKeys: String, CodingKey {
         case replies
         case hidden
