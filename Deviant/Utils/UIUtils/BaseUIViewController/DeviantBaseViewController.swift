@@ -6,6 +6,7 @@
 //  Copyright © 2020 JustNow. All rights reserved.
 //
 
+import DZNEmptyDataSet
 import PKHUD
 import UIKit
 
@@ -14,6 +15,7 @@ class DeviantBaseViewController: UIViewController {
         static let baseMargin: CGFloat = 16
         static let backButtonInsets = UIEdgeInsets(top: 0, left: -11, bottom: 0, right: 0)
         static let delayTime: TimeInterval = 0.5
+        static let errorDisplayTime: TimeInterval = 4.0
     }
 
     override func viewDidLoad() {
@@ -31,7 +33,7 @@ extension DeviantBaseViewController {
     }
 
     func showError(errorMsg: String) {
-        HUD.flash(.labeledError(title: "DeviantArt", subtitle: errorMsg), delay: 3.0)
+        HUD.flash(.labeledError(title: "DeviantArt", subtitle: errorMsg), delay: Const.errorDisplayTime)
     }
 
     func customLeftBarButton() {
@@ -46,5 +48,19 @@ extension DeviantBaseViewController {
     @objc
     func leftBarButtonAction() {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+extension DeviantBaseViewController: DZNEmptyDataSetSource {
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "bigEmpty") ?? UIImage()
+    }
+
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: "No date")
+    }
+
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControl.State) -> NSAttributedString! {
+        return NSAttributedString(string: "Try again")
     }
 }

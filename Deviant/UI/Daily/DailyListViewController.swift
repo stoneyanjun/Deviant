@@ -6,6 +6,7 @@
 //  Copyright (c) 2020 JustNow. All rights reserved.
 //
 
+import DZNEmptyDataSet
 import Kingfisher
 import Reusable
 import SnapKit
@@ -20,17 +21,30 @@ class DailyListViewController: DeviantBaseViewController {
     var interactor: DailyListInteractorInterface?
     private(set) var dailyTableView: UITableView!
     private lazy var defaultCell = UITableViewCell()
-    private var datas: [DeviantDetailBase] = []
+    private var results: [DeviantDetailBase] = []
 
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         makeView()
+        interactor?.tryFetchDaily(with: "")
+
+        dailyTableView.es.addPullToRefresh {
+            self.interactor?.tryFetchDaily(with: "")
+        }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        interactor?.tryFetchDaily(with: "")
+    private func stopES() {
+        dailyTableView.es.stopPullToRefresh()
+        dailyTableView.es.stopLoadingMore()
+    }
+
+    private func updateTableView() {
+        if results.isEmpty {
+            dailyTableView.emptyDataSetDelegate = self
+            dailyTableView.emptyDataSetSource = self
+        }
+        dailyTableView.reloadData()
     }
 }
 
@@ -58,12 +72,12 @@ extension DailyListViewController {
 
 extension DailyListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return datas.count
+        return results.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.reuseIdentifier, for: indexPath) as? DailyTableViewCell {
-            cell.update(with: datas[indexPath.row])
+            cell.update(with: results[indexPath.row])
             return cell
         } else {
             return defaultCell
@@ -73,20 +87,31 @@ extension DailyListViewController: UITableViewDataSource {
 
 extension DailyListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        interactor?.showDeviation(with: datas[indexPath.row])
+        interactor?.showDeviation(with: results[indexPath.row])
     }
 }
 
 extension DailyListViewController: DailyListViewControllerInterface {
     func setLoadingView(with status: Bool) {
+        stopES()
         setHUD(with: status)
     }
     func showError(with error: Error) {
+        stopES()
         showError(errorMsg: error.localizedDescription)
+        updateTableView()
     }
 
     func update(with results: [DeviantDetailBase]) {
-        datas = results
-        dailyTableView.reloadData()
+        stopES()
+        setLoadingView(with: false)
+        self.results = results
+        updateTableView()
+    }
+}
+
+extension DailyListViewController: DZNEmptyDataSetDelegate {
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        interactor?.tryFetchDaily(with: "")
     }
 }

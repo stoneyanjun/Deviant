@@ -16,6 +16,9 @@ class RootViewController: UIViewController {
     private lazy var viewControllers: [UIViewController] = {
         return self.prepareViewControllers()
     }()
+    private enum Const {
+        static let segementHeight: CGFloat = 50
+    }
     private var offset = 0
 
     override func viewDidLoad() {
@@ -40,13 +43,13 @@ extension RootViewController {
 
     private func setupScrollView() {
         scrollView.contentSize = CGSize(width: UIScreen.width * CGFloat(viewControllers.count),
-                                        height: containView.frame.size.height)
+                                        height: containView.frame.size.height - Const.segementHeight)
 
         for (index, viewController) in viewControllers.enumerated() {
             viewController.view.frame = CGRect(x: CGFloat(index) * UIScreen.width,
                                                y: 0,
                                                width: view.frame.width,
-                                               height: view.frame.height)
+                                               height: (containView.frame.size.height))
             addChild(viewController)
             scrollView.addSubview(viewController.view, options: .useAutoresize)
             viewController.didMove(toParent: self)
@@ -54,7 +57,7 @@ extension RootViewController {
     }
 
     private func setupSegment() {
-        SegmentioBuilder.buildSegmentioView(segmentioView: segmentioView, segmentioStyle: .onlyLabel)
+        SegmentioBuilder.buildHomeSegmentioView(segmentioView: segmentioView, segmentioStyle: .onlyLabel)
 
         segmentioView.valueDidChange = { [weak self] _, segmentIndex in
             if let scrollWidth = self?.scrollView.frame.width {
@@ -63,8 +66,7 @@ extension RootViewController {
                                                   animated: true)
             }
         }
-
-        segmentioView.selectedSegmentioIndex = 1
+        segmentioView.selectedSegmentioIndex = 0
     }
 }
 

@@ -33,7 +33,7 @@ class DailyTableViewCell: UITableViewCell, Reusable {
     func update(with result: DeviantDetailBase) {
         if let usericon = result.author?.usericon,
             let url = URL(string: usericon) {
-            usericonImageView.kf.setImage(with: url)
+            usericonImageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
         } else {
             usericonImageView.image = UIImage(named: "AvatorWhite")
         }
@@ -52,7 +52,7 @@ class DailyTableViewCell: UITableViewCell, Reusable {
 
         if let src = result.preview?.src ,
             let url = URL(string: src) {
-            srcImageView.kf.setImage(with: url, placeholder: nil, options: nil, progressBlock: nil) { [weak self] result in
+            srcImageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"), options: nil, progressBlock: nil) { [weak self] result in
                 guard let strongSelf = self else {
                     return
                 }
@@ -77,7 +77,7 @@ class DailyTableViewCell: UITableViewCell, Reusable {
     }
 
     private func setImageViewWhenFailure() {
-        loadingImageView.image = UIImage(named: "NotFound")
+        loadingImageView.image = UIImage(named: "bigEmpty")
         loadingImageView.isHidden = false
     }
 

@@ -6,6 +6,7 @@
 //  Copyright (c) 2020 JustNow. All rights reserved.
 //
 
+import DZNEmptyDataSet
 import Kingfisher
 import Reusable
 import SnapKit
@@ -20,16 +21,12 @@ class CommentViewController: DeviantBaseViewController {
     var interactor: CommentInteractorInterface?
     private(set) var commentTableView: UITableView!
     private lazy var defaultCell = UITableViewCell()
-    private var comments: [CommentTableViewCell.ViewData] = []
+    private var results: [CommentTableViewCell.ViewData] = []
 
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         makeView()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         interactor?.tryFetchComments()
     }
 }
@@ -54,6 +51,14 @@ extension CommentViewController {
             make.edges.equalToSuperview()
         }
     }
+
+    private func updateTableView() {
+        if results.isEmpty {
+            commentTableView.emptyDataSetDelegate = self
+            commentTableView.emptyDataSetSource = self
+        }
+        commentTableView.reloadData()
+    }
 }
 
 extension CommentViewController: UITableViewDelegate {
@@ -63,12 +68,12 @@ extension CommentViewController: UITableViewDelegate {
 
 extension CommentViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return comments.count
+        return results.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.reuseIdentifier, for: indexPath) as? CommentTableViewCell {
-            cell.update(with: comments[indexPath.row])
+            cell.update(with: results[indexPath.row])
             return cell
         } else {
             return defaultCell
@@ -82,11 +87,18 @@ extension CommentViewController: CommentViewControllerInterface {
     }
     func showError(with error: Error) {
         showError(errorMsg: error.localizedDescription)
+        updateTableView()
     }
 
-    func update(with comments: [CommentTableViewCell.ViewData]) {
-//        datas = results
-        self.comments = comments
-        commentTableView.reloadData()
+    func update(with results: [CommentTableViewCell.ViewData]) {
+        setLoadingView(with: false)
+        self.results = results
+        updateTableView()
+    }
+}
+
+extension CommentViewController: DZNEmptyDataSetDelegate {
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        interactor?.tryFetchComments()
     }
 }

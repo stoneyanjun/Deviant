@@ -18,19 +18,35 @@ struct SegmentioBuilder {
         )
     }
 
-    static func buildSegmentioView(segmentioView: Segmentio, segmentioStyle: SegmentioStyle, segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: 3)) {
+    static func buildHomeSegmentioView(segmentioView: Segmentio, segmentioStyle: SegmentioStyle, segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: 3)) {
         segmentioView.setup(
-            content: segmentioContent(),
+            content: homeSegmentioContent(),
             style: segmentioStyle,
             options: segmentioOptions(segmentioStyle: segmentioStyle, segmentioPosition: segmentioPosition)
         )
     }
 
-    private static func segmentioContent() -> [SegmentioItem] {
+    static func buildDetailSegmentioView(segmentioView: Segmentio, segmentioStyle: SegmentioStyle, segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: 3)) {
+        segmentioView.setup(
+            content: detailSegmentioContent(),
+            style: segmentioStyle,
+            options: segmentioOptions(segmentioStyle: segmentioStyle, segmentioPosition: segmentioPosition)
+        )
+    }
+
+    private static func homeSegmentioContent() -> [SegmentioItem] {
         return [
             SegmentioItem(title: "Popular", image: nil),
             SegmentioItem(title: "Topic", image: nil),
             SegmentioItem(title: "Daily", image: nil)
+        ]
+    }
+
+    private static func detailSegmentioContent() -> [SegmentioItem] {
+        return [
+            SegmentioItem(title: "Info", image: nil),
+            SegmentioItem(title: "Comment", image: nil),
+            SegmentioItem(title: "More", image: nil)
         ]
     }
 

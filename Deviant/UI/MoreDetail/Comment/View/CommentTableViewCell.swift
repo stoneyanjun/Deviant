@@ -6,9 +6,9 @@
 //  Copyright © 2020 JustNow. All rights reserved.
 //
 
+import Kingfisher
 import Reusable
 import UIKit
-import Kingfisher
 
 class CommentTableViewCell: UITableViewCell, Reusable {
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -27,7 +27,7 @@ class CommentTableViewCell: UITableViewCell, Reusable {
     func update(with viewData: ViewData) {
         if let avatarUrlString = viewData.avatarUrlString,
             let url = URL(string: avatarUrlString) {
-            avatarImageView.kf.setImage(with: url)
+            avatarImageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
         } else {
             avatarImageView.image = UIImage(named: "commentAvatar")
         }

@@ -7,6 +7,7 @@
 //
 
 import CHTCollectionViewWaterfallLayout
+import DZNEmptyDataSet
 import Kingfisher
 import Reusable
 import UIKit
@@ -18,8 +19,8 @@ class TopicDetailViewController: DeviantBaseViewController {
         static let minSpace: CGFloat = 1.0
     }
 
-    var interactor: TopicDetailInteractorInterface?
     @IBOutlet private weak var collectionView: UICollectionView!
+    var interactor: TopicDetailInteractorInterface?
     private lazy var defaultCell = UICollectionViewCell()
     private var results: [DeviantDetailBase] = []
     private var offset = 0
@@ -29,10 +30,6 @@ class TopicDetailViewController: DeviantBaseViewController {
         super.viewDidLoad()
         customLeftBarButton()
         setupCollectionView()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         interactor?.tryFetchTopic(with: offset)
     }
 }
@@ -51,6 +48,14 @@ extension TopicDetailViewController {
 
         let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
         collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
+    }
+
+    private func updateCollectionView() {
+        if results.isEmpty {
+            collectionView.emptyDataSetDelegate = self
+            collectionView.emptyDataSetSource = self
+        }
+        collectionView.reloadData()
     }
 }
 
@@ -71,7 +76,7 @@ extension TopicDetailViewController: UICollectionViewDataSource {
             let url = URL(string: src) else {
             return UICollectionViewCell()
         }
-        cell.image.kf.setImage(with: url, placeholder: nil)
+        cell.image.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
         return cell
     }
 }
@@ -94,6 +99,7 @@ extension TopicDetailViewController: TopicDetailViewControllerInterface {
     }
     func showError(with error: Error) {
         showError(errorMsg: error.localizedDescription)
+        updateCollectionView()
     }
 
     func update(with results: [DeviantDetailBase], nextOffset: Int) {
@@ -102,6 +108,12 @@ extension TopicDetailViewController: TopicDetailViewControllerInterface {
         }
         self.results.append(contentsOf: results)
         self.offset = nextOffset
-        self.collectionView.reloadData()
+        updateCollectionView()
+    }
+}
+
+extension TopicDetailViewController: DZNEmptyDataSetDelegate {
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        interactor?.tryFetchTopic(with: offset)
     }
 }

@@ -23,6 +23,8 @@ target 'Deviant' do
   pod 'Segmentio'
   pod 'CHTCollectionViewWaterfallLayout/Swift'
   pod 'PanModal'
+
+  pod 'DZNEmptyDataSet'
   
   pod 'Localize-Swift'
 

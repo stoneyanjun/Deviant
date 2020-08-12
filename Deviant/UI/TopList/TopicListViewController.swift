@@ -6,6 +6,8 @@
 //
 
 import CHTCollectionViewWaterfallLayout
+import DZNEmptyDataSet
+import ESPullToRefresh
 import Kingfisher
 import UIKit
 
@@ -17,8 +19,8 @@ class TopicListViewController: DeviantBaseViewController {
         static let headerHeight: CGFloat = 50.0
     }
 
-    var interactor: TopicListInteractorInterface?
     @IBOutlet private weak var collectionView: UICollectionView!
+    var interactor: TopicListInteractorInterface?
     private lazy var defaultCell = UICollectionViewCell()
     private var results: [TopicListResult] = []
     private var offset = 0
@@ -27,11 +29,27 @@ class TopicListViewController: DeviantBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        interactor?.tryFetchTopicList(with: offset)
+        collectionView.es.addPullToRefresh {
+            self.offset = 0
+            self.interactor?.tryFetchTopicList(with: self.offset)
+        }
+        collectionView.es.addInfiniteScrolling {
+            self.interactor?.tryFetchTopicList(with: self.offset)
+        }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        interactor?.tryFetchTopicList(with: offset)
+    private func stopES() {
+        collectionView.es.stopPullToRefresh()
+        collectionView.es.stopLoadingMore()
+    }
+
+    private func updateCollectionView() {
+        if results.isEmpty {
+            collectionView.emptyDataSetDelegate = self
+            collectionView.emptyDataSetSource = self
+        }
+        collectionView.reloadData()
     }
 }
 
@@ -79,7 +97,7 @@ extension TopicListViewController: UICollectionViewDataSource {
             let url = URL(string: src) else {
                return collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
         }
-        cell.image.kf.setImage(with: url, placeholder: nil)
+        cell.image.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
         return cell
     }
 
@@ -120,16 +138,27 @@ extension TopicListViewController: TopicListViewControllerInterface {
     func setLoadingView(with status: Bool) {
         setHUD(with: status)
     }
+
     func showError(with error: Error) {
+        stopES()
         showError(errorMsg: error.localizedDescription)
+        updateCollectionView()
     }
 
     func update(with results: [TopicListResult], nextOffset: Int) {
+        setLoadingView(with: false)
+        stopES()
         if self.offset <= 0 {
             self.results.removeAll()
         }
         self.results.append(contentsOf: results)
         self.offset = nextOffset
-        self.collectionView.reloadData()
+        updateCollectionView()
+    }
+}
+
+extension TopicListViewController: DZNEmptyDataSetDelegate {
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        interactor?.tryFetchTopicList(with: offset)
     }
 }

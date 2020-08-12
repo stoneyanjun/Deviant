@@ -6,6 +6,7 @@
 //  Copyright (c) 2020 JustNow. All rights reserved.
 //
 
+import DZNEmptyDataSet
 import Kingfisher
 import PanModal
 import Reusable
@@ -13,7 +14,6 @@ import SwifterSwift
 import UIKit
 
 class MetadataViewController: DeviantBaseViewController {
-    var interactor: MetadataInteractorInterface?
 
     enum Const {
         static let minColumnSpace: CGFloat = 4.0
@@ -36,17 +36,14 @@ class MetadataViewController: DeviantBaseViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
 
-    var meta: MetadataBase?
-//    private var deviantDetail: MetadataBase?
+    private var meta: MetadataBase?
+    var interactor: MetadataInteractorInterface?
+
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         customLeftBarButton()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         interactor?.tryFetchMetadata()
     }
 }
@@ -60,6 +57,7 @@ extension MetadataViewController: MetadataViewControllerInterface {
     }
 
     func update(with meta: MetadataBase) {
+        setLoadingView(with: false)
         self.meta = meta
         updateUI()
     }
@@ -70,7 +68,7 @@ extension MetadataViewController {
         titleLabel.text = meta?.metadata?.first?.title
         if let usericon = meta?.metadata?.first?.author?.usericon,
             let url = URL(string: usericon) {
-            avatorImageView.kf.setImage(with: url)
+            avatorImageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
         } else {
             avatorImageView.image = UIImage(named: "AvatorWhite")
         }
@@ -103,9 +101,6 @@ extension MetadataViewController {
         flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         collectionView.setCollectionViewLayout(flowLayout, animated: false)
 
-//        collectionView.autoresizingMask = [.flexibleWidth]
-//        collectionView.alwaysBounceVertical = true
-
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         let viewNib = UINib(nibName: "TagCollectionViewCell", bundle: nil)
         collectionView.register(viewNib, forCellWithReuseIdentifier: TagCollectionViewCell.reuseIdentifier)
@@ -129,5 +124,11 @@ extension MetadataViewController: UICollectionViewDataSource {
         }
         cell.tagLabel.text = tags[indexPath.row].tagName
         return cell
+    }
+}
+
+extension MetadataViewController: DZNEmptyDataSetDelegate {
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        interactor?.tryFetchMetadata()
     }
 }

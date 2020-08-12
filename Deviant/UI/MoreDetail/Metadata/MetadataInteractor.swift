@@ -21,6 +21,7 @@ class MetadataInteractor {
 
 extension MetadataInteractor: MetadataInteractorInterface {
     func tryFetchMetadata() {
+        presenter?.setLoadingView(with: true)
         if TokenManager.shared.needFetchToken() {
             TokenManager.shared.fetchToken { result in
                 switch result {

@@ -21,7 +21,7 @@ extension DailyListPresenter: DailyListPresenterInterface {
     func showError(with error: Error) {
         viewController?.showError(with: error)
     }
-    
+
     func update(with results: [DeviantDetailBase]) {
         viewController?.update(with: results)
     }

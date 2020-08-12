@@ -22,10 +22,6 @@ class DeviantDetailViewController: DeviantBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customLeftBarButton()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         interactor?.tryFetchDeviantDetail()
     }
 }
@@ -39,6 +35,7 @@ extension DeviantDetailViewController: DeviantDetailViewControllerInterface {
     }
 
     func update(with deviantDetail: DeviantDetailBase) {
+        setLoadingView(with: false)
         self.deviantDetail = deviantDetail
         updateUI()
     }
@@ -48,7 +45,7 @@ extension DeviantDetailViewController {
     func updateUI() {
         guard let detail = deviantDetail else { return }
         if let url = URL(string: (detail.content?.src ?? "")) {
-            contentImageView.kf.setImage(with: url, placeholder: nil)
+            contentImageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
         }
 
         if let comments = detail.stats?.comments, comments > 0 {

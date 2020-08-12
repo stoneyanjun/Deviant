@@ -21,6 +21,7 @@ class PopularListInteractor {
 
 extension PopularListInteractor: PopularListInteractorInterface {
     func tryFetchPopular(with offset: Int) {
+        presenter?.setLoadingView(with: true)
         if TokenManager.shared.needFetchToken() {
             TokenManager.shared.fetchToken { result in
                 switch result {

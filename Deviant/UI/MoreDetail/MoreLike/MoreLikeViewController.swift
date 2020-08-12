@@ -6,6 +6,7 @@
 //
 
 import CHTCollectionViewWaterfallLayout
+import DZNEmptyDataSet
 import Kingfisher
 import UIKit
 
@@ -30,10 +31,6 @@ class MoreLikeViewController: DeviantBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         interactor?.tryFetchMoreLike()
     }
 }
@@ -55,6 +52,14 @@ extension MoreLikeViewController {
         let headNib = UINib(nibName: "TopicListHeadView", bundle: nil)
         collectionView.register(headNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TopicListHeadView.reuseIdentifier)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
+    }
+
+    private func updateCollectionView() {
+        if moreFromArtist.isEmpty && moreFromDa.isEmpty {
+            collectionView.emptyDataSetDelegate = self
+            collectionView.emptyDataSetSource = self
+        }
+        collectionView.reloadData()
     }
 }
 
@@ -81,7 +86,7 @@ extension MoreLikeViewController: UICollectionViewDataSource {
                return collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
         }
         if let url = getURL(indexPath: indexPath) {
-            cell.image.kf.setImage(with: url, placeholder: nil)
+            cell.image.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
         }
         return cell
     }
@@ -155,11 +160,19 @@ extension MoreLikeViewController: MoreLikeViewControllerInterface {
     }
     func showError(with error: Error) {
         showError(errorMsg: error.localizedDescription)
+        updateCollectionView()
     }
 
     func update(with moreFromArtist: [DeviantDetailBase], moreFromDa: [DeviantDetailBase]) {
+        setLoadingView(with: false)
         self.moreFromArtist = moreFromArtist
         self.moreFromDa = moreFromDa
-        collectionView.reloadData()
+        updateCollectionView()
+    }
+}
+
+extension MoreLikeViewController: DZNEmptyDataSetDelegate {
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        interactor?.tryFetchMoreLike()
     }
 }

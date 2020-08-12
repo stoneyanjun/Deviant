@@ -21,6 +21,7 @@ class TopicListInteractor {
 
 extension TopicListInteractor: TopicListInteractorInterface {
     func tryFetchTopicList(with offset: Int) {
+        presenter?.setLoadingView(with: true)
         if TokenManager.shared.needFetchToken() {
             TokenManager.shared.fetchToken { result in
                 switch result {

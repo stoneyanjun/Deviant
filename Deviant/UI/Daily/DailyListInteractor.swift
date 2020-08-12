@@ -42,6 +42,7 @@ extension DailyListInteractor: DailyListInteractorInterface {
 
 extension DailyListInteractor {
     private func fetchDaily(with date: String) {
+        presenter?.setLoadingView(with: true)
         NetworkManager<DeviantService>().networkRequest(target: .fetchDaily(date: date)) { result in
             switch result {
             case .success(let json):

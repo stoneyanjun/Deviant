@@ -65,7 +65,7 @@ extension MoreDetailContainerVC {
     }
 
     private func setupSegment() {
-        SegmentioBuilder.buildSegmentioView(segmentioView: segmentioView, segmentioStyle: .onlyLabel)
+        SegmentioBuilder.buildDetailSegmentioView(segmentioView: segmentioView, segmentioStyle: .onlyLabel)
 
         segmentioView.valueDidChange = { [weak self] _, segmentIndex in
             if let scrollWidth = self?.scrollView.frame.width {
@@ -74,8 +74,7 @@ extension MoreDetailContainerVC {
                                                   animated: true)
             }
         }
-
-        segmentioView.selectedSegmentioIndex = 1
+        segmentioView.selectedSegmentioIndex = 0
     }
 }
 
