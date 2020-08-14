@@ -27,7 +27,8 @@ target 'Deviant' do
   pod 'DZNEmptyDataSet'
   
   pod 'Localize-Swift'
-
+  pod 'Firebase/Analytics'
+  
 end
 
 

@@ -33,6 +33,8 @@
 		8E4FA46A24CFB8B000742432 /* TopicListHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4FA46824CFB8B000742432 /* TopicListHeadView.swift */; };
 		8E4FA46B24CFB8B000742432 /* TopicListHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E4FA46924CFB8B000742432 /* TopicListHeadView.xib */; };
 		8E54E6D024D1A88000339EFA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E54E6CF24D1A88000339EFA /* UIView+Extension.swift */; };
+		8E5C799024E67B8500DBAE28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E5C798F24E67B8500DBAE28 /* GoogleService-Info.plist */; };
+		8E5C799324E689B400DBAE28 /* PopularListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5C799224E689B400DBAE28 /* PopularListInteractorTests.swift */; };
 		8E5F843E24DA3EED002E6E47 /* MoreLikeThisPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F843D24DA3EED002E6E47 /* MoreLikeThisPreview.swift */; };
 		8E5F844224DA4715002E6E47 /* DeviantDetailThumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F844124DA4715002E6E47 /* DeviantDetailThumb.swift */; };
 		8E5F844A24DA5447002E6E47 /* MetadataStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F844324DA5447002E6E47 /* MetadataStats.swift */; };
@@ -186,6 +188,8 @@
 		8E4FA46824CFB8B000742432 /* TopicListHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListHeadView.swift; sourceTree = "<group>"; };
 		8E4FA46924CFB8B000742432 /* TopicListHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicListHeadView.xib; sourceTree = "<group>"; };
 		8E54E6CF24D1A88000339EFA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		8E5C798F24E67B8500DBAE28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Config/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8E5C799224E689B400DBAE28 /* PopularListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListInteractorTests.swift; sourceTree = "<group>"; };
 		8E5F843D24DA3EED002E6E47 /* MoreLikeThisPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikeThisPreview.swift; sourceTree = "<group>"; };
 		8E5F844124DA4715002E6E47 /* DeviantDetailThumb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailThumb.swift; sourceTree = "<group>"; };
 		8E5F844324DA5447002E6E47 /* MetadataStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataStats.swift; sourceTree = "<group>"; };
@@ -357,6 +361,7 @@
 		8E1B7FE924C0A4C9008C059C /* Deviant */ = {
 			isa = PBXGroup;
 			children = (
+				8E5C798F24E67B8500DBAE28 /* GoogleService-Info.plist */,
 				8E1B7FEA24C0A4C9008C059C /* AppDelegate.swift */,
 				8E1B803924C0B405008C059C /* Config */,
 				8E1B7FF824C0A4CB008C059C /* Info.plist */,
@@ -373,6 +378,7 @@
 		8E1B800024C0A4CB008C059C /* DeviantTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E5C799124E6897F00DBAE28 /* PopularListTest */,
 				8E1B800124C0A4CB008C059C /* DeviantTests.swift */,
 				8E1B800324C0A4CB008C059C /* Info.plist */,
 			);
@@ -594,6 +600,14 @@
 				8E54E6CF24D1A88000339EFA /* UIView+Extension.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		8E5C799124E6897F00DBAE28 /* PopularListTest */ = {
+			isa = PBXGroup;
+			children = (
+				8E5C799224E689B400DBAE28 /* PopularListInteractorTests.swift */,
+			);
+			path = PopularListTest;
 			sourceTree = "<group>";
 		};
 		8E5F842624DA3BA4002E6E47 /* MoreLikeThisPreview */ = {
@@ -941,6 +955,7 @@
 				8EAED44024D545C1004E8AC3 /* DeviantDetailViewController.xib in Resources */,
 				8E1B7FF724C0A4CB008C059C /* LaunchScreen.storyboard in Resources */,
 				8E1B7FF424C0A4CB008C059C /* Assets.xcassets in Resources */,
+				8E5C799024E67B8500DBAE28 /* GoogleService-Info.plist in Resources */,
 				8E944EDC24C89F330050B76B /* TopicListViewController.xib in Resources */,
 				8EA310D124D10CB3008813B7 /* DailyTableViewCell.xib in Resources */,
 				8E66AC6B24D68C1D00A384AE /* TagCollectionViewCell.xib in Resources */,
@@ -1144,6 +1159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E5C799324E689B400DBAE28 /* PopularListInteractorTests.swift in Sources */,
 				8E1B800224C0A4CB008C059C /* DeviantTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1318,7 +1334,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.-JustNow.Deviant";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JustNow.Deviant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1338,7 +1354,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.-JustNow.Deviant";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JustNow.Deviant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
