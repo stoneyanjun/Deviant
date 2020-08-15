@@ -4,7 +4,7 @@
 //
 //  Copyright © 2020 Stone. All rights reserved.
 //
-/*
+
 @testable import Deviant
 import Foundation
 import XCTest
@@ -51,20 +51,20 @@ class TopicListPresenterTests: XCTestCase {
         viewController.nextOffset = -1
         viewController.results.removeAll()
         let offset = 1
-        let deviationid = "001"
-        let bases  = [DeviantDetailBase(deviationid: deviationid)]
 
         //When Then
-        presenter.update(with: bases, nextOffset: offset)
+        presenter.update(with: [DeviantMockData.topicListResult], nextOffset: offset)
 
         //Then
         XCTAssertEqual(viewController.nextOffset, offset)
-        XCTAssertEqual(viewController.results.count, bases.count)
-        XCTAssertEqual(viewController.results.first?.deviationid.wrap(), bases.first?.deviationid.wrap())
+        XCTAssertEqual(viewController.results.count, 1)
+        XCTAssertEqual(viewController.results.first?.exampleDeviations?.first?.deviationid.wrap(),
+                       DeviantMockData.topicListResult.exampleDeviations?.first?.deviationid.wrap())
     }
-    func testShowDeviation(with TopicResult: DeviantDetailBase) {
+
+    func testShowDeviation(with deviation: DeviantDetailBase) {
         //Given
-        router.TopicResult = nil
+        router.deviation = nil
         let deviationid = "001"
         let base = DeviantDetailBase(deviationid: deviationid)
 
@@ -72,8 +72,20 @@ class TopicListPresenterTests: XCTestCase {
         presenter.showDeviation(with: base)
 
         //Then
-        XCTAssertNotNil(router.TopicResult)
-        XCTAssertEqual(router.TopicResult?.deviationid.wrap(), deviationid)
+        XCTAssertNotNil(router.deviation)
+        XCTAssertEqual(router.deviation?.deviationid.wrap(), deviationid)
+    }
+
+    func testShowTopic(with topicName: String) {
+        //Given
+        let topicName = "TestTopic"
+        router.topicName = ""
+
+        //When
+        presenter.showTopic(with: topicName)
+
+        //Then
+        XCTAssertEqual(router.topicName, topicName)
     }
 }
 
@@ -81,7 +93,7 @@ class TopicListViewControllerSpy: UIViewController, TopicListViewControllerInter
     var called = false
     var showErrorCalled = false
     var nextOffset = -1
-    var results: [DeviantDetailBase] = []
+    var results: [TopicListResult] = []
 
     func showError(with error: Error) {
         showErrorCalled = true
@@ -92,7 +104,8 @@ class TopicListViewControllerSpy: UIViewController, TopicListViewControllerInter
     }
 
     func update(with results: [TopicListResult], nextOffset: Int) {
-        
+        self.results.append(contentsOf: results)
+        self.nextOffset = nextOffset
     }
 }
 
@@ -109,4 +122,3 @@ class TopicListRouterSpy: TopicListRouterInterface {
         self.deviation = deviation
     }
 }
-*/

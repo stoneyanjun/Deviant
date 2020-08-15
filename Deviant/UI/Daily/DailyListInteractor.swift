@@ -2,8 +2,7 @@
 //  DailyListInteractor.swift
 //  Deviant
 //
-//  Created by Stone on 29/7/2020.
-//  Copyright (c) 2020 JustNow. All rights reserved.
+//  Copyright © 2020 Stone. All rights reserved.
 //
 
 import HandyJSON
@@ -21,6 +20,7 @@ class DailyListInteractor {
 
 extension DailyListInteractor: DailyListInteractorInterface {
     func tryFetchDaily(with date: String) {
+        presenter?.setLoadingView(with: true)
         if TokenManager.shared.needFetchToken() {
             TokenManager.shared.fetchToken { result in
                 switch result {

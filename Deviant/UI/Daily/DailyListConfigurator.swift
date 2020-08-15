@@ -2,8 +2,7 @@
 //  DailyListConfigurator.swift
 //  Deviant
 //
-//  Created by Stone on 29/7/2020.
-//  Copyright (c) 2020 JustNow. All rights reserved.
+//  Copyright © 2020 Stone. All rights reserved.
 //
 
 import UIKit

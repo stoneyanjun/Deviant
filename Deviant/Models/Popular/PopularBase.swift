@@ -1,8 +1,7 @@
 //
 //  PopularBase.swift
 //
-//  Created by Stone on 20/7/2020
-//  Copyright (c) . All rights reserved.
+//  Copyright © 2020 Stone. All rights reserved.
 //
 
 import Foundation

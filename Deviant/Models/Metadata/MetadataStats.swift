@@ -1,8 +1,7 @@
 //
 //  MetadataStats.swift
 //
-//  Created by Stone on 5/8/2020
-//  Copyright (c) . All rights reserved.
+//  Copyright © 2020 Stone. All rights reserved.
 //
 
 import Foundation

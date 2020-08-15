@@ -50,30 +50,26 @@ class PopularListPresenterTests: XCTestCase {
         //Given
         viewController.nextOffset = -1
         viewController.results.removeAll()
-        let offset = 1
-        let deviationid = "001"
-        let bases  = [DeviantDetailBase(deviationid: deviationid)]
 
         //When Then
-        presenter.update(with: bases, nextOffset: 1)
+        let offset = 1
+        presenter.update(with: [DeviantMockData.detail], nextOffset: offset)
 
         //Then
         XCTAssertEqual(viewController.nextOffset, offset)
-        XCTAssertEqual(viewController.results.count, bases.count)
-        XCTAssertEqual(viewController.results.first?.deviationid.wrap(), bases.first?.deviationid.wrap())
+        XCTAssertEqual(viewController.results.count, 1)
+        XCTAssertEqual(viewController.results.first?.deviationid.wrap(), DeviantMockData.deviantId)
     }
     func testShowDeviation(with popularResult: DeviantDetailBase) {
         //Given
         router.popularResult = nil
-        let deviationid = "001"
-        let base = DeviantDetailBase(deviationid: deviationid)
 
         //When Then
-        presenter.showDeviation(with: base)
+        presenter.showDeviation(with: DeviantMockData.detail)
 
         //Then
         XCTAssertNotNil(router.popularResult)
-        XCTAssertEqual(router.popularResult?.deviationid.wrap(), deviationid)
+        XCTAssertEqual(router.popularResult?.deviationid.wrap(), DeviantMockData.deviantId)
     }
 }
 

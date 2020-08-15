@@ -36,27 +36,24 @@ class TopicListInteractorTests: XCTestCase {
 
     func testShowTopic() {
         //Given
-        let topicName = "TestTopic"
         presenter.topicName = ""
 
         //When
-        interactor.showTopic(with: topicName)
+        interactor.showTopic(with: DeviantMockData.topicName)
 
         //Then
-        XCTAssertEqual(presenter.topicName, topicName)
+        XCTAssertEqual(presenter.topicName, DeviantMockData.topicName)
     }
 
     func testShowDeviation() {
         //Given
-        let deviationid = "001"
-        let base = DeviantDetailBase(deviationid: deviationid)
         presenter.deviation = nil
 
         //When
-        interactor.showDeviation(with: base)
+        interactor.showDeviation(with: DeviantMockData.detail)
 
         //Then
-        XCTAssertEqual(presenter.deviation?.deviationid.wrap(), deviationid)
+        XCTAssertEqual(presenter.deviation?.deviationid.wrap(), DeviantMockData.deviantId)
     }
 }
 
