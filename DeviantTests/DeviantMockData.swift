@@ -29,7 +29,7 @@ struct DeviantMockData {
     static let giverType = "volunteer"
     static let deviantTime = "2020-06-12T00:00:00-0700"
     static let publishedTime = "1591291314"
-    static let topicName = "test TopicName"
+    static let topicName = "Visual Art"
     static let canonicalName = "test canonicalName"
 
     static let author = DeviantDetailAuthor(type: authorType,

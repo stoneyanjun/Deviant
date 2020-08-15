@@ -1,5 +1,5 @@
 //
-//  PopularListPresenterTests.swift
+//  DailyListPresenterTests.swift
 //  DeviantTests
 //
 //  Copyright © 2020 Stone. All rights reserved.
@@ -9,16 +9,16 @@
 import Foundation
 import XCTest
 
-class PopularListPresenterTests: XCTestCase {
-    var presenter: PopularListPresenter!
-    var viewController: PopularListViewControllerSpy!
-    var router: PopularListRouterSpy!
+class DailyListPresenterTests: XCTestCase {
+    var presenter: DailyListPresenter!
+    var viewController: DailyListViewControllerSpy!
+    var router: DailyListRouterSpy!
 
     override func setUp() {
         super.setUp()
-        presenter = PopularListPresenter()
-        viewController = PopularListViewControllerSpy()
-        router = PopularListRouterSpy()
+        presenter = DailyListPresenter()
+        viewController = DailyListViewControllerSpy()
+        router = DailyListRouterSpy()
 
         presenter.viewController = viewController
         presenter.router = router
@@ -48,35 +48,33 @@ class PopularListPresenterTests: XCTestCase {
 
     func testUpdate() {
         //Given
-        viewController.nextOffset = -1
         viewController.results.removeAll()
 
-        //When Then
-        let offset = 1
-        presenter.update(with: [DeviantMockData.detail], nextOffset: offset)
+        //When
+        presenter.update(with: [DeviantMockData.detail])
 
         //Then
-        XCTAssertEqual(viewController.nextOffset, offset)
         XCTAssertEqual(viewController.results.count, 1)
-        XCTAssertEqual(viewController.results.first?.deviationid.wrap(), DeviantMockData.deviantId)
+        XCTAssertEqual(viewController.results.first?.deviationid.wrap(),
+                       DeviantMockData.deviantId)
     }
+
     func testShowDeviation() {
         //Given
-        router.popularResult = nil
+        router.deviation = nil
 
-        //When Then
+        //When
         presenter.showDeviation(with: DeviantMockData.detail)
 
         //Then
-        XCTAssertNotNil(router.popularResult)
-        XCTAssertEqual(router.popularResult?.deviationid.wrap(), DeviantMockData.deviantId)
+        XCTAssertEqual(router.deviation?.deviationid.wrap(),
+                       DeviantMockData.deviantId)
     }
 }
 
-class PopularListViewControllerSpy: UIViewController, PopularListViewControllerInterface {
+class DailyListViewControllerSpy: UIViewController, DailyListViewControllerInterface {
     var called = false
     var showErrorCalled = false
-    var nextOffset = -1
     var results: [DeviantDetailBase] = []
 
     func showError(with error: Error) {
@@ -87,16 +85,16 @@ class PopularListViewControllerSpy: UIViewController, PopularListViewControllerI
         called = true
     }
 
-    func update(with results: [DeviantDetailBase], nextOffset: Int) {
-        self.nextOffset = nextOffset
+    func update(with results: [DeviantDetailBase]) {
         self.results.append(contentsOf: results)
     }
 }
 
-class PopularListRouterSpy: PopularListRouterInterface {
-    var popularResult: DeviantDetailBase?
+class DailyListRouterSpy: DailyListRouterInterface {
+    var deviation: DeviantDetailBase?
+    var navigationController: UINavigationController?
 
-    func showDeviation(with popularResult: DeviantDetailBase) {
-        self.popularResult = popularResult
+    func showDeviation(with dailyResult: DeviantDetailBase) {
+        self.deviation = dailyResult
     }
 }

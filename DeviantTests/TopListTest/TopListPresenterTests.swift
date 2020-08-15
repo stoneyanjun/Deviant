@@ -62,30 +62,26 @@ class TopicListPresenterTests: XCTestCase {
                        DeviantMockData.topicListResult.exampleDeviations?.first?.deviationid.wrap())
     }
 
-    func testShowDeviation(with deviation: DeviantDetailBase) {
+    func testShowDeviation() {
         //Given
         router.deviation = nil
-        let deviationid = "001"
-        let base = DeviantDetailBase(deviationid: deviationid)
 
         //When Then
-        presenter.showDeviation(with: base)
+        presenter.showDeviation(with: DeviantMockData.detail)
 
         //Then
-        XCTAssertNotNil(router.deviation)
-        XCTAssertEqual(router.deviation?.deviationid.wrap(), deviationid)
+        XCTAssertEqual(router.deviation?.deviationid.wrap(), DeviantMockData.deviantId)
     }
 
-    func testShowTopic(with topicName: String) {
+    func testShowTopic() {
         //Given
-        let topicName = "TestTopic"
         router.topicName = ""
 
         //When
-        presenter.showTopic(with: topicName)
+        presenter.showTopic(with: DeviantMockData.topicName)
 
         //Then
-        XCTAssertEqual(router.topicName, topicName)
+        XCTAssertEqual(router.topicName, DeviantMockData.topicName)
     }
 }
 
@@ -122,3 +118,4 @@ class TopicListRouterSpy: TopicListRouterInterface {
         self.deviation = deviation
     }
 }
+
