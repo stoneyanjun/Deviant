@@ -26,9 +26,11 @@ extension PopularListInteractor: PopularListInteractorInterface {
             TokenManager.shared.fetchToken { result in
                 switch result {
                 case .success:
+                    print(#function + " success")
                     self.fetchPopular(with: offset)
                 case .failure(let error):
                     self.presenter?.showError(with: error)
+                    print(#function + " error: \(error.localizedDescription)")
                 }
             }
         } else {
@@ -42,6 +44,7 @@ extension PopularListInteractor {
         NetworkManager<DeviantService>().networkRequest(target: .fetchPopular(categoryPath: "", query: "", timeRange: "", limit: NetworkConst.limit, offset: offset)) { result in
             switch result {
             case .success(let json):
+                print(#function + " success")
                 guard let popularBase = JSONDeserializer<PopularBase>.deserializeFrom(json: json.description),
                     let results = popularBase.results
                     else {
@@ -51,6 +54,7 @@ extension PopularListInteractor {
                 self.presenter?.update(with: results, nextOffset: popularBase.nextOffset ?? offset)
             case .failure(let error):
                 self.presenter?.showError(with: error)
+                print(#function + " error: \(error.localizedDescription)")
             }
         }
     }

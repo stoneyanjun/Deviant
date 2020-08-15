@@ -2,8 +2,7 @@
 //  TopicListHeadView.swift
 //  Deviant
 //
-//  Created by Stone on 28/7/2020.
-//  Copyright © 2020 JustNow. All rights reserved.
+//  Copyright © 2020 Stone. All rights reserved.
 //
 
 import Reusable

@@ -2,30 +2,58 @@
 //  PopularListInteractorTests.swift
 //  DeviantTests
 //
-//  Created by Stone on 14/8/2020.
-//  Copyright © 2020 JustNow. All rights reserved.
+//  Copyright © 2020 Stone. All rights reserved.
 //
 
+@testable import Deviant
 import Foundation
 import XCTest
 
 class PopularListInteractorTests: XCTestCase {
-//    var interactor: PopularListInteractor!
-//    var Presenter: PopularListPresenterSpy!
+    var interactor: PopularListInteractor!
+    var presenter: PopularListPresenterSpy!
+    var offset = 0
 
     override func setUp() {
         super.setUp()
+        let configuration = PopularListConfiguration()
+        interactor = PopularListInteractor(config: configuration)
+        presenter = PopularListPresenterSpy()
+        interactor.presenter = presenter
+    }
+
+    func testTryFetchPopular() {
+        //Given
+        presenter.called = false
+
+        //When
+        interactor.tryFetchPopular(with: self.offset)
+
+        //Then
+        XCTAssertTrue(presenter.called)
+    }
+
+    func testShowDeviation() {
+        //Given
+        let base = DeviantDetailBase()
+        presenter.showDeviationCalled = false
+
+        //When
+        interactor.showDeviation(with: base)
+
+        //Then
+        XCTAssertTrue(presenter.showDeviationCalled)
     }
 }
 
 class PopularListPresenterSpy: PopularListPresenterInterface {
-    var setLoadingViewCalled = false
+    var called = false
     var showErrorCalled = false
     var updateCalled = false
     var showDeviationCalled = false
 
     func setLoadingView(with status: Bool) {
-        setLoadingViewCalled = true
+        called = true
     }
 
     func showError(with error: Error) {

@@ -14,6 +14,5 @@ class ImageUICollectionViewCell: UICollectionViewCell, Reusable {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1FD1B41E440AA0E7B00EB104 /* Pods_Deviant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51567E4DEFD8B1D2471A373E /* Pods_Deviant.framework */; };
+		7FDE9C2047FE025642F01BE3 /* Pods_DeviantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D97992183629E87F01CDAE7 /* Pods_DeviantTests.framework */; };
 		8E1B7FEB24C0A4C9008C059C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B7FEA24C0A4C9008C059C /* AppDelegate.swift */; };
 		8E1B7FED24C0A4C9008C059C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B7FEC24C0A4C9008C059C /* SceneDelegate.swift */; };
 		8E1B7FEF24C0A4C9008C059C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B7FEE24C0A4C9008C059C /* RootViewController.swift */; };
@@ -89,6 +90,9 @@
 		8EA310CC24D10C58008813B7 /* DailyListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310C524D10C58008813B7 /* DailyListConfigurator.swift */; };
 		8EA310D024D10CB3008813B7 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310CE24D10CB3008813B7 /* DailyTableViewCell.swift */; };
 		8EA310D124D10CB3008813B7 /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EA310CF24D10CB3008813B7 /* DailyTableViewCell.xib */; };
+		8EA756DC24E76DA100C282CC /* PopularListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA756DB24E76DA100C282CC /* PopularListPresenterTests.swift */; };
+		8EA756E024E77DD100C282CC /* TopListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA756DE24E77DD100C282CC /* TopListInteractorTests.swift */; };
+		8EA756E124E77DD100C282CC /* TopListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA756DF24E77DD100C282CC /* TopListPresenterTests.swift */; };
 		8EAED41B24D52547004E8AC3 /* TopicDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED41324D52546004E8AC3 /* TopicDetailRouter.swift */; };
 		8EAED41C24D52547004E8AC3 /* TopicDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EAED41424D52546004E8AC3 /* TopicDetailViewController.xib */; };
 		8EAED41D24D52547004E8AC3 /* TopicDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED41524D52546004E8AC3 /* TopicDetailInteractor.swift */; };
@@ -155,8 +159,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A35E1EBE76FF158AA827EB0 /* Pods-DeviantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviantTests.release.xcconfig"; path = "Target Support Files/Pods-DeviantTests/Pods-DeviantTests.release.xcconfig"; sourceTree = "<group>"; };
+		2D97992183629E87F01CDAE7 /* Pods_DeviantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeviantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4152B91DEF81250BDDE8263B /* Pods-Deviant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deviant.debug.xcconfig"; path = "Target Support Files/Pods-Deviant/Pods-Deviant.debug.xcconfig"; sourceTree = "<group>"; };
 		51567E4DEFD8B1D2471A373E /* Pods_Deviant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Deviant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BC46D81D80E9EBB9DB022CE /* Pods-DeviantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviantTests.debug.xcconfig"; path = "Target Support Files/Pods-DeviantTests/Pods-DeviantTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E1B7FE724C0A4C9008C059C /* Deviant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deviant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1B7FEA24C0A4C9008C059C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E1B7FEC24C0A4C9008C059C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -244,6 +251,9 @@
 		8EA310C524D10C58008813B7 /* DailyListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListConfigurator.swift; sourceTree = "<group>"; };
 		8EA310CE24D10CB3008813B7 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 		8EA310CF24D10CB3008813B7 /* DailyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
+		8EA756DB24E76DA100C282CC /* PopularListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListPresenterTests.swift; sourceTree = "<group>"; };
+		8EA756DE24E77DD100C282CC /* TopListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopListInteractorTests.swift; sourceTree = "<group>"; };
+		8EA756DF24E77DD100C282CC /* TopListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopListPresenterTests.swift; sourceTree = "<group>"; };
 		8EAED41324D52546004E8AC3 /* TopicDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailRouter.swift; sourceTree = "<group>"; };
 		8EAED41424D52546004E8AC3 /* TopicDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicDetailViewController.xib; sourceTree = "<group>"; };
 		8EAED41524D52546004E8AC3 /* TopicDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailInteractor.swift; sourceTree = "<group>"; };
@@ -306,6 +316,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FDE9C2047FE025642F01BE3 /* Pods_DeviantTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +335,8 @@
 			children = (
 				4152B91DEF81250BDDE8263B /* Pods-Deviant.debug.xcconfig */,
 				D686C8D192EFD0D9DAD1D56B /* Pods-Deviant.release.xcconfig */,
+				6BC46D81D80E9EBB9DB022CE /* Pods-DeviantTests.debug.xcconfig */,
+				0A35E1EBE76FF158AA827EB0 /* Pods-DeviantTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -332,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				51567E4DEFD8B1D2471A373E /* Pods_Deviant.framework */,
+				2D97992183629E87F01CDAE7 /* Pods_DeviantTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -378,6 +392,7 @@
 		8E1B800024C0A4CB008C059C /* DeviantTests */ = {
 			isa = PBXGroup;
 			children = (
+				8EA756DD24E77DAC00C282CC /* TopListTest */,
 				8E5C799124E6897F00DBAE28 /* PopularListTest */,
 				8E1B800124C0A4CB008C059C /* DeviantTests.swift */,
 				8E1B800324C0A4CB008C059C /* Info.plist */,
@@ -606,6 +621,7 @@
 			isa = PBXGroup;
 			children = (
 				8E5C799224E689B400DBAE28 /* PopularListInteractorTests.swift */,
+				8EA756DB24E76DA100C282CC /* PopularListPresenterTests.swift */,
 			);
 			path = PopularListTest;
 			sourceTree = "<group>";
@@ -715,6 +731,15 @@
 				8EA310CF24D10CB3008813B7 /* DailyTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8EA756DD24E77DAC00C282CC /* TopListTest */ = {
+			isa = PBXGroup;
+			children = (
+				8EA756DE24E77DD100C282CC /* TopListInteractorTests.swift */,
+				8EA756DF24E77DD100C282CC /* TopListPresenterTests.swift */,
+			);
+			path = TopListTest;
 			sourceTree = "<group>";
 		};
 		8EAED41224D524F6004E8AC3 /* TopicDetail */ = {
@@ -864,6 +889,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E1B801424C0A4CB008C059C /* Build configuration list for PBXNativeTarget "DeviantTests" */;
 			buildPhases = (
+				B7A35706293EF36A4C74F568 /* [CP] Check Pods Manifest.lock */,
 				8E1B7FF924C0A4CB008C059C /* Sources */,
 				8E1B7FFA24C0A4CB008C059C /* Frameworks */,
 				8E1B7FFB24C0A4CB008C059C /* Resources */,
@@ -1017,6 +1043,28 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		B7A35706293EF36A4C74F568 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DeviantTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F40C7BBE1B0D097C227B8D34 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1159,7 +1207,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EA756E024E77DD100C282CC /* TopListInteractorTests.swift in Sources */,
+				8EA756E124E77DD100C282CC /* TopListPresenterTests.swift in Sources */,
 				8E5C799324E689B400DBAE28 /* PopularListInteractorTests.swift in Sources */,
+				8EA756DC24E76DA100C282CC /* PopularListPresenterTests.swift in Sources */,
 				8E1B800224C0A4CB008C059C /* DeviantTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1363,11 +1414,17 @@
 		};
 		8E1B801524C0A4CB008C059C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BC46D81D80E9EBB9DB022CE /* Pods-DeviantTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NDL4XDVZF3;
+				HEADER_SEARCH_PATHS = (
+					"${PODS_ROOT}/Firebase/Core/Sources",
+					"$(inherited)/**",
+					"$(SRCROOT)/Pods",
+				);
 				INFOPLIST_FILE = DeviantTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1385,11 +1442,17 @@
 		};
 		8E1B801624C0A4CB008C059C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A35E1EBE76FF158AA827EB0 /* Pods-DeviantTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NDL4XDVZF3;
+				HEADER_SEARCH_PATHS = (
+					"${PODS_ROOT}/Firebase/Core/Sources",
+					"$(inherited)/**",
+					"$(SRCROOT)/Pods",
+				);
 				INFOPLIST_FILE = DeviantTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
