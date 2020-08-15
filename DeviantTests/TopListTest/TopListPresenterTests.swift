@@ -28,7 +28,7 @@ class TopicListPresenterTests: XCTestCase {
         //Given
         viewController.called = false
 
-        //When Then
+        //When
         presenter.setLoadingView(with: true)
 
         //Then
@@ -39,7 +39,7 @@ class TopicListPresenterTests: XCTestCase {
         //Given
         viewController.showErrorCalled = false
 
-        //When Then
+        //When
         presenter.showError(with: DeviantGeneralError.unknownError)
 
         //Then
@@ -52,7 +52,7 @@ class TopicListPresenterTests: XCTestCase {
         viewController.results.removeAll()
         let offset = 1
 
-        //When Then
+        //When
         presenter.update(with: [DeviantMockData.topicListResult], nextOffset: offset)
 
         //Then
@@ -66,7 +66,7 @@ class TopicListPresenterTests: XCTestCase {
         //Given
         router.deviation = nil
 
-        //When Then
+        //When
         presenter.showDeviation(with: DeviantMockData.detail)
 
         //Then

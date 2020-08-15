@@ -29,7 +29,7 @@ class TopicDetailPresenterTests: XCTestCase {
         //Given
         viewController.called = false
 
-        //When Then
+        //When
         presenter.setLoadingView(with: true)
 
         //Then
@@ -40,7 +40,7 @@ class TopicDetailPresenterTests: XCTestCase {
         //Given
         viewController.showErrorCalled = false
 
-        //When Then
+        //When
         presenter.showError(with: DeviantGeneralError.unknownError)
 
         //Then

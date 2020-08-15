@@ -28,7 +28,7 @@ class PopularListPresenterTests: XCTestCase {
         //Given
         viewController.called = false
 
-        //When Then
+        //When
         presenter.setLoadingView(with: true)
 
         //Then
@@ -39,7 +39,7 @@ class PopularListPresenterTests: XCTestCase {
         //Given
         viewController.showErrorCalled = false
 
-        //When Then
+        //When
         presenter.showError(with: DeviantGeneralError.unknownError)
 
         //Then
@@ -51,7 +51,7 @@ class PopularListPresenterTests: XCTestCase {
         viewController.nextOffset = -1
         viewController.results.removeAll()
 
-        //When Then
+        //When
         let offset = 1
         presenter.update(with: [DeviantMockData.detail], nextOffset: offset)
 
@@ -64,7 +64,7 @@ class PopularListPresenterTests: XCTestCase {
         //Given
         router.popularResult = nil
 
-        //When Then
+        //When
         presenter.showDeviation(with: DeviantMockData.detail)
 
         //Then

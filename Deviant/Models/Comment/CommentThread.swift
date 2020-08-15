@@ -30,7 +30,7 @@ struct CommentThread: HandyJSON {
 extension CommentThread {
     func toDisplayModel() -> CommentTableViewCell.ViewData {
         let postedDate = Date.fromatPostedDate(postedDateStr: posted.wrap())
-        let viewDate = CommentTableViewCell.ViewData(avatarUrlString: user?.usericon, username: user?.username ?? "", postedDate: postedDate, comment: getCommentFromBody())
+        let viewDate = CommentTableViewCell.ViewData(avatarUrlString: user?.usericon, username: user?.username ?? "", postedDate: postedDate, comment: getCommentFromBody(), commentId: commentid)
 
         return viewDate
     }

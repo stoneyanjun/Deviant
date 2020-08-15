@@ -43,5 +43,6 @@ extension CommentTableViewCell {
         var username: String
         var postedDate: String
         var comment: String
+        var commentId: String?
     }
 }
