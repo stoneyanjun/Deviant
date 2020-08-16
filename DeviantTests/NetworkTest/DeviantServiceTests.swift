@@ -29,10 +29,12 @@ class DeviantServiceTests: XCTestCase {
             TokenManager.shared.fetchToken { result in
                 switch result {
                 case .success:
+                    print(#function + " success")
                     self.runAllServices()
                 case .failure(let error):
-                    print(#function + "\(error.localizedDescription)")
+                    print(#function + " \(error.localizedDescription)")
                     XCTAssertTrue(!error.localizedDescription.isEmpty)
+                    self.fetchExpectation?.fulfill()
                 }
             }
         } else {
@@ -44,18 +46,57 @@ class DeviantServiceTests: XCTestCase {
     }
 
     private func runAllServices() {
-//        self.fetchExpectation?.fulfill()
-        fetchPopular()
-        fetchDaily()
-        fetchDeviantDetail()
-        fetchTopicList()
-        fetchTopic()
-        fetchMetadata()
-        fetchComment()
-        fetchMoreLike()
+        let group = DispatchGroup()
+
+        group.enter()
+        fetchPopular {
+            group.leave()
+        }
+
+        group.enter()
+        fetchDaily {
+            group.leave()
+        }
+
+        group.enter()
+        fetchDeviantDetail {
+            group.leave()
+        }
+
+        group.enter()
+        fetchTopicList {
+            group.leave()
+        }
+
+        group.enter()
+        fetchTopic {
+            group.leave()
+        }
+
+        group.enter()
+        fetchMetadata {
+            group.leave()
+        }
+
+        group.enter()
+        fetchComment {
+            group.leave()
+        }
+
+        group.enter()
+        fetchMoreLike {
+            group.leave()
+        }
+
+        group.notify(queue: .main) {
+            [weak self] in
+            guard let self = self else { return }
+            print(#function, " group.notify ")
+            self.fetchExpectation?.fulfill()
+        }
     }
 
-    private func fetchPopular() {
+    private func fetchPopular(completion: (() -> Void)?) {
         let offset = 0
         NetworkManager<DeviantService>().networkRequest(target:
             .fetchPopular(categoryPath: "",
@@ -71,10 +112,11 @@ class DeviantServiceTests: XCTestCase {
                                 print(#function + "\(error.localizedDescription)")
                                 XCTAssertTrue(!error.localizedDescription.isEmpty)
                             }
+                            completion?()
         }
     }
 
-    private func fetchDaily() {
+    private func fetchDaily(completion: (() -> Void)?) {
         NetworkManager<DeviantService>().networkRequest(target: .fetchDaily(date: "")) { result in
             switch result {
             case .success(let json):
@@ -84,10 +126,11 @@ class DeviantServiceTests: XCTestCase {
                 print(#function + "\(error.localizedDescription)")
                 XCTAssertTrue(!error.localizedDescription.isEmpty)
             }
+            completion?()
         }
     }
 
-    private func fetchDeviantDetail() {
+    private func fetchDeviantDetail(completion: (() -> Void)?) {
         NetworkManager<DeviantService>().networkRequest(target:
         .fetchDeviantDetail(deviationid: DeviantMockData.deviantId)) { result in
             switch result {
@@ -98,10 +141,11 @@ class DeviantServiceTests: XCTestCase {
                 print(#function + "\(error.localizedDescription)")
                 XCTAssertTrue(!error.localizedDescription.isEmpty)
             }
+            completion?()
         }
     }
 
-    private func fetchTopicList() {
+    private func fetchTopicList(completion: (() -> Void)?) {
         let offset = 0
         NetworkManager<DeviantService>().networkRequest(target:
             .fetchTopicList(numDeviationsPerTopic: NetworkConst.numDeviationsPerTopic,
@@ -115,10 +159,11 @@ class DeviantServiceTests: XCTestCase {
                                     print(#function + "\(error.localizedDescription)")
                                     XCTAssertTrue(!error.localizedDescription.isEmpty)
                                 }
+                                completion?()
         }
     }
 
-    private func fetchTopic() {
+    private func fetchTopic(completion: (() -> Void)?) {
         let name = DeviantMockData.topicName
         let offset = 0
         NetworkManager<DeviantService>().networkRequest(target:
@@ -134,10 +179,11 @@ class DeviantServiceTests: XCTestCase {
                                     print(#function + "\(error.localizedDescription)")
                                     XCTAssertTrue(!error.localizedDescription.isEmpty)
                                 }
+                                completion?()
         }
     }
 
-    private func fetchMetadata() {
+    private func fetchMetadata(completion: (() -> Void)?) {
         let params = MetadataParams(deviationids: [DeviantMockData.deviantId],
                                     extSubmission: true,
                                     extCamera: true,
@@ -153,10 +199,11 @@ class DeviantServiceTests: XCTestCase {
                 print(#function + "\(error.localizedDescription)")
                 XCTAssertTrue(!error.localizedDescription.isEmpty)
             }
+            completion?()
         }
     }
 
-    private func fetchComment() {
+    private func fetchComment(completion: (() -> Void)?) {
         let offset = 0
         let params = CommentParams(deviationid: DeviantMockData.deviantId,
                                    commentid: nil,
@@ -174,10 +221,11 @@ class DeviantServiceTests: XCTestCase {
                 print(#function + "\(error.localizedDescription)")
                 XCTAssertTrue(!error.localizedDescription.isEmpty)
             }
+            completion?()
         }
     }
 
-    private func fetchMoreLike() {
+    private func fetchMoreLike(completion: (() -> Void)?) {
         NetworkManager<DeviantService>().networkRequest(target:
         .fetchMoreLikeThisPreview(seed: DeviantMockData.deviantId)) { result in
             switch result {
@@ -188,6 +236,7 @@ class DeviantServiceTests: XCTestCase {
                 print(#function + "\(error.localizedDescription)")
                 XCTAssertTrue(!error.localizedDescription.isEmpty)
             }
+            completion?()
         }
     }
 }
