@@ -94,6 +94,8 @@
 		8E944EE124C89F330050B76B /* TopicListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED924C89F330050B76B /* TopicListInteractor.swift */; };
 		8E944EE224C89F330050B76B /* TopicListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EDA24C89F330050B76B /* TopicListRouter.swift */; };
 		8E944EF024C8A1720050B76B /* TopicListBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EE424C8A1710050B76B /* TopicListBase.swift */; };
+		8E9D156924E818730027ECDF /* TokenManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D156824E818730027ECDF /* TokenManagerTests.swift */; };
+		8E9D156C24E8D0980027ECDF /* DeviantServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D156B24E8D0980027ECDF /* DeviantServiceTests.swift */; };
 		8EA310C624D10C58008813B7 /* DailyListConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310BF24D10C58008813B7 /* DailyListConfiguration.swift */; };
 		8EA310C724D10C58008813B7 /* DailyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310C024D10C58008813B7 /* DailyListPresenter.swift */; };
 		8EA310C824D10C58008813B7 /* DailyListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310C124D10C58008813B7 /* DailyListRouter.swift */; };
@@ -268,6 +270,8 @@
 		8E944ED924C89F330050B76B /* TopicListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListInteractor.swift; sourceTree = "<group>"; };
 		8E944EDA24C89F330050B76B /* TopicListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListRouter.swift; sourceTree = "<group>"; };
 		8E944EE424C8A1710050B76B /* TopicListBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListBase.swift; sourceTree = "<group>"; };
+		8E9D156824E818730027ECDF /* TokenManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenManagerTests.swift; sourceTree = "<group>"; };
+		8E9D156B24E8D0980027ECDF /* DeviantServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantServiceTests.swift; sourceTree = "<group>"; };
 		8EA310BF24D10C58008813B7 /* DailyListConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListConfiguration.swift; sourceTree = "<group>"; };
 		8EA310C024D10C58008813B7 /* DailyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListPresenter.swift; sourceTree = "<group>"; };
 		8EA310C124D10C58008813B7 /* DailyListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListRouter.swift; sourceTree = "<group>"; };
@@ -456,13 +460,13 @@
 			isa = PBXGroup;
 			children = (
 				8E5C798F24E67B8500DBAE28 /* GoogleService-Info.plist */,
-				8E1B7FEA24C0A4C9008C059C /* AppDelegate.swift */,
-				8E1B803924C0B405008C059C /* Config */,
 				8E1B7FF824C0A4CB008C059C /* Info.plist */,
+				8E1B7FEA24C0A4C9008C059C /* AppDelegate.swift */,
+				8E1B7FEC24C0A4C9008C059C /* SceneDelegate.swift */,
+				8E1B803924C0B405008C059C /* Config */,
 				8E1B802524C0A712008C059C /* Models */,
 				8E1B802224C0A67A008C059C /* Network */,
 				8E1B802024C0A5D6008C059C /* Resource */,
-				8E1B7FEC24C0A4C9008C059C /* SceneDelegate.swift */,
 				8E1B801A24C0A56D008C059C /* UI */,
 				8E1B802424C0A6E9008C059C /* Utils */,
 			);
@@ -480,6 +484,7 @@
 				8E19CC2124E7E546000CAD09 /* DeviantDetailTest */,
 				8E19CC3024E80021000CAD09 /* MetadataTest */,
 				8E19CC2624E7E7FD000CAD09 /* MoreLikeTest */,
+				8E9D156724E818240027ECDF /* NetworkTest */,
 				8E5C799124E6897F00DBAE28 /* PopularListTest */,
 				8E19CC1C24E7DBF2000CAD09 /* TopicDetailTest */,
 				8EA756DD24E77DAC00C282CC /* TopListTest */,
@@ -809,6 +814,15 @@
 				8E66AC3224D65EA200A384AE /* TopicListResult.swift */,
 			);
 			path = TopicList;
+			sourceTree = "<group>";
+		};
+		8E9D156724E818240027ECDF /* NetworkTest */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D156824E818730027ECDF /* TokenManagerTests.swift */,
+				8E9D156B24E8D0980027ECDF /* DeviantServiceTests.swift */,
+			);
+			path = NetworkTest;
 			sourceTree = "<group>";
 		};
 		8EA310CD24D10C64008813B7 /* View */ = {
@@ -1297,6 +1311,7 @@
 				8E19CC1724E7BBA3000CAD09 /* DailyPresenterTests.swift in Sources */,
 				8EA756E024E77DD100C282CC /* TopListInteractorTests.swift in Sources */,
 				8EA756E124E77DD100C282CC /* TopListPresenterTests.swift in Sources */,
+				8E9D156924E818730027ECDF /* TokenManagerTests.swift in Sources */,
 				8E5C799324E689B400DBAE28 /* PopularListInteractorTests.swift in Sources */,
 				8E19CC3324E8005E000CAD09 /* MetadataInteractorTests.swift in Sources */,
 				8E19CC2424E7E573000CAD09 /* DeviantDetailPresenterTests.swift in Sources */,
@@ -1312,6 +1327,7 @@
 				8E19CC2924E7E8E0000CAD09 /* MoreLikeInteractorTests.swift in Sources */,
 				8E19CC1A24E7C47E000CAD09 /* DeviantMockData.swift in Sources */,
 				8E19CC2E24E7FBCF000CAD09 /* CommentPresenterTests.swift in Sources */,
+				8E9D156C24E8D0980027ECDF /* DeviantServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

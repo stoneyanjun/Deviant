@@ -17,6 +17,8 @@ enum NetworkConst {
     static let numDeviationsPerTopic = 10
     static let defaultExpiredSecond = 3600
     #endif
+
+    static let testTimeout: TimeInterval = 360
 }
 
 enum RequestParams: String {

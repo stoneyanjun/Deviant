@@ -38,10 +38,11 @@ extension CommentInteractor: CommentInteractorInterface {
 
 extension CommentInteractor {
     private func fetchComment() {
+        let offset = 0
         guard let deviationid = config.deviantDetail?.deviationid else {
             return
         }
-        let params = CommentParams(deviationid: deviationid, commentid: nil, maxdepth: nil, offset: 0, limit: 10)
+        let params = CommentParams(deviationid: deviationid, commentid: nil, maxdepth: nil, offset: offset, limit: NetworkConst.limit)
         NetworkManager<DeviantService>().networkRequest(target: .   fetchComment(params: params)) { result in
             switch result {
             case .success(let json):
