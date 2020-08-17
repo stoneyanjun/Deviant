@@ -30,7 +30,7 @@ class DeviantServiceTests: XCTestCase {
                     print(#function + " success")
                     self.runAllServices()
                 case .failure(let error):
-                    print(#function + " \(error.localizedDescription)")
+                    print(#function + " error \(error.localizedDescription)")
                     XCTAssertTrue(!error.localizedDescription.isEmpty)
                     self.fetchExpectation?.fulfill()
                 }
@@ -44,6 +44,7 @@ class DeviantServiceTests: XCTestCase {
     }
 
     private func runAllServices() {
+        print(#function + " begin")
         let group = DispatchGroup()
 
         group.enter()
@@ -112,7 +113,7 @@ class DeviantServiceTests: XCTestCase {
                                 let popularBase = JSONDeserializer<PopularBase>.deserializeFrom(json: json.description)
                                 XCTAssertTrue((popularBase?.results?.count ?? 0) > 0)
                             case .failure(let error):
-                                print(#function + "\(error.localizedDescription)")
+                                print(#function + " error \(error.localizedDescription)")
                                 XCTAssertTrue(!error.localizedDescription.isEmpty)
                             }
                             completion?()
@@ -126,7 +127,7 @@ class DeviantServiceTests: XCTestCase {
                 let dailyBase = JSONDeserializer<DailyBase>.deserializeFrom(json: json.description)
                 XCTAssertTrue((dailyBase?.results?.count ?? 0) > 0)
             case .failure(let error):
-                print(#function + "\(error.localizedDescription)")
+                print(#function + " error \(error.localizedDescription)")
                 XCTAssertTrue(!error.localizedDescription.isEmpty)
             }
             completion?()
@@ -141,7 +142,7 @@ class DeviantServiceTests: XCTestCase {
                 let deviantDetailBase = JSONDeserializer<DeviantDetailBase>.deserializeFrom(json: json.description)
                 XCTAssertNotNil( deviantDetailBase?.deviationid)
             case .failure(let error):
-                print(#function + "\(error.localizedDescription)")
+                print(#function + " error \(error.localizedDescription)")
                 XCTAssertTrue(!error.localizedDescription.isEmpty)
             }
             completion?()
@@ -160,7 +161,7 @@ class DeviantServiceTests: XCTestCase {
                                     let list = JSONDeserializer<TopicListBase>.deserializeFrom(json: json.description)
                                     XCTAssertTrue((list?.results?.count ?? 0) > 0)
                                 case .failure(let error):
-                                    print(#function + "\(error.localizedDescription)")
+                                    print(#function + " error \(error.localizedDescription)")
                                     XCTAssertTrue(!error.localizedDescription.isEmpty)
                                 }
                                 completion?()
@@ -179,7 +180,7 @@ class DeviantServiceTests: XCTestCase {
                                     let results = detail?.results
                                     XCTAssertTrue((results?.count ?? 0) > 0)
                                 case .failure(let error):
-                                    print(#function + "\(error.localizedDescription)")
+                                    print(#function + " error \(error.localizedDescription)")
                                     XCTAssertTrue(!error.localizedDescription.isEmpty)
                                 }
                                 completion?()
@@ -199,7 +200,7 @@ class DeviantServiceTests: XCTestCase {
                 let results = metadataBase?.metadata
                 XCTAssertTrue((results?.count ?? 0) > 0)
             case .failure(let error):
-                print(#function + "\(error.localizedDescription)")
+                print(#function + " error \(error.localizedDescription)")
                 XCTAssertTrue(!error.localizedDescription.isEmpty)
             }
             completion?()
@@ -221,7 +222,7 @@ class DeviantServiceTests: XCTestCase {
                 let results = comment?.thread
                 XCTAssertTrue((results?.count ?? 0) > 0)
             case .failure(let error):
-                print(#function + "\(error.localizedDescription)")
+                print(#function + " error \(error.localizedDescription)")
                 XCTAssertTrue(!error.localizedDescription.isEmpty)
             }
             completion?()
@@ -236,7 +237,7 @@ class DeviantServiceTests: XCTestCase {
                 let moreLikeThis = JSONDeserializer<MoreLikeThisPreview>.deserializeFrom(json: json.description)
             XCTAssertNotNil(moreLikeThis)
             case .failure(let error):
-                print(#function + "\(error.localizedDescription)")
+                print(#function + " error \(error.localizedDescription)")
                 XCTAssertTrue(!error.localizedDescription.isEmpty)
             }
             completion?()
@@ -255,7 +256,7 @@ class DeviantServiceTests: XCTestCase {
 
                 XCTAssertTrue((favorateBase?.results?.count ?? 0) > 0)
             case .failure(let error):
-                print(#function + "\(error.localizedDescription)")
+                print(#function + " error \(error.localizedDescription)")
                 XCTAssertTrue(!error.localizedDescription.isEmpty)
             }
             completion?()

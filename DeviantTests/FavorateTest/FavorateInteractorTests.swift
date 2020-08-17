@@ -26,7 +26,7 @@ class FavorateInteractorTests: XCTestCase {
         //Given
 
         //When
-        interactor.tryFetchFavorates()
+        interactor.tryFetchFavorates(offset: offset)
 
         //Then
         XCTAssertTrue(presenter.called)

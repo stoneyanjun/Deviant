@@ -26,7 +26,7 @@ class CommentInteractorTests: XCTestCase {
         //Given
 
         //When
-        interactor.tryFetchComments()
+        interactor.tryFetchComments(offset: offset)
 
         //Then
         XCTAssertTrue(presenter.called)

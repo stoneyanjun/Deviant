@@ -13,6 +13,7 @@ class FavoratePresenterTests: XCTestCase {
     var presenter: FavoratePresenter!
     var viewController: FavorateViewControllerSpy!
     var router: FavorateRouterSpy!
+    var offset = 0
 
     override func setUp() {
         super.setUp()
@@ -52,7 +53,7 @@ class FavoratePresenterTests: XCTestCase {
         let viewData = DeviantMockData.favorate.toDisplayModel()
 
         //When
-        viewController.update(with: [viewData])
+        viewController.update(with: [viewData], nextOffset: offset)
 
         //Then
         XCTAssertEqual(viewController.favorates.count, 1)
@@ -60,9 +61,11 @@ class FavoratePresenterTests: XCTestCase {
 }
 
 class FavorateViewControllerSpy: UIViewController, FavorateViewControllerInterface {
+
     var called = false
     var showErrorCalled = false
     var favorates: [FavorateTableViewCell.ViewData] = []
+    var nextOffset = 0
 
     func showError(with error: Error) {
         showErrorCalled = true
@@ -72,8 +75,9 @@ class FavorateViewControllerSpy: UIViewController, FavorateViewControllerInterfa
         called = true
     }
 
-    func update(with favorates: [FavorateTableViewCell.ViewData]) {
+    func update(with favorates: [FavorateTableViewCell.ViewData], nextOffset: Int) {
         self.favorates = favorates
+        self.nextOffset = nextOffset
     }
 }
 

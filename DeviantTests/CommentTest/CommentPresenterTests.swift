@@ -13,6 +13,7 @@ class CommentPresenterTests: XCTestCase {
     var presenter: CommentPresenter!
     var viewController: CommentViewControllerSpy!
     var router: CommentRouterSpy!
+    var offset = 0
 
     override func setUp() {
         super.setUp()
@@ -52,7 +53,7 @@ class CommentPresenterTests: XCTestCase {
         let viewData = DeviantMockData.commentThread.toDisplayModel()
 
         //When
-        viewController.update(with: [viewData])
+        viewController.update(with: [viewData], nextOffset: offset)
 
         //Then
         XCTAssertEqual(viewController.comments.count, 1)
@@ -61,6 +62,7 @@ class CommentPresenterTests: XCTestCase {
 }
 
 class CommentViewControllerSpy: UIViewController, CommentViewControllerInterface {
+    var nextOffset = 0
     var called = false
     var showErrorCalled = false
     var comments: [CommentTableViewCell.ViewData] = []
@@ -73,7 +75,7 @@ class CommentViewControllerSpy: UIViewController, CommentViewControllerInterface
         called = true
     }
 
-    func update(with comments: [CommentTableViewCell.ViewData]) {
+    func update(with comments: [CommentTableViewCell.ViewData], nextOffset: Int) {
         self.comments = comments
     }
 }
