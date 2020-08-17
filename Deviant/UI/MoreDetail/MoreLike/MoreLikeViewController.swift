@@ -50,7 +50,9 @@ extension MoreLikeViewController {
         let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
         collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
         let headNib = UINib(nibName: "TopicListHeadView", bundle: nil)
-        collectionView.register(headNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TopicListHeadView.reuseIdentifier)
+        collectionView.register(headNib,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: TopicListHeadView.reuseIdentifier)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
     }
 
@@ -81,8 +83,10 @@ extension MoreLikeViewController: UICollectionViewDataSource {
         }
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier, for: indexPath) as? ImageUICollectionViewCell else {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier,
+                                                            for: indexPath) as? ImageUICollectionViewCell else {
                return collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
         }
         if let url = getURL(indexPath: indexPath) {
@@ -126,13 +130,18 @@ extension MoreLikeViewController: UICollectionViewDataSource {
         return size
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, heightForHeaderIn section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        heightForHeaderIn section: Int) -> CGFloat {
         return Const.headerHeight
     }
 
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            if let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TopicListHeadView.reuseIdentifier, for: indexPath) as? TopicListHeadView {
+            if let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                              withReuseIdentifier: TopicListHeadView.reuseIdentifier,
+                                                                              for: indexPath) as? TopicListHeadView {
                 if indexPath.section == 0 {
                     headView.topicLabel.text = "MORE BY THIS ARTIST"
                 } else {
@@ -149,7 +158,9 @@ extension MoreLikeViewController: UICollectionViewDataSource {
 }
 
 extension MoreLikeViewController: CHTCollectionViewDelegateWaterfallLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         return getImageSize(indexPath: indexPath)
     }
 }

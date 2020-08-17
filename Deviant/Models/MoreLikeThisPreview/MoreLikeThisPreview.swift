@@ -16,7 +16,7 @@ struct MoreLikeThisPreview: HandyJSON {
         case moreFromArtist = "more_from_artist"
     }
 
-    var author: DeviantDetailAuthor?
+    var author: DeviantUser?
     var seed: String?
     var moreFromDa: [DeviantDetailBase]?
     var moreFromArtist: [DeviantDetailBase]?

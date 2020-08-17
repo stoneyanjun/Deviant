@@ -28,6 +28,8 @@ target 'Deviant' do
   
   pod 'Localize-Swift'
   pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 
   target 'DeviantTests' do
     inherit! :search_paths

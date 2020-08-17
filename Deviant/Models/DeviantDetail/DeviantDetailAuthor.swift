@@ -1,5 +1,5 @@
 //
-//  DeviantDetailAuthor.swift
+//  DeviantUser.swift
 //  Deviant
 //
 //  Copyright © 2020 Stone. All rights reserved.
@@ -8,7 +8,7 @@
 import Foundation
 import HandyJSON
 
-struct DeviantDetailAuthor: HandyJSON {
+struct DeviantUser: HandyJSON {
 
   enum CodingKeys: String, CodingKey {
     case type

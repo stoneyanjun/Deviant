@@ -8,8 +8,7 @@ import Foundation
 import HandyJSON
 
 struct PopularBase: HandyJSON {
-
-  enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
     case nextOffset = "next_offset"
     case hasMore = "has_more"
     case estimatedTotal = "estimated_total"

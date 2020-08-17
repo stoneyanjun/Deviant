@@ -23,6 +23,7 @@ class MoreDetailContainerVC: DeviantBaseViewController, PanModalPresentable {
     }()
 
     var deviantDetail: DeviantDetailBase?
+    var focusIndex: Int = 0
     private var offset = 0
     var panScrollable: UIScrollView? {
         return scrollView
@@ -42,10 +43,20 @@ class MoreDetailContainerVC: DeviantBaseViewController, PanModalPresentable {
 
 extension MoreDetailContainerVC {
     private func prepareViewControllers() -> [UIViewController] {
-        let metadataVC = MetadataConfigurator(config: MetadataConfiguration(navigationController: navigationController, deviantDetail: deviantDetail)).createViewController()
-        let commentVC = CommentConfigurator(config: CommentConfiguration(navigationController: navigationController, deviantDetail: deviantDetail)).createViewController()
-        let moreLikjeVC = MoreLikeConfigurator(config: MoreLikeConfiguration(navigationController: navigationController, deviantDetail: deviantDetail)).createViewController()
-        return [metadataVC, commentVC, moreLikjeVC]
+        let metadataVC = MetadataConfigurator(config:
+            MetadataConfiguration(navigationController: navigationController,
+                                  deviantDetail: deviantDetail)).createViewController()
+        let commentVC = CommentConfigurator(config:
+            CommentConfiguration(navigationController: navigationController,
+                                 deviantDetail: deviantDetail)).createViewController()
+        let moreLikjeVC = MoreLikeConfigurator(config:
+            MoreLikeConfiguration(navigationController: navigationController,
+                                  deviantDetail: deviantDetail)).createViewController()
+        let favorateVC = FavorateConfigurator(config:
+            FavorateConfiguration(navigationController: navigationController,
+                                  deviantDetail: deviantDetail)).createViewController()
+
+        return [metadataVC, commentVC, favorateVC, moreLikjeVC]
     }
 
     private func setupScrollView() {
@@ -73,7 +84,7 @@ extension MoreDetailContainerVC {
                                                   animated: true)
             }
         }
-        segmentioView.selectedSegmentioIndex = 0
+        segmentioView.selectedSegmentioIndex = focusIndex
     }
 }
 

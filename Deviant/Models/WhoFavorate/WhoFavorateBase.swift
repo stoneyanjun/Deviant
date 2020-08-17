@@ -1,21 +1,23 @@
 //
-//  TopicDetailBase.swift
+//  WhoFavorateBase.swift
 //
-//  Copyright © 2020 Stone. All rights reserved.
+//  Created by Stone on 17/8/2020
+//  Copyright (c) . All rights reserved.
 //
 
 import Foundation
 import HandyJSON
 
-struct TopicDetailBase: HandyJSON {
+struct WhoFavorateBase: HandyJSON {
+
     enum CodingKeys: String, CodingKey {
-        case results
         case hasMore = "has_more"
+        case results
         case nextOffset = "next_offset"
     }
 
-    var results: [DeviantDetailBase]?
     var hasMore: Bool?
+    var results: [WhoFavorateResults]?
     var nextOffset: Int?
 
     mutating func mapping(mapper: HelpingMapper) {

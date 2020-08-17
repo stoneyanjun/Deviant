@@ -48,10 +48,10 @@ struct DeviantMockData {
     static let descriptionValue = "www.javiergonzalezart.com"
     static let license = "No License"
 
-    static let author = DeviantDetailAuthor(type: authorType,
-                                            usericon: usericon,
-                                            userid: userid,
-                                            username: username)
+    static let author = DeviantUser(type: authorType,
+                                    usericon: usericon,
+                                    userid: userid,
+                                    username: username)
 
     static let content = DeviantDetailContent(height: height,
                                               src: src,
@@ -59,10 +59,10 @@ struct DeviantMockData {
                                               transparency: false,
                                               width: width)
 
-    static let giver = DeviantDetailGiver(userid: userid,
-                                          type: giverType,
-                                          usericon: usericon,
-                                          username: username)
+    static let giver = DeviantUser(type: giverType,
+                                   usericon: usericon,
+                                   userid: userid,
+                                   username: username)
 
     static let  dailyDeviant = DeviantDetailDailyDeviation(time: dateTime,
                                                            giver: giver,

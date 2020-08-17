@@ -118,4 +118,3 @@ class TopicListRouterSpy: TopicListRouterInterface {
         self.deviation = deviation
     }
 }
-

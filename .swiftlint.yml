@@ -101,7 +101,7 @@ custom_rules:
     regex: \bfatalError\b
     match_kinds:
       - identifier
-    severity: error
+    severity: warn
   rule_test_function:
     included: Tests/SwiftLintFrameworkTests/RulesTests.swift
     name: Rule Test Function

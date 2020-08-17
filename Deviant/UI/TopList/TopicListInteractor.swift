@@ -38,9 +38,10 @@ extension TopicListInteractor: TopicListInteractorInterface {
 
 extension TopicListInteractor {
     private func fetchTopicList(with offset: Int) {
-        NetworkManager<DeviantService>().networkRequest(target: .fetchTopicList(numDeviationsPerTopic: NetworkConst.numDeviationsPerTopic,
-                                                                          limit: NetworkConst.limit,
-                                                                          offset: offset) ) { result in
+        let params = TopicListParams(numDeviationsPerTopic: NetworkConst.numDeviationsPerTopic,
+                                     limit: NetworkConst.limit,
+                                     offset: offset)
+        NetworkManager<DeviantService>().networkRequest(target: .fetchTopicList(params: params) ) { result in
             switch result {
             case .success(let json):
                 guard let topicListBase = JSONDeserializer<TopicListBase>.deserializeFrom(json: json.description),

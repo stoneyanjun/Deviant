@@ -17,6 +17,6 @@ struct DeviantDetailDailyDeviation: HandyJSON {
   }
 
   var time: String?
-  var giver: DeviantDetailGiver?
+  var giver: DeviantUser?
   var body: String?
 }

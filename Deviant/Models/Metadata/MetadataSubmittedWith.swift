@@ -8,11 +8,10 @@ import Foundation
 import HandyJSON
 
 struct MetadataSubmittedWith: HandyJSON {
-
-  enum CodingKeys: String, CodingKey {
-    case url
-    case app
-  }
+    enum CodingKeys: String, CodingKey {
+        case url
+        case app
+    }
 
   var url: String?
   var app: String?

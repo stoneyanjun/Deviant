@@ -16,10 +16,11 @@ class RootViewController: UIViewController {
     private lazy var viewControllers: [UIViewController] = {
         return self.prepareViewControllers()
     }()
+    private var offset = 0
+
     private enum Const {
         static let segementHeight: CGFloat = 50
     }
-    private var offset = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +36,12 @@ class RootViewController: UIViewController {
 
 extension RootViewController {
     private func prepareViewControllers() -> [UIViewController] {
-        let popularVC = PopularListConfigurator(config: PopularListConfiguration(navigationController: navigationController)).createViewController()
-        let topicListVC = TopicListConfigurator(config: TopicListConfiguration(navigationController: navigationController)).createViewController()
-        let dailyVC = DailyListConfigurator(config: DailyListConfiguration(navigationController: navigationController)).createViewController()
+        let popularVC = PopularListConfigurator(config:
+            PopularListConfiguration(navigationController: navigationController)).createViewController()
+        let topicListVC = TopicListConfigurator(config:
+            TopicListConfiguration(navigationController: navigationController)).createViewController()
+        let dailyVC = DailyListConfigurator(config:
+            DailyListConfiguration(navigationController: navigationController)).createViewController()
         return [popularVC, topicListVC, dailyVC]
     }
 

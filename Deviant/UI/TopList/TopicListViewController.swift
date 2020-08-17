@@ -68,7 +68,9 @@ extension TopicListViewController {
         let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
         collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
         let headNib = UINib(nibName: "TopicListHeadView", bundle: nil)
-        collectionView.register(headNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TopicListHeadView.reuseIdentifier)
+        collectionView.register(headNib,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: TopicListHeadView.reuseIdentifier)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
     }
 }
@@ -91,29 +93,38 @@ extension TopicListViewController: UICollectionViewDataSource {
         return results[section].deviations?.count ?? 0
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier, for: indexPath) as? ImageUICollectionViewCell,
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:
+            ImageUICollectionViewCell.reuseIdentifier,
+                                                            for: indexPath) as? ImageUICollectionViewCell,
             let src = results[indexPath.section].deviations?[indexPath.row].preview?.src ,
             let url = URL(string: src) else {
-               return collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
+                return collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
         }
         cell.image.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, heightForHeaderIn section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        heightForHeaderIn section: Int) -> CGFloat {
         return Const.headerHeight
     }
 
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            if let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TopicListHeadView.reuseIdentifier, for: indexPath) as? TopicListHeadView {
+            if let head = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                          withReuseIdentifier: TopicListHeadView.reuseIdentifier,
+                                                                          for: indexPath) as? TopicListHeadView {
                 let record = results[indexPath.section]
-                headView.topicLabel.text = record.name
-                headView.tapHandle = {
+                head.topicLabel.text = record.name
+                head.tapHandle = {
                     self.interactor?.showTopic(with: record.name.wrap())
                 }
-                return headView
+                return head
             }
             return UICollectionReusableView()
         } else {
@@ -123,7 +134,9 @@ extension TopicListViewController: UICollectionViewDataSource {
 }
 
 extension TopicListViewController: CHTCollectionViewDelegateWaterfallLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         var imageSize = CGSize()
         if let thumb = results[indexPath.section].deviations?[indexPath.row].thumbs?.first {
             imageSize.width = CGFloat(thumb.width ?? 0)

@@ -38,7 +38,8 @@ extension MoreLikeInteractor: MoreLikeInteractorInterface {
 
 extension MoreLikeInteractor {
     private func fetchMoreLike() {
-        NetworkManager<DeviantService>().networkRequest(target: .fetchMoreLikeThisPreview(seed: config.deviantDetail?.deviationid ?? "")) { result in
+        NetworkManager<DeviantService>().networkRequest(target:
+        .fetchMoreLikeThisPreview(seed: config.deviantDetail?.deviationid ?? "")) { result in
             switch result {
             case .success(let json):
                 guard let moreLikeThis = JSONDeserializer<MoreLikeThisPreview>.deserializeFrom(json: json.description),

@@ -34,9 +34,9 @@ extension DeviantDetailViewController: DeviantDetailViewControllerInterface {
     }
 
     func update(with deviantDetail: DeviantDetailBase) {
-        setLoadingView(with: false)
         self.deviantDetail = deviantDetail
         updateUI()
+        setLoadingView(with: false)
     }
 }
 
@@ -44,7 +44,8 @@ extension DeviantDetailViewController {
     func updateUI() {
         guard let detail = deviantDetail else { return }
         if let url = URL(string: (detail.content?.src ?? "")) {
-            contentImageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
+            contentImageView.kf.setImage(with: url,
+                                         placeholder: UIImage(named: "loading"))
         }
 
         if let comments = detail.stats?.comments, comments > 0 {
@@ -57,21 +58,13 @@ extension DeviantDetailViewController {
 }
 
 extension DeviantDetailViewController {
-    @IBAction func infoAction(_ sender: Any) {
+    @IBAction func infoAction(_ sender: UIButton) {
         guard let deviantDetail = self.deviantDetail else {
                 return
         }
         let moreDetailContainerVC = MoreDetailContainerVC()
         moreDetailContainerVC.deviantDetail = deviantDetail
+        moreDetailContainerVC.focusIndex = sender.tag
         presentPanModal(moreDetailContainerVC)
-    }
-
-    @IBAction func commentAction(_ sender: Any) {
-    }
-
-    @IBAction func starAction(_ sender: Any) {
-    }
-
-    @IBAction func moreAction(_ sender: Any) {
     }
 }

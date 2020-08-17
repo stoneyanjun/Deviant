@@ -20,7 +20,7 @@ extension CommentPresenter: CommentPresenterInterface {
     func showError(with error: Error) {
         viewController?.showError(with: error)
     }
-    
+
     func update(with comment: CommentBase) {
         guard let threads = comment.thread else {
             return

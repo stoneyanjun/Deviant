@@ -13,7 +13,6 @@ import SwiftyJSON
 import XCTest
 
 class DeviantServiceTests: XCTestCase {
-
     var fetchExpectation: XCTestExpectation?
 
     override func setUp() {
@@ -99,11 +98,11 @@ class DeviantServiceTests: XCTestCase {
     private func fetchPopular(completion: (() -> Void)?) {
         let offset = 0
         NetworkManager<DeviantService>().networkRequest(target:
-            .fetchPopular(categoryPath: "",
-                          query: "",
-                          timeRange: "",
-                          limit: NetworkConst.limit,
-                          offset: offset)) { result in
+            .fetchPopular(params: PopularParams(categoryPath: "",
+                                                query: "",
+                                                timeRange: "",
+                                                limit: NetworkConst.limit,
+                                                offset: offset))) { result in
                             switch result {
                             case .success(let json):
                                 let popularBase = JSONDeserializer<PopularBase>.deserializeFrom(json: json.description)
@@ -146,11 +145,12 @@ class DeviantServiceTests: XCTestCase {
     }
 
     private func fetchTopicList(completion: (() -> Void)?) {
-        let offset = 0
+        let params = TopicListParams(numDeviationsPerTopic: NetworkConst.numDeviationsPerTopic,
+                                     limit: NetworkConst.limit,
+                                     offset: 0)
+
         NetworkManager<DeviantService>().networkRequest(target:
-            .fetchTopicList(numDeviationsPerTopic: NetworkConst.numDeviationsPerTopic,
-                            limit: NetworkConst.limit,
-                            offset: offset) ) { result in
+            .fetchTopicList(params: params) ) { result in
                                 switch result {
                                 case .success(let json):
                                     let list = JSONDeserializer<TopicListBase>.deserializeFrom(json: json.description)
@@ -164,12 +164,11 @@ class DeviantServiceTests: XCTestCase {
     }
 
     private func fetchTopic(completion: (() -> Void)?) {
-        let name = DeviantMockData.topicName
-        let offset = 0
+        let params = TopicDetailParams(name: DeviantMockData.topicName,
+                                       limit: NetworkConst.limit,
+                                       offset: 0)
         NetworkManager<DeviantService>().networkRequest(target:
-            .fetchTopicDetail(name: name,
-                              limit: NetworkConst.limit,
-                              offset: offset)) { result in
+            .fetchTopicDetail(params: params)) { result in
                                 switch result {
                                 case .success(let json):
                                     let detail = JSONDeserializer<TopicDetailBase>.deserializeFrom(json: json.description)

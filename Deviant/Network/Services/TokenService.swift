@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum TokenService {
-    case fetchToken(clientID: String, clientSecret: String)
+    case fetchToken((clientID: String, clientSecret: String))
 }
 
 extension TokenService: TargetType {
@@ -40,12 +40,12 @@ extension TokenService: TargetType {
 
     var task: Task {
         switch self {
-        case .fetchToken(let clientID, let clientSecret):
-            let parameters: [String: Any] = [RequestParams.grantType.rawValue: RequestParams.clientCredentials.rawValue,
-                                             RequestParams.clientID.rawValue: clientID,
-                                             RequestParams.clientSecret.rawValue: clientSecret]
+        case .fetchToken(let (clientID, clientSecret)):
+        let parameters: [String: Any] = [RequestParams.grantType.rawValue: RequestParams.clientCredentials.rawValue,
+                                         RequestParams.clientID.rawValue: clientID,
+                                         RequestParams.clientSecret.rawValue: clientSecret]
 
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+        return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }
 

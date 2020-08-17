@@ -84,8 +84,10 @@ extension PopularListViewController: UICollectionViewDataSource {
         return results.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier, for: indexPath) as? ImageUICollectionViewCell,
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier,
+                                                            for: indexPath) as? ImageUICollectionViewCell,
             let src = results[indexPath.row].preview?.src,
             let url = URL(string: src) else {
             return UICollectionViewCell()
@@ -96,7 +98,9 @@ extension PopularListViewController: UICollectionViewDataSource {
 }
 
 extension PopularListViewController: CHTCollectionViewDelegateWaterfallLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         var imageSize = CGSize()
         if let thumb = results[indexPath.row].thumbs?.first {
             imageSize.width = CGFloat(thumb.width ?? 0)

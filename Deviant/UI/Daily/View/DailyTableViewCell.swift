@@ -39,7 +39,7 @@ class DailyTableViewCell: UITableViewCell, Reusable {
 
         usernameLabel.text = result.author?.username
         titleLabel.text = result.title
-        let resultTxt = String.getDateFormatString(timeStamp: result.publishedTime ?? "")
+        let resultTxt = String.getDateFromTimeStamp(with: result.publishedTime ?? "")
         timeLabel.text = resultTxt
 
         initImageView()
@@ -51,7 +51,9 @@ class DailyTableViewCell: UITableViewCell, Reusable {
 
         if let src = result.preview?.src ,
             let url = URL(string: src) {
-            srcImageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"), options: nil, progressBlock: nil) { [weak self] result in
+            srcImageView.kf.setImage(with: url,
+                                     placeholder: UIImage(named: "loading"),
+                                     options: nil, progressBlock: nil) { [weak self] result in
                 guard let strongSelf = self else {
                     return
                 }

@@ -16,7 +16,7 @@ extension String {
         return data(using: .utf8)!
     }
 
-    static func getDateFormatString(timeStamp: String) -> String {
+    static func getDateFromTimeStamp(with timeStamp: String) -> String {
         guard let interval = TimeInterval(timeStamp) else {
             return ""
         }

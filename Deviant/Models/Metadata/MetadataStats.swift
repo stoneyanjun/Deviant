@@ -8,7 +8,6 @@ import Foundation
 import HandyJSON
 
 struct MetadataStats: HandyJSON {
-
     enum CodingKeys: String, CodingKey {
         case favourites
         case downloadsToday = "downloads_today"

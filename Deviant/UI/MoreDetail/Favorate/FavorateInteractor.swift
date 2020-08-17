@@ -1,5 +1,5 @@
 //
-//  CommentInteractor.swift
+//  FavorateInteractor.swift
 //  Deviant
 //
 //  Copyright © 2020 Stone. All rights reserved.
@@ -9,53 +9,51 @@ import HandyJSON
 import SwiftyJSON
 import UIKit
 
-class CommentInteractor {
-    var presenter: CommentPresenterInterface?
-    private(set) var config: CommentConfiguration
+class FavorateInteractor {
+    var presenter: FavoratePresenterInterface?
+    private(set) var config: FavorateConfiguration
 
-    init(config: CommentConfiguration) {
+    init(config: FavorateConfiguration) {
         self.config = config
     }
 }
 
-extension CommentInteractor: CommentInteractorInterface {
-    func tryFetchComments() {
+extension FavorateInteractor: FavorateInteractorInterface {
+    func tryFetchFavorates() {
         presenter?.setLoadingView(with: true)
         if TokenManager.shared.needFetchToken() {
             TokenManager.shared.fetchToken { result in
                 switch result {
                 case .success:
-                    self.fetchComment()
+                    self.fetchWhoFavorate()
                 case .failure(let error):
                     self.presenter?.showError(with: error)
                 }
             }
         } else {
-            fetchComment()
+            fetchWhoFavorate()
         }
     }
 }
 
-extension CommentInteractor {
-    private func fetchComment() {
+extension FavorateInteractor {
+    private func fetchWhoFavorate() {
         let offset = 0
         guard let deviationid = config.deviantDetail?.deviationid else {
             return
         }
-        let params = CommentParams(deviationid: deviationid,
-                                   commentid: nil,
-                                   maxdepth: nil,
-                                   offset: offset,
-                                   limit: NetworkConst.limit)
-        NetworkManager<DeviantService>().networkRequest(target: .   fetchComment(params: params)) { result in
+        let params = WhoFavedParams(deviationid: deviationid,
+                                    limit: NetworkConst.limit,
+                                    offset: offset)
+        NetworkManager<DeviantService>().networkRequest(target: .   whoFaved(params: params)) { result in
             switch result {
             case .success(let json):
-                guard let comment = JSONDeserializer<CommentBase>.deserializeFrom(json: json.description)
+                guard let favorateBase = JSONDeserializer<WhoFavorateBase>.deserializeFrom(json: json.description)
                     else {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)
                         return
                 }
-                self.presenter?.update(with: comment)
+                self.presenter?.update(with: favorateBase)
             case .failure(let error):
                 self.presenter?.showError(with: error)
             }

@@ -8,8 +8,7 @@ import Foundation
 import HandyJSON
 
 struct TopicListBase: HandyJSON {
-
-  enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
     case nextOffset = "next_offset"
     case results
     case hasMore = "has_more"

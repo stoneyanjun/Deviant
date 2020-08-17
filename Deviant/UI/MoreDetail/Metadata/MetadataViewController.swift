@@ -13,7 +13,6 @@ import SwifterSwift
 import UIKit
 
 class MetadataViewController: DeviantBaseViewController {
-
     enum Const {
         static let minColumnSpace: CGFloat = 4.0
         static let minItemSpace: CGFloat = 4.0
@@ -116,8 +115,10 @@ extension MetadataViewController: UICollectionViewDataSource {
         return meta?.metadata?.first?.tags?.count ?? 0
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCollectionViewCell.reuseIdentifier, for: indexPath) as? TagCollectionViewCell,
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCollectionViewCell.reuseIdentifier,
+                                                            for: indexPath) as? TagCollectionViewCell,
             let tags = meta?.metadata?.first?.tags else {
                 return UICollectionViewCell()
         }

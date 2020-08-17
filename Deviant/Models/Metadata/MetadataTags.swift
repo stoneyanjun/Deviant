@@ -18,6 +18,7 @@ struct MetadataTags: HandyJSON {
     var sponsor: String?
     var tagName: String?
     var sponsored: Bool?
+
     mutating func mapping(mapper: HelpingMapper) {
         mapper <<< self.tagName <-- CodingKeys.tagName.rawValue
     }

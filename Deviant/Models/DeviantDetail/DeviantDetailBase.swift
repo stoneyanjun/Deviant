@@ -9,7 +9,6 @@ import Foundation
 import HandyJSON
 
 struct DeviantDetailBase: HandyJSON {
-
     enum CodingKeys: String, CodingKey {
         case allowsComments = "allows_comments"
         case deviationid
@@ -33,7 +32,7 @@ struct DeviantDetailBase: HandyJSON {
 
     var allowsComments: Bool?
     var deviationid: String?
-    var author: DeviantDetailAuthor?
+    var author: DeviantUser?
     var content: DeviantDetailContent?
     var dailyDeviation: DeviantDetailDailyDeviation?
     var url: String?

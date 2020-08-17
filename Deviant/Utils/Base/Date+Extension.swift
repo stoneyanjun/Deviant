@@ -9,13 +9,24 @@ import Foundation
 import SwifterSwift
 
 extension Date {
+    static func fromatFavorateDate(with timeStamp: String) -> String {
+        guard let interval = TimeInterval(timeStamp) else {
+            return ""
+            }
+        let date = Date(timeIntervalSince1970: interval)
+        return date.getFormatDateString()
+    }
+
     static func fromatPostedDate(postedDateStr: String) -> String {
         //yyyy-MM-dd'T'HH:mm:ss-SSSZ
         guard let date = Date(deviantDateString: postedDateStr) else {
             return postedDateStr
         }
+        return date.getFormatDateString()
+    }
 
-        let minutes = -date.timeIntervalSinceNow / 60
+    func getFormatDateString() -> String {
+        let minutes = -(self.timeIntervalSinceNow / 60)
 
         if minutes < 5 {
             return "Just now"
@@ -23,16 +34,16 @@ extension Date {
             return "\(Int(minutes)) minutes ago"
         } else if minutes < (60 * 12) {
             return "\(Int(minutes / 60)) hours ago"
-        } else if date.isInToday {
+        } else if self.isInToday {
             return "Today"
-        } else if date.isInYesterday {
+        } else if self.isInYesterday {
             return "Yesterday"
         } else {
             let days = minutes / (60 * 24)
             if days < 5 {
                 return "\(Int(days)) days ago"
             } else {
-                return date.formatString(dateFormat: "MMMM dd, yyyy")
+                return self.formatString(dateFormat: "MMMM dd, yyyy")
             }
         }
     }

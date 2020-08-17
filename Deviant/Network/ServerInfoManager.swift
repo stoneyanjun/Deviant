@@ -19,10 +19,11 @@ enum UriResource: String {
     case fetchComment
     case userStatuses
     case moreLikeThisPreview
+    case whoFaved
 }
 
 class ServerInfoManager {
-    private enum ServerInfoKey: String {
+    private enum InfoKey: String {
         case clientID = "ClientID"
         case clientSecret = "ClientSecret"
         case serverBaseURL = "ServerBaseURL"
@@ -35,17 +36,12 @@ class ServerInfoManager {
     private(set) var apiPath: String = ""
     private(set) var clientID: String = ""
     private(set) var clientSecret: String = ""
-
-    private var serverInfo = [String: String]()
     private var pathInfo = [String: String]()
 
     private init() {
         loadUris()
+        loadClientInfo()
         loadServerInfo()
-    }
-
-    private func getServerInfo(with infoKey: ServerInfoKey) -> String? {
-        return serverInfo[infoKey.rawValue]
     }
 
     func getUri(with resource: UriResource) -> String? {
@@ -67,10 +63,18 @@ extension ServerInfoManager {
             let requestDict = NSDictionary(contentsOfFile: filtPath) as? [String: String] else {
                 return
         }
-        serverInfo = requestDict
-        serverBaseUrl = serverInfo[ServerInfoKey.serverBaseURL.rawValue].wrap()
-        apiPath = serverBaseUrl + serverInfo[ServerInfoKey.apiBasePath.rawValue].wrap()
-        clientID = serverInfo[ServerInfoKey.clientID.rawValue].wrap()
-        clientSecret = serverInfo[ServerInfoKey.clientSecret.rawValue].wrap()
+        let serverInfo: [String: String] = requestDict
+        serverBaseUrl = serverInfo[InfoKey.serverBaseURL.rawValue].wrap()
+        apiPath = serverBaseUrl + serverInfo[InfoKey.apiBasePath.rawValue].wrap()
+    }
+
+    private func loadClientInfo() {
+        guard let filtPath = Bundle.main.path(forResource: "Client", ofType: "plist"),
+            let requestDict = NSDictionary(contentsOfFile: filtPath) as? [String: String] else {
+                return
+        }
+        let clientInfo: [String: String] = requestDict
+        clientID = clientInfo[InfoKey.clientID.rawValue].wrap()
+        clientSecret = clientInfo[InfoKey.clientSecret.rawValue].wrap()
     }
 }

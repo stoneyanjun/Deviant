@@ -24,28 +24,28 @@
                     <rect key="frame" x="16" y="830" width="93" height="32"/>
                     <state key="normal" image="infomark"/>
                     <connections>
-                        <action selector="infoAction:" destination="-1" eventType="touchUpInside" id="gFI-JT-JLT"/>
+                        <action selector="infoAction:" destination="-1" eventType="touchUpInside" id="Ac0-T7-4v5"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oo-UE-r58">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oo-UE-r58">
                     <rect key="frame" x="125" y="830" width="93" height="32"/>
                     <state key="normal" title=" " image="commentWhite"/>
                     <connections>
-                        <action selector="commentAction:" destination="-1" eventType="touchUpInside" id="SWu-MW-gcS"/>
+                        <action selector="infoAction:" destination="-1" eventType="touchUpInside" id="NEF-IP-7F1"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmG-Ne-WdX">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmG-Ne-WdX">
                     <rect key="frame" x="234" y="830" width="74" height="32"/>
                     <state key="normal" title=" " image="starWhite"/>
                     <connections>
-                        <action selector="starAction:" destination="-1" eventType="touchUpInside" id="9hP-Lk-eWz"/>
+                        <action selector="infoAction:" destination="-1" eventType="touchUpInside" id="6yR-I8-L5x"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoK-to-F2M">
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoK-to-F2M">
                     <rect key="frame" x="324" y="830" width="74" height="32"/>
                     <state key="normal" image="more"/>
                     <connections>
-                        <action selector="moreAction:" destination="-1" eventType="touchUpInside" id="KqJ-4Z-DjB"/>
+                        <action selector="infoAction:" destination="-1" eventType="touchUpInside" id="eYZ-1l-Fnw"/>
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N33-rF-baw">

@@ -61,7 +61,8 @@ extension DailyListViewController {
         dailyTableView.separatorStyle = .none
         dailyTableView.estimatedRowHeight = Const.estimatedRowHeight
         dailyTableView.rowHeight = UITableView.automaticDimension
-        dailyTableView.register(DailyTableViewCell.createNib(), forCellReuseIdentifier: DailyTableViewCell.reuseIdentifier)
+        dailyTableView.register(DailyTableViewCell.createNib(),
+                                forCellReuseIdentifier: DailyTableViewCell.reuseIdentifier)
 
         dailyTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -75,7 +76,8 @@ extension DailyListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.reuseIdentifier, for: indexPath) as? DailyTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.reuseIdentifier,
+                                                    for: indexPath) as? DailyTableViewCell {
             cell.update(with: results[indexPath.row])
             return cell
         } else {

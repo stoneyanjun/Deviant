@@ -38,7 +38,8 @@ extension DeviantDetailInteractor: DeviantDetailInteractorInterface {
 
 extension DeviantDetailInteractor {
     private func fetchDeviantDetail() {
-        NetworkManager<DeviantService>().networkRequest(target: .fetchDeviantDetail(deviationid: config.detailParams.deviationid)) { result in
+        NetworkManager<DeviantService>().networkRequest(target:
+        .fetchDeviantDetail(deviationid: config.detailParams.deviationid)) { result in
             switch result {
             case .success(let json):
                 guard let deviantDetailBase = JSONDeserializer<DeviantDetailBase>.deserializeFrom(json: json.description)

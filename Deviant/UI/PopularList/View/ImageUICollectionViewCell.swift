@@ -1,9 +1,8 @@
 //
 //  ImageUICollectionViewCell.swift
-//  CHTWaterfallSwift
+//  Deviant
 //
-//  Created by Sophie Fader on 3/21/15.
-//  Copyright (c) 2015 Sophie Fader. All rights reserved.
+//  Copyright © 2020 Stone. All rights reserved.
 //
 
 import Reusable

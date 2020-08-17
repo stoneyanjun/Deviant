@@ -50,7 +50,7 @@
 	<string>deviation/embeddedcontent</string>
 	<key>deviationMetadata</key>
 	<string>deviation/metadata</string>
-	<key>deviationWhofaved</key>
+	<key>whoFaved</key>
 	<string>deviation/whofaved</string>
 </dict>
 </plist>

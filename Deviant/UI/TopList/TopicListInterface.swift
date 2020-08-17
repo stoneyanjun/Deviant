@@ -15,6 +15,7 @@ protocol TopicListInteractorInterface {
 
 protocol TopicListRouterInterface {
     var navigationController: UINavigationController? { get set }
+
     func showTopic(with topicName: String)
     func showDeviation(with deviation: DeviantDetailBase)
 }

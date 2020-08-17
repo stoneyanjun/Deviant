@@ -7,6 +7,26 @@
 
 import Foundation
 
+struct PopularParams {
+    var categoryPath: String
+    var query: String
+    var timeRange: String
+    var limit: Int
+    var offset: Int
+}
+
+struct TopicListParams {
+    var numDeviationsPerTopic: Int
+    var limit: Int
+    var offset: Int
+}
+
+struct TopicDetailParams {
+    var name: String
+    var limit: Int
+    var offset: Int
+}
+
 struct MetadataParams {
     var deviationids: [String]
     var extSubmission: Bool
@@ -21,4 +41,10 @@ struct CommentParams {
     var maxdepth: Int?
     var offset: Int
     var limit: Int
+}
+
+struct WhoFavedParams {
+    var deviationid: String
+    var limit: Int
+    var offset: Int
 }

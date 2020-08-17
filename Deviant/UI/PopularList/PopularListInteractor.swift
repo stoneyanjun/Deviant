@@ -40,7 +40,12 @@ extension PopularListInteractor: PopularListInteractorInterface {
 
 extension PopularListInteractor {
     private func fetchPopular(with offset: Int) {
-        NetworkManager<DeviantService>().networkRequest(target: .fetchPopular(categoryPath: "", query: "", timeRange: "", limit: NetworkConst.limit, offset: offset)) { result in
+        let params = PopularParams(categoryPath: "",
+                                   query: "",
+                                   timeRange: "",
+                                   limit: NetworkConst.limit,
+                                   offset: offset)
+        NetworkManager<DeviantService>().networkRequest(target: .fetchPopular(params: params)) { result in
             switch result {
             case .success(let json):
                 print(#function + " success")

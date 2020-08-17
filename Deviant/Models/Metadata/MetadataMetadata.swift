@@ -34,7 +34,7 @@ struct MetadataMetadata: HandyJSON {
     var title: String?
     var license: String?
     var isWatching: Bool?
-    var author: DeviantDetailAuthor?
+    var author: DeviantUser?
     var submission: MetadataSubmission?
 
     mutating func mapping(mapper: HelpingMapper) {

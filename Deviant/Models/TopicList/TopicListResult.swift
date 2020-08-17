@@ -8,7 +8,6 @@ import Foundation
 import HandyJSON
 
 struct TopicListResult: HandyJSON {
-
     enum CodingKeys: String, CodingKey {
         case exampleDeviations = "example_deviations"
         case name

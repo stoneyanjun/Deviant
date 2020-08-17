@@ -37,7 +37,10 @@ extension DeviantBaseViewController {
 
     func customLeftBarButton() {
         guard let backImage = UIImage(named: "back") else { return }
-        let backButton = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(leftBarButtonAction))
+        let backButton = UIBarButtonItem(image: backImage,
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(leftBarButtonAction))
         backButton.tintColor = .black
         backButton.imageInsets = Const.backButtonInsets
         navigationItem.hidesBackButton = true

@@ -10,6 +10,13 @@ import Segmentio
 import UIKit
 
 struct SegmentioBuilder {
+    private enum Const {
+        static let maxVisibleItems = 4
+        static let numberOfLines = 1
+        static let ratio: CGFloat = 1
+        static let fontSize: CGFloat = 13
+        static let animationDuration = 0.3
+    }
     static func setupBadgeCountForIndex(_ segmentioView: Segmentio, index: Int) {
         segmentioView.addBadge(
             at: index,
@@ -18,19 +25,25 @@ struct SegmentioBuilder {
         )
     }
 
-    static func buildHomeSegmentioView(segmentioView: Segmentio, segmentioStyle: SegmentioStyle, segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: 3)) {
+    static func buildHomeSegmentioView(segmentioView: Segmentio,
+                                       segmentioStyle: SegmentioStyle,
+                                       segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: Const.maxVisibleItems)) {
         segmentioView.setup(
             content: homeSegmentioContent(),
             style: segmentioStyle,
-            options: segmentioOptions(segmentioStyle: segmentioStyle, segmentioPosition: segmentioPosition)
+            options: segmentioOptions(segmentioStyle: segmentioStyle,
+                                      segmentioPosition: segmentioPosition)
         )
     }
 
-    static func buildDetailSegmentioView(segmentioView: Segmentio, segmentioStyle: SegmentioStyle, segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: 3)) {
+    static func buildDetailSegmentioView(segmentioView: Segmentio,
+                                         segmentioStyle: SegmentioStyle,
+                                         segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: Const.maxVisibleItems)) {
         segmentioView.setup(
             content: detailSegmentioContent(),
             style: segmentioStyle,
-            options: segmentioOptions(segmentioStyle: segmentioStyle, segmentioPosition: segmentioPosition)
+            options: segmentioOptions(segmentioStyle: segmentioStyle,
+                                      segmentioPosition: segmentioPosition)
         )
     }
 
@@ -46,11 +59,13 @@ struct SegmentioBuilder {
         return [
             SegmentioItem(title: "Info", image: nil),
             SegmentioItem(title: "Comment", image: nil),
+            SegmentioItem(title: "Favorate", image: nil),
             SegmentioItem(title: "More", image: nil)
         ]
     }
 
-    private static func segmentioOptions(segmentioStyle: SegmentioStyle, segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: 3)) -> SegmentioOptions {
+    private static func segmentioOptions(segmentioStyle: SegmentioStyle,
+                                         segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: Const.maxVisibleItems)) -> SegmentioOptions {
         var imageContentMode = UIView.ContentMode.center
         switch segmentioStyle {
         case .imageBeforeLabel, .imageAfterLabel:
@@ -68,14 +83,14 @@ struct SegmentioBuilder {
             verticalSeparatorOptions: segmentioVerticalSeparatorOptions(),
             imageContentMode: imageContentMode,
             labelTextAlignment: .center,
-            labelTextNumberOfLines: 1,
+            labelTextNumberOfLines: Const.numberOfLines,
             segmentStates: segmentioStates(),
-            animationDuration: 0.3
+            animationDuration: Const.animationDuration
         )
     }
 
     private static func segmentioStates() -> SegmentioStates {
-        let font = UIFont.exampleAvenirMedium(ofSize: 13)
+        let font = UIFont.exampleAvenirMedium(ofSize: Const.fontSize)
         return SegmentioStates(
             defaultState: segmentioState(
                 backgroundColor: .clear,
@@ -108,7 +123,7 @@ struct SegmentioBuilder {
     private static func segmentioIndicatorOptions() -> SegmentioIndicatorOptions {
         return SegmentioIndicatorOptions(
             type: .bottom,
-            ratio: 1,
+            ratio: Const.ratio,
             height: 5,
             color: ColorPalette.coral
         )
@@ -124,7 +139,7 @@ struct SegmentioBuilder {
 
     private static func segmentioVerticalSeparatorOptions() -> SegmentioVerticalSeparatorOptions {
         return SegmentioVerticalSeparatorOptions(
-            ratio: 1,
+            ratio: Const.ratio,
             color: ColorPalette.whiteSmoke
         )
     }

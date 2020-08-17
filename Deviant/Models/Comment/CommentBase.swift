@@ -9,7 +9,6 @@ import Foundation
 import HandyJSON
 
 struct CommentBase: HandyJSON {
-
     enum CodingKeys: String, CodingKey {
         case total
         case hasLess = "has_less"
