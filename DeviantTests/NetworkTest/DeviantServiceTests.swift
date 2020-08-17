@@ -2,8 +2,7 @@
 //  DeviantServiceTests.swift
 //  DeviantTests
 //
-//  Created by Stone on 16/8/2020.
-//  Copyright © 2020 JustNow. All rights reserved.
+//  Copyright © 2020 Stone. All rights reserved.
 //
 
 @testable import Deviant
@@ -84,6 +83,11 @@ class DeviantServiceTests: XCTestCase {
 
         group.enter()
         fetchMoreLike {
+            group.leave()
+        }
+
+        group.enter()
+        fetchWhoFavorate {
             group.leave()
         }
 
@@ -231,6 +235,25 @@ class DeviantServiceTests: XCTestCase {
             case .success(let json):
                 let moreLikeThis = JSONDeserializer<MoreLikeThisPreview>.deserializeFrom(json: json.description)
             XCTAssertNotNil(moreLikeThis)
+            case .failure(let error):
+                print(#function + "\(error.localizedDescription)")
+                XCTAssertTrue(!error.localizedDescription.isEmpty)
+            }
+            completion?()
+        }
+    }
+
+    private func fetchWhoFavorate(completion: (() -> Void)?) {
+        let offset = 0
+        let params = WhoFavedParams(deviationid: DeviantMockData.deviantId,
+                                    limit: NetworkConst.limit,
+                                    offset: offset)
+        NetworkManager<DeviantService>().networkRequest(target: .   whoFaved(params: params)) { result in
+            switch result {
+            case .success(let json):
+                let favorateBase = JSONDeserializer<WhoFavorateBase>.deserializeFrom(json: json.description)
+
+                XCTAssertTrue((favorateBase?.results?.count ?? 0) > 0)
             case .failure(let error):
                 print(#function + "\(error.localizedDescription)")
                 XCTAssertTrue(!error.localizedDescription.isEmpty)

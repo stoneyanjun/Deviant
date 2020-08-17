@@ -2,8 +2,7 @@
 //  FavorateTableViewCell.swift
 //  Deviant
 //
-//  Created by Stone on 17/8/2020.
-//  Copyright © 2020 JustNow. All rights reserved.
+//  Copyright © 2020 Stone. All rights reserved.
 //
 
 import Kingfisher

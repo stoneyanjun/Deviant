@@ -81,6 +81,8 @@
 		8E81334524EA130A009887C9 /* FavorateConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81333E24EA130A009887C9 /* FavorateConfiguration.swift */; };
 		8E81334624EA130A009887C9 /* FavorateConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81333F24EA130A009887C9 /* FavorateConfigurator.swift */; };
 		8E81334824EA13E4009887C9 /* FavorateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81334724EA13E4009887C9 /* FavorateTableViewCell.swift */; };
+		8E81334C24EA7582009887C9 /* FavorateInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81334A24EA7582009887C9 /* FavorateInteractorTests.swift */; };
+		8E81334D24EA7582009887C9 /* FavoratePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81334B24EA7582009887C9 /* FavoratePresenterTests.swift */; };
 		8E938E7324D9285A0063B79D /* MoreLikeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E938E6B24D9285A0063B79D /* MoreLikeViewController.xib */; };
 		8E938E7424D9285A0063B79D /* MoreLikeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E938E6C24D9285A0063B79D /* MoreLikeConfigurator.swift */; };
 		8E938E7524D9285A0063B79D /* MoreLikeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E938E6D24D9285A0063B79D /* MoreLikeConfiguration.swift */; };
@@ -267,6 +269,8 @@
 		8E81333E24EA130A009887C9 /* FavorateConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavorateConfiguration.swift; sourceTree = "<group>"; };
 		8E81333F24EA130A009887C9 /* FavorateConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavorateConfigurator.swift; sourceTree = "<group>"; };
 		8E81334724EA13E4009887C9 /* FavorateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorateTableViewCell.swift; sourceTree = "<group>"; };
+		8E81334A24EA7582009887C9 /* FavorateInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavorateInteractorTests.swift; sourceTree = "<group>"; };
+		8E81334B24EA7582009887C9 /* FavoratePresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoratePresenterTests.swift; sourceTree = "<group>"; };
 		8E938E6B24D9285A0063B79D /* MoreLikeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreLikeViewController.xib; sourceTree = "<group>"; };
 		8E938E6C24D9285A0063B79D /* MoreLikeConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikeConfigurator.swift; sourceTree = "<group>"; };
 		8E938E6D24D9285A0063B79D /* MoreLikeConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikeConfiguration.swift; sourceTree = "<group>"; };
@@ -501,6 +505,7 @@
 				8E19CC2B24E7EBE0000CAD09 /* CommentTest */,
 				8E19CC1424E7BB65000CAD09 /* DailyTest */,
 				8E19CC2124E7E546000CAD09 /* DeviantDetailTest */,
+				8E81334924EA7554009887C9 /* FavorateTest */,
 				8E19CC3024E80021000CAD09 /* MetadataTest */,
 				8E19CC2624E7E7FD000CAD09 /* MoreLikeTest */,
 				8E9D156724E818240027ECDF /* NetworkTest */,
@@ -827,6 +832,15 @@
 				8E81334724EA13E4009887C9 /* FavorateTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8E81334924EA7554009887C9 /* FavorateTest */ = {
+			isa = PBXGroup;
+			children = (
+				8E81334A24EA7582009887C9 /* FavorateInteractorTests.swift */,
+				8E81334B24EA7582009887C9 /* FavoratePresenterTests.swift */,
+			);
+			path = FavorateTest;
 			sourceTree = "<group>";
 		};
 		8E938E6A24D926DE0063B79D /* MoreLike */ = {
@@ -1387,10 +1401,12 @@
 				8E19CC1824E7BBA3000CAD09 /* DailyInteractorTests.swift in Sources */,
 				8E1B800224C0A4CB008C059C /* DeviantTests.swift in Sources */,
 				8E19CC3424E8005E000CAD09 /* MetadataPresenterTests.swift in Sources */,
+				8E81334C24EA7582009887C9 /* FavorateInteractorTests.swift in Sources */,
 				8E19CC1F24E7DC1F000CAD09 /* TopicDetailInteractorTests.swift in Sources */,
 				8E19CC2924E7E8E0000CAD09 /* MoreLikeInteractorTests.swift in Sources */,
 				8E19CC1A24E7C47E000CAD09 /* DeviantMockData.swift in Sources */,
 				8E19CC2E24E7FBCF000CAD09 /* CommentPresenterTests.swift in Sources */,
+				8E81334D24EA7582009887C9 /* FavoratePresenterTests.swift in Sources */,
 				8E9D156C24E8D0980027ECDF /* DeviantServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

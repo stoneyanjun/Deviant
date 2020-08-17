@@ -13,6 +13,7 @@ struct DeviantMockData {
     static let deviantId = "D08DE65F-FC99-B804-35B9-87655550B740"
     static let secondDeviantId = "B69A9A86-B509-EEB7-E4F6-ED562CD55F76"
     static let userid = "D4FE00D1-26F8-8989-B813-D4018CF554CC"
+    static let secondUserid = "1185483A-EE52-5BB6-D81F-45190908B1C4"
     static let usericon = "https://a.deviantart.net/avatars/k/e/keid.jpg?14"
     static let src = "https://images.wixm"
     static let username = "Keid"
@@ -30,7 +31,7 @@ struct DeviantMockData {
     static let url = "https:\\xxx"
     static let giverType = "volunteer"
     static let dateTime = "2020-06-12T00:00:00-0700"
-    static let publishedTime = "1591291314"
+    static let timeStamp = "1591291314"
     static let topicName = "Visual Art"
     static let canonicalName = "test canonicalName"
     static let replies = 11
@@ -48,10 +49,15 @@ struct DeviantMockData {
     static let descriptionValue = "www.javiergonzalezart.com"
     static let license = "No License"
 
-    static let author = DeviantUser(type: authorType,
+    static let user = DeviantUser(type: authorType,
                                     usericon: usericon,
                                     userid: userid,
                                     username: username)
+
+    static let secondUser = DeviantUser(type: giverType,
+                                        usericon: usericon,
+                                        userid: secondUserid,
+                                        username: username)
 
     static let content = DeviantDetailContent(height: height,
                                               src: src,
@@ -59,13 +65,8 @@ struct DeviantMockData {
                                               transparency: false,
                                               width: width)
 
-    static let giver = DeviantUser(type: giverType,
-                                   usericon: usericon,
-                                   userid: userid,
-                                   username: username)
-
     static let  dailyDeviant = DeviantDetailDailyDeviation(time: dateTime,
-                                                           giver: giver,
+                                                           giver: secondUser,
                                                            body: body)
 
     static let stats = DeviantDetailStats(comments: comments,
@@ -83,7 +84,7 @@ struct DeviantMockData {
 
     static let detail = DeviantDetailBase(allowsComments: true,
                                           deviationid: deviantId,
-                                          author: author,
+                                          author: user,
                                           content: content,
                                           dailyDeviation: dailyDeviant,
                                           url: url,
@@ -97,12 +98,12 @@ struct DeviantMockData {
                                           category: category,
                                           preview: preview,
                                           categoryPath: categoryPath,
-                                          publishedTime: publishedTime,
+                                          timeStamp: timeStamp,
                                           isFavourited: false)
 
     static let secondDetail = DeviantDetailBase(allowsComments: true,
                                                 deviationid: secondDeviantId,
-                                                author: author,
+                                                author: user,
                                                 content: content,
                                                 dailyDeviation: dailyDeviant,
                                                 url: url,
@@ -116,7 +117,7 @@ struct DeviantMockData {
                                                 category: category,
                                                 preview: preview,
                                                 categoryPath: categoryPath,
-                                                publishedTime: publishedTime,
+                                                timeStamp: timeStamp,
                                                 isFavourited: false)
 
     static let topicListResult = TopicListResult(exampleDeviations: [detail],
@@ -127,7 +128,7 @@ struct DeviantMockData {
     static let commentThread = CommentThread(replies: replies,
                                              hidden: hidden,
                                              body: body,
-                                             user: author,
+                                             user: user,
                                              commentid: commentid,
                                              posted: dateTime)
 
@@ -161,8 +162,10 @@ struct DeviantMockData {
                                            title: deviantTitle,
                                            license: license,
                                            isWatching: false,
-                                           author: author,
+                                           author: user,
                                            submission: metadataSubmission)
 
     static let metadataBase = MetadataBase(metadata: [metadata])
+
+    static let favorate = WhoFavorateResults(time: timeStamp, user: secondUser)
 }
