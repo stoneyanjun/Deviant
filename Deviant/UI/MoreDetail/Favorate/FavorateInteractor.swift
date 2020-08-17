@@ -19,26 +19,25 @@ class FavorateInteractor {
 }
 
 extension FavorateInteractor: FavorateInteractorInterface {
-    func tryFetchFavorates() {
+    func tryFetchFavorates(offset: Int) {
         presenter?.setLoadingView(with: true)
         if TokenManager.shared.needFetchToken() {
             TokenManager.shared.fetchToken { result in
                 switch result {
                 case .success:
-                    self.fetchWhoFavorate()
+                    self.fetchWhoFavorate(offset: offset)
                 case .failure(let error):
                     self.presenter?.showError(with: error)
                 }
             }
         } else {
-            fetchWhoFavorate()
+            fetchWhoFavorate(offset: offset)
         }
     }
 }
 
 extension FavorateInteractor {
-    private func fetchWhoFavorate() {
-        let offset = 0
+    private func fetchWhoFavorate(offset: Int) {
         guard let deviationid = config.deviantDetail?.deviationid else {
             return
         }

@@ -29,6 +29,6 @@ extension CommentPresenter: CommentPresenterInterface {
         for thread in threads {
             comments.append(thread.toDisplayModel())
         }
-        viewController?.update(with: comments)
+        viewController?.update(with: comments, nextOffset: (comment.nextOffset ?? 0))
     }
 }

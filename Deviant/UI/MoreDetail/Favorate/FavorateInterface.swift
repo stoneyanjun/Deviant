@@ -8,7 +8,7 @@
 import UIKit
 
 protocol FavorateInteractorInterface {
-    func tryFetchFavorates()
+    func tryFetchFavorates(offset: Int)
 }
 
 protocol FavorateRouterInterface {
@@ -23,5 +23,5 @@ protocol FavoratePresenterInterface {
 protocol FavorateViewControllerInterface: UIViewController {
     func setLoadingView(with status: Bool)
     func showError(with error: Error)
-    func update(with favorates: [FavorateTableViewCell.ViewData])
+    func update(with favorates: [FavorateTableViewCell.ViewData], nextOffset: Int)
 }

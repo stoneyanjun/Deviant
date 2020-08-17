@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CommentInteractorInterface {
-    func tryFetchComments()
+    func tryFetchComments(offset: Int)
 }
 
 protocol CommentRouterInterface {
@@ -23,5 +23,5 @@ protocol CommentPresenterInterface {
 protocol CommentViewControllerInterface: UIViewController {
     func setLoadingView(with status: Bool)
     func showError(with error: Error)
-    func update(with comments: [CommentTableViewCell.ViewData])
+    func update(with comments: [CommentTableViewCell.ViewData], nextOffset: Int)
 }

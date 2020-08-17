@@ -50,9 +50,9 @@ struct DeviantMockData {
     static let license = "No License"
 
     static let user = DeviantUser(type: authorType,
-                                    usericon: usericon,
-                                    userid: userid,
-                                    username: username)
+                                  usericon: usericon,
+                                  userid: userid,
+                                  username: username)
 
     static let secondUser = DeviantUser(type: giverType,
                                         usericon: usericon,
@@ -89,16 +89,16 @@ struct DeviantMockData {
                                           dailyDeviation: dailyDeviant,
                                           url: url,
                                           stats: stats,
-                                          isDeleted: true,
+                                          isDeleted: false,
                                           title: deviantTitle,
-                                          isDownloadable: true,
-                                          isMature: true,
+                                          isDownloadable: false,
+                                          isMature: false,
                                           thumbs: [thumb],
                                           downloadFilesize: fileSize,
                                           category: category,
                                           preview: preview,
                                           categoryPath: categoryPath,
-                                          timeStamp: timeStamp,
+                                          publishedTime: timeStamp,
                                           isFavourited: false)
 
     static let secondDetail = DeviantDetailBase(allowsComments: true,
@@ -117,7 +117,7 @@ struct DeviantMockData {
                                                 category: category,
                                                 preview: preview,
                                                 categoryPath: categoryPath,
-                                                timeStamp: timeStamp,
+                                                publishedTime: timeStamp,
                                                 isFavourited: false)
 
     static let topicListResult = TopicListResult(exampleDeviations: [detail],
@@ -167,5 +167,6 @@ struct DeviantMockData {
 
     static let metadataBase = MetadataBase(metadata: [metadata])
 
-    static let favorate = WhoFavorateResults(time: timeStamp, user: secondUser)
+    static let favorate = WhoFavorateResults(time: (timeStamp.int ?? 0),
+                                             user: secondUser)
 }

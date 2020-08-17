@@ -7,6 +7,7 @@
 
 import CHTCollectionViewWaterfallLayout
 import DZNEmptyDataSet
+import ESPullToRefresh
 import Kingfisher
 import Reusable
 import UIKit
@@ -47,6 +48,23 @@ extension TopicDetailViewController {
 
         let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
         collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
+
+        setupPullToRefresh()
+    }
+
+    private func setupPullToRefresh() {
+        collectionView.es.addPullToRefresh {
+            self.offset = 0
+            self.interactor?.tryFetchTopic(with: self.offset)
+        }
+        collectionView.es.addInfiniteScrolling {
+            self.interactor?.tryFetchTopic(with: self.offset)
+        }
+    }
+
+    private func stopES() {
+        collectionView.es.stopPullToRefresh()
+        collectionView.es.stopLoadingMore()
     }
 
     private func updateCollectionView() {
@@ -101,17 +119,20 @@ extension TopicDetailViewController: TopicDetailViewControllerInterface {
         setHUD(with: status)
     }
     func showError(with error: Error) {
-        showError(errorMsg: error.localizedDescription)
+        stopES()
         updateCollectionView()
+        showError(errorMsg: error.localizedDescription)
     }
 
     func update(with results: [DeviantDetailBase], nextOffset: Int) {
+        stopES()
         if self.offset <= 0 {
             self.results.removeAll()
         }
         self.results.append(contentsOf: results)
         self.offset = nextOffset
         updateCollectionView()
+        setLoadingView(with: false)
     }
 }
 

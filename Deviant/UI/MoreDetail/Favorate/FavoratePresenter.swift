@@ -29,6 +29,6 @@ extension FavoratePresenter: FavoratePresenterInterface {
         for whoFavorate in results {
             favorateViewDatas.append(whoFavorate.toDisplayModel())
         }
-        viewController?.update(with: favorateViewDatas)
+        viewController?.update(with: favorateViewDatas, nextOffset: (favorate.nextOffset ?? 0))
     }
 }

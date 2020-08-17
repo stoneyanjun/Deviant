@@ -19,26 +19,25 @@ class CommentInteractor {
 }
 
 extension CommentInteractor: CommentInteractorInterface {
-    func tryFetchComments() {
+    func tryFetchComments(offset: Int) {
         presenter?.setLoadingView(with: true)
         if TokenManager.shared.needFetchToken() {
             TokenManager.shared.fetchToken { result in
                 switch result {
                 case .success:
-                    self.fetchComment()
+                    self.fetchComment(offset: offset)
                 case .failure(let error):
                     self.presenter?.showError(with: error)
                 }
             }
         } else {
-            fetchComment()
+            fetchComment(offset: offset)
         }
     }
 }
 
 extension CommentInteractor {
-    private func fetchComment() {
-        let offset = 0
+    private func fetchComment(offset: Int) {
         guard let deviationid = config.deviantDetail?.deviationid else {
             return
         }

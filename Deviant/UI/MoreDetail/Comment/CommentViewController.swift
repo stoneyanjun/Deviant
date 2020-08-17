@@ -5,7 +5,9 @@
 //  Copyright © 2020 Stone. All rights reserved.
 //
 
+import CHTCollectionViewWaterfallLayout
 import DZNEmptyDataSet
+import ESPullToRefresh
 import Kingfisher
 import Reusable
 import SnapKit
@@ -21,18 +23,48 @@ class CommentViewController: DeviantBaseViewController {
     private(set) var commentTableView: UITableView!
     private lazy var defaultCell = UITableViewCell()
     private var results: [CommentTableViewCell.ViewData] = []
+    private var offset = 0
+    private var errorDesc: String?
 
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         makeView()
-        interactor?.tryFetchComments()
+        interactor?.tryFetchComments(offset: offset)
+    }
+}
+
+extension CommentViewController {
+    func setupPullToRefresh() {
+        commentTableView.es.addPullToRefresh {
+            self.offset = 0
+            self.errorDesc = nil
+            self.interactor?.tryFetchComments(offset: self.offset)
+        }
+        commentTableView.es.addInfiniteScrolling {
+            self.errorDesc = nil
+            self.interactor?.tryFetchComments(offset: self.offset)
+        }
+    }
+
+    private func stopES() {
+        commentTableView.es.stopPullToRefresh()
+        commentTableView.es.stopLoadingMore()
+    }
+
+    private func updateTableView() {
+        if results.isEmpty {
+            commentTableView.emptyDataSetDelegate = self
+            commentTableView.emptyDataSetSource = self
+        }
+        commentTableView.reloadData()
     }
 }
 
 extension CommentViewController {
     func makeView() {
         makeTableView()
+        setupPullToRefresh()
     }
 
     func makeTableView() {
@@ -51,28 +83,20 @@ extension CommentViewController {
             make.edges.equalToSuperview()
         }
     }
-
-    private func updateTableView() {
-        if results.isEmpty {
-            commentTableView.emptyDataSetDelegate = self
-            commentTableView.emptyDataSetSource = self
-        }
-        commentTableView.reloadData()
-    }
 }
 
 extension CommentViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func commentTableView(_ commentTableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }
 
 extension CommentViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ commentTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.reuseIdentifier,
+    func tableView(_ commentTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = commentTableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.reuseIdentifier,
                                                     for: indexPath) as? CommentTableViewCell {
             cell.update(with: results[indexPath.row])
             return cell
@@ -87,19 +111,22 @@ extension CommentViewController: CommentViewControllerInterface {
         setHUD(with: status)
     }
     func showError(with error: Error) {
-        showError(errorMsg: error.localizedDescription)
+        stopES()
         updateTableView()
+        showError(errorMsg: error.localizedDescription)
     }
 
-    func update(with results: [CommentTableViewCell.ViewData]) {
-        setLoadingView(with: false)
+    func update(with results: [CommentTableViewCell.ViewData], nextOffset: Int) {
+        stopES()
+        offset = nextOffset
         self.results = results
         updateTableView()
+        setLoadingView(with: false)
     }
 }
 
 extension CommentViewController: DZNEmptyDataSetDelegate {
     func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
-        interactor?.tryFetchComments()
+        interactor?.tryFetchComments(offset: offset)
     }
 }
