@@ -58,6 +58,7 @@
 		8E5F844E24DA5447002E6E47 /* MetadataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F844724DA5447002E6E47 /* MetadataBase.swift */; };
 		8E5F844F24DA5447002E6E47 /* MetadataSubmittedWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F844824DA5447002E6E47 /* MetadataSubmittedWith.swift */; };
 		8E61635F24EBD3100043DB63 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61635E24EBD3100043DB63 /* UIApplication+Extension.swift */; };
+		8E61636224EBE05C0043DB63 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61636124EBE05C0043DB63 /* UILabel+Extension.swift */; };
 		8E66AC1A24D6449800A384AE /* MoreDetailContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC1824D6449800A384AE /* MoreDetailContainerVC.swift */; };
 		8E66AC1B24D6449800A384AE /* MoreDetailContainerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E66AC1924D6449800A384AE /* MoreDetailContainerVC.xib */; };
 		8E66AC3424D65EA200A384AE /* TopicListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3224D65EA200A384AE /* TopicListResult.swift */; };
@@ -249,6 +250,7 @@
 		8E5F844724DA5447002E6E47 /* MetadataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataBase.swift; sourceTree = "<group>"; };
 		8E5F844824DA5447002E6E47 /* MetadataSubmittedWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataSubmittedWith.swift; sourceTree = "<group>"; };
 		8E61635E24EBD3100043DB63 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		8E61636124EBE05C0043DB63 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		8E66AC1824D6449800A384AE /* MoreDetailContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailContainerVC.swift; sourceTree = "<group>"; };
 		8E66AC1924D6449800A384AE /* MoreDetailContainerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreDetailContainerVC.xib; sourceTree = "<group>"; };
 		8E66AC3224D65EA200A384AE /* TopicListResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListResult.swift; sourceTree = "<group>"; };
@@ -769,6 +771,14 @@
 			path = UIApplication;
 			sourceTree = "<group>";
 		};
+		8E61636024EBE0400043DB63 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				8E61636124EBE05C0043DB63 /* UILabel+Extension.swift */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
 		8E66AC1724D63FDF00A384AE /* MoreDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -970,6 +980,7 @@
 		8EBB91ED24C3E80300223F51 /* UIUtils */ = {
 			isa = PBXGroup;
 			children = (
+				8E61636024EBE0400043DB63 /* UILabel */,
 				8E61635D24EBD2F60043DB63 /* UIApplication */,
 				8E54E6CE24D1A86E00339EFA /* UIView */,
 				8EFB59A624C6A9CC005DE580 /* BaseUIViewController */,
@@ -1409,6 +1420,7 @@
 				8E938E7524D9285A0063B79D /* MoreLikeConfiguration.swift in Sources */,
 				8E5F844F24DA5447002E6E47 /* MetadataSubmittedWith.swift in Sources */,
 				8E944EDD24C89F330050B76B /* TopicListPresenter.swift in Sources */,
+				8E61636224EBE05C0043DB63 /* UILabel+Extension.swift in Sources */,
 				8EFB6E8924E9F080002A62B5 /* WhoFavorateResults.swift in Sources */,
 				8EFB599A24C66F6A005DE580 /* PopularListConfigurator.swift in Sources */,
 				8E81334124EA130A009887C9 /* FavorateInteractor.swift in Sources */,

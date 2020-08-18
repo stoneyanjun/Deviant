@@ -22,14 +22,10 @@ class TagCollectionViewCell: UICollectionViewCell, Reusable {
         static let margin: CGFloat = 8
     }
 
-    private lazy var tagLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = ColorPalette.defaultBackground
-        label.textColor = .white
-        label.font = DevinatFont.systemFont.font(size: .footnote)
-        label.adjustsFontForContentSizeCategory = true
-        return label
-    }()
+    private lazy var tagLabel = UILabel.make(color: .white,
+                                             backgroundColor: ColorPalette.defaultBackground,
+                                             font: DeviFont.systemFont.font(size: .footnote),
+                                             alignment: .center)
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

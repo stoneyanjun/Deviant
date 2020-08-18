@@ -22,23 +22,15 @@ class FavorateTableViewCell: UITableViewCell, Reusable {
         return imageView
     }()
 
-    private lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = ColorPalette.defaultBackground
-        label.textColor = .white
-        label.font = DevinatFont.systemFont.font(size: .body)
-        label.adjustsFontForContentSizeCategory = true
-        return label
-    }()
+    private lazy var nameLabel = UILabel.make(color: .white,
+                                              backgroundColor: ColorPalette.defaultBackground,
+                                              font: DeviFont.systemFont.font(size: .body),
+                                              alignment: .left)
 
-    private lazy var dateLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = ColorPalette.defaultBackground
-        label.font = DevinatFont.systemFont.font(size: .footnote)
-        label.adjustsFontForContentSizeCategory = true
-        label.textColor = .white
-        return label
-    }()
+    private lazy var dateLabel = UILabel.make(color: .white,
+                                              backgroundColor: ColorPalette.defaultBackground,
+                                              font: DeviFont.systemFont.font(size: .footnote),
+                                              alignment: .right)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -53,7 +45,8 @@ class FavorateTableViewCell: UITableViewCell, Reusable {
 
     func update(with data: ViewData) {
         if let url = URL(string: data.avatarUrlString.wrap()) {
-            avatarImageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
+            avatarImageView.kf.setImage(with: url,
+                                        placeholder: UIImage(named: "loading"))
         } else {
             avatarImageView.image = UIImage(named: "AvatorWhite")
         }

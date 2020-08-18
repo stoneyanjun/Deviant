@@ -18,7 +18,7 @@ extension UIFont {
     }
 }
 
-enum DevinatFont: String {
+enum DeviFont: String {
     case systemFont = "System Font"
 
     func font(size: FontSize) -> UIFont {

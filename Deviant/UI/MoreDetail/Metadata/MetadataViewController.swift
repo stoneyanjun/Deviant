@@ -27,12 +27,18 @@ class MetadataViewController: DeviantBaseViewController {
         return formatter
     }()
 
-    @IBOutlet weak var viewsLabel: UILabel!
-    @IBOutlet weak var creationTimeLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var avatorImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var creationTimeLabel: UILabel!
+    @IBOutlet weak var viewsLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+
+//    private lazy var titleLabel = UILabel.make(with: nil,
+//                                               color: .white,
+//                                               font: DeviFont.systemFont.font(size: .title),
+//                                               numOfLines: 0,
+//                                               alignment: .left)
 
     private var meta: MetadataBase?
     var interactor: MetadataInteractorInterface?
