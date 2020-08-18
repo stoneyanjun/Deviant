@@ -5,9 +5,11 @@
 //  Copyright © 2020 Stone. All rights reserved.
 //
 
+@testable import Deviant
+import FBSnapshotTestCase
 import XCTest
 
-class DeviantUITests: XCTestCase {
+class DeviantUITests: FBSnapshotTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -16,6 +18,8 @@ class DeviantUITests: XCTestCase {
         continueAfterFailure = false
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+
+        recordMode = true
     }
 
     override func tearDown() {

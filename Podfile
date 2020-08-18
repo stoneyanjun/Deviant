@@ -35,6 +35,11 @@ target 'Deviant' do
     inherit! :search_paths
     # Pods for testing
   end
+  
+  target "DeviantUITests" do
+    use_frameworks!
+    pod 'iOSSnapshotTestCase'
+  end
 end
 
 

@@ -166,6 +166,7 @@
 		8EFB6E8B24E9F080002A62B5 /* WhoFavorateBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB6E8824E9F080002A62B5 /* WhoFavorateBase.swift */; };
 		8EFC857724D8E5FA00EA8023 /* CommentThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFC857424D8E5F900EA8023 /* CommentThread.swift */; };
 		8EFC857924D8E5FA00EA8023 /* CommentBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFC857624D8E5FA00EA8023 /* CommentBase.swift */; };
+		D186EEC2CFD25082303EEF3F /* Pods_Deviant_DeviantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7B8725F74961AC359FCAD7 /* Pods_Deviant_DeviantUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,10 +188,12 @@
 
 /* Begin PBXFileReference section */
 		0A35E1EBE76FF158AA827EB0 /* Pods-DeviantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviantTests.release.xcconfig"; path = "Target Support Files/Pods-DeviantTests/Pods-DeviantTests.release.xcconfig"; sourceTree = "<group>"; };
+		2C7B8725F74961AC359FCAD7 /* Pods_Deviant_DeviantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Deviant_DeviantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D97992183629E87F01CDAE7 /* Pods_DeviantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeviantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4152B91DEF81250BDDE8263B /* Pods-Deviant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deviant.debug.xcconfig"; path = "Target Support Files/Pods-Deviant/Pods-Deviant.debug.xcconfig"; sourceTree = "<group>"; };
 		51567E4DEFD8B1D2471A373E /* Pods_Deviant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Deviant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC46D81D80E9EBB9DB022CE /* Pods-DeviantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviantTests.debug.xcconfig"; path = "Target Support Files/Pods-DeviantTests/Pods-DeviantTests.debug.xcconfig"; sourceTree = "<group>"; };
+		89265D00E52FBED86F8A620C /* Pods-Deviant-DeviantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deviant-DeviantUITests.release.xcconfig"; path = "Target Support Files/Pods-Deviant-DeviantUITests/Pods-Deviant-DeviantUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8E19CC1524E7BBA3000CAD09 /* DailyPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyPresenterTests.swift; sourceTree = "<group>"; };
 		8E19CC1624E7BBA3000CAD09 /* DailyInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyInteractorTests.swift; sourceTree = "<group>"; };
 		8E19CC1924E7C47E000CAD09 /* DeviantMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantMockData.swift; sourceTree = "<group>"; };
@@ -355,6 +358,7 @@
 		8EFC857424D8E5F900EA8023 /* CommentThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentThread.swift; sourceTree = "<group>"; };
 		8EFC857624D8E5FA00EA8023 /* CommentBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentBase.swift; sourceTree = "<group>"; };
 		D686C8D192EFD0D9DAD1D56B /* Pods-Deviant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deviant.release.xcconfig"; path = "Target Support Files/Pods-Deviant/Pods-Deviant.release.xcconfig"; sourceTree = "<group>"; };
+		F1B2D957DDC6FC73527F503C /* Pods-Deviant-DeviantUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Deviant-DeviantUITests.debug.xcconfig"; path = "Target Support Files/Pods-Deviant-DeviantUITests/Pods-Deviant-DeviantUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,6 +382,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D186EEC2CFD25082303EEF3F /* Pods_Deviant_DeviantUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +396,8 @@
 				D686C8D192EFD0D9DAD1D56B /* Pods-Deviant.release.xcconfig */,
 				6BC46D81D80E9EBB9DB022CE /* Pods-DeviantTests.debug.xcconfig */,
 				0A35E1EBE76FF158AA827EB0 /* Pods-DeviantTests.release.xcconfig */,
+				F1B2D957DDC6FC73527F503C /* Pods-Deviant-DeviantUITests.debug.xcconfig */,
+				89265D00E52FBED86F8A620C /* Pods-Deviant-DeviantUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -400,6 +407,7 @@
 			children = (
 				51567E4DEFD8B1D2471A373E /* Pods_Deviant.framework */,
 				2D97992183629E87F01CDAE7 /* Pods_DeviantTests.framework */,
+				2C7B8725F74961AC359FCAD7 /* Pods_Deviant_DeviantUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1077,9 +1085,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E1B801724C0A4CB008C059C /* Build configuration list for PBXNativeTarget "DeviantUITests" */;
 			buildPhases = (
+				BA1EEDE8320E02E1A4F8E8DC /* [CP] Check Pods Manifest.lock */,
 				8E1B800424C0A4CB008C059C /* Sources */,
 				8E1B800524C0A4CB008C059C /* Frameworks */,
 				8E1B800624C0A4CB008C059C /* Resources */,
+				9C55FAD113F8873AC6D077AB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1213,6 +1223,23 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		9C55FAD113F8873AC6D077AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Deviant-DeviantUITests/Pods-Deviant-DeviantUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Deviant-DeviantUITests/Pods-Deviant-DeviantUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Deviant-DeviantUITests/Pods-Deviant-DeviantUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B7A35706293EF36A4C74F568 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1229,6 +1256,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-DeviantTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA1EEDE8320E02E1A4F8E8DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Deviant-DeviantUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1666,6 +1715,7 @@
 		};
 		8E1B801824C0A4CB008C059C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1B2D957DDC6FC73527F503C /* Pods-Deviant-DeviantUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1686,6 +1736,7 @@
 		};
 		8E1B801924C0A4CB008C059C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89265D00E52FBED86F8A620C /* Pods-Deviant-DeviantUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
