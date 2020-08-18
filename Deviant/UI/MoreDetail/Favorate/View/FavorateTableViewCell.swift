@@ -14,7 +14,6 @@ class FavorateTableViewCell: UITableViewCell, Reusable {
     private enum Const {
         static let margin: CGFloat = 12
         static let imageWith: CGFloat = 32
-        static let rightMargin: CGFloat = 8
     }
 
     private lazy var avatarImageView: UIImageView = {
@@ -27,12 +26,16 @@ class FavorateTableViewCell: UITableViewCell, Reusable {
         let label = UILabel()
         label.backgroundColor = ColorPalette.defaultBackground
         label.textColor = .white
+        label.font = DevinatFont.systemFont.font(size: .body)
+        label.adjustsFontForContentSizeCategory = true
         return label
     }()
 
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = ColorPalette.defaultBackground
+        label.font = DevinatFont.systemFont.font(size: .footnote)
+        label.adjustsFontForContentSizeCategory = true
         label.textColor = .white
         return label
     }()
@@ -87,7 +90,7 @@ extension FavorateTableViewCell {
         dateLabel.snp.makeConstraints { make in
             make.leading.greaterThanOrEqualTo(nameLabel.snp.trailing).offset(Const.margin)
             make.centerY.equalTo(nameLabel.snp.centerY)
-            make.trailing.equalToSuperview().offset(-Const.rightMargin)
+            make.trailing.equalToSuperview().offset(-Const.margin)
         }
     }
 }

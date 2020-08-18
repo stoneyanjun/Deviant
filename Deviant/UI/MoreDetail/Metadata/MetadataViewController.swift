@@ -55,9 +55,9 @@ extension MetadataViewController: MetadataViewControllerInterface {
     }
 
     func update(with meta: MetadataBase) {
-        setLoadingView(with: false)
         self.meta = meta
         updateUI()
+        setLoadingView(with: false)
     }
 }
 
@@ -100,8 +100,9 @@ extension MetadataViewController {
         collectionView.setCollectionViewLayout(flowLayout, animated: false)
 
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        let viewNib = UINib(nibName: "TagCollectionViewCell", bundle: nil)
-        collectionView.register(viewNib, forCellWithReuseIdentifier: TagCollectionViewCell.reuseIdentifier)
+//        let viewNib = UINib(nibName: "TagCollectionViewCell", bundle: nil)
+//        collectionView.register(viewNib, forCellWithReuseIdentifier: TagCollectionViewCell.reuseIdentifier)
+        collectionView.register(cellType: TagCollectionViewCell.self)
     }
 }
 
@@ -122,7 +123,7 @@ extension MetadataViewController: UICollectionViewDataSource {
             let tags = meta?.metadata?.first?.tags else {
                 return UICollectionViewCell()
         }
-        cell.tagLabel.text = tags[indexPath.row].tagName
+        cell.update(with: tags[indexPath.row].tagName.wrap())
         return cell
     }
 }
