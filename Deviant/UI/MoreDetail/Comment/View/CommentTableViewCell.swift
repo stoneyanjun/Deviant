@@ -15,9 +15,26 @@ class CommentTableViewCell: UITableViewCell, Reusable {
     @IBOutlet weak var postDateLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+//    private lazy var usernameLabel = UILabel.make( color: .white,
+//                                                            backgroundColor: .defaultBackground,
+//                                                            font: DeviFont.systemFont.font(size: .body),
+//                                                            numOfLines: 0,
+//                                                            alignment: .left)
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
+        makeViews()
+        applyConstraints()
     }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -37,6 +54,15 @@ class CommentTableViewCell: UITableViewCell, Reusable {
     }
 }
 
+extension CommentTableViewCell {
+    private func makeViews() {
+
+    }
+
+    private func applyConstraints() {
+
+    }
+}
 extension CommentTableViewCell {
     struct ViewData {
         var avatarUrlString: String?

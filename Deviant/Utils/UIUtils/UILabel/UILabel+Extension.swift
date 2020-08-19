@@ -13,8 +13,8 @@ extension UILabel {
                      color: UIColor? = nil,
                      backgroundColor: UIColor? = nil,
                      font: UIFont? = nil,
-                     numOfLines: Int? = nil,
-                     alignment: NSTextAlignment? = nil) -> UILabel {
+                     numOfLines: Int? = 0,
+                     alignment: NSTextAlignment? = .left) -> UILabel {
         let label = UILabel()
         label.adjustsFontForContentSizeCategory = true
         label.translatesAutoresizingMaskIntoConstraints = false
