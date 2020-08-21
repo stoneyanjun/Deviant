@@ -70,6 +70,10 @@ extension CommentViewController {
     func makeTableView() {
         commentTableView = UITableView(frame: .zero, style: .plain)
         view.addSubview(commentTableView)
+        commentTableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
         commentTableView.delegate = self
         commentTableView.dataSource = self
 
@@ -77,12 +81,6 @@ extension CommentViewController {
         commentTableView.estimatedRowHeight = Const.estimatedRowHeight
         commentTableView.rowHeight = UITableView.automaticDimension
         commentTableView.register(cellType: CommentTableViewCell.self)
-//        commentTableView.register(CommentTableViewCell.createNib(),
-//                                  forCellReuseIdentifier: CommentTableViewCell.reuseIdentifier)
-
-        commentTableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
     }
 }
 
@@ -98,7 +96,7 @@ extension CommentViewController: UITableViewDataSource {
 
     func tableView(_ commentTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = commentTableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.reuseIdentifier,
-                                                    for: indexPath) as? CommentTableViewCell {
+                                                           for: indexPath) as? CommentTableViewCell {
             cell.update(with: results[indexPath.row])
             return cell
         } else {

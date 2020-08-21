@@ -90,7 +90,6 @@
 		8E81334824EA13E4009887C9 /* FavorateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81334724EA13E4009887C9 /* FavorateTableViewCell.swift */; };
 		8E81334C24EA7582009887C9 /* FavorateInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81334A24EA7582009887C9 /* FavorateInteractorTests.swift */; };
 		8E81334D24EA7582009887C9 /* FavoratePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81334B24EA7582009887C9 /* FavoratePresenterTests.swift */; };
-		8E938E7324D9285A0063B79D /* MoreLikeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E938E6B24D9285A0063B79D /* MoreLikeViewController.xib */; };
 		8E938E7424D9285A0063B79D /* MoreLikeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E938E6C24D9285A0063B79D /* MoreLikeConfigurator.swift */; };
 		8E938E7524D9285A0063B79D /* MoreLikeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E938E6D24D9285A0063B79D /* MoreLikeConfiguration.swift */; };
 		8E938E7624D9285A0063B79D /* MoreLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E938E6E24D9285A0063B79D /* MoreLikeViewController.swift */; };
@@ -288,7 +287,6 @@
 		8E81334724EA13E4009887C9 /* FavorateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorateTableViewCell.swift; sourceTree = "<group>"; };
 		8E81334A24EA7582009887C9 /* FavorateInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavorateInteractorTests.swift; sourceTree = "<group>"; };
 		8E81334B24EA7582009887C9 /* FavoratePresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoratePresenterTests.swift; sourceTree = "<group>"; };
-		8E938E6B24D9285A0063B79D /* MoreLikeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreLikeViewController.xib; sourceTree = "<group>"; };
 		8E938E6C24D9285A0063B79D /* MoreLikeConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikeConfigurator.swift; sourceTree = "<group>"; };
 		8E938E6D24D9285A0063B79D /* MoreLikeConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikeConfiguration.swift; sourceTree = "<group>"; };
 		8E938E6E24D9285A0063B79D /* MoreLikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikeViewController.swift; sourceTree = "<group>"; };
@@ -928,7 +926,6 @@
 				8E938E7024D9285A0063B79D /* MoreLikePresenter.swift */,
 				8E938E7224D9285A0063B79D /* MoreLikeRouter.swift */,
 				8E938E6E24D9285A0063B79D /* MoreLikeViewController.swift */,
-				8E938E6B24D9285A0063B79D /* MoreLikeViewController.xib */,
 			);
 			path = MoreLike;
 			sourceTree = "<group>";
@@ -1222,7 +1219,6 @@
 				8E944EAB24C88C490050B76B /* PopularListViewController.xib in Resources */,
 				8EAED41C24D52547004E8AC3 /* TopicDetailViewController.xib in Resources */,
 				8E1B803D24C0B42C008C059C /* ServerInfo.plist in Resources */,
-				8E938E7324D9285A0063B79D /* MoreLikeViewController.xib in Resources */,
 				8E1B803B24C0B422008C059C /* Request.plist in Resources */,
 				8E66AC4424D679B200A384AE /* MetadataViewController.xib in Resources */,
 				8E944EAF24C88DF40050B76B /* ImageUICollectionViewCell.xib in Resources */,

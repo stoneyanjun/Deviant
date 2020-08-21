@@ -8,6 +8,7 @@
 import CHTCollectionViewWaterfallLayout
 import DZNEmptyDataSet
 import Kingfisher
+import SnapKit
 import UIKit
 
 class MoreLikeViewController: DeviantBaseViewController {
@@ -19,12 +20,10 @@ class MoreLikeViewController: DeviantBaseViewController {
     }
 
     var interactor: MoreLikeInteractorInterface?
-    @IBOutlet private weak var collectionView: UICollectionView!
     private lazy var defaultCell = UICollectionViewCell()
-
+    private var moreLikeCollectionView: UICollectionView?
     private var moreFromArtist: [DeviantDetailBase] = []
     private var moreFromDa: [DeviantDetailBase] = []
-
     private var offset = 0
 
     // MARK: View lifecycle
@@ -37,11 +36,25 @@ class MoreLikeViewController: DeviantBaseViewController {
 
 extension MoreLikeViewController {
     func setupCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
         let layout = CHTCollectionViewWaterfallLayout()
         layout.minimumColumnSpacing = Const.minColumnSpace
         layout.minimumInteritemSpacing = Const.minItemSpace
+
+        moreLikeCollectionView = UICollectionView(
+            frame: self.view.frame,
+            collectionViewLayout: layout
+        )
+        guard let collectionView = moreLikeCollectionView else {
+            return
+        }
+        view.addSubview(collectionView)
+        collectionView.frame = self.view.frame
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
+        collectionView.delegate = self
+        collectionView.dataSource = self
 
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.alwaysBounceVertical = true
@@ -57,6 +70,10 @@ extension MoreLikeViewController {
     }
 
     private func updateCollectionView() {
+        guard let collectionView = moreLikeCollectionView else {
+            return
+        }
+
         if moreFromArtist.isEmpty && moreFromDa.isEmpty {
             collectionView.emptyDataSetDelegate = self
             collectionView.emptyDataSetSource = self
