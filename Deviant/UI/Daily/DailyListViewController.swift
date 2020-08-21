@@ -105,9 +105,9 @@ extension DailyListViewController: DailyListViewControllerInterface {
 
     func update(with results: [DeviantDetailBase]) {
         stopES()
-        setLoadingView(with: false)
         self.results = results
         updateTableView()
+        setLoadingView(with: false)
     }
 }
 

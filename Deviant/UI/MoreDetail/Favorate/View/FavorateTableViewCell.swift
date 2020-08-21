@@ -23,12 +23,10 @@ class FavorateTableViewCell: UITableViewCell, Reusable {
     }()
 
     private lazy var nameLabel = UILabel.make(color: .white,
-                                              backgroundColor: ColorPalette.defaultBackground,
                                               font: DeviFont.systemFont.font(size: .body),
                                               alignment: .left)
 
     private lazy var dateLabel = UILabel.make(color: .white,
-                                              backgroundColor: ColorPalette.defaultBackground,
                                               font: DeviFont.systemFont.font(size: .footnote),
                                               alignment: .right)
 

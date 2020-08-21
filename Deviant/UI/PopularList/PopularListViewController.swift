@@ -124,7 +124,6 @@ extension PopularListViewController: PopularListViewControllerInterface {
     }
 
     func update(with results: [DeviantDetailBase], nextOffset: Int) {
-        setLoadingView(with: false)
         stopES()
         if self.offset <= 0 {
             self.results.removeAll()
@@ -132,6 +131,7 @@ extension PopularListViewController: PopularListViewControllerInterface {
         self.results.append(contentsOf: results)
         self.offset = nextOffset
         updateCollectionView()
+        setLoadingView(with: false)
     }
 }
 

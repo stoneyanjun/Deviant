@@ -76,8 +76,9 @@ extension CommentViewController {
         commentTableView.separatorStyle = .none
         commentTableView.estimatedRowHeight = Const.estimatedRowHeight
         commentTableView.rowHeight = UITableView.automaticDimension
-        commentTableView.register(CommentTableViewCell.createNib(),
-                                  forCellReuseIdentifier: CommentTableViewCell.reuseIdentifier)
+        commentTableView.register(cellType: CommentTableViewCell.self)
+//        commentTableView.register(CommentTableViewCell.createNib(),
+//                                  forCellReuseIdentifier: CommentTableViewCell.reuseIdentifier)
 
         commentTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

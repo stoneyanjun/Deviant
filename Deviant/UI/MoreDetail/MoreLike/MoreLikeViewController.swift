@@ -175,10 +175,10 @@ extension MoreLikeViewController: MoreLikeViewControllerInterface {
     }
 
     func update(with moreFromArtist: [DeviantDetailBase], moreFromDa: [DeviantDetailBase]) {
-        setLoadingView(with: false)
         self.moreFromArtist = moreFromArtist
         self.moreFromDa = moreFromDa
         updateCollectionView()
+        setLoadingView(with: false)
     }
 }
 

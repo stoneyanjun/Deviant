@@ -10,16 +10,24 @@ import Reusable
 import UIKit
 
 class CommentTableViewCell: UITableViewCell, Reusable {
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var postDateLabel: UILabel!
-    @IBOutlet weak var commentLabel: UILabel!
+    private enum Const {
+        static let imageWidth: CGFloat = 24
+        static let leftMargin: CGFloat = 12
+        static let topMargin: CGFloat = 8
+    }
 
-//    private lazy var usernameLabel = UILabel.make( color: .white,
-//                                                            backgroundColor: .defaultBackground,
-//                                                            font: DeviFont.systemFont.font(size: .body),
-//                                                            numOfLines: 0,
-//                                                            alignment: .left)
+    private lazy var avatarImageView = UIImageView()
+
+    private lazy var usernameLabel = UILabel.make( color: .white,
+                                                   font: DeviFont.systemFont.semiBold(size: .body),
+                                                   alignment: .left)
+    private lazy var postDateLabel = UILabel.make( color: .lightText,
+                                                   font: DeviFont.systemFont.font(size: .caption),
+                                                   alignment: .right)
+    private lazy var commentLabel = UILabel.make( color: .white,
+                                                  font: DeviFont.systemFont.font(size: .caption),
+                                                  numOfLines: 0,
+                                                  alignment: .left)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -31,11 +39,7 @@ class CommentTableViewCell: UITableViewCell, Reusable {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//    }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -56,13 +60,38 @@ class CommentTableViewCell: UITableViewCell, Reusable {
 
 extension CommentTableViewCell {
     private func makeViews() {
-
+        contentView.backgroundColor = .defaultBackground
+        addSubview(avatarImageView)
+        addSubview(usernameLabel)
+        addSubview(postDateLabel)
+        addSubview(commentLabel)
     }
 
     private func applyConstraints() {
-
+        avatarImageView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(Const.leftMargin)
+            make.top.equalToSuperview().offset(Const.topMargin)
+            make.width.equalTo(Const.imageWidth)
+            make.height.equalTo(Const.imageWidth)
+        }
+        usernameLabel.snp.makeConstraints { make in
+            make.leading.equalTo(avatarImageView.snp.trailing).offset(Const.leftMargin)
+            make.top.equalTo(avatarImageView.snp.top)
+            make.trailing.greaterThanOrEqualTo(postDateLabel.snp.leading).offset(Const.leftMargin)
+        }
+        postDateLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(avatarImageView.snp.centerY)
+            make.trailing.equalToSuperview().offset(-Const.leftMargin)
+        }
+        commentLabel.snp.makeConstraints { make in
+            make.leading.equalTo(usernameLabel.snp.leading)
+            make.trailing.equalTo(postDateLabel.snp.trailing)
+            make.top.equalTo(usernameLabel.snp.bottom).offset(Const.topMargin)
+            make.bottom.equalToSuperview().offset(-Const.topMargin)
+        }
     }
 }
+
 extension CommentTableViewCell {
     struct ViewData {
         var avatarUrlString: String?
