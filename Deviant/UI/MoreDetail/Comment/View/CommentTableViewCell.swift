@@ -12,7 +12,7 @@ import UIKit
 class CommentTableViewCell: UITableViewCell, Reusable {
     private enum Const {
         static let imageWidth: CGFloat = 24
-        static let leftMargin: CGFloat = 12
+        static let leftMargin: CGFloat = 16
         static let topMargin: CGFloat = 8
     }
 

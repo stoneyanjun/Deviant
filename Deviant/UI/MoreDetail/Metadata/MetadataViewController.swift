@@ -14,6 +14,14 @@ import UIKit
 
 class MetadataViewController: DeviantBaseViewController {
     enum Const {
+        static let avatorImageWidth: CGFloat = 32
+        static let eyeImageWidth: CGFloat = 12
+        static let leftMargin: CGFloat = 16
+        static let topMargin: CGFloat = 16
+        static let intervalVSpace: CGFloat = 12
+        static let intervalHorizonSpace: CGFloat = 8
+        static let eyeHorizonSpace: CGFloat = 4
+
         static let minColumnSpace: CGFloat = 4.0
         static let minItemSpace: CGFloat = 4.0
         static let minSpace: CGFloat = 4.0
@@ -27,18 +35,18 @@ class MetadataViewController: DeviantBaseViewController {
         return formatter
     }()
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var avatorImageView: UIImageView!
-    @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var creationTimeLabel: UILabel!
-    @IBOutlet weak var viewsLabel: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
+    private lazy var titleLabel = UILabel.make(color: .white,
+                                               font: DeviFont.systemFont.semiBold(size: .body))
+    private lazy var userNameLabel = UILabel.make(color: .white,
+                                                  font: DeviFont.systemFont.semiBold(size: .body))
+    private lazy var creationTimeLabel = UILabel.make(color: .lightText,
+                                                      font: DeviFont.systemFont.font(size: .footnote))
+    private lazy var viewsLabel = UILabel.make(color: .lightText,
+                                               font: DeviFont.systemFont.font(size: .footnote))
 
-//    private lazy var titleLabel = UILabel.make(with: nil,
-//                                               color: .white,
-//                                               font: DeviFont.systemFont.font(size: .title),
-//                                               numOfLines: 0,
-//                                               alignment: .left)
+    private lazy var avatorImageView = UIImageView(image: UIImage(named: "AvatorWhite"))
+    private lazy var eyeImageView = UIImageView(image: UIImage(named: "eyeView"))
+    private var metaCollectionView: UICollectionView?
 
     private var meta: MetadataBase?
     var interactor: MetadataInteractorInterface?
@@ -46,8 +54,8 @@ class MetadataViewController: DeviantBaseViewController {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
-        customLeftBarButton()
+        makeViews()
+        applyConstraints()
         interactor?.tryFetchMetadata()
     }
 }
@@ -69,6 +77,10 @@ extension MetadataViewController: MetadataViewControllerInterface {
 
 extension MetadataViewController {
     func updateUI() {
+        guard let collectionView = metaCollectionView else {
+            return
+        }
+
         titleLabel.text = meta?.metadata?.first?.title
         if let usericon = meta?.metadata?.first?.author?.usericon,
             let url = URL(string: usericon) {
@@ -77,7 +89,6 @@ extension MetadataViewController {
             avatorImageView.image = UIImage(named: "AvatorWhite")
         }
         userNameLabel.text = meta?.metadata?.first?.author?.username
-        collectionView.reloadData()
 
         if let date = Date(deviantDateString: meta?.metadata?.first?.submission?.creationTime ?? "") {
             creationTimeLabel.text = date.formatString()
@@ -93,21 +104,86 @@ extension MetadataViewController {
         } else {
             viewsLabel.text = ""
         }
+        
+        collectionView.reloadData()
     }
 }
 
 extension MetadataViewController {
-    func setupCollectionView() {
+    private func makeViews() {
+        view.backgroundColor = UIColor.defaultBackground
+
+        view.addSubview(titleLabel)
+        view.addSubview(userNameLabel)
+        view.addSubview(creationTimeLabel)
+        view.addSubview(viewsLabel)
+        view.addSubview(avatorImageView)
+        view.addSubview(eyeImageView)
+        setupCollectionView()
+        customLeftBarButton()
+    }
+
+    private func applyConstraints() {
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(Const.topMargin)
+            make.leading.equalToSuperview().offset(Const.leftMargin)
+            make.trailing.equalToSuperview().offset(-Const.leftMargin)
+        }
+
+        avatorImageView.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(Const.intervalVSpace)
+            make.leading.equalTo(titleLabel.snp.leading)
+            make.width.equalTo(Const.avatorImageWidth)
+            make.height.equalTo(Const.avatorImageWidth)
+        }
+
+        userNameLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(avatorImageView.snp.centerY)
+            make.leading.equalTo(avatorImageView.snp.trailing).offset(Const.intervalVSpace)
+            make.trailing.equalTo(titleLabel.snp.trailing)
+        }
+
+        creationTimeLabel.snp.makeConstraints { make in
+            make.leading.equalTo(titleLabel.snp.leading)
+            make.top.equalTo(avatorImageView.snp.bottom).offset(Const.intervalVSpace)
+        }
+
+        eyeImageView.snp.makeConstraints { make in
+            make.leading.equalTo(creationTimeLabel.snp.trailing).offset(Const.intervalHorizonSpace)
+            make.centerY.equalTo(creationTimeLabel.snp.centerY)
+            make.width.equalTo(Const.eyeImageWidth)
+            make.height.equalTo(Const.eyeImageWidth)
+        }
+
+        viewsLabel.snp.makeConstraints { make in
+            make.leading.equalTo(eyeImageView.snp.trailing).offset(Const.eyeHorizonSpace)
+            make.centerY.equalTo(creationTimeLabel.snp.centerY)
+            make.trailing.equalTo(titleLabel.snp.trailing)
+        }
+
+        metaCollectionView?.snp.makeConstraints { make in
+            make.leading.equalTo(titleLabel.snp.leading)
+            make.trailing.equalTo(titleLabel.snp.trailing)
+            make.top.equalTo(creationTimeLabel.snp.bottom).offset(Const.intervalVSpace)
+            make.bottom.equalToSuperview().offset(-Const.topMargin)
+        }
+    }
+
+    private func setupCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        metaCollectionView = UICollectionView(
+            frame: self.view.frame,
+            collectionViewLayout: layout
+        )
+
+        guard let collectionView = metaCollectionView  else {
+            return
+        }
+        view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
-
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        collectionView.setCollectionViewLayout(flowLayout, animated: false)
-
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-//        let viewNib = UINib(nibName: "TagCollectionViewCell", bundle: nil)
-//        collectionView.register(viewNib, forCellWithReuseIdentifier: TagCollectionViewCell.reuseIdentifier)
         collectionView.register(cellType: TagCollectionViewCell.self)
     }
 }

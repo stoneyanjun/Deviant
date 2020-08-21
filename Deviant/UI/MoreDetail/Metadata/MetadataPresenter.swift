@@ -14,14 +14,29 @@ class MetadataPresenter {
 
 extension MetadataPresenter: MetadataPresenterInterface {
     func setLoadingView(with status: Bool) {
-        viewController?.setLoadingView(with: status)
+        perform { viewController in
+            viewController.setLoadingView(with: status)
+        }
     }
 
     func showError(with error: Error) {
-        viewController?.showError(with: error)
+        perform { viewController in
+            viewController.showError(with: error)
+        }
     }
 
     func update(with meta: MetadataBase) {
-        viewController?.update(with: meta)
+        perform { viewController in
+            viewController.update(with: meta)
+        }
+    }
+}
+
+private extension MetadataPresenter {
+    func perform(presenterAction: @escaping (MetadataViewControllerInterface) -> Void) {
+        DispatchQueue.main.async { [weak viewController] in
+            guard let viewController = viewController else { return }
+            presenterAction(viewController)
+        }
     }
 }

@@ -69,7 +69,6 @@
 		8E66AC1B24D6449800A384AE /* MoreDetailContainerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E66AC1924D6449800A384AE /* MoreDetailContainerVC.xib */; };
 		8E66AC3424D65EA200A384AE /* TopicListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3224D65EA200A384AE /* TopicListResult.swift */; };
 		8E66AC3624D65ECC00A384AE /* DeviantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3524D65ECC00A384AE /* DeviantService.swift */; };
-		8E66AC4424D679B200A384AE /* MetadataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E66AC3C24D679B200A384AE /* MetadataViewController.xib */; };
 		8E66AC4524D679B200A384AE /* MetadataConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3D24D679B200A384AE /* MetadataConfigurator.swift */; };
 		8E66AC4624D679B200A384AE /* MetadataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3E24D679B200A384AE /* MetadataConfiguration.swift */; };
 		8E66AC4724D679B200A384AE /* MetadataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3F24D679B200A384AE /* MetadataPresenter.swift */; };
@@ -266,7 +265,6 @@
 		8E66AC1924D6449800A384AE /* MoreDetailContainerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreDetailContainerVC.xib; sourceTree = "<group>"; };
 		8E66AC3224D65EA200A384AE /* TopicListResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListResult.swift; sourceTree = "<group>"; };
 		8E66AC3524D65ECC00A384AE /* DeviantService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantService.swift; sourceTree = "<group>"; };
-		8E66AC3C24D679B200A384AE /* MetadataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MetadataViewController.xib; sourceTree = "<group>"; };
 		8E66AC3D24D679B200A384AE /* MetadataConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataConfigurator.swift; sourceTree = "<group>"; };
 		8E66AC3E24D679B200A384AE /* MetadataConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataConfiguration.swift; sourceTree = "<group>"; };
 		8E66AC3F24D679B200A384AE /* MetadataPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataPresenter.swift; sourceTree = "<group>"; };
@@ -849,7 +847,6 @@
 				8E66AC3F24D679B200A384AE /* MetadataPresenter.swift */,
 				8E66AC4224D679B200A384AE /* MetadataRouter.swift */,
 				8E66AC4024D679B200A384AE /* MetadataViewController.swift */,
-				8E66AC3C24D679B200A384AE /* MetadataViewController.xib */,
 				8E66AC6724D68C0800A384AE /* View */,
 			);
 			path = Metadata;
@@ -1220,7 +1217,6 @@
 				8EAED41C24D52547004E8AC3 /* TopicDetailViewController.xib in Resources */,
 				8E1B803D24C0B42C008C059C /* ServerInfo.plist in Resources */,
 				8E1B803B24C0B422008C059C /* Request.plist in Resources */,
-				8E66AC4424D679B200A384AE /* MetadataViewController.xib in Resources */,
 				8E944EAF24C88DF40050B76B /* ImageUICollectionViewCell.xib in Resources */,
 				8EAED44024D545C1004E8AC3 /* DeviantDetailViewController.xib in Resources */,
 				8E1B7FF724C0A4CB008C059C /* LaunchScreen.storyboard in Resources */,

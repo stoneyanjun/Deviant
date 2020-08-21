@@ -14,6 +14,7 @@ class DeviantBaseViewController: UIViewController {
         static let baseMargin: CGFloat = 16
         static let backButtonInsets = UIEdgeInsets(top: 0, left: -11, bottom: 0, right: 0)
         static let delayTime: TimeInterval = 0.5
+        static let dismissHUDDelayTime: TimeInterval = 0.1
         static let errorDisplayTime: TimeInterval = 4.0
     }
 
@@ -27,7 +28,7 @@ extension DeviantBaseViewController {
         if status {
             HUD.show(.progress)
         } else {
-            HUD.hide()
+            HUD.hide(afterDelay: Const.dismissHUDDelayTime)
         }
     }
 
