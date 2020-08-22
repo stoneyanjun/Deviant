@@ -48,7 +48,7 @@
                         <action selector="infoAction:" destination="-1" eventType="touchUpInside" id="eYZ-1l-Fnw"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N33-rF-baw">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N33-rF-baw">
                     <rect key="frame" x="0.0" y="44" width="414" height="770"/>
                 </imageView>
             </subviews>
@@ -67,7 +67,7 @@
                 <constraint firstItem="ST4-OC-4ZJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="bng-vc-3ad"/>
                 <constraint firstItem="4oo-UE-r58" firstAttribute="leading" secondItem="ST4-OC-4ZJ" secondAttribute="trailing" constant="16" id="c8P-wy-kym"/>
                 <constraint firstItem="NoK-to-F2M" firstAttribute="leading" secondItem="wmG-Ne-WdX" secondAttribute="trailing" constant="16" id="dBF-os-SiE"/>
-                <constraint firstItem="ST4-OC-4ZJ" firstAttribute="top" secondItem="N33-rF-baw" secondAttribute="bottom" constant="16" id="iCB-BV-uGV"/>
+                <constraint firstItem="ST4-OC-4ZJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="N33-rF-baw" secondAttribute="bottom" constant="16" id="iCB-BV-uGV"/>
                 <constraint firstItem="wmG-Ne-WdX" firstAttribute="height" secondItem="4oo-UE-r58" secondAttribute="height" id="jvB-uq-jpl"/>
                 <constraint firstItem="N33-rF-baw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jvy-mn-sU7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ST4-OC-4ZJ" secondAttribute="bottom" id="rEk-8D-NEi"/>

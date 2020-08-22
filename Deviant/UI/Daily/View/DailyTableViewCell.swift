@@ -34,7 +34,7 @@ class DailyTableViewCell: UITableViewCell, Reusable {
             let url = URL(string: usericon) {
             usericonImageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
         } else {
-            usericonImageView.image = UIImage(named: "AvatorWhite")
+            usericonImageView.image = UIImage(named: "commentAvatar")
         }
 
         usernameLabel.text = result.author?.username

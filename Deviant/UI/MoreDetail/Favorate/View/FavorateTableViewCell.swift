@@ -46,7 +46,7 @@ class FavorateTableViewCell: UITableViewCell, Reusable {
             avatarImageView.kf.setImage(with: url,
                                         placeholder: UIImage(named: "loading"))
         } else {
-            avatarImageView.image = UIImage(named: "AvatorWhite")
+            avatarImageView.image = UIImage(named: "commentAvatar")
         }
         nameLabel.text = data.username
         dateLabel.text = data.favorateDate

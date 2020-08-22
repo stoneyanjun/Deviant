@@ -29,6 +29,10 @@ extension CommentPresenter: CommentPresenterInterface {
         for thread in threads {
             comments.append(thread.toDisplayModel())
         }
+        comments.sort {
+            $0.postedDate < $1.postedDate
+        }
+
         viewController?.update(with: comments, nextOffset: (comment.nextOffset ?? 0))
     }
 }

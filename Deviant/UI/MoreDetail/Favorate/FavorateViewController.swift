@@ -119,7 +119,16 @@ extension FavorateViewController: FavorateViewControllerInterface {
 
     func update(with favorates: [FavorateTableViewCell.ViewData], nextOffset: Int) {
         stopES()
-        results = favorates
+        if offset <= 0 {
+            results = favorates
+        } else {
+            results.append(contentsOf: favorates)
+        }
+
+        results.sort {
+            $0.favorateDate < $1.favorateDate
+        }
+
         offset = nextOffset
         updateTableView()
         setLoadingView(with: false)

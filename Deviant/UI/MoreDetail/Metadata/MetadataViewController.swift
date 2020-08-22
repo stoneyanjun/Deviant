@@ -45,7 +45,7 @@ class MetadataViewController: DeviantBaseViewController {
     private lazy var viewsLabel = UILabel.make(color: .lightText,
                                                font: DeFont.sysFont.font(size: .footnote))
 
-    private lazy var avatorImageView = UIImageView(image: UIImage(named: "AvatorWhite"))
+    private lazy var avatorImageView = UIImageView(image: UIImage(named: "commentAvatar"))
     private lazy var eyeImageView = UIImageView(image: UIImage(named: "eyeView"))
     private var metaCollectionView: UICollectionView?
 
@@ -87,7 +87,7 @@ extension MetadataViewController {
             let url = URL(string: usericon) {
             avatorImageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
         } else {
-            avatorImageView.image = UIImage(named: "AvatorWhite")
+            avatorImageView.image = UIImage(named: "commentAvatar")
         }
         userNameLabel.text = meta?.metadata?.first?.author?.username
 
