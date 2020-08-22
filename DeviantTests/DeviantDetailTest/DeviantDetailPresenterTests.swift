@@ -57,6 +57,17 @@ class DeviantDetailPresenterTests: XCTestCase {
         XCTAssertEqual(viewController.deviantDetail?.deviationid.wrap(),
                        DeviantMockData.deviantId)
     }
+    func testShowMoreDetail() {
+        //Given
+        let tag = 0
+        router.showMoreDetailCalled = false
+
+        //When
+        presenter.showMoreDetail(with: DeviantMockData.detail, tag: tag)
+
+        //Then
+        XCTAssertTrue(viewController.showMoreDetailCalled)
+    }
 }
 
 class DeviantDetailViewControllerSpy: UIViewController, DeviantDetailViewControllerInterface {
@@ -78,4 +89,9 @@ class DeviantDetailViewControllerSpy: UIViewController, DeviantDetailViewControl
 }
 
 class DeviantDetailRouterSpy: DeviantDetailRouterInterface {
+    var showMoreDetailCalled = false
+
+    func showMoreDetail(with deviantDetail: DeviantDetailBase, tag: Int) {
+        showMoreDetailCalled = true
+    }
 }

@@ -32,12 +32,25 @@ class DeviantDetailInteractorTests: XCTestCase {
         //Then
         XCTAssertTrue(presenter.called)
     }
+
+    func testShowMoreDetail() {
+        //Given
+        let tag = 0
+        presenter.showMoreDetailCalled = false
+
+        //When
+        interactor.showMoreDetail(with: DeviantMockData.detail, tag: tag)
+
+        //Then
+        XCTAssertTrue(presenter.showMoreDetailCalled)
+    }
 }
 
 class DeviantDetailPresenterSpy: DeviantDetailPresenterInterface {
     var called = false
     var showErrorCalled = false
     var deviantDetail: DeviantDetailBase?
+    var showMoreDetailCalled = false
 
     func setLoadingView(with status: Bool) {
         called = true
@@ -49,5 +62,9 @@ class DeviantDetailPresenterSpy: DeviantDetailPresenterInterface {
 
     func update(with deviantDetail: DeviantDetailBase) {
         self.deviantDetail = deviantDetail
+    }
+
+    func showMoreDetail(with deviantDetail: DeviantDetailBase, tag: Int) {
+        showMoreDetailCalled = true
     }
 }

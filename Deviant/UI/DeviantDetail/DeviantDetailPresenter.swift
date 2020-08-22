@@ -24,4 +24,8 @@ extension DeviantDetailPresenter: DeviantDetailPresenterInterface {
     func update(with deviantDetail: DeviantDetailBase) {
         viewController?.update(with: deviantDetail)
     }
+
+    func showMoreDetail(with deviantDetail: DeviantDetailBase, tag: Int) {
+        router?.showMoreDetail(with: deviantDetail, tag: tag)
+    }
 }

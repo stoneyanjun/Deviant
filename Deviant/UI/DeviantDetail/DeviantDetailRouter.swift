@@ -12,4 +12,10 @@ class DeviantDetailRouter: NSObject {
 }
 
 extension DeviantDetailRouter: DeviantDetailRouterInterface {
+    func showMoreDetail(with deviantDetail: DeviantDetailBase, tag: Int) {
+        let moreDetailContainerVC = MoreDetailContainerVC()
+        moreDetailContainerVC.deviantDetail = deviantDetail
+        moreDetailContainerVC.focusIndex = tag
+        viewController?.presentPanModal(moreDetailContainerVC)
+    }
 }

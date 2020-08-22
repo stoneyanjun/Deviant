@@ -34,6 +34,10 @@ extension DeviantDetailInteractor: DeviantDetailInteractorInterface {
             self.fetchDeviantDetail()
         }
     }
+
+    func showMoreDetail(with deviantDetail: DeviantDetailBase, tag: Int) {
+        presenter?.showMoreDetail(with: deviantDetail, tag: tag)
+    }
 }
 
 extension DeviantDetailInteractor {

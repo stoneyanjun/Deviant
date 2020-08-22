@@ -137,9 +137,6 @@ extension DeviantDetailViewController {
         guard let deviantDetail = self.deviantDetail else {
             return
         }
-        let moreDetailContainerVC = MoreDetailContainerVC()
-        moreDetailContainerVC.deviantDetail = deviantDetail
-        moreDetailContainerVC.focusIndex = sender.tag
-        presentPanModal(moreDetailContainerVC)
+        interactor?.showMoreDetail(with: deviantDetail, tag: sender.tag)
     }
 }
