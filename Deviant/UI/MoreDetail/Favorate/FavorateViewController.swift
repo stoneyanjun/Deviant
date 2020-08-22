@@ -64,17 +64,17 @@ extension FavorateViewController {
 
 extension FavorateViewController {
     func makeView() {
+        view.backgroundColor = UIColor.defaultBackground
         makeTableView()
     }
 
     func makeTableView() {
-        view.backgroundColor = ColorPalette.defaultBackground
         tableView = UITableView(frame: .zero, style: .plain)
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
 
-        tableView.backgroundColor = ColorPalette.defaultBackground
+        tableView.backgroundColor = UIColor.defaultBackground
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = Const.estimatedRowHeight
         tableView.rowHeight = UITableView.automaticDimension

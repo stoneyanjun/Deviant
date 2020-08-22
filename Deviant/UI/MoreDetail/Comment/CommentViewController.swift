@@ -63,12 +63,14 @@ extension CommentViewController {
 
 extension CommentViewController {
     func makeView() {
+        view.backgroundColor = UIColor.defaultBackground
         makeTableView()
         setupPullToRefresh()
     }
 
     func makeTableView() {
         commentTableView = UITableView(frame: .zero, style: .plain)
+        commentTableView.backgroundColor = UIColor.defaultBackground
         view.addSubview(commentTableView)
         commentTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

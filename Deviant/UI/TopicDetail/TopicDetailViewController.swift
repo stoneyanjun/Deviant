@@ -28,6 +28,7 @@ class TopicDetailViewController: DeviantBaseViewController {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.defaultBackground
         customLeftBarButton()
         setupCollectionView()
         interactor?.tryFetchTopic(with: offset)

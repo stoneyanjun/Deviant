@@ -28,6 +28,7 @@ class TopicListViewController: DeviantBaseViewController {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.defaultBackground
         setupCollectionView()
         interactor?.tryFetchTopicList(with: offset)
         collectionView.es.addPullToRefresh {

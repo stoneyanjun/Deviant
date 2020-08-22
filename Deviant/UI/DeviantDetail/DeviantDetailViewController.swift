@@ -20,6 +20,7 @@ class DeviantDetailViewController: DeviantBaseViewController {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.defaultBackground
         customLeftBarButton()
         interactor?.tryFetchDeviantDetail()
     }

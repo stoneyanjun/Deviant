@@ -29,6 +29,7 @@ class PopularListViewController: DeviantBaseViewController {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.defaultBackground
         setupCollectionView()
         interactor?.tryFetchPopular(with: offset)
         collectionView.es.addPullToRefresh {

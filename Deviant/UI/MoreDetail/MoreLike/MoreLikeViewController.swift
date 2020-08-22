@@ -29,6 +29,7 @@ class MoreLikeViewController: DeviantBaseViewController {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.defaultBackground
         setupCollectionView()
         interactor?.tryFetchMoreLike()
     }
@@ -47,6 +48,7 @@ extension MoreLikeViewController {
         guard let collectionView = moreLikeCollectionView else {
             return
         }
+        collectionView.backgroundColor = UIColor.defaultBackground
         view.addSubview(collectionView)
         collectionView.frame = self.view.frame
         collectionView.snp.makeConstraints { make in

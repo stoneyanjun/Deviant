@@ -31,6 +31,7 @@ class MoreDetailContainerVC: DeviantBaseViewController, PanModalPresentable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.defaultBackground
         self.title = "DeviantArt"
     }
 

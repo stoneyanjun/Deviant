@@ -18,8 +18,8 @@ extension UIFont {
     }
 }
 
-enum DeviFont: String {
-    case systemFont = "System Font"
+enum DeFont: String {
+    case sysFont = "System Font"
 
     func font(size: FontSize) -> UIFont {
         return dynamicFont(size: size, weight: UIFont.Weight.regular)

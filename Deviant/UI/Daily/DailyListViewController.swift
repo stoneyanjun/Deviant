@@ -49,6 +49,7 @@ class DailyListViewController: DeviantBaseViewController {
 
 extension DailyListViewController {
     func makeView() {
+        view.backgroundColor = UIColor.defaultBackground
         makeTableView()
     }
 

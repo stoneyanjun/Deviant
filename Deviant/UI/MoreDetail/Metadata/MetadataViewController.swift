@@ -22,6 +22,7 @@ class MetadataViewController: DeviantBaseViewController {
         static let intervalHorizonSpace: CGFloat = 8
         static let eyeHorizonSpace: CGFloat = 4
 
+        //for UICollection Layout
         static let minColumnSpace: CGFloat = 4.0
         static let minItemSpace: CGFloat = 4.0
         static let minSpace: CGFloat = 4.0
@@ -36,13 +37,13 @@ class MetadataViewController: DeviantBaseViewController {
     }()
 
     private lazy var titleLabel = UILabel.make(color: .white,
-                                               font: DeviFont.systemFont.semiBold(size: .body))
+                                               font: DeFont.sysFont.semiBold(size: .body))
     private lazy var userNameLabel = UILabel.make(color: .white,
-                                                  font: DeviFont.systemFont.semiBold(size: .body))
+                                                  font: DeFont.sysFont.semiBold(size: .body))
     private lazy var creationTimeLabel = UILabel.make(color: .lightText,
-                                                      font: DeviFont.systemFont.font(size: .footnote))
+                                                      font: DeFont.sysFont.font(size: .footnote))
     private lazy var viewsLabel = UILabel.make(color: .lightText,
-                                               font: DeviFont.systemFont.font(size: .footnote))
+                                               font: DeFont.sysFont.font(size: .footnote))
 
     private lazy var avatorImageView = UIImageView(image: UIImage(named: "AvatorWhite"))
     private lazy var eyeImageView = UIImageView(image: UIImage(named: "eyeView"))
@@ -180,6 +181,7 @@ extension MetadataViewController {
         guard let collectionView = metaCollectionView  else {
             return
         }
+        collectionView.backgroundColor = UIColor.defaultBackground
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self

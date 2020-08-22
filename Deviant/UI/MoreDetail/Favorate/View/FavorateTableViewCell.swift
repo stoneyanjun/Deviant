@@ -23,11 +23,11 @@ class FavorateTableViewCell: UITableViewCell, Reusable {
     }()
 
     private lazy var nameLabel = UILabel.make(color: .white,
-                                              font: DeviFont.systemFont.font(size: .body),
+                                              font: DeFont.sysFont.font(size: .body),
                                               alignment: .left)
 
     private lazy var dateLabel = UILabel.make(color: .white,
-                                              font: DeviFont.systemFont.font(size: .footnote),
+                                              font: DeFont.sysFont.font(size: .footnote),
                                               alignment: .right)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -59,7 +59,7 @@ class FavorateTableViewCell: UITableViewCell, Reusable {
 
 extension FavorateTableViewCell {
     private func makeViews() {
-        contentView.backgroundColor = ColorPalette.defaultBackground
+        contentView.backgroundColor = UIColor.defaultBackground
         contentView.addSubview(avatarImageView)
         contentView.addSubview(nameLabel)
         contentView.addSubview(dateLabel)
