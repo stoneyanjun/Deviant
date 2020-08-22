@@ -19,7 +19,7 @@ class TopicDetailViewController: DeviantBaseViewController {
         static let minSpace: CGFloat = 1.0
     }
 
-    @IBOutlet private weak var collectionView: UICollectionView!
+    private var topicDetailCollectionView: UICollectionView?
     var interactor: TopicDetailInteractorInterface?
     private lazy var defaultCell = UICollectionViewCell()
     private var results: [DeviantDetailBase] = []
@@ -32,28 +32,45 @@ class TopicDetailViewController: DeviantBaseViewController {
         customLeftBarButton()
         setupCollectionView()
         interactor?.tryFetchTopic(with: offset)
+        setupPullToRefresh()
     }
 }
 
 extension TopicDetailViewController {
     func setupCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
         let layout = CHTCollectionViewWaterfallLayout()
         layout.minimumColumnSpacing = Const.minColumnSpace
         layout.minimumInteritemSpacing = Const.minItemSpace
+        topicDetailCollectionView = UICollectionView(
+            frame: self.view.frame,
+            collectionViewLayout: layout
+        )
+        guard let collectionView = topicDetailCollectionView else {
+            return
+        }
+
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+
+        collectionView.delegate = self
+        collectionView.dataSource = self
 
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.alwaysBounceVertical = true
-        collectionView.collectionViewLayout = layout
 
         let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
         collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
-
-        setupPullToRefresh()
     }
 
     private func setupPullToRefresh() {
+        guard let collectionView = topicDetailCollectionView else {
+            return
+        }
         collectionView.es.addPullToRefresh {
             self.offset = 0
             self.interactor?.tryFetchTopic(with: self.offset)
@@ -64,11 +81,17 @@ extension TopicDetailViewController {
     }
 
     private func stopES() {
+        guard let collectionView = topicDetailCollectionView else {
+            return
+        }
         collectionView.es.stopPullToRefresh()
         collectionView.es.stopLoadingMore()
     }
 
     private func updateCollectionView() {
+        guard let collectionView = topicDetailCollectionView else {
+            return
+        }
         if results.isEmpty {
             collectionView.emptyDataSetDelegate = self
             collectionView.emptyDataSetSource = self

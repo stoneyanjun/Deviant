@@ -66,7 +66,7 @@ class DeviantDetailPresenterTests: XCTestCase {
         presenter.showMoreDetail(with: DeviantMockData.detail, tag: tag)
 
         //Then
-        XCTAssertTrue(viewController.showMoreDetailCalled)
+        XCTAssertTrue(router.showMoreDetailCalled)
     }
 }
 

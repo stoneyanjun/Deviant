@@ -10,6 +10,7 @@ import DZNEmptyDataSet
 import ESPullToRefresh
 import Kingfisher
 import Reusable
+import SnapKit
 import UIKit
 
 class PopularListViewController: DeviantBaseViewController {
@@ -20,7 +21,7 @@ class PopularListViewController: DeviantBaseViewController {
     }
 
     var interactor: PopularListInteractorInterface?
-    @IBOutlet private weak var collectionView: UICollectionView!
+    private var popularListCollectionView: UICollectionView?
     private lazy var defaultCell = UICollectionViewCell()
     private var results: [DeviantDetailBase] = []
     private var offset = 0
@@ -32,6 +33,43 @@ class PopularListViewController: DeviantBaseViewController {
         view.backgroundColor = UIColor.defaultBackground
         setupCollectionView()
         interactor?.tryFetchPopular(with: offset)
+        setupESRefresh()
+    }
+}
+
+extension PopularListViewController {
+    func setupCollectionView() {
+        let layout = CHTCollectionViewWaterfallLayout()
+        layout.minimumColumnSpacing = Const.minColumnSpace
+        layout.minimumInteritemSpacing = Const.minItemSpace
+        popularListCollectionView = UICollectionView(
+            frame: self.view.frame,
+            collectionViewLayout: layout
+        )
+        guard let collectionView = popularListCollectionView else {
+            return
+        }
+
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
+        collectionView.delegate = self
+        collectionView.dataSource = self
+
+        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        collectionView.alwaysBounceVertical = true
+        collectionView.collectionViewLayout = layout
+
+        let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
+        collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
+    }
+
+    private func setupESRefresh() {
+        guard let collectionView = popularListCollectionView else {
+            return
+        }
         collectionView.es.addPullToRefresh {
             self.offset = 0
             self.errorDesc = nil
@@ -44,33 +82,22 @@ class PopularListViewController: DeviantBaseViewController {
     }
 
     private func stopES() {
+        guard let collectionView = popularListCollectionView else {
+            return
+        }
         collectionView.es.stopPullToRefresh()
         collectionView.es.stopLoadingMore()
     }
 
     private func updateCollectionView() {
+        guard let collectionView = popularListCollectionView else {
+            return
+        }
         if results.isEmpty {
             collectionView.emptyDataSetDelegate = self
             collectionView.emptyDataSetSource = self
         }
         collectionView.reloadData()
-    }
-}
-
-extension PopularListViewController {
-    func setupCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        let layout = CHTCollectionViewWaterfallLayout()
-        layout.minimumColumnSpacing = Const.minColumnSpace
-        layout.minimumInteritemSpacing = Const.minItemSpace
-
-        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        collectionView.alwaysBounceVertical = true
-        collectionView.collectionViewLayout = layout
-
-        let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
-        collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
     }
 }
 

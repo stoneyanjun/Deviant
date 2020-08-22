@@ -19,7 +19,7 @@ class TopicListViewController: DeviantBaseViewController {
         static let headerHeight: CGFloat = 50.0
     }
 
-    @IBOutlet private weak var collectionView: UICollectionView!
+    private var topicListCollectionView: UICollectionView?
     var interactor: TopicListInteractorInterface?
     private lazy var defaultCell = UICollectionViewCell()
     private var results: [TopicListResult] = []
@@ -31,6 +31,15 @@ class TopicListViewController: DeviantBaseViewController {
         view.backgroundColor = UIColor.defaultBackground
         setupCollectionView()
         interactor?.tryFetchTopicList(with: offset)
+        setupESRefresh()
+    }
+}
+
+extension TopicListViewController {
+    private func setupESRefresh() {
+        guard let collectionView = topicListCollectionView else {
+            return
+        }
         collectionView.es.addPullToRefresh {
             self.offset = 0
             self.interactor?.tryFetchTopicList(with: self.offset)
@@ -41,11 +50,17 @@ class TopicListViewController: DeviantBaseViewController {
     }
 
     private func stopES() {
+        guard let collectionView = topicListCollectionView else {
+            return
+        }
         collectionView.es.stopPullToRefresh()
         collectionView.es.stopLoadingMore()
     }
 
     private func updateCollectionView() {
+        guard let collectionView = topicListCollectionView else {
+            return
+        }
         if results.isEmpty {
             collectionView.emptyDataSetDelegate = self
             collectionView.emptyDataSetSource = self
@@ -56,15 +71,26 @@ class TopicListViewController: DeviantBaseViewController {
 
 extension TopicListViewController {
     func setupCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
         let layout = CHTCollectionViewWaterfallLayout()
         layout.minimumColumnSpacing = Const.minColumnSpace
         layout.minimumInteritemSpacing = Const.minItemSpace
+        topicListCollectionView = UICollectionView(
+            frame: self.view.frame,
+            collectionViewLayout: layout
+        )
+        guard let collectionView = topicListCollectionView else {
+            return
+        }
+
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        collectionView.delegate = self
+        collectionView.dataSource = self
 
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.alwaysBounceVertical = true
-        collectionView.collectionViewLayout = layout
 
         let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
         collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)

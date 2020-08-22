@@ -32,7 +32,9 @@ class DailyListViewController: DeviantBaseViewController {
             self.interactor?.tryFetchDaily(with: "")
         }
     }
+}
 
+extension DailyListViewController {
     private func stopES() {
         dailyTableView.es.stopPullToRefresh()
         dailyTableView.es.stopLoadingMore()
@@ -50,14 +52,12 @@ class DailyListViewController: DeviantBaseViewController {
 extension DailyListViewController {
     func makeView() {
         view.backgroundColor = UIColor.defaultBackground
-        makeTableView()
-    }
 
-    func makeTableView() {
         dailyTableView = UITableView(frame: .zero, style: .plain)
         view.addSubview(dailyTableView)
         dailyTableView.delegate = self
         dailyTableView.dataSource = self
+        dailyTableView.backgroundColor = UIColor.defaultBackground
 
         dailyTableView.separatorStyle = .none
         dailyTableView.estimatedRowHeight = Const.estimatedRowHeight

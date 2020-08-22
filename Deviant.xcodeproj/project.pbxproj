@@ -97,11 +97,9 @@
 		8E938E7924D9285A0063B79D /* MoreLikeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E938E7124D9285A0063B79D /* MoreLikeInteractor.swift */; };
 		8E938E7A24D9285A0063B79D /* MoreLikeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E938E7224D9285A0063B79D /* MoreLikeRouter.swift */; };
 		8E944EAA24C88C490050B76B /* PopularListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EA824C88C490050B76B /* PopularListViewController.swift */; };
-		8E944EAB24C88C490050B76B /* PopularListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E944EA924C88C490050B76B /* PopularListViewController.xib */; };
 		8E944EAF24C88DF40050B76B /* ImageUICollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E944EAD24C88DF30050B76B /* ImageUICollectionViewCell.xib */; };
 		8E944EB024C88DF40050B76B /* ImageUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EAE24C88DF30050B76B /* ImageUICollectionViewCell.swift */; };
 		8E944EDB24C89F330050B76B /* TopicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED324C89F330050B76B /* TopicListViewController.swift */; };
-		8E944EDC24C89F330050B76B /* TopicListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E944ED424C89F330050B76B /* TopicListViewController.xib */; };
 		8E944EDD24C89F330050B76B /* TopicListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED524C89F330050B76B /* TopicListPresenter.swift */; };
 		8E944EDE24C89F330050B76B /* TopicListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED624C89F330050B76B /* TopicListInterface.swift */; };
 		8E944EDF24C89F330050B76B /* TopicListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED724C89F330050B76B /* TopicListConfigurator.swift */; };
@@ -124,7 +122,6 @@
 		8EA756E024E77DD100C282CC /* TopListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA756DE24E77DD100C282CC /* TopListInteractorTests.swift */; };
 		8EA756E124E77DD100C282CC /* TopListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA756DF24E77DD100C282CC /* TopListPresenterTests.swift */; };
 		8EAED41B24D52547004E8AC3 /* TopicDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED41324D52546004E8AC3 /* TopicDetailRouter.swift */; };
-		8EAED41C24D52547004E8AC3 /* TopicDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EAED41424D52546004E8AC3 /* TopicDetailViewController.xib */; };
 		8EAED41D24D52547004E8AC3 /* TopicDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED41524D52546004E8AC3 /* TopicDetailInteractor.swift */; };
 		8EAED41E24D52547004E8AC3 /* TopicDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED41624D52546004E8AC3 /* TopicDetailPresenter.swift */; };
 		8EAED41F24D52547004E8AC3 /* TopicDetailInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED41724D52546004E8AC3 /* TopicDetailInterface.swift */; };
@@ -292,11 +289,9 @@
 		8E938E7124D9285A0063B79D /* MoreLikeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikeInteractor.swift; sourceTree = "<group>"; };
 		8E938E7224D9285A0063B79D /* MoreLikeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikeRouter.swift; sourceTree = "<group>"; };
 		8E944EA824C88C490050B76B /* PopularListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListViewController.swift; sourceTree = "<group>"; };
-		8E944EA924C88C490050B76B /* PopularListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularListViewController.xib; sourceTree = "<group>"; };
 		8E944EAD24C88DF30050B76B /* ImageUICollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageUICollectionViewCell.xib; sourceTree = "<group>"; };
 		8E944EAE24C88DF30050B76B /* ImageUICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUICollectionViewCell.swift; sourceTree = "<group>"; };
 		8E944ED324C89F330050B76B /* TopicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListViewController.swift; sourceTree = "<group>"; };
-		8E944ED424C89F330050B76B /* TopicListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicListViewController.xib; sourceTree = "<group>"; };
 		8E944ED524C89F330050B76B /* TopicListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListPresenter.swift; sourceTree = "<group>"; };
 		8E944ED624C89F330050B76B /* TopicListInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListInterface.swift; sourceTree = "<group>"; };
 		8E944ED724C89F330050B76B /* TopicListConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListConfigurator.swift; sourceTree = "<group>"; };
@@ -319,7 +314,6 @@
 		8EA756DE24E77DD100C282CC /* TopListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopListInteractorTests.swift; sourceTree = "<group>"; };
 		8EA756DF24E77DD100C282CC /* TopListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopListPresenterTests.swift; sourceTree = "<group>"; };
 		8EAED41324D52546004E8AC3 /* TopicDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailRouter.swift; sourceTree = "<group>"; };
-		8EAED41424D52546004E8AC3 /* TopicDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicDetailViewController.xib; sourceTree = "<group>"; };
 		8EAED41524D52546004E8AC3 /* TopicDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailInteractor.swift; sourceTree = "<group>"; };
 		8EAED41624D52546004E8AC3 /* TopicDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailPresenter.swift; sourceTree = "<group>"; };
 		8EAED41724D52546004E8AC3 /* TopicDetailInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailInterface.swift; sourceTree = "<group>"; };
@@ -567,7 +561,6 @@
 				8EFB598E24C66F6A005DE580 /* PopularListPresenter.swift */,
 				8EFB598F24C66F6A005DE580 /* PopularListRouter.swift */,
 				8E944EA824C88C490050B76B /* PopularListViewController.swift */,
-				8E944EA924C88C490050B76B /* PopularListViewController.xib */,
 			);
 			path = PopularList;
 			sourceTree = "<group>";
@@ -583,7 +576,6 @@
 				8E944ED524C89F330050B76B /* TopicListPresenter.swift */,
 				8E944EDA24C89F330050B76B /* TopicListRouter.swift */,
 				8E944ED324C89F330050B76B /* TopicListViewController.swift */,
-				8E944ED424C89F330050B76B /* TopicListViewController.xib */,
 			);
 			path = TopList;
 			sourceTree = "<group>";
@@ -979,7 +971,6 @@
 				8EAED41624D52546004E8AC3 /* TopicDetailPresenter.swift */,
 				8EAED41324D52546004E8AC3 /* TopicDetailRouter.swift */,
 				8EAED41A24D52547004E8AC3 /* TopicDetailViewController.swift */,
-				8EAED41424D52546004E8AC3 /* TopicDetailViewController.xib */,
 			);
 			path = TopicDetail;
 			sourceTree = "<group>";
@@ -1210,8 +1201,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E66AC1B24D6449800A384AE /* MoreDetailContainerVC.xib in Resources */,
-				8E944EAB24C88C490050B76B /* PopularListViewController.xib in Resources */,
-				8EAED41C24D52547004E8AC3 /* TopicDetailViewController.xib in Resources */,
 				8E1B803D24C0B42C008C059C /* ServerInfo.plist in Resources */,
 				8E1B803B24C0B422008C059C /* Request.plist in Resources */,
 				8E944EAF24C88DF40050B76B /* ImageUICollectionViewCell.xib in Resources */,
@@ -1219,7 +1208,6 @@
 				8E1B7FF424C0A4CB008C059C /* Assets.xcassets in Resources */,
 				8EFB6E8424E9E498002A62B5 /* Client.plist in Resources */,
 				8E5C799024E67B8500DBAE28 /* GoogleService-Info.plist in Resources */,
-				8E944EDC24C89F330050B76B /* TopicListViewController.xib in Resources */,
 				8EA310D124D10CB3008813B7 /* DailyTableViewCell.xib in Resources */,
 				8E1B7FF224C0A4C9008C059C /* Main.storyboard in Resources */,
 				8E4FA46B24CFB8B000742432 /* TopicListHeadView.xib in Resources */,
