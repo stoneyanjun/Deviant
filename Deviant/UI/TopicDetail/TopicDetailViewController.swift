@@ -63,8 +63,7 @@ extension TopicDetailViewController {
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.alwaysBounceVertical = true
 
-        let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
-        collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
+        collectionView.register(ImageUICollectionViewCell.self, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
     }
 
     private func setupPullToRefresh() {
@@ -119,7 +118,7 @@ extension TopicDetailViewController: UICollectionViewDataSource {
             let url = URL(string: src) else {
                 return UICollectionViewCell()
         }
-        cell.image.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
+        cell.imageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
         return cell
     }
 }

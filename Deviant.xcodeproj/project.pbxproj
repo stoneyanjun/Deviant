@@ -51,7 +51,6 @@
 		8E4C18A624D84D030001186F /* CommentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C189F24D84D030001186F /* CommentInteractor.swift */; };
 		8E4C18AD24D850B50001186F /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4C18AB24D850B50001186F /* CommentTableViewCell.swift */; };
 		8E4FA46A24CFB8B000742432 /* TopicListHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4FA46824CFB8B000742432 /* TopicListHeadView.swift */; };
-		8E4FA46B24CFB8B000742432 /* TopicListHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E4FA46924CFB8B000742432 /* TopicListHeadView.xib */; };
 		8E54E6D024D1A88000339EFA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E54E6CF24D1A88000339EFA /* UIView+Extension.swift */; };
 		8E5C799024E67B8500DBAE28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E5C798F24E67B8500DBAE28 /* GoogleService-Info.plist */; };
 		8E5C799324E689B400DBAE28 /* PopularListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5C799224E689B400DBAE28 /* PopularListInteractorTests.swift */; };
@@ -97,7 +96,6 @@
 		8E938E7924D9285A0063B79D /* MoreLikeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E938E7124D9285A0063B79D /* MoreLikeInteractor.swift */; };
 		8E938E7A24D9285A0063B79D /* MoreLikeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E938E7224D9285A0063B79D /* MoreLikeRouter.swift */; };
 		8E944EAA24C88C490050B76B /* PopularListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EA824C88C490050B76B /* PopularListViewController.swift */; };
-		8E944EAF24C88DF40050B76B /* ImageUICollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E944EAD24C88DF30050B76B /* ImageUICollectionViewCell.xib */; };
 		8E944EB024C88DF40050B76B /* ImageUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EAE24C88DF30050B76B /* ImageUICollectionViewCell.swift */; };
 		8E944EDB24C89F330050B76B /* TopicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED324C89F330050B76B /* TopicListViewController.swift */; };
 		8E944EDD24C89F330050B76B /* TopicListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED524C89F330050B76B /* TopicListPresenter.swift */; };
@@ -243,7 +241,6 @@
 		8E4C189F24D84D030001186F /* CommentInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentInteractor.swift; sourceTree = "<group>"; };
 		8E4C18AB24D850B50001186F /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		8E4FA46824CFB8B000742432 /* TopicListHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListHeadView.swift; sourceTree = "<group>"; };
-		8E4FA46924CFB8B000742432 /* TopicListHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicListHeadView.xib; sourceTree = "<group>"; };
 		8E54E6CF24D1A88000339EFA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8E5C798F24E67B8500DBAE28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8E5C799224E689B400DBAE28 /* PopularListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListInteractorTests.swift; sourceTree = "<group>"; };
@@ -289,7 +286,6 @@
 		8E938E7124D9285A0063B79D /* MoreLikeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikeInteractor.swift; sourceTree = "<group>"; };
 		8E938E7224D9285A0063B79D /* MoreLikeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikeRouter.swift; sourceTree = "<group>"; };
 		8E944EA824C88C490050B76B /* PopularListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListViewController.swift; sourceTree = "<group>"; };
-		8E944EAD24C88DF30050B76B /* ImageUICollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageUICollectionViewCell.xib; sourceTree = "<group>"; };
 		8E944EAE24C88DF30050B76B /* ImageUICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUICollectionViewCell.swift; sourceTree = "<group>"; };
 		8E944ED324C89F330050B76B /* TopicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListViewController.swift; sourceTree = "<group>"; };
 		8E944ED524C89F330050B76B /* TopicListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListPresenter.swift; sourceTree = "<group>"; };
@@ -768,7 +764,6 @@
 			isa = PBXGroup;
 			children = (
 				8E4FA46824CFB8B000742432 /* TopicListHeadView.swift */,
-				8E4FA46924CFB8B000742432 /* TopicListHeadView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -920,7 +915,6 @@
 			isa = PBXGroup;
 			children = (
 				8E944EAE24C88DF30050B76B /* ImageUICollectionViewCell.swift */,
-				8E944EAD24C88DF30050B76B /* ImageUICollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1203,14 +1197,12 @@
 				8E66AC1B24D6449800A384AE /* MoreDetailContainerVC.xib in Resources */,
 				8E1B803D24C0B42C008C059C /* ServerInfo.plist in Resources */,
 				8E1B803B24C0B422008C059C /* Request.plist in Resources */,
-				8E944EAF24C88DF40050B76B /* ImageUICollectionViewCell.xib in Resources */,
 				8E1B7FF724C0A4CB008C059C /* LaunchScreen.storyboard in Resources */,
 				8E1B7FF424C0A4CB008C059C /* Assets.xcassets in Resources */,
 				8EFB6E8424E9E498002A62B5 /* Client.plist in Resources */,
 				8E5C799024E67B8500DBAE28 /* GoogleService-Info.plist in Resources */,
 				8EA310D124D10CB3008813B7 /* DailyTableViewCell.xib in Resources */,
 				8E1B7FF224C0A4C9008C059C /* Main.storyboard in Resources */,
-				8E4FA46B24CFB8B000742432 /* TopicListHeadView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

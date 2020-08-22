@@ -92,10 +92,8 @@ extension TopicListViewController {
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.alwaysBounceVertical = true
 
-        let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
-        collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
-        let headNib = UINib(nibName: "TopicListHeadView", bundle: nil)
-        collectionView.register(headNib,
+        collectionView.register(ImageUICollectionViewCell.self, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
+        collectionView.register(TopicListHeadView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: TopicListHeadView.reuseIdentifier)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
@@ -129,7 +127,7 @@ extension TopicListViewController: UICollectionViewDataSource {
             let url = URL(string: src) else {
                 return collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
         }
-        cell.image.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
+        cell.imageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
         return cell
     }
 
@@ -147,8 +145,7 @@ extension TopicListViewController: UICollectionViewDataSource {
                                                                           withReuseIdentifier: TopicListHeadView.reuseIdentifier,
                                                                           for: indexPath) as? TopicListHeadView {
                 let record = results[indexPath.section]
-                head.topicLabel.text = record.name
-                head.tapHandle = {
+                head.update(with: record.name.wrap()) {
                     self.interactor?.showTopic(with: record.name.wrap())
                 }
                 return head

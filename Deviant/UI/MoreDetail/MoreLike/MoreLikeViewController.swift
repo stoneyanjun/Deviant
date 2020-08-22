@@ -61,13 +61,12 @@ extension MoreLikeViewController {
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.alwaysBounceVertical = true
         collectionView.collectionViewLayout = layout
-
-        let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
-        collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
-        let headNib = UINib(nibName: "TopicListHeadView", bundle: nil)
-        collectionView.register(headNib,
+        
+        collectionView.register(ImageUICollectionViewCell.self, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
+        collectionView.register(TopicListHeadView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: TopicListHeadView.reuseIdentifier)
+
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
     }
 
@@ -109,7 +108,7 @@ extension MoreLikeViewController: UICollectionViewDataSource {
                return collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
         }
         if let url = getURL(indexPath: indexPath) {
-            cell.image.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
+            cell.imageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
         }
         return cell
     }
@@ -161,11 +160,13 @@ extension MoreLikeViewController: UICollectionViewDataSource {
             if let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                               withReuseIdentifier: TopicListHeadView.reuseIdentifier,
                                                                               for: indexPath) as? TopicListHeadView {
+                var title = ""
                 if indexPath.section == 0 {
-                    headView.topicLabel.text = "MORE BY THIS ARTIST"
+                    title = "MORE BY THIS ARTIST"
                 } else {
-                    headView.topicLabel.text = "MORE LIKE THIS"
+                    title = "MORE LIKE THIS"
                 }
+                headView.update(with: title, tapHandle: nil)
                 return headView
             }
 

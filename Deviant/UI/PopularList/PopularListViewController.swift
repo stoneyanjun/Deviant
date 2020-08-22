@@ -62,8 +62,7 @@ extension PopularListViewController {
         collectionView.alwaysBounceVertical = true
         collectionView.collectionViewLayout = layout
 
-        let viewNib = UINib(nibName: "ImageUICollectionViewCell", bundle: nil)
-        collectionView.register(viewNib, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
+        collectionView.register(ImageUICollectionViewCell.self, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
     }
 
     private func setupESRefresh() {
@@ -120,7 +119,7 @@ extension PopularListViewController: UICollectionViewDataSource {
             let url = URL(string: src) else {
             return UICollectionViewCell()
         }
-        cell.image.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
+        cell.imageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
         return cell
     }
 }

@@ -6,12 +6,21 @@
 //
 
 import Reusable
+import SnapKit
 import UIKit
 
 class ImageUICollectionViewCell: UICollectionViewCell, Reusable {
-    @IBOutlet weak var image: UIImageView!
+    private (set) var imageView = UIImageView()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 }
