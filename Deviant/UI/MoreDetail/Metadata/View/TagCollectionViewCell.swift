@@ -15,7 +15,7 @@ class TagCollectionViewCell: UICollectionViewCell, Reusable {
     }
 
     private lazy var tagLabel = UILabel.make(color: .white,
-                                             font: DeFont.sysFont.font(size: .footnote),
+                                             font: UIFont.footnoteFont(),
                                              alignment: .center)
 
     required init?(coder: NSCoder) {

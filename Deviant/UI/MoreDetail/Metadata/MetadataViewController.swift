@@ -37,13 +37,13 @@ class MetadataViewController: DeviantBaseViewController {
     }()
 
     private lazy var titleLabel = UILabel.make(color: .white,
-                                               font: DeFont.sysFont.semiBold(size: .body))
+                                               font: UIFont.headlineFont())
     private lazy var userNameLabel = UILabel.make(color: .white,
-                                                  font: DeFont.sysFont.semiBold(size: .body))
+                                                  font: UIFont.headlineFont())
     private lazy var creationTimeLabel = UILabel.make(color: .lightText,
-                                                      font: DeFont.sysFont.font(size: .footnote))
+                                                      font: UIFont.footnoteFont())
     private lazy var viewsLabel = UILabel.make(color: .lightText,
-                                               font: DeFont.sysFont.font(size: .footnote))
+                                               font: UIFont.footnoteFont())
 
     private lazy var avatorImageView = UIImageView(image: UIImage(named: "commentAvatar"))
     private lazy var eyeImageView = UIImageView(image: UIImage(named: "eyeView"))

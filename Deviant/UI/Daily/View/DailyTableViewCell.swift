@@ -38,19 +38,17 @@ class DailyTableViewCell: UITableViewCell, Reusable {
     private lazy var commentImageView = UIImageView(image: UIImage(named: "commentWhite"))
 
     private lazy var usernameLabel = UILabel.make(color: .white,
-                                                  font: DeFont.sysFont.semiBold(size: .caption),
+                                                  font: UIFont.headlineFont(),
                                                   alignment: .left)
     private lazy var titleLabel = UILabel.make(color: .white,
-                                               font: DeFont.sysFont.semiBold(size: .caption),
+                                               font: UIFont.headlineFont(),
                                                alignment: .left)
     private lazy var timeLabel = UILabel.make(color: .white,
-                                              font: DeFont.sysFont.font(size: .footnote),
-                                              alignment: .right)
+                                              font: UIFont.footnoteFont())
     private lazy var starsLabel = UILabel.make(color: .white,
-                                               font: DeFont.sysFont.font(size: .footnote),
-                                               alignment: .left)
+                                               font: UIFont.footnoteFont())
     private lazy var commentLabel = UILabel.make(color: .white,
-                                                 font: DeFont.sysFont.font(size: .footnote),
+                                                 font: UIFont.footnoteFont(),
                                                  alignment: .left)
 
     override func setSelected(_ selected: Bool, animated: Bool) {

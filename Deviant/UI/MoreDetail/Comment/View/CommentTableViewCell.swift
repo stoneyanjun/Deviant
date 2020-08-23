@@ -19,13 +19,13 @@ class CommentTableViewCell: UITableViewCell, Reusable {
     private lazy var avatarImageView = UIImageView()
 
     private lazy var usernameLabel = UILabel.make( color: .white,
-                                                   font: DeFont.sysFont.semiBold(size: .body),
+                                                   font: UIFont.bodyFont(),
                                                    alignment: .left)
     private lazy var postDateLabel = UILabel.make( color: .lightText,
-                                                   font: DeFont.sysFont.font(size: .caption),
+                                                   font: UIFont.footnoteFont(),
                                                    alignment: .right)
     private lazy var commentLabel = UILabel.make( color: .white,
-                                                  font: DeFont.sysFont.font(size: .caption),
+                                                  font: UIFont.footnoteFont(),
                                                   numOfLines: 0,
                                                   alignment: .left)
 

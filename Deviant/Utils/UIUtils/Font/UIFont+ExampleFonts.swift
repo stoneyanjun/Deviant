@@ -16,47 +16,20 @@ extension UIFont {
     class func exampleAvenirLight(ofSize size: CGFloat) -> UIFont {
         return UIFont(name: "Avenir-Light", size: size) ?? UIFont.systemFont(ofSize: size)
     }
-}
 
-enum DeFont: String {
-    case sysFont = "System Font"
-
-    func font(size: FontSize) -> UIFont {
-        return dynamicFont(size: size, weight: UIFont.Weight.regular)
+    class func headlineFont() -> UIFont {
+        return UIFont.preferredFont(forTextStyle: .headline)
     }
 
-    func boldFont(size: FontSize) -> UIFont {
-        return dynamicFont(size: size, weight: UIFont.Weight.bold)
+    class func subheadlineFont() -> UIFont {
+        return UIFont.preferredFont(forTextStyle: .subheadline)
     }
 
-    func semiBold(size: FontSize) -> UIFont {
-        return dynamicFont(size: size, weight: UIFont.Weight.semibold)
+    class func bodyFont() -> UIFont {
+        return UIFont.preferredFont(forTextStyle: .body)
     }
 
-    func lightFont(size: FontSize) -> UIFont {
-        return dynamicFont(size: size, weight: UIFont.Weight.light)
+    class func footnoteFont() -> UIFont {
+        return UIFont.preferredFont(forTextStyle: .footnote)
     }
-
-    func mediumFont(size: FontSize) -> UIFont {
-        return dynamicFont(size: size, weight: UIFont.Weight.medium)
-    }
-
-    private func dynamicFont(size: FontSize, weight: UIFont.Weight) -> UIFont {
-        var scale = UIApplication.shared.fontScaleFactor()
-        scale = (scale < 0.1) ? 1.0 : scale
-        return UIFont.systemFont(ofSize: scale * size.rawValue, weight: weight)
-    }
-}
-
-enum FontSize: CGFloat {
-    case display = 34.0
-    case headline = 28.0
-    case title = 24.0
-    case medium = 25.0
-    case titleTwo = 20.0
-    case body = 16.0
-    case caption = 14.0
-    case captionTwo = 11.0
-    case footnote = 12.0
-    case littleFootnote = 10.0
 }

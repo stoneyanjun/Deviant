@@ -23,11 +23,11 @@ class FavorateTableViewCell: UITableViewCell, Reusable {
     }()
 
     private lazy var nameLabel = UILabel.make(color: .white,
-                                              font: DeFont.sysFont.font(size: .body),
+                                              font: UIFont.headlineFont(),
                                               alignment: .left)
 
     private lazy var dateLabel = UILabel.make(color: .white,
-                                              font: DeFont.sysFont.font(size: .footnote),
+                                              font: UIFont.footnoteFont(),
                                               alignment: .right)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
