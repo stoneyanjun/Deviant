@@ -8,7 +8,6 @@
 import Alamofire
 import Foundation
 import HandyJSON
-import Localize_Swift
 import Moya
 import SwiftyJSON
 

@@ -62,8 +62,7 @@ extension DailyListViewController {
         dailyTableView.separatorStyle = .none
         dailyTableView.estimatedRowHeight = Const.estimatedRowHeight
         dailyTableView.rowHeight = UITableView.automaticDimension
-        dailyTableView.register(DailyTableViewCell.createNib(),
-                                forCellReuseIdentifier: DailyTableViewCell.reuseIdentifier)
+        dailyTableView.register(DailyTableViewCell.self, forCellReuseIdentifier: DailyTableViewCell.reuseIdentifier)
 
         dailyTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

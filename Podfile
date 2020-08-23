@@ -11,14 +11,14 @@ target 'Deviant' do
   pod 'SwiftyJSON'
   pod 'SwiftSoup'
   
-  pod "AsyncSwift"
+#   pod "AsyncSwift"
   pod 'SwifterSwift'
   pod 'Reusable'
 
   pod 'SnapKit'
   pod 'Kingfisher'
   pod "ESPullToRefresh"
-  pod 'SwiftMessages'
+#   pod 'SwiftMessages'
   pod 'PKHUD'
   pod 'Segmentio'
   pod 'CHTCollectionViewWaterfallLayout/Swift'
@@ -26,20 +26,10 @@ target 'Deviant' do
 
   pod 'DZNEmptyDataSet'
   
-  pod 'Localize-Swift'
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
-
-  target 'DeviantTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-  
-  target "DeviantUITests" do
-    use_frameworks!
-    pod 'iOSSnapshotTestCase'
-  end
+#   pod 'Loca# lize-Swift'
+#   pod 'Firebase/Analytics'
+#   pod 'Firebase/Auth'
+#   pod 'Firebase/Firestore'
 end
 
 

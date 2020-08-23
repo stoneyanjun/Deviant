@@ -5,13 +5,14 @@
 //  Copyright © 2020 Stone. All rights reserved.
 //
 
-import Firebase
+//import Firebase
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {        FirebaseApp.configure()
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//        FirebaseApp.configure()
         return true
     }
 
