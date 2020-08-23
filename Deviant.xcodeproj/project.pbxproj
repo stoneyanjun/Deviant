@@ -64,7 +64,6 @@
 		8E61635F24EBD3100043DB63 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61635E24EBD3100043DB63 /* UIApplication+Extension.swift */; };
 		8E61636224EBE05C0043DB63 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61636124EBE05C0043DB63 /* UILabel+Extension.swift */; };
 		8E66AC1A24D6449800A384AE /* MoreDetailContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC1824D6449800A384AE /* MoreDetailContainerVC.swift */; };
-		8E66AC1B24D6449800A384AE /* MoreDetailContainerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E66AC1924D6449800A384AE /* MoreDetailContainerVC.xib */; };
 		8E66AC3424D65EA200A384AE /* TopicListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3224D65EA200A384AE /* TopicListResult.swift */; };
 		8E66AC3624D65ECC00A384AE /* DeviantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3524D65ECC00A384AE /* DeviantService.swift */; };
 		8E66AC4524D679B200A384AE /* MetadataConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3D24D679B200A384AE /* MetadataConfigurator.swift */; };
@@ -114,7 +113,6 @@
 		8EA310CB24D10C58008813B7 /* DailyListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310C424D10C58008813B7 /* DailyListInteractor.swift */; };
 		8EA310CC24D10C58008813B7 /* DailyListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310C524D10C58008813B7 /* DailyListConfigurator.swift */; };
 		8EA310D024D10CB3008813B7 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310CE24D10CB3008813B7 /* DailyTableViewCell.swift */; };
-		8EA310D124D10CB3008813B7 /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EA310CF24D10CB3008813B7 /* DailyTableViewCell.xib */; };
 		8EA756DC24E76DA100C282CC /* PopularListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA756DB24E76DA100C282CC /* PopularListPresenterTests.swift */; };
 		8EA756E024E77DD100C282CC /* TopListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA756DE24E77DD100C282CC /* TopListInteractorTests.swift */; };
 		8EA756E124E77DD100C282CC /* TopListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA756DF24E77DD100C282CC /* TopListPresenterTests.swift */; };
@@ -248,7 +246,6 @@
 		8E61635E24EBD3100043DB63 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		8E61636124EBE05C0043DB63 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		8E66AC1824D6449800A384AE /* MoreDetailContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailContainerVC.swift; sourceTree = "<group>"; };
-		8E66AC1924D6449800A384AE /* MoreDetailContainerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreDetailContainerVC.xib; sourceTree = "<group>"; };
 		8E66AC3224D65EA200A384AE /* TopicListResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListResult.swift; sourceTree = "<group>"; };
 		8E66AC3524D65ECC00A384AE /* DeviantService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantService.swift; sourceTree = "<group>"; };
 		8E66AC3D24D679B200A384AE /* MetadataConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataConfigurator.swift; sourceTree = "<group>"; };
@@ -298,7 +295,6 @@
 		8EA310C424D10C58008813B7 /* DailyListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListInteractor.swift; sourceTree = "<group>"; };
 		8EA310C524D10C58008813B7 /* DailyListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListConfigurator.swift; sourceTree = "<group>"; };
 		8EA310CE24D10CB3008813B7 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
-		8EA310CF24D10CB3008813B7 /* DailyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
 		8EA756DB24E76DA100C282CC /* PopularListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListPresenterTests.swift; sourceTree = "<group>"; };
 		8EA756DE24E77DD100C282CC /* TopListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopListInteractorTests.swift; sourceTree = "<group>"; };
 		8EA756DF24E77DD100C282CC /* TopListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopListPresenterTests.swift; sourceTree = "<group>"; };
@@ -706,7 +702,6 @@
 			isa = PBXGroup;
 			children = (
 				8E66AC1824D6449800A384AE /* MoreDetailContainerVC.swift */,
-				8E66AC1924D6449800A384AE /* MoreDetailContainerVC.xib */,
 			);
 			path = MoreDetailContainer;
 			sourceTree = "<group>";
@@ -925,7 +920,6 @@
 			isa = PBXGroup;
 			children = (
 				8EA310CE24D10CB3008813B7 /* DailyTableViewCell.swift */,
-				8EA310CF24D10CB3008813B7 /* DailyTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1175,14 +1169,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E66AC1B24D6449800A384AE /* MoreDetailContainerVC.xib in Resources */,
 				8E1B803D24C0B42C008C059C /* ServerInfo.plist in Resources */,
 				8E1B803B24C0B422008C059C /* Request.plist in Resources */,
 				8E1B7FF724C0A4CB008C059C /* LaunchScreen.storyboard in Resources */,
 				8E1B7FF424C0A4CB008C059C /* Assets.xcassets in Resources */,
 				8EFB6E8424E9E498002A62B5 /* Client.plist in Resources */,
 				8E5C799024E67B8500DBAE28 /* GoogleService-Info.plist in Resources */,
-				8EA310D124D10CB3008813B7 /* DailyTableViewCell.xib in Resources */,
 				8E1B7FF224C0A4C9008C059C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
