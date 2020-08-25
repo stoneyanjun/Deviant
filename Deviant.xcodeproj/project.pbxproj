@@ -106,6 +106,7 @@
 		8E944EF024C8A1720050B76B /* TopicListBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EE424C8A1710050B76B /* TopicListBase.swift */; };
 		8E9D156924E818730027ECDF /* TokenManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D156824E818730027ECDF /* TokenManagerTests.swift */; };
 		8E9D156C24E8D0980027ECDF /* DeviantServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D156B24E8D0980027ECDF /* DeviantServiceTests.swift */; };
+		8E9D185524F4AB5800A679DB /* MoreDetailContainerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D185424F4AB5800A679DB /* MoreDetailContainerVC.xib */; };
 		8EA310C624D10C58008813B7 /* DailyListConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310BF24D10C58008813B7 /* DailyListConfiguration.swift */; };
 		8EA310C724D10C58008813B7 /* DailyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310C024D10C58008813B7 /* DailyListPresenter.swift */; };
 		8EA310C824D10C58008813B7 /* DailyListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310C124D10C58008813B7 /* DailyListRouter.swift */; };
@@ -291,6 +292,7 @@
 		8E944EE424C8A1710050B76B /* TopicListBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListBase.swift; sourceTree = "<group>"; };
 		8E9D156824E818730027ECDF /* TokenManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenManagerTests.swift; sourceTree = "<group>"; };
 		8E9D156B24E8D0980027ECDF /* DeviantServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantServiceTests.swift; sourceTree = "<group>"; };
+		8E9D185424F4AB5800A679DB /* MoreDetailContainerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreDetailContainerVC.xib; sourceTree = "<group>"; };
 		8EA310BF24D10C58008813B7 /* DailyListConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListConfiguration.swift; sourceTree = "<group>"; };
 		8EA310C024D10C58008813B7 /* DailyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListPresenter.swift; sourceTree = "<group>"; };
 		8EA310C124D10C58008813B7 /* DailyListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListRouter.swift; sourceTree = "<group>"; };
@@ -717,6 +719,7 @@
 		8E4A204D24D6FAF900788B86 /* MoreDetailContainer */ = {
 			isa = PBXGroup;
 			children = (
+				8E9D185424F4AB5800A679DB /* MoreDetailContainerVC.xib */,
 				8E66AC1824D6449800A384AE /* MoreDetailContainerVC.swift */,
 			);
 			path = MoreDetailContainer;
@@ -1193,6 +1196,7 @@
 				8E1B803B24C0B422008C059C /* Request.plist in Resources */,
 				8E1B7FF724C0A4CB008C059C /* LaunchScreen.storyboard in Resources */,
 				8E1B7FF424C0A4CB008C059C /* Assets.xcassets in Resources */,
+				8E9D185524F4AB5800A679DB /* MoreDetailContainerVC.xib in Resources */,
 				8EFB6E8424E9E498002A62B5 /* Client.plist in Resources */,
 				8E5C799024E67B8500DBAE28 /* GoogleService-Info.plist in Resources */,
 				8E1B7FF224C0A4C9008C059C /* Main.storyboard in Resources */,

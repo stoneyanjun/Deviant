@@ -49,6 +49,7 @@ extension CommentInteractor {
         NetworkManager<DeviantService>().networkRequest(target: .   fetchComment(params: params)) { result in
             switch result {
             case .success(let json):
+                print(json.description)
                 guard let comment = JSONDeserializer<CommentBase>.deserializeFrom(json: json.description)
                     else {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)

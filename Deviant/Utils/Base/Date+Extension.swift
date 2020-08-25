@@ -22,17 +22,22 @@ extension Date {
         guard let date = Date(deviantDateString: postedDateStr) else {
             return postedDateStr
         }
-        return date.getFormatDateString()
+
+        let zone = TimeZone.current
+        let second = zone.secondsFromGMT()
+        let newDate = date.addingTimeInterval(TimeInterval( second))
+
+        return newDate.getFormatDateString()
     }
 
     func getFormatDateString() -> String {
         let minutes = -(self.timeIntervalSinceNow / 60)
 
-        if minutes < 5 {
+        if minutes < 10 {
             return "Just now"
         } else if minutes < 60 {
             return "\(Int(minutes)) minutes ago"
-        } else if minutes < (60 * 12) {
+        } else if minutes < (60 * 10) {
             return "\(Int(minutes / 60)) hours ago"
         } else if self.isInToday {
             return "Today"
@@ -40,7 +45,7 @@ extension Date {
             return "Yesterday"
         } else {
             let days = minutes / (60 * 24)
-            if days < 5 {
+            if days < 10 {
                 return "\(Int(days)) days ago"
             } else {
                 return self.formatString(dateFormat: "MMMM dd, yyyy")
@@ -51,7 +56,7 @@ extension Date {
     init?(deviantDateString: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.timeZone = TimeZone.init(abbreviation: "GMT")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss-SSSS"
         guard let date = dateFormatter.date(from: deviantDateString) else { return nil }
         self = date
