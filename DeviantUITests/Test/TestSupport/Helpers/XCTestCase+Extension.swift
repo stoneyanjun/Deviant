@@ -1,5 +1,5 @@
 //
-//  UIScreen+Extension.swift
+//  XCTestCase+Extension.swift
 //  Deviant
 //
 //  Copyright © 2020 Stone. All rights reserved.
@@ -14,7 +14,7 @@ public extension XCTestCase {
                                waitSeconds: TimeInterval = waitSeconds,
                                file: StaticString = #file,
                                line: Int = #line) {
-        evaluateAssertion("Exist ! = true",
+        evaluateAssertion("exists == true",
                           element: element,
                           waitSeconds: waitSeconds,
                           file: file,
@@ -35,7 +35,9 @@ public extension XCTestCase {
         guard result == .completed else {
             let message = "Fail to find the element after waiting"
             recordFailure(withDescription: message,
-                          inFile: file.description, atLine: Int(line), expected: true)
+                          inFile: file.description,
+                          atLine: Int(line),
+                          expected: true)
             return
         }
         XCTAssert(true, "Element found")

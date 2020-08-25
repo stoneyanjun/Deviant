@@ -1,5 +1,5 @@
 //
-//  UIScreen+Extension.swift
+//  ScreenModel.swift
 //  Deviant
 //
 //  Copyright © 2020 Stone. All rights reserved.
@@ -25,6 +25,16 @@ open class ScreenModel {
 
     open var identifyingElement: XCUIElement {
         fatalError("This has to be implemented in a subcall or extension")
+    }
+
+    public func reportSelf(_ function: StaticString = #function) -> Self {
+        test.report(function: function.description)
+        return self
+    }
+
+    public func reportBDD(_ scenario: BDDScenario) -> Self {
+        test.report(function: scenario.description)
+        return self
     }
 
     @discardableResult func waitForViewToAppear(file: StaticString,
