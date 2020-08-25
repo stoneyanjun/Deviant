@@ -1,36 +1,38 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '13.0'
 
-target 'Deviant' do
-  use_frameworks!
-  inhibit_all_warnings!
-  # Pods for DeviantArt
-
+def shared_pods
   pod 'Moya'
   pod 'HandyJSON'
   pod 'SwiftyJSON'
   pod 'SwiftSoup'
-  
-#   pod "AsyncSwift"
   pod 'SwifterSwift'
   pod 'Reusable'
-
   pod 'SnapKit'
   pod 'Kingfisher'
   pod "ESPullToRefresh"
-#   pod 'SwiftMessages'
   pod 'PKHUD'
   pod 'Segmentio'
   pod 'CHTCollectionViewWaterfallLayout/Swift'
   pod 'PanModal'
-
   pod 'DZNEmptyDataSet'
-  
-#   pod 'Loca# lize-Swift'
-#   pod 'Firebase/Analytics'
-#   pod 'Firebase/Auth'
-#   pod 'Firebase/Firestore'
 end
 
+target 'Deviant' do
+  inhibit_all_warnings!
+  use_frameworks!
+  shared_pods
+end
 
+target 'DeviantTests' do
+  inhibit_all_warnings!
+  use_frameworks!
+  shared_pods
+end
 
+target 'DeviantUITests' do
+  inhibit_all_warnings!
+  use_frameworks!
+  shared_pods
+  pod 'iOSSnapshotTestCase'
+end
