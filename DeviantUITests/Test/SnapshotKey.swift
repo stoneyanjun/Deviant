@@ -8,7 +8,19 @@
 import Foundation
 
 enum SnapshotKey: String {
-    case PopularList
-    case TopicList
-    case Daily
+    case rootPopularList
+    case rootTopicList
+    case rootDaily
+
+    case popularDeviantDetail
+
+    case topicDetail
+
+    case dailyDeviantDetail
+
+    case deviantDetail
+    case deviantDetailMoreInfo
+    case deviantDetailComment
+    case deviantDetailFavorate
+    case deviantDetailMoreLike
 }

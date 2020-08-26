@@ -63,6 +63,8 @@ extension DeviantDetailViewController {
 
         contentImageView.contentMode = .scaleAspectFit
         view.addSubview(contentImageView)
+
+        setAccessibility()
     }
 
     private func applyConstraints() {
@@ -138,5 +140,19 @@ extension DeviantDetailViewController {
             return
         }
         interactor?.showMoreDetail(with: deviantDetail, tag: sender.tag)
+    }
+}
+
+extension DeviantDetailViewController {
+    private func setAccessibility() {
+        infoButton.accessibilityIdentifier = AccessibilityIdentifier.moreInfoButton.accessibilityIdentifier()
+        commentButton.accessibilityIdentifier = AccessibilityIdentifier.commentButton.accessibilityIdentifier()
+        starsButton.accessibilityIdentifier = AccessibilityIdentifier.favorateButton.accessibilityIdentifier()
+        moreLikeButton.accessibilityIdentifier = AccessibilityIdentifier.moreLikeButton.accessibilityIdentifier()
+
+        print(infoButton.accessibilityIdentifier)
+        print(commentButton.accessibilityIdentifier)
+        print(starsButton.accessibilityIdentifier)
+        print(moreLikeButton.accessibilityIdentifier)
     }
 }

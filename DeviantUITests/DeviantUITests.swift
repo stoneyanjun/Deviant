@@ -9,6 +9,7 @@
 import FBSnapshotTestCase
 import XCTest
 
+/*
 class DeviantUITests: FBSnapshotTestCase {
 
     override func setUp() {
@@ -25,7 +26,6 @@ class DeviantUITests: FBSnapshotTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
     func testExample() {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
@@ -34,7 +34,6 @@ class DeviantUITests: FBSnapshotTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-
     func testLaunchPerformance() {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
@@ -44,6 +43,7 @@ class DeviantUITests: FBSnapshotTestCase {
         }
     }
 }
+     */
 
 class MPFJourneyUITests: UITestCase {
     override func setUp() {
@@ -53,12 +53,38 @@ class MPFJourneyUITests: UITestCase {
 
     func testLaunchJourneyTest() {
         print(#function)
-        _ = RootSceenModel(self).wait()
+        _ = RootSceenModel(self).longerWait()
             .showPopularPage().wait()
-            .verifyView(snapshotKey: .PopularList)
-            .showTopicListPage().wait()
-            .verifyView(snapshotKey: .TopicList)
+            .verifyView(snapshotKey: .rootPopularList)
+            .showDetail().longerWait()
+
+            .verifyView(snapshotKey: .popularDeviantDetail)
+            .goBack().wait()
+
             .showDailyPage().wait()
-            .verifyView(snapshotKey: .Daily)
+            .verifyView(snapshotKey: .rootDaily)
+            .showDetail().longerWait()
+            .verifyView(snapshotKey: .dailyDeviantDetail)
+            .goBack().wait()
+
+            .showTopicListPage().wait()
+            .verifyView(snapshotKey: .rootTopicList)
+            .showTopic().longerWait()
+            .verifyView(snapshotKey: .topicDetail)
+            .to(TopicDetailScreenModel(self))
+            .showDetail().longerWait()
+
+            .verifyView(snapshotKey: .deviantDetail)
+            .to(DeviantDetailScreenModel(self))
+            .showMoreInfoPage().longerWait()
+            .verifyView(snapshotKey: .deviantDetailMoreInfo)
+            .showInternalCommentPage().wait()
+            .verifyView(snapshotKey: .deviantDetailComment)
+            .showInternalFavoratePage().wait()
+            .verifyView(snapshotKey: .deviantDetailFavorate)
+            .showInternalMoreLikePage().wait()
+            .verifyView(snapshotKey: .deviantDetailMoreLike)
+
     }
 }
+//

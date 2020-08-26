@@ -25,4 +25,12 @@ final class RootSceenModel: BaseScreenModel {
     func showDailyPage() -> RootSceenModel {
         return showPage(index: 2)
     }
+
+    func showDetail() -> RootSceenModel {
+        return showPage(index: 3)
+    }
+
+    func showTopic() -> RootSceenModel {
+        return showPage(index: 3)
+    }
 }

@@ -19,6 +19,12 @@ extension ScreenModel {
         return reportSelf()
     }
 
+    @discardableResult
+    func longerWait(for timeout: TimeInterval = Const.longWaitTime) -> Self {
+        _ = app.wait(for: .runningBackground, timeout: timeout)
+        return reportSelf()
+    }
+
     func to<T>(_ model: T) -> T {
         return model
     }
