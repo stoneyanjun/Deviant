@@ -1,6 +1,6 @@
 //
 //  CommentTableViewCell.swift
-//  Deviant
+//  DeviantUITests
 //
 //  Copyright © 2020 Stone. All rights reserved.
 //
@@ -16,9 +16,9 @@ class UITestCase: FBSnapshotTestCase, UITestable {
 
     private(set) var _app: XCUIApplication!
 
-    func launchApp() {
+    func launchApp(isRecordModel: Bool = false) {
         // If in recordMode, the test should continue to save all images in the test, otherwise we should stop test to save CI time.
-        recordMode = false
+        recordMode = isRecordModel
         continueAfterFailure = recordMode
 
         let application = XCUIApplication()

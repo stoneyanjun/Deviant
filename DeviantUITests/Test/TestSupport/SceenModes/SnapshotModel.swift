@@ -1,6 +1,6 @@
 //
 //  SnapshotModel.swift
-//  Deviant
+//  DeviantUITests
 //
 //  Copyright © 2020 Stone. All rights reserved.
 //
@@ -123,5 +123,19 @@ private enum Device {
         default:
             return 22
         }
+    }
+}
+
+extension SnapshotModel where Self: ScreenModel {
+    @discardableResult
+    func verifyView(snapshotKey: SnapshotKey,
+                    tolerence: CGFloat = Const.tolerence,
+                    file: StaticString = #file,
+                    line: UInt = #line) -> Self {
+        let snapshotName = "\(snapshotKey.rawValue)"
+        return verifyView(snapshotName: snapshotName,
+                          tolerence: tolerence,
+                          file: file,
+                          line: line)
     }
 }

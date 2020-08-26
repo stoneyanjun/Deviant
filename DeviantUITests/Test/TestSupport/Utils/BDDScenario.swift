@@ -1,6 +1,6 @@
 //
 //  BDDScenario.swift
-//  Deviant
+//  DeviantUITests
 //
 //  Copyright © 2020 Stone. All rights reserved.
 //

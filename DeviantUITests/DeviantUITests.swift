@@ -44,3 +44,21 @@ class DeviantUITests: FBSnapshotTestCase {
         }
     }
 }
+
+class MPFJourneyUITests: UITestCase {
+    override func setUp() {
+        super.setUp()
+        launchApp(isRecordModel: false)
+    }
+
+    func testLaunchJourneyTest() {
+        print(#function)
+        _ = RootSceenModel(self).wait()
+            .showPopularPage().wait()
+            .verifyView(snapshotKey: .PopularList)
+            .showTopicListPage().wait()
+            .verifyView(snapshotKey: .TopicList)
+            .showDailyPage().wait()
+            .verifyView(snapshotKey: .Daily)
+    }
+}

@@ -2,9 +2,9 @@
 //  UIApplication+Extension.swift
 //  Deviant
 //
-//  Created by Stone on 18/8/2020.
-//  Copyright © 2020 JustNow. All rights reserved.
+//  Copyright © 2020 Stone. All rights reserved.
 //
+
 
 import Foundation
 import UIKit

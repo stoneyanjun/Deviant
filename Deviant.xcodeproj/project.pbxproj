@@ -110,6 +110,9 @@
 		8E9D186024F4F5D300A679DB /* UITestableCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D185D24F4F5D300A679DB /* UITestableCase.swift */; };
 		8E9D186224F4F5D900A679DB /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D186124F4F5D900A679DB /* XCTestCase+Extension.swift */; };
 		8E9D186424F4FB6400A679DB /* TestReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D186324F4FB6400A679DB /* TestReporter.swift */; };
+		8E9D186624F5157B00A679DB /* SnapshotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D186524F5157B00A679DB /* SnapshotKey.swift */; };
+		8E9D186C24F5168300A679DB /* BaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D186B24F5168300A679DB /* BaseModels.swift */; };
+		8E9D186E24F5197B00A679DB /* RootScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D186D24F5197B00A679DB /* RootScreenModel.swift */; };
 		8EA310C624D10C58008813B7 /* DailyListConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310BF24D10C58008813B7 /* DailyListConfiguration.swift */; };
 		8EA310C724D10C58008813B7 /* DailyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310C024D10C58008813B7 /* DailyListPresenter.swift */; };
 		8EA310C824D10C58008813B7 /* DailyListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310C124D10C58008813B7 /* DailyListRouter.swift */; };
@@ -299,6 +302,9 @@
 		8E9D185D24F4F5D300A679DB /* UITestableCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestableCase.swift; sourceTree = "<group>"; };
 		8E9D186124F4F5D900A679DB /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		8E9D186324F4FB6400A679DB /* TestReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReporter.swift; sourceTree = "<group>"; };
+		8E9D186524F5157B00A679DB /* SnapshotKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotKey.swift; sourceTree = "<group>"; };
+		8E9D186B24F5168300A679DB /* BaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModels.swift; sourceTree = "<group>"; };
+		8E9D186D24F5197B00A679DB /* RootScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreenModel.swift; sourceTree = "<group>"; };
 		8EA310BF24D10C58008813B7 /* DailyListConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListConfiguration.swift; sourceTree = "<group>"; };
 		8EA310C024D10C58008813B7 /* DailyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListPresenter.swift; sourceTree = "<group>"; };
 		8EA310C124D10C58008813B7 /* DailyListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListRouter.swift; sourceTree = "<group>"; };
@@ -707,6 +713,8 @@
 		8E2876A824ECD74500974E95 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				8E9D186A24F5166100A679DB /* BaseModels */,
+				8E9D186924F5162D00A679DB /* RootVC */,
 				8E2876A924ECD75D00974E95 /* Const.swift */,
 			);
 			path = model;
@@ -749,9 +757,10 @@
 		8E4BBD9024EC848000608BF7 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				8E9D186524F5157B00A679DB /* SnapshotKey.swift */,
+				8E28769A24ECC47300974E95 /* helpers */,
 				8E2876A824ECD74500974E95 /* model */,
 				8E2876A124ECCACB00974E95 /* TestSupport */,
-				8E28769A24ECC47300974E95 /* helpers */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -966,6 +975,22 @@
 				8E9D186324F4FB6400A679DB /* TestReporter.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8E9D186924F5162D00A679DB /* RootVC */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D186D24F5197B00A679DB /* RootScreenModel.swift */,
+			);
+			path = RootVC;
+			sourceTree = "<group>";
+		};
+		8E9D186A24F5166100A679DB /* BaseModels */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D186B24F5168300A679DB /* BaseModels.swift */,
+			);
+			path = BaseModels;
 			sourceTree = "<group>";
 		};
 		8EA310CD24D10C64008813B7 /* View */ = {
@@ -1549,13 +1574,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E28769E24ECC49000974E95 /* XCUIElement+Extensions.swift in Sources */,
+				8E9D186624F5157B00A679DB /* SnapshotKey.swift in Sources */,
 				8E9D186424F4FB6400A679DB /* TestReporter.swift in Sources */,
 				8E2876A024ECC49000974E95 /* ScreenModel+Extensions.swift in Sources */,
 				8E9D185A24F4F5CC00A679DB /* BDDScenario.swift in Sources */,
+				8E9D186C24F5168300A679DB /* BaseModels.swift in Sources */,
 				8E28769F24ECC49000974E95 /* UITestCase.swift in Sources */,
 				8E9D186224F4F5D900A679DB /* XCTestCase+Extension.swift in Sources */,
 				8E1B800D24C0A4CB008C059C /* DeviantUITests.swift in Sources */,
 				8E9D185F24F4F5D300A679DB /* ScreenModel.swift in Sources */,
+				8E9D186E24F5197B00A679DB /* RootScreenModel.swift in Sources */,
 				8E9D185E24F4F5D300A679DB /* SnapshotModel.swift in Sources */,
 				8E2876AA24ECD75D00974E95 /* Const.swift in Sources */,
 				8E9D186024F4F5D300A679DB /* UITestableCase.swift in Sources */,
