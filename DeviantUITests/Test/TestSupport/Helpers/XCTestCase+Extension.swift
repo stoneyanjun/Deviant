@@ -8,7 +8,7 @@
 import XCTest
 
 public extension XCTestCase {
-    public static let waitSeconds: TimeInterval = 30.0
+    static let waitSeconds: TimeInterval = 30.0
 
     func waitForElementToExist(_ element: XCUIElement,
                                waitSeconds: TimeInterval = waitSeconds,
