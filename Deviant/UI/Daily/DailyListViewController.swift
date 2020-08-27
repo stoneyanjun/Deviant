@@ -20,7 +20,7 @@ class DailyListViewController: DeviantBaseViewController {
     var interactor: DailyListInteractorInterface?
     private(set) var dailyTableView: UITableView!
     private lazy var defaultCell = UITableViewCell()
-    private var results: [DeviantDetailBase] = []
+    private var results: [DeviantDetailDisplayModel] = []
 
     // MARK: View lifecycle
     override func viewDidLoad() {
@@ -76,10 +76,23 @@ extension DailyListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let detail = results[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.reuseIdentifier,
                                                     for: indexPath) as? DailyTableViewCell {
-            cell.update(with: results[indexPath.row])
-            cell.setupAccessibility(row: indexPath.row)
+            if let url = URL(string: (detail.src ?? "")) {
+                let viewData = DailyTableViewCell.ViewData(usericon: detail.usericon,
+                                                           title: detail.title,
+                                                           username: detail.username,
+                                                           publishedTime: detail.publishedTime,
+                                                           url: url,
+                                                           favourites: detail.favourites,
+                                                           comments: detail.comments,
+                                                           width: detail.width,
+                                                           height: detail.height,
+                                                           identifier: .dailyTableViewCell,
+                                                           row: indexPath.row)
+                cell.update(with: viewData)
+            }
             return cell
         } else {
             return defaultCell
@@ -104,7 +117,7 @@ extension DailyListViewController: DailyListViewControllerInterface {
         updateTableView()
     }
 
-    func update(with results: [DeviantDetailBase]) {
+    func update(with results: [DeviantDetailDisplayModel]) {
         stopES()
         self.results = results
         updateTableView()
@@ -117,3 +130,4 @@ extension DailyListViewController: DZNEmptyDataSetDelegate {
         interactor?.tryFetchDaily(with: "")
     }
 }
+

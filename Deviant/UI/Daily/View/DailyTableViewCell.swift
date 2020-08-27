@@ -166,10 +166,10 @@ extension DailyTableViewCell {
                 }
                 strongSelf.loadingImageView.isHidden = true
                 switch result {
-                case .failure:
-                    strongSelf.setImageViewWhenFailure()
-                default:
-                    break
+                    case .failure:
+                        strongSelf.setImageViewWhenFailure()
+                    default:
+                        break
                 }
             }
         } else {
@@ -187,5 +187,63 @@ extension DailyTableViewCell {
 extension DailyTableViewCell {
     func setupAccessibility(row: Int) {
         setAccessibilityIdentifier(.dailyTableViewCell, row: row)
+    }
+}
+
+extension DailyTableViewCell {
+    struct ViewData {
+        var usericon: String?
+        var title: String?
+        var username: String?
+        var publishedTime: String?
+        var url: URL
+        var favourites: Int?
+        var comments: Int?
+        var width: Int?
+        var height: Int?
+        var identifier: AccessibilityIdentifier
+        var row: Int
+    }
+
+    func update(with viewData: ViewData) {
+        if let usericon = viewData.usericon,
+            let url = URL(string: usericon) {
+            avatarImageView.kf.setImage(with: url, placeholder: UIImage(named: "bigLoading"))
+        } else {
+            avatarImageView.image = UIImage(named: "commentAvatar")
+        }
+
+        usernameLabel.text = viewData.username
+        titleLabel.text = viewData.title
+        let publishedTime = String.getDateFromTimeStamp(with: viewData.publishedTime ?? "")
+        timeLabel.text = publishedTime
+        if let width = viewData.width,
+            let height = viewData.height {
+            let radio = CGFloat(height) / CGFloat(width)
+            srcImageView.snp.remakeConstraints { make in
+                make.leading.equalToSuperview().offset(Const.margin)
+                make.trailing.equalToSuperview().offset(-Const.margin)
+                make.top.equalTo(titleLabel.snp.bottom).offset(Const.interval)
+                make.height.equalTo(srcImageView.snp.width).multipliedBy(radio)
+            }
+        }
+
+        loadingImageView.isHidden = false
+        srcImageView.kf.setImage(with: viewData.url) { [weak self] result in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.loadingImageView.isHidden = true
+            switch result {
+            case .failure:
+                strongSelf.setImageViewWhenFailure()
+            default:
+                break
+            }
+        }
+        starsLabel.text = "\(viewData.favourites ?? 0)"
+        commentLabel.text = "\(viewData.comments ?? 0)"
+
+        setAccessibilityIdentifier(viewData.identifier, row: viewData.row)
     }
 }

@@ -52,7 +52,7 @@ extension DailyListInteractor {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)
                         return
                 }
-                self.presenter?.update(with: results)
+                self.presenter?.update(with: results.map { $0.toDisplayModel() })
             case .failure(let error):
                 self.presenter?.showError(with: error)
             }
