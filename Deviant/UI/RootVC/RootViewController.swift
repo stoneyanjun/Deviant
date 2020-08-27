@@ -10,17 +10,16 @@ import Segmentio
 import UIKit
 
 class RootViewController: UIViewController {
+    private enum Const {
+        static let segementHeight: CGFloat = 50
+    }
+
     @IBOutlet private weak var segmentioView: Segmentio!
     @IBOutlet private weak var containView: UIView!
     @IBOutlet private weak var scrollView: UIScrollView!
     private lazy var viewControllers: [UIViewController] = {
         return self.prepareViewControllers()
     }()
-    private var offset = 0
-
-    private enum Const {
-        static let segementHeight: CGFloat = 50
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

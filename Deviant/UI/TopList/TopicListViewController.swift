@@ -127,7 +127,9 @@ extension TopicListViewController: UICollectionViewDataSource {
             let url = URL(string: src) else {
                 return collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
         }
-        cell.imageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
+        cell.update(with: url)
+        cell.setupAccessibility(with: .topicListCollectionCell, row: indexPath.row)
+        print(#function)
         return cell
     }
 

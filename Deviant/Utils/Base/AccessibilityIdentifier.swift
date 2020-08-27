@@ -10,6 +10,17 @@ import Foundation
 import UIKit
 
 enum AccessibilityIdentifier: String {
+    case popularListCollectionCell
+    case moreLikeCollectionCell
+    case topicListCollectionCell
+    case topicDetailCollectionCell
+
+    case dailyTableViewCell
+
+    case favorateTableViewCell
+    case commentTableViewCell
+    case tagCollectionViewCell
+
     case moreInfoButton
     case commentButton
     case favorateButton
@@ -45,3 +56,11 @@ enum AccessibilityStatus: String {
 
 private let uppercaseCharacters: [Character] =
     ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+extension UIAccessibilityIdentification {
+    func setAccessibilityIdentifier(_ id: AccessibilityIdentifier,
+                                    status: AccessibilityStatus = .none,
+                                    row: Int? = nil) {
+        accessibilityIdentifier = id.accessibilityIdentifier(status: status, row: row)
+    }
+}

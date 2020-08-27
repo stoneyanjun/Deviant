@@ -85,7 +85,7 @@ extension MetadataViewController {
         titleLabel.text = meta?.metadata?.first?.title
         if let usericon = meta?.metadata?.first?.author?.usericon,
             let url = URL(string: usericon) {
-            avatorImageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
+            avatorImageView.kf.setImage(with: url, placeholder: UIImage(named: "bigLoading"))
         } else {
             avatorImageView.image = UIImage(named: "commentAvatar")
         }
@@ -208,6 +208,7 @@ extension MetadataViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
         }
         cell.update(with: tags[indexPath.row].tagName.wrap())
+        cell.setupAccessibility(row: indexPath.row)
         return cell
     }
 }

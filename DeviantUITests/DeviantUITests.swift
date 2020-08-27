@@ -12,33 +12,16 @@ import XCTest
 class MPFJourneyUITests: UITestCase {
     override func setUp() {
         super.setUp()
-        launchApp(isRecordModel: false)
+        launchApp(isRecordModel: true)
     }
 
     func testLaunchJourneyTest() {
-        print(#function)
         _ = RootSceenModel(self).longerWait()
             .showPopularPage().wait()
             .verifyView(snapshotKey: .rootPopularList)
-            .showDetail().longerWait()
-
+            .openFirstPopularItem().longerWait()
             .verifyView(snapshotKey: .popularDeviantDetail)
-            .goBack().wait()
 
-            .showDailyPage().wait()
-            .verifyView(snapshotKey: .rootDaily)
-            .showDetail().longerWait()
-            .verifyView(snapshotKey: .dailyDeviantDetail)
-            .goBack().wait()
-
-            .showTopicListPage().wait()
-            .verifyView(snapshotKey: .rootTopicList)
-            .showTopic().longerWait()
-            .verifyView(snapshotKey: .topicDetail)
-            .to(TopicDetailScreenModel(self))
-            .showDetail().longerWait()
-
-            .verifyView(snapshotKey: .deviantDetail)
             .to(DeviantDetailScreenModel(self))
             .showMoreInfoPage().longerWait()
             .verifyView(snapshotKey: .deviantDetailMoreInfo)
@@ -49,5 +32,22 @@ class MPFJourneyUITests: UITestCase {
             .showInternalMoreLikePage().wait()
             .verifyView(snapshotKey: .deviantDetailMoreLike)
 
+            .swipeDownVC()
+            .goBack().wait()
+
+            .to(RootSceenModel(self))
+            .showDailyPage().wait()
+            .verifyView(snapshotKey: .rootDaily)
+            .openFirstDaily().longerWait()
+            .verifyView(snapshotKey: .dailyDeviantDetail)
+            .goBack().wait()
+
+            .to(RootSceenModel(self))
+            .showTopicListPage().wait()
+            .verifyView(snapshotKey: .rootTopicList)
+            .openFirstTopic().longerWait()
+            .verifyView(snapshotKey: .topicDetail)
+            .to(TopicDetailScreenModel(self))
+            .showDetail().longerWait()
     }
 }

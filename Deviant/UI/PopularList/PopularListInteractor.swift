@@ -25,7 +25,6 @@ extension PopularListInteractor: PopularListInteractorInterface {
             TokenManager.shared.fetchToken { result in
                 switch result {
                 case .success:
-                    print(#function + " success")
                     self.fetchPopular(with: offset)
                 case .failure(let error):
                     self.presenter?.showError(with: error)
@@ -48,7 +47,6 @@ extension PopularListInteractor {
         NetworkManager<DeviantService>().networkRequest(target: .fetchPopular(params: params)) { result in
             switch result {
             case .success(let json):
-                print(#function + " success")
                 guard let popularBase = JSONDeserializer<PopularBase>.deserializeFrom(json: json.description),
                     let results = popularBase.results
                     else {

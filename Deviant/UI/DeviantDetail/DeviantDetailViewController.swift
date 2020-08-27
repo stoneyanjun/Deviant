@@ -121,7 +121,7 @@ extension DeviantDetailViewController {
         guard let detail = deviantDetail else { return }
         if let url = URL(string: (detail.content?.src ?? "")) {
             contentImageView.kf.setImage(with: url,
-                                         placeholder: UIImage(named: "loading"))
+                                         placeholder: UIImage(named: "bigLoading"))
         }
 
         if let comments = detail.stats?.comments, comments > 0 {

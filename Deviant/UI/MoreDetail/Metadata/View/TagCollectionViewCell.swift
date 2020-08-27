@@ -37,4 +37,15 @@ class TagCollectionViewCell: UICollectionViewCell, Reusable {
     func update(with tagName: String) {
         tagLabel.text = tagName
     }
+
+    deinit {
+        print(#function)
+    }
+}
+
+extension TagCollectionViewCell {
+    func setupAccessibility(row: Int) {
+        setAccessibilityIdentifier(.tagCollectionViewCell, row: row)
+        print(accessibilityIdentifier)
+    }
 }

@@ -33,7 +33,7 @@ class DailyTableViewCell: UITableViewCell, Reusable {
 
     private lazy var avatarImageView = UIImageView(image: UIImage(named: "commentAvatar"))
     private lazy var srcImageView = UIImageView()
-    private lazy var loadingImageView = UIImageView(image: UIImage(named: "loading"))
+    private lazy var loadingImageView = UIImageView(image: UIImage(named: "bigLoading"))
     private lazy var starImageView = UIImageView(image: UIImage(named: "starWhite"))
     private lazy var commentImageView = UIImageView(image: UIImage(named: "commentWhite"))
 
@@ -53,6 +53,10 @@ class DailyTableViewCell: UITableViewCell, Reusable {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+
+    deinit {
+        print(#function)
     }
 }
 
@@ -135,7 +139,7 @@ extension DailyTableViewCell {
     func update(with result: DeviantDetailBase) {
         if let usericon = result.author?.usericon,
             let url = URL(string: usericon) {
-            avatarImageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
+            avatarImageView.kf.setImage(with: url, placeholder: UIImage(named: "bigLoading"))
         } else {
             avatarImageView.image = UIImage(named: "commentAvatar")
         }
@@ -180,5 +184,12 @@ extension DailyTableViewCell {
 
     private func setImageViewWhenFailure() {
         srcImageView.image = UIImage(named: "bigEmpty")
+    }
+}
+
+extension DailyTableViewCell {
+    func setupAccessibility(row: Int) {
+        setAccessibilityIdentifier(.dailyTableViewCell, row: row)
+        print(accessibilityIdentifier)
     }
 }

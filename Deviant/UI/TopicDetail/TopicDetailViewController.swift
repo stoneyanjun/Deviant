@@ -118,7 +118,8 @@ extension TopicDetailViewController: UICollectionViewDataSource {
             let url = URL(string: src) else {
                 return UICollectionViewCell()
         }
-        cell.imageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
+        cell.update(with: url)
+        cell.setupAccessibility(with: .topicDetailCollectionCell, row: indexPath.row)
         return cell
     }
 }

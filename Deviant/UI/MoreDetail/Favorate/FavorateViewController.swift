@@ -100,6 +100,7 @@ extension FavorateViewController: UITableViewDataSource {
             FavorateTableViewCell.reuseIdentifier,
                                                     for: indexPath) as? FavorateTableViewCell {
             cell.update(with: results[indexPath.row])
+            cell.setupAccessibility(row: indexPath.row)
             return cell
         } else {
             return defaultCell

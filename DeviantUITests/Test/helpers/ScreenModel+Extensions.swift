@@ -50,4 +50,10 @@ extension ScreenModel {
         app.tables.firstMatch.swipeDown()
         return self
     }
+
+    @discardableResult
+    func swipeDownVC() -> Self {
+        app.swipeDown()
+        return self
+    }
 }

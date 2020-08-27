@@ -47,7 +47,7 @@ class CommentTableViewCell: UITableViewCell, Reusable {
     func update(with viewData: ViewData) {
         if let avatarUrlString = viewData.avatarUrlString,
             let url = URL(string: avatarUrlString) {
-            avatarImageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
+            avatarImageView.kf.setImage(with: url, placeholder: UIImage(named: "bigLoading"))
         } else {
             avatarImageView.image = UIImage(named: "commentAvatar")
         }
@@ -55,6 +55,10 @@ class CommentTableViewCell: UITableViewCell, Reusable {
         usernameLabel.text = viewData.username
         postDateLabel.text = viewData.postedDate
         commentLabel.text = viewData.comment
+    }
+    
+    deinit {
+        print(#function)
     }
 }
 
@@ -99,5 +103,12 @@ extension CommentTableViewCell {
         var postedDate: String
         var comment: String
         var commentId: String?
+    }
+}
+
+extension CommentTableViewCell {
+    func setupAccessibility(row: Int) {
+        setAccessibilityIdentifier(.commentTableViewCell, row: row)
+        print(accessibilityIdentifier)
     }
 }

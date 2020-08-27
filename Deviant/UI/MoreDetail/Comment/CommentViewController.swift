@@ -100,6 +100,7 @@ extension CommentViewController: UITableViewDataSource {
         if let cell = commentTableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.reuseIdentifier,
                                                            for: indexPath) as? CommentTableViewCell {
             cell.update(with: results[indexPath.row])
+            cell.setupAccessibility(row: indexPath.row)
             return cell
         } else {
             return defaultCell

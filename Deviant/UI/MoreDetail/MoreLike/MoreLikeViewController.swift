@@ -108,7 +108,8 @@ extension MoreLikeViewController: UICollectionViewDataSource {
                return collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
         }
         if let url = getURL(indexPath: indexPath) {
-            cell.imageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
+            cell.update(with: url)
+            cell.setupAccessibility(with: .moreLikeCollectionCell, row: indexPath.row)
         }
         return cell
     }

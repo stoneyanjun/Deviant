@@ -20,7 +20,9 @@ class TokenManagerTests: XCTestCase {
             expectation.fulfill()
             switch result {
             case .success(let token):
+                #if DEBUG
                 print(#function + "token: \(token)")
+                #endif
                 XCTAssertTrue(!token.isEmpty)
             case .failure(let error):
                 print(#function + "error: \(error.localizedDescription)")

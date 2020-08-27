@@ -44,7 +44,7 @@ class FavorateTableViewCell: UITableViewCell, Reusable {
     func update(with data: ViewData) {
         if let url = URL(string: data.avatarUrlString.wrap()) {
             avatarImageView.kf.setImage(with: url,
-                                        placeholder: UIImage(named: "loading"))
+                                        placeholder: UIImage(named: "bigLoading"))
         } else {
             avatarImageView.image = UIImage(named: "commentAvatar")
         }
@@ -91,5 +91,12 @@ extension FavorateTableViewCell {
         var avatarUrlString: String?
         var username: String
         var favorateDate: String
+    }
+}
+
+extension FavorateTableViewCell {
+    func setupAccessibility(row: Int) {
+        setAccessibilityIdentifier(.favorateTableViewCell, row: row)
+        print(accessibilityIdentifier)
     }
 }

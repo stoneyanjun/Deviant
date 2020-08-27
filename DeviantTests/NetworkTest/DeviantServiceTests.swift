@@ -27,7 +27,6 @@ class DeviantServiceTests: XCTestCase {
             TokenManager.shared.fetchToken { result in
                 switch result {
                 case .success:
-                    print(#function + " success")
                     self.runAllServices()
                 case .failure(let error):
                     print(#function + " error \(error.localizedDescription)")
@@ -44,7 +43,6 @@ class DeviantServiceTests: XCTestCase {
     }
 
     private func runAllServices() {
-        print(#function + " begin")
         let group = DispatchGroup()
 
         group.enter()

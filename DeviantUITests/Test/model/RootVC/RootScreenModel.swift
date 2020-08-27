@@ -18,6 +18,7 @@ final class RootSceenModel: BaseScreenModel {
     func showPopularPage() -> RootSceenModel {
         return showPage(index: 0)
     }
+
     func showTopicListPage() -> RootSceenModel {
         return showPage(index: 1)
     }
@@ -26,11 +27,18 @@ final class RootSceenModel: BaseScreenModel {
         return showPage(index: 2)
     }
 
-    func showDetail() -> RootSceenModel {
-        return showPage(index: 3)
+    func openFirstPopularItem() -> RootSceenModel {
+        app.collectionViews.children(matching: .cell)["popular_list_collection_cell_0"].firstMatch.tap()
+        return self
     }
 
-    func showTopic() -> RootSceenModel {
-        return showPage(index: 3)
+    func openFirstTopic() -> RootSceenModel {
+        app.collectionViews.children(matching: .cell)["topic_list_collection_cell_0"].firstMatch.tap()
+        return self
+    }
+
+    func openFirstDaily() -> RootSceenModel {
+        app.tables.children(matching: .cell)["daily_table_view_cell_0"].firstMatch.tap()
+        return self
     }
 }

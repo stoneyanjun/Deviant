@@ -119,7 +119,9 @@ extension PopularListViewController: UICollectionViewDataSource {
             let url = URL(string: src) else {
             return UICollectionViewCell()
         }
-        cell.imageView.kf.setImage(with: url, placeholder: UIImage(named: "loading"))
+        cell.update(with: url)
+        cell.setupAccessibility(with: .popularListCollectionCell, row: indexPath.row)
+        print(#function)
         return cell
     }
 }
