@@ -70,7 +70,10 @@ extension RootViewController {
                                                   animated: true)
             }
         }
-        segmentioView.selectedSegmentioIndex = 0
+
+        if segmentioView.selectedSegmentioIndex < 0 {
+            segmentioView.selectedSegmentioIndex = 0
+        }
     }
 }
 

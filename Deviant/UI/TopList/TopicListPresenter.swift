@@ -21,15 +21,15 @@ extension TopicListPresenter: TopicListPresenterInterface {
         viewController?.showError(with: error)
     }
 
-    func update(with results: [TopicListResult], nextOffset: Int) {
-        viewController?.update(with: results, nextOffset: nextOffset)
+    func update(with displayModels: [TopicListDisplay], nextOffset: Int) {
+        viewController?.update(with: displayModels, nextOffset: nextOffset)
     }
 
     func showTopic(with topicName: String) {
         self.router?.showTopic(with: topicName)
     }
 
-    func showDeviation(with deviation: DeviantDetailBase) {
-        self.router?.showDeviation(with: deviation)
+    func showDeviation(with deviantDetail: DeviantDetailDisplay) {
+        self.router?.showDeviation(with: deviantDetail)
     }
 }

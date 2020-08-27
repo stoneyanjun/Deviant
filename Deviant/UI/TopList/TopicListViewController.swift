@@ -22,7 +22,7 @@ class TopicListViewController: DeviantBaseViewController {
     private var topicListCollectionView: UICollectionView?
     var interactor: TopicListInteractorInterface?
     private lazy var defaultCell = UICollectionViewCell()
-    private var results: [TopicListResult] = []
+    private var displayModels: [TopicListDisplay] = []
     private var offset = 0
 
     // MARK: View lifecycle
@@ -61,7 +61,7 @@ extension TopicListViewController {
         guard let collectionView = topicListCollectionView else {
             return
         }
-        if results.isEmpty {
+        if displayModels.isEmpty {
             collectionView.emptyDataSetDelegate = self
             collectionView.emptyDataSetSource = self
         }
@@ -102,33 +102,38 @@ extension TopicListViewController {
 
 extension TopicListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let topicListDeviation = results[indexPath.section].deviations?[indexPath.row] else {
+        guard let displayModel = displayModels[indexPath.section].deviantDetails?[indexPath.row] else {
             return
         }
-        self.interactor?.showDeviation(with: topicListDeviation)
+
+        interactor?.showDeviation(with: displayModel)
     }
 }
 
 extension TopicListViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return results.count
+        return displayModels.count
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return results[section].deviations?.count ?? 0
+        return displayModels[section].deviantDetails?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:
-            ImageUICollectionViewCell.reuseIdentifier,
+        let displayModel = displayModels[indexPath.section].deviantDetails?[indexPath.row]
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier,
                                                             for: indexPath) as? ImageUICollectionViewCell,
-            let src = results[indexPath.section].deviations?[indexPath.row].preview?.src ,
+            let src = displayModel?.src,
             let url = URL(string: src) else {
-                return collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
+                return UICollectionViewCell()
         }
-        cell.update(with: url)
-        cell.setupAccessibility(with: .topicListCollectionCell, row: indexPath.row)
+        let viewDate = ImageUICollectionViewCell.ViewData(url: url,
+                                                          title: displayModel?.title,
+                                                          username: displayModel?.username,
+                                                          identifier: .topicListCollectionCell,
+                                                          row: indexPath.row)
+        cell.update(with: viewDate)
         return cell
     }
 
@@ -145,10 +150,13 @@ extension TopicListViewController: UICollectionViewDataSource {
             if let head = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                           withReuseIdentifier: TopicListHeadView.reuseIdentifier,
                                                                           for: indexPath) as? TopicListHeadView {
-                let record = results[indexPath.section]
-                head.update(with: record.name.wrap()) {
-                    self.interactor?.showTopic(with: record.name.wrap())
+                let topicName = displayModels[indexPath.section].name
+                let viewData = TopicListHeadView.ViewData(title: topicName,
+                                                          row: indexPath.section,
+                                                          identifier: .topicListHeadView) {
+                                                            self.interactor?.showTopic(with: topicName)
                 }
+                head.update(with: viewData)
                 return head
             }
             return UICollectionReusableView()
@@ -162,13 +170,9 @@ extension TopicListViewController: CHTCollectionViewDelegateWaterfallLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var imageSize = CGSize()
-        if let thumb = results[indexPath.section].deviations?[indexPath.row].thumbs?.first {
-            imageSize.width = CGFloat(thumb.width ?? 0)
-            imageSize.height = CGFloat(thumb.height ?? 0)
-        }
-
-        return imageSize
+        let displayModel = displayModels[indexPath.section].deviantDetails?[indexPath.row]
+        return CGSize(width: displayModel?.width ?? 0,
+                      height: displayModel?.height ?? 0)
     }
 }
 
@@ -183,12 +187,12 @@ extension TopicListViewController: TopicListViewControllerInterface {
         updateCollectionView()
     }
 
-    func update(with results: [TopicListResult], nextOffset: Int) {
+    func update(with displayModels: [TopicListDisplay], nextOffset: Int) {
         stopES()
         if self.offset <= 0 {
-            self.results.removeAll()
+            self.displayModels.removeAll()
         }
-        self.results.append(contentsOf: results)
+        self.displayModels.append(contentsOf: displayModels)
         self.offset = nextOffset
         updateCollectionView()
         setLoadingView(with: false)

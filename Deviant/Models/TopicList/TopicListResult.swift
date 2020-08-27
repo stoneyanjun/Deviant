@@ -25,3 +25,11 @@ struct TopicListResult: HandyJSON {
         mapper <<< self.canonicalName <-- CodingKeys.canonicalName.rawValue
     }
 }
+
+extension TopicListResult {
+    func toDisplayModel() -> TopicListDisplay {
+        let deviantDetails = deviations?.map { $0.toDisplayModel() }
+        return TopicListDisplay(name: name.wrap(),
+                                deviantDetails: deviantDetails)
+    }
+}

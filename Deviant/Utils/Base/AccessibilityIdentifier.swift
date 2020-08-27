@@ -13,6 +13,8 @@ enum AccessibilityIdentifier: String {
     case popularListCollectionCell
     case moreLikeCollectionCell
     case topicListCollectionCell
+    case topicListHeadView
+    case moreLikeHeadView
     case topicDetailCollectionCell
 
     case dailyTableViewCell

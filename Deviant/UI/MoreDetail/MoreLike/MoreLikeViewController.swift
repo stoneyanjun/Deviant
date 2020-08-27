@@ -161,13 +161,12 @@ extension MoreLikeViewController: UICollectionViewDataSource {
             if let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                               withReuseIdentifier: TopicListHeadView.reuseIdentifier,
                                                                               for: indexPath) as? TopicListHeadView {
-                var title = ""
-                if indexPath.section == 0 {
-                    title = "MORE BY THIS ARTIST"
-                } else {
-                    title = "MORE LIKE THIS"
-                }
-                headView.update(with: title, tapHandle: nil)
+                let title = (indexPath.section == 0) ? "MORE BY THIS ARTIST"
+                    : "MORE LIKE THIS"
+                let viewData = TopicListHeadView.ViewData(title: title,
+                                                          row: indexPath.section,
+                                                          identifier: .moreLikeHeadView)
+                headView.update(with: viewData)
                 return headView
             }
 

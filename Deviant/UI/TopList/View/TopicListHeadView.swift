@@ -15,7 +15,7 @@ class TopicListHeadView: UICollectionReusableView, Reusable {
     }
 
     typealias TapHandle = (() -> Void)
-    var tapHandle: TapHandle?
+    private var tapHandle: TapHandle?
     private lazy var topicButton = UIButton()
 
     required init?(coder: NSCoder) {
@@ -37,12 +37,23 @@ class TopicListHeadView: UICollectionReusableView, Reusable {
     }
 
     @objc
-    func topicAction(_ sender: Any) {
+    private func topicAction(_ sender: Any) {
         tapHandle?()
     }
+}
 
-    func update(with title: String, tapHandle: TapHandle?) {
-        topicButton.setTitleForAllStates(title)
-        self.tapHandle = tapHandle
+extension TopicListHeadView {
+    struct ViewData {
+        var title: String
+        var row: Int
+        var identifier: AccessibilityIdentifier
+        var tapHandle: TapHandle?
+    }
+
+    func update(with viewData: ViewData) {
+        topicButton.setTitleForAllStates(viewData.title)
+        self.tapHandle = viewData.tapHandle
+        setAccessibilityIdentifier(viewData.identifier, row: viewData.row)
+        accessibilityTraits = .header
     }
 }

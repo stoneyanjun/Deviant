@@ -113,16 +113,16 @@ extension PopularListViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let model = displayModels[indexPath.row]
+        let displayModel = displayModels[indexPath.row]
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier,
                                                             for: indexPath) as? ImageUICollectionViewCell,
-            let src = model.src,
+            let src = displayModel.src,
             let url = URL(string: src) else {
             return UICollectionViewCell()
         }
         let viewDate = ImageUICollectionViewCell.ViewData(url: url,
-                                                          title: model.title,
-                                                          username: model.username,
+                                                          title: displayModel.title,
+                                                          username: displayModel.username,
                                                           identifier: .popularListCollectionCell,
                                                           row: indexPath.row)
         cell.update(with: viewDate)
