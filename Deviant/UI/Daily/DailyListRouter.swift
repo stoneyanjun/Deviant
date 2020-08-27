@@ -18,9 +18,7 @@ extension DailyListRouter: DailyListRouterInterface {
 
         let detailParams = DeviantDetailParams(deviationid: dailyResult.deviationid.wrap() ,
                                                username: dailyResult.author?.username ,
-                                               title: dailyResult.title ,
-                                               favourites: dailyResult.stats?.favourites,
-                                               comments: dailyResult.stats?.comments)
+                                               title: dailyResult.title)
         let config = DeviantDetailConfiguration(navigationController: navi, detailParams: detailParams)
         let deviantDetailVC = DeviantDetailConfigurator(config: config).createViewController()
         navi.pushViewController(deviantDetailVC, animated: true)

@@ -16,6 +16,4 @@ struct DeviantDetailParams {
     var deviationid: String
     var username: String?
     var title: String?
-    var favourites: Int?
-    var comments: Int?
 }

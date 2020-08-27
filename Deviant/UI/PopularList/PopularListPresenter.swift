@@ -21,11 +21,11 @@ extension PopularListPresenter: PopularListPresenterInterface {
         viewController?.showError(with: error)
     }
 
-    func update(with results: [DeviantDetailBase], nextOffset: Int) {
-        viewController?.update(with: results, nextOffset: nextOffset)
+    func update(with displayModels: [DeviantDetailDisplay], nextOffset: Int) {
+        viewController?.update(with: displayModels, nextOffset: nextOffset)
     }
 
-    func showDeviation(with popularResult: DeviantDetailBase) {
-        router?.showDeviation(with: popularResult)
+    func showDeviation(with deviantDetail: DeviantDetailDisplay) {
+        router?.showDeviation(with: deviantDetail)
     }
 }

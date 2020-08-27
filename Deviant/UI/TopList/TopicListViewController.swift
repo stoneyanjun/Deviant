@@ -129,7 +129,6 @@ extension TopicListViewController: UICollectionViewDataSource {
         }
         cell.update(with: url)
         cell.setupAccessibility(with: .topicListCollectionCell, row: indexPath.row)
-        print(#function)
         return cell
     }
 

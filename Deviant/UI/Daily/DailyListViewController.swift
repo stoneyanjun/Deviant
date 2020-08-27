@@ -80,7 +80,6 @@ extension DailyListViewController: UITableViewDataSource {
                                                     for: indexPath) as? DailyTableViewCell {
             cell.update(with: results[indexPath.row])
             cell.setupAccessibility(row: indexPath.row)
-            print(#function)
             return cell
         } else {
             return defaultCell

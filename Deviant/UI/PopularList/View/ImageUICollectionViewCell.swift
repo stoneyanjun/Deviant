@@ -28,6 +28,7 @@ class ImageUICollectionViewCell: UICollectionViewCell, Reusable {
         srcImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        srcImageView.accessibilityElementsHidden = true
     }
 
     deinit {
@@ -42,6 +43,34 @@ extension ImageUICollectionViewCell {
 
     func setupAccessibility(with identifier: AccessibilityIdentifier, row: Int) {
         setAccessibilityIdentifier(identifier, row: row)
-        print(accessibilityIdentifier)
+    }
+
+    func update(with viewData: ViewData) {
+        srcImageView.kf.setImage(with: viewData.url,placeholder: UIImage(named: "bigLoading"))
+        setupAccessibility(with: viewData)
+    }
+
+    private func setupAccessibility(with viewData: ViewData) {
+        setAccessibilityIdentifier(viewData.identifier, row: viewData.row)
+
+        guard var title = viewData.title,
+            !title.isEmpty else {
+            return
+        }
+        if let username = viewData.username, !username.isEmpty {
+            title += " by " + username
+        }
+        accessibilityLabel = title
+    }
+}
+
+extension ImageUICollectionViewCell {
+    struct ViewData {
+        var url: URL
+
+        var title: String?
+        var username: String?
+        var identifier: AccessibilityIdentifier
+        var row: Int
     }
 }

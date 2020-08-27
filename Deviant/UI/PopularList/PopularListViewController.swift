@@ -23,7 +23,7 @@ class PopularListViewController: DeviantBaseViewController {
     var interactor: PopularListInteractorInterface?
     private var popularListCollectionView: UICollectionView?
     private lazy var defaultCell = UICollectionViewCell()
-    private var results: [DeviantDetailBase] = []
+    private var displayModels: [DeviantDetailDisplay] = []
     private var offset = 0
     private var errorDesc: String?
 
@@ -92,7 +92,7 @@ extension PopularListViewController {
         guard let collectionView = popularListCollectionView else {
             return
         }
-        if results.isEmpty {
+        if displayModels.isEmpty {
             collectionView.emptyDataSetDelegate = self
             collectionView.emptyDataSetSource = self
         }
@@ -102,26 +102,30 @@ extension PopularListViewController {
 
 extension PopularListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        interactor?.showDeviation(with: results[indexPath.row])
+        interactor?.showDeviation(with: displayModels[indexPath.row])
     }
 }
 
 extension PopularListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return results.count
+        return displayModels.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let model = displayModels[indexPath.row]
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier,
                                                             for: indexPath) as? ImageUICollectionViewCell,
-            let src = results[indexPath.row].preview?.src,
+            let src = model.src,
             let url = URL(string: src) else {
             return UICollectionViewCell()
         }
-        cell.update(with: url)
-        cell.setupAccessibility(with: .popularListCollectionCell, row: indexPath.row)
-        print(#function)
+        let viewDate = ImageUICollectionViewCell.ViewData(url: url,
+                                                          title: model.title,
+                                                          username: model.username,
+                                                          identifier: .popularListCollectionCell,
+                                                          row: indexPath.row)
+        cell.update(with: viewDate)
         return cell
     }
 }
@@ -130,13 +134,9 @@ extension PopularListViewController: CHTCollectionViewDelegateWaterfallLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var imageSize = CGSize()
-        if let thumb = results[indexPath.row].thumbs?.first {
-            imageSize.width = CGFloat(thumb.width ?? 0)
-            imageSize.height = CGFloat(thumb.height ?? 0)
-        }
-
-        return imageSize
+        let displayModel = displayModels[indexPath.row]
+        return CGSize(width: displayModel.width ?? 0,
+                      height: displayModel.height ?? 0)
     }
 }
 
@@ -151,13 +151,13 @@ extension PopularListViewController: PopularListViewControllerInterface {
         showError(errorMsg: error.localizedDescription)
         updateCollectionView()
     }
-
-    func update(with results: [DeviantDetailBase], nextOffset: Int) {
+    func update(with displayModels: [DeviantDetailDisplay], nextOffset: Int) {
+//    func update(with displayModels: [DeviantDetailBase], nextOffset: Int) {
         stopES()
         if self.offset <= 0 {
-            self.results.removeAll()
+            self.displayModels.removeAll()
         }
-        self.results.append(contentsOf: results)
+        self.displayModels.append(contentsOf: displayModels)
         self.offset = nextOffset
         updateCollectionView()
         setLoadingView(with: false)

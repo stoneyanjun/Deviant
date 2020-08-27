@@ -8,6 +8,8 @@
 import Foundation
 
 extension String {
+    static let commaSeparator = ", "
+
     var urlEscaped: String {
         return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
     }

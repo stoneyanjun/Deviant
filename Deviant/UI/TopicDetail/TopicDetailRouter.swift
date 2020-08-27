@@ -18,9 +18,7 @@ extension TopicDetailRouter: TopicDetailRouterInterface {
 
         let detailParams = DeviantDetailParams(deviationid: topicDetail.deviationid.wrap() ,
                                                username: topicDetail.author?.username ,
-                                               title: topicDetail.title ,
-                                               favourites: topicDetail.stats?.favourites,
-                                               comments: topicDetail.stats?.comments)
+                                               title: topicDetail.title)
         let config = DeviantDetailConfiguration(navigationController: navi, detailParams: detailParams)
         let deviantDetailVC = DeviantDetailConfigurator(config: config).createViewController()
         navi.pushViewController(deviantDetailVC, animated: true)

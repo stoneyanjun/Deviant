@@ -53,7 +53,8 @@ extension PopularListInteractor {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)
                         return
                 }
-                self.presenter?.update(with: results, nextOffset: popularBase.nextOffset ?? offset)
+                self.presenter?.update(with: results.map { $0.toDisplayModel() },
+                                       nextOffset: popularBase.nextOffset ?? offset)
             case .failure(let error):
                 self.presenter?.showError(with: error)
                 print(#function + " error: \(error.localizedDescription)")
@@ -61,7 +62,7 @@ extension PopularListInteractor {
         }
     }
 
-    func showDeviation(with popularResult: DeviantDetailBase) {
-        presenter?.showDeviation(with: popularResult)
+    func showDeviation(with deviantDetail: DeviantDetailDisplay) {
+        presenter?.showDeviation(with: deviantDetail)
     }
 }

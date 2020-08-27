@@ -61,3 +61,14 @@ struct DeviantDetailBase: HandyJSON {
         mapper <<< self.isFavourited <-- CodingKeys.isFavourited.rawValue
     }
 }
+
+extension DeviantDetailBase {
+    func toDisplayModel() -> DeviantDetailDisplay {
+        return DeviantDetailDisplay(deviationid: deviationid.wrap(),
+                                    title: title,
+                                    username: author?.username,
+                                    src: preview?.src ?? content?.src,
+                                    width: preview?.width ?? content?.width ,
+                                    height: preview?.height ?? content?.height )
+    }
+}

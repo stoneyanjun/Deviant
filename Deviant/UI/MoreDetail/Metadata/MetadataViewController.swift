@@ -47,6 +47,8 @@ class MetadataViewController: DeviantBaseViewController {
 
     private lazy var avatorImageView = UIImageView(image: UIImage(named: "commentAvatar"))
     private lazy var eyeImageView = UIImageView(image: UIImage(named: "eyeView"))
+
+    private lazy var containerView = UIView()
     private var metaCollectionView: UICollectionView?
 
     private var meta: MetadataBase?
@@ -105,8 +107,9 @@ extension MetadataViewController {
         } else {
             viewsLabel.text = ""
         }
-        
         collectionView.reloadData()
+
+        containerView.isHidden = false
     }
 }
 
@@ -114,17 +117,26 @@ extension MetadataViewController {
     private func makeViews() {
         view.backgroundColor = UIColor.defaultBackground
 
-        view.addSubview(titleLabel)
-        view.addSubview(userNameLabel)
-        view.addSubview(creationTimeLabel)
-        view.addSubview(viewsLabel)
-        view.addSubview(avatorImageView)
-        view.addSubview(eyeImageView)
+        view.addSubview(containerView)
+        containerView.isHidden = true
+        containerView.addSubview(titleLabel)
+        containerView.addSubview(userNameLabel)
+        containerView.addSubview(creationTimeLabel)
+        containerView.addSubview(viewsLabel)
+        containerView.addSubview(avatorImageView)
+        containerView.addSubview(eyeImageView)
+
         setupCollectionView()
         customLeftBarButton()
     }
 
     private func applyConstraints() {
+        containerView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(Const.topMargin)
             make.leading.equalToSuperview().offset(Const.leftMargin)
@@ -163,9 +175,9 @@ extension MetadataViewController {
         }
 
         metaCollectionView?.snp.makeConstraints { make in
-            make.leading.equalTo(titleLabel.snp.leading)
-            make.trailing.equalTo(titleLabel.snp.trailing)
-            make.top.equalTo(creationTimeLabel.snp.bottom).offset(Const.intervalVSpace)
+            make.leading.equalTo(containerView.snp.leading).offset(Const.leftMargin)
+            make.trailing.equalTo(containerView.snp.trailing).offset(-Const.leftMargin)
+            make.top.equalTo(containerView.snp.bottom).offset(Const.intervalVSpace)
             make.bottom.equalToSuperview().offset(-Const.topMargin)
         }
     }
