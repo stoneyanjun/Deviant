@@ -10,18 +10,18 @@ import UIKit
 protocol TopicListInteractorInterface {
     func tryFetchTopicList(with offset: Int)
     func showTopic(with topicName: String)
-    func showDeviation(with deviantDetail: DeviantDetailDisplay)
+    func showDeviation(with deviantDetail: DeviantDetailDisplayModel)
 }
 
 protocol TopicListRouterInterface {
     var navigationController: UINavigationController? { get set }
 
     func showTopic(with topicName: String)
-    func showDeviation(with deviantDetail: DeviantDetailDisplay)
+    func showDeviation(with deviantDetail: DeviantDetailDisplayModel)
 }
 
 protocol TopicListPresenterInterface {
-    func showDeviation(with deviantDetail: DeviantDetailDisplay)
+    func showDeviation(with deviantDetail: DeviantDetailDisplayModel)
     func showTopic(with topicName: String)
     func setLoadingView(with status: Bool)
     func showError(with error: Error)

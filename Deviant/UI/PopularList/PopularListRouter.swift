@@ -13,7 +13,7 @@ class PopularListRouter: NSObject {
 }
 
 extension PopularListRouter: PopularListRouterInterface {
-    func showDeviation(with deviantDetail: DeviantDetailDisplay) {
+    func showDeviation(with deviantDetail: DeviantDetailDisplayModel) {
         guard let navi = navigationController else { return }
         let detailParams = DeviantDetailParams(deviationid: deviantDetail.deviationid ,
                                                username: deviantDetail.username ,

@@ -11,12 +11,11 @@ import SnapKit
 import UIKit
 
 class DailyTableViewCell: UITableViewCell, Reusable {
-
     private enum Const {
         static let margin: CGFloat = 16
         static let interval: CGFloat = 12
         static let smallInterval: CGFloat = 6
-        static let avatarImageWidth: CGFloat = 32
+        static let avatarImageWidth: CGFloat = 40
         static let starImageWidth: CGFloat = 16
     }
 
@@ -73,7 +72,7 @@ extension DailyTableViewCell {
         contentView.addSubview(starsLabel)
         contentView.addSubview(commentImageView)
         contentView.addSubview(commentLabel)
-
+        timeLabel.setContentHuggingPriority(.required, for: .horizontal)
         srcImageView.contentMode = .scaleAspectFit
     }
 
@@ -115,8 +114,8 @@ extension DailyTableViewCell {
             make.height.equalTo(Const.starImageWidth)
         }
         starsLabel.snp.makeConstraints { make in
-            make.top.greaterThanOrEqualTo(srcImageView.snp.bottom).offset(Const.interval)
-            make.top.greaterThanOrEqualTo(srcImageView.snp.bottom).offset(Const.interval)
+            make.top.equalTo(srcImageView.snp.bottom).offset(Const.interval)
+            make.bottom.equalToSuperview().offset(-Const.margin)
             make.centerY.equalTo(starImageView.snp.centerY)
             make.leading.equalTo(starImageView.snp.trailing).offset(Const.smallInterval)
         }
@@ -128,9 +127,7 @@ extension DailyTableViewCell {
         }
         commentLabel.snp.makeConstraints { make in
             make.leading.equalTo(commentImageView.snp.trailing).offset(Const.smallInterval)
-            make.trailing.greaterThanOrEqualToSuperview().offset(-Const.margin)
             make.centerY.equalTo(commentImageView.snp.centerY)
-            make.bottom.equalToSuperview().offset(-Const.margin)
         }
     }
 }
@@ -190,6 +187,5 @@ extension DailyTableViewCell {
 extension DailyTableViewCell {
     func setupAccessibility(row: Int) {
         setAccessibilityIdentifier(.dailyTableViewCell, row: row)
-        print(accessibilityIdentifier)
     }
 }

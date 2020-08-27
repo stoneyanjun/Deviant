@@ -23,7 +23,7 @@ class PopularListViewController: DeviantBaseViewController {
     var interactor: PopularListInteractorInterface?
     private var popularListCollectionView: UICollectionView?
     private lazy var defaultCell = UICollectionViewCell()
-    private var displayModels: [DeviantDetailDisplay] = []
+    private var displayModels: [DeviantDetailDisplayModel] = []
     private var offset = 0
     private var errorDesc: String?
 
@@ -151,7 +151,7 @@ extension PopularListViewController: PopularListViewControllerInterface {
         showError(errorMsg: error.localizedDescription)
         updateCollectionView()
     }
-    func update(with displayModels: [DeviantDetailDisplay], nextOffset: Int) {
+    func update(with displayModels: [DeviantDetailDisplayModel], nextOffset: Int) {
 //    func update(with displayModels: [DeviantDetailBase], nextOffset: Int) {
         stopES()
         if self.offset <= 0 {

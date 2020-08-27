@@ -62,7 +62,7 @@ extension PopularListInteractor {
         }
     }
 
-    func showDeviation(with deviantDetail: DeviantDetailDisplay) {
+    func showDeviation(with deviantDetail: DeviantDetailDisplayModel) {
         presenter?.showDeviation(with: deviantDetail)
     }
 }

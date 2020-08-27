@@ -61,7 +61,7 @@ extension TopicListInteractor {
         self.presenter?.showTopic(with: topicName)
     }
 
-    func showDeviation(with deviantDetail: DeviantDetailDisplay) {
+    func showDeviation(with deviantDetail: DeviantDetailDisplayModel) {
         self.presenter?.showDeviation(with: deviantDetail)
     }
 }

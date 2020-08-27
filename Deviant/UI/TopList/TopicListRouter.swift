@@ -13,7 +13,7 @@ class TopicListRouter: NSObject {
 }
 
 extension TopicListRouter: TopicListRouterInterface {
-    func showDeviation(with deviantDetail: DeviantDetailDisplay) {
+    func showDeviation(with deviantDetail: DeviantDetailDisplayModel) {
         guard let navi = navigationController else { return }
         let detailParams = DeviantDetailParams(deviationid: deviantDetail.deviationid ,
                                                username: deviantDetail.username ,

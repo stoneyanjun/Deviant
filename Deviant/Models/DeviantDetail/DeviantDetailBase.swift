@@ -63,12 +63,16 @@ struct DeviantDetailBase: HandyJSON {
 }
 
 extension DeviantDetailBase {
-    func toDisplayModel() -> DeviantDetailDisplay {
-        return DeviantDetailDisplay(deviationid: deviationid.wrap(),
-                                    title: title,
-                                    username: author?.username,
-                                    src: preview?.src ?? content?.src,
-                                    width: preview?.width ?? content?.width ,
-                                    height: preview?.height ?? content?.height )
+    func toDisplayModel() -> DeviantDetailDisplayModel {
+        return DeviantDetailDisplayModel(deviationid: deviationid.wrap(),
+                                         title: title,
+                                         username: author?.username,
+                                         src: preview?.src ?? content?.src,
+                                         width: preview?.width ?? content?.width ,
+                                         height: preview?.height ?? content?.height,
+                                         usericon: author?.usericon,
+                                         publishedTime: publishedTime,
+                                         comments: stats?.comments,
+                                         favourites: stats?.favourites)
     }
 }

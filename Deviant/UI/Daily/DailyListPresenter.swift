@@ -25,7 +25,7 @@ extension DailyListPresenter: DailyListPresenterInterface {
         viewController?.update(with: results)
     }
 
-    func showDeviation(with dailyResult: DeviantDetailBase) {
-        router?.showDeviation(with: dailyResult)
+    func showDeviation(with deviantDetail: DeviantDetailDisplayModel) {
+        router?.showDeviation(with: deviantDetail)
     }
 }
