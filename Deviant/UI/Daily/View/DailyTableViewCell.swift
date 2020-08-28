@@ -83,24 +83,24 @@ extension DailyTableViewCell {
             make.width.equalTo(Const.avatarImageWidth)
             make.height.equalTo(Const.avatarImageWidth)
         }
-        usernameLabel.snp.makeConstraints { make in
+        titleLabel.snp.makeConstraints { make in
             make.top.equalTo(avatarImageView.snp.top)
             make.leading.equalTo(avatarImageView.snp.trailing).offset(Const.interval)
             make.trailing.equalToSuperview().offset(-Const.margin)
         }
-        titleLabel.snp.makeConstraints { make in
-            make.leading.equalTo(usernameLabel.snp.leading)
-            make.top.equalTo(usernameLabel.snp.bottom).offset(Const.interval)
+        usernameLabel.snp.makeConstraints { make in
+            make.leading.equalTo(titleLabel.snp.leading)
+            make.top.equalTo(titleLabel.snp.bottom).offset(Const.interval)
         }
         timeLabel.snp.makeConstraints { make in
-            make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(Const.interval)
-            make.trailing.equalTo(usernameLabel.snp.trailing)
-            make.centerY.equalTo(titleLabel.snp.centerY)
+            make.leading.greaterThanOrEqualTo(usernameLabel.snp.trailing).offset(Const.interval)
+            make.trailing.equalTo(titleLabel.snp.trailing)
+            make.centerY.equalTo(usernameLabel.snp.centerY)
         }
         srcImageView.snp.makeConstraints { make in
-            make.leading.equalTo(avatarImageView.snp.leading)
-            make.trailing.equalTo(timeLabel.snp.trailing)
-            make.top.equalTo(titleLabel.snp.bottom).offset(Const.interval)
+            make.leading.equalToSuperview().offset(Const.margin)
+            make.trailing.equalToSuperview().offset(-Const.margin)
+            make.top.equalTo(usernameLabel.snp.bottom).offset(Const.interval)
             make.height.equalTo(srcImageView.snp.width)
         }
         loadingImageView.snp.makeConstraints { make in
@@ -109,7 +109,7 @@ extension DailyTableViewCell {
             make.height.equalTo(loadingImageView.snp.width)
         }
         starImageView.snp.makeConstraints { make in
-            make.leading.equalTo(srcImageView.snp.leading)
+            make.leading.equalTo(avatarImageView.snp.leading)
             make.width.equalTo(Const.starImageWidth)
             make.height.equalTo(Const.starImageWidth)
         }
@@ -133,103 +133,48 @@ extension DailyTableViewCell {
 }
 
 extension DailyTableViewCell {
-    func update(with result: DeviantDetailBase) {
-        if let usericon = result.author?.usericon,
-            let url = URL(string: usericon) {
-            avatarImageView.kf.setImage(with: url, placeholder: UIImage(named: "bigLoading"))
-        } else {
-            avatarImageView.image = UIImage(named: "commentAvatar")
-        }
-
-        usernameLabel.text = result.author?.username
-        titleLabel.text = result.title
-        let resultTxt = String.getDateFromTimeStamp(with: result.publishedTime ?? "")
-        timeLabel.text = resultTxt
-
-        if let width = result.preview?.width,
-            let height = result.preview?.height {
-            let radio = CGFloat(height) / CGFloat(width)
-            srcImageView.snp.remakeConstraints { make in
-                make.leading.equalToSuperview().offset(Const.margin)
-                make.trailing.equalToSuperview().offset(-Const.margin)
-                make.top.equalTo(titleLabel.snp.bottom).offset(Const.interval)
-                make.height.equalTo(srcImageView.snp.width).multipliedBy(radio)
-            }
-        }
-
-        loadingImageView.isHidden = false
-        if let src = result.preview?.src ,
-            let url = URL(string: src) {
-            srcImageView.kf.setImage(with: url) { [weak self] result in
-                guard let strongSelf = self else {
-                    return
-                }
-                strongSelf.loadingImageView.isHidden = true
-                switch result {
-                    case .failure:
-                        strongSelf.setImageViewWhenFailure()
-                    default:
-                        break
-                }
-            }
-        } else {
-            setImageViewWhenFailure()
-        }
-        starsLabel.text = "\(result.stats?.favourites ?? 0)"
-        commentLabel.text = "\(result.stats?.comments ?? 0)"
-    }
-
     private func setImageViewWhenFailure() {
         srcImageView.image = UIImage(named: "bigEmpty")
     }
-}
 
-extension DailyTableViewCell {
-    func setupAccessibility(row: Int) {
-        setAccessibilityIdentifier(.dailyTableViewCell, row: row)
-    }
-}
-
-extension DailyTableViewCell {
     struct ViewData {
-        var usericon: String?
-        var title: String?
-        var username: String?
-        var publishedTime: String?
-        var url: URL
-        var favourites: Int?
-        var comments: Int?
-        var width: Int?
-        var height: Int?
+        var detail: DeviantDetailDisplayModel
         var identifier: AccessibilityIdentifier
         var row: Int
     }
 
     func update(with viewData: ViewData) {
-        if let usericon = viewData.usericon,
+        setupAccessibility(with: viewData)
+        srcImageView.image = nil
+        setAccessibilityIdentifier(viewData.identifier, row: viewData.row)
+
+        let detail = viewData.detail
+
+        if let usericon = detail.usericon,
             let url = URL(string: usericon) {
             avatarImageView.kf.setImage(with: url, placeholder: UIImage(named: "bigLoading"))
         } else {
             avatarImageView.image = UIImage(named: "commentAvatar")
         }
 
-        usernameLabel.text = viewData.username
-        titleLabel.text = viewData.title
-        let publishedTime = String.getDateFromTimeStamp(with: viewData.publishedTime ?? "")
+        usernameLabel.text = detail.username
+        titleLabel.text = detail.title
+        let publishedTime = String.getDateFromTimeStamp(with: detail.publishedTime ?? "")
         timeLabel.text = publishedTime
-        if let width = viewData.width,
-            let height = viewData.height {
-            let radio = CGFloat(height) / CGFloat(width)
-            srcImageView.snp.remakeConstraints { make in
-                make.leading.equalToSuperview().offset(Const.margin)
-                make.trailing.equalToSuperview().offset(-Const.margin)
-                make.top.equalTo(titleLabel.snp.bottom).offset(Const.interval)
-                make.height.equalTo(srcImageView.snp.width).multipliedBy(radio)
-            }
-        }
+        starsLabel.text = "\(detail.favourites ?? 0)"
+        commentLabel.text = "\(detail.comments ?? 0)"
 
+        if URL(string: detail.src.wrap()) != nil {
+            setupSrcImageView(with: detail)
+        } else {
+            setImageViewWhenFailure()
+        }
+    }
+
+    private func setupSrcImageView(with detail: DeviantDetailDisplayModel) {
         loadingImageView.isHidden = false
-        srcImageView.kf.setImage(with: viewData.url) { [weak self] result in
+        let url = URL(string: detail.src.wrap())
+        srcImageView.kf.setImage(with: url) { [weak self] result in
             guard let strongSelf = self else {
                 return
             }
@@ -241,9 +186,38 @@ extension DailyTableViewCell {
                 break
             }
         }
-        starsLabel.text = "\(viewData.favourites ?? 0)"
-        commentLabel.text = "\(viewData.comments ?? 0)"
 
+        if let width = detail.width,
+            let height = detail.height {
+            let radio = CGFloat(height) / CGFloat(width)
+            srcImageView.snp.remakeConstraints { make in
+                make.leading.equalToSuperview().offset(Const.margin)
+                make.trailing.equalToSuperview().offset(-Const.margin)
+                make.top.equalTo(usernameLabel.snp.bottom).offset(Const.interval)
+                make.height.equalTo(srcImageView.snp.width).multipliedBy(radio)
+            }
+        }
+    }
+}
+extension DailyTableViewCell {
+    private func setupAccessibility(with viewData: ViewData) {
         setAccessibilityIdentifier(viewData.identifier, row: viewData.row)
+
+        let detail = viewData.detail
+
+        var accessibilityText = "\(detail.title.wrap()) by \(detail.username.wrap()), "
+        let publishedTime = String.getDateFromTimeStamp(with: detail.publishedTime ?? "")
+        accessibilityText += "published at \(publishedTime), "
+        let favourites = detail.favourites ?? 0
+        if favourites > 0 {
+            accessibilityText += "favorited at \(favourites), "
+        }
+        let comments = detail.comments ?? 0
+        if comments > 0 {
+            accessibilityText += "comments \(comments)"
+        }
+        accessibilityLabel = accessibilityText
+
+        accessibilityElements = []
     }
 }

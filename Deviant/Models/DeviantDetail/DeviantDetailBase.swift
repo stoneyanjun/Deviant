@@ -19,6 +19,7 @@ struct DeviantDetailBase: HandyJSON {
         case stats
         case isDeleted = "is_deleted"
         case title
+        case excerpt
         case isDownloadable = "is_downloadable"
         case isMature = "is_mature"
         case thumbs
@@ -39,6 +40,7 @@ struct DeviantDetailBase: HandyJSON {
     var stats: DeviantDetailStats?
     var isDeleted: Bool?
     var title: String?
+    var excerpt: String?
     var isDownloadable: Bool?
     var isMature: Bool?
     var thumbs: [DeviantDetailThumb]?
@@ -64,12 +66,34 @@ struct DeviantDetailBase: HandyJSON {
 
 extension DeviantDetailBase {
     func toDisplayModel() -> DeviantDetailDisplayModel {
+        var src = ""
+        var width: Int?
+        var height: Int?
+        if let previewSrc = preview?.src,
+            !previewSrc.isEmpty {
+            src = previewSrc
+            width = preview?.width
+            height = preview?.height
+        } else if let contentSrc = content?.src,
+            !contentSrc.isEmpty {
+            src = contentSrc
+            width = content?.width
+            height = content?.height
+        } else if let thumbsSrc = thumbs?.first?.src,
+            !thumbsSrc.isEmpty {
+            src = thumbsSrc
+            width = thumbs?.first?.width
+            height = thumbs?.first?.height
+        }
+
         return DeviantDetailDisplayModel(deviationid: deviationid.wrap(),
                                          title: title,
+                                         category: category,
+                                         excerpt: excerpt,
                                          username: author?.username,
-                                         src: preview?.src ?? content?.src,
-                                         width: preview?.width ?? content?.width ,
-                                         height: preview?.height ?? content?.height,
+                                         src: src,
+                                         width: width ,
+                                         height: height,
                                          usericon: author?.usericon,
                                          publishedTime: publishedTime,
                                          comments: stats?.comments,

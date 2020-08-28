@@ -28,3 +28,16 @@ extension UIView {
         return NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: self, attribute: .width, multiplier: ratio, constant: 0)
     }
 }
+
+extension UIView {
+    static func makeNormalStackView(_ axis: NSLayoutConstraint.Axis,
+                                    space: CGFloat = 0.0) -> UIStackView {
+        let stackView = UIStackView()
+        stackView.axis = axis
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.spacing = space
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }
+}

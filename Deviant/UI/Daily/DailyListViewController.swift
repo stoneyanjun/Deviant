@@ -79,20 +79,10 @@ extension DailyListViewController: UITableViewDataSource {
         let detail = results[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.reuseIdentifier,
                                                     for: indexPath) as? DailyTableViewCell {
-            if let url = URL(string: (detail.src ?? "")) {
-                let viewData = DailyTableViewCell.ViewData(usericon: detail.usericon,
-                                                           title: detail.title,
-                                                           username: detail.username,
-                                                           publishedTime: detail.publishedTime,
-                                                           url: url,
-                                                           favourites: detail.favourites,
-                                                           comments: detail.comments,
-                                                           width: detail.width,
-                                                           height: detail.height,
-                                                           identifier: .dailyTableViewCell,
-                                                           row: indexPath.row)
-                cell.update(with: viewData)
-            }
+            let viewData = DailyTableViewCell.ViewData(detail: detail,
+                                                       identifier: .dailyTableViewCell,
+                                                       row: indexPath.row)
+            cell.update(with: viewData)
             return cell
         } else {
             return defaultCell
