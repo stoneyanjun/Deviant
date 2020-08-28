@@ -11,7 +11,7 @@ import UIKit
 
 class CommentTableViewCell: UITableViewCell, Reusable {
     private enum Const {
-        static let imageWidth: CGFloat = 24
+        static let imageWidth: CGFloat = 32
         static let leftMargin: CGFloat = 16
         static let topMargin: CGFloat = 8
     }
@@ -40,21 +40,17 @@ class CommentTableViewCell: UITableViewCell, Reusable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
-    func update(with viewData: ViewData) {
-        if let avatarUrlString = viewData.avatarUrlString,
+    func update(with displayModel: CommentDisplayModel, row: Int) {
+        if let avatarUrlString = displayModel.avatarUrlString,
             let url = URL(string: avatarUrlString) {
             avatarImageView.kf.setImage(with: url, placeholder: UIImage(named: "bigLoading"))
         } else {
             avatarImageView.image = UIImage(named: "commentAvatar")
         }
 
-        usernameLabel.text = viewData.username
-        postDateLabel.text = viewData.postedDate
-        commentLabel.text = viewData.comment
+        usernameLabel.text = displayModel.username
+        postDateLabel.text = displayModel.postedDate
+        commentLabel.text = displayModel.comment
     }
 
     deinit {
@@ -97,17 +93,10 @@ extension CommentTableViewCell {
 }
 
 extension CommentTableViewCell {
-    struct ViewData {
-        var avatarUrlString: String?
-        var username: String
-        var postedDate: String
-        var comment: String
-        var commentId: String?
-    }
-}
-
-extension CommentTableViewCell {
-    func setupAccessibility(row: Int) {
+    private func setupAccessibility(with displayModel: CommentDisplayModel, row: Int) {
         setAccessibilityIdentifier(.commentTableViewCell, row: row)
+        var accessibilityText = displayModel.username + " commented at " + displayModel.postedDate
+        accessibilityText += " , " + displayModel.comment
+        accessibilityLabel = accessibilityText
     }
 }

@@ -17,11 +17,11 @@ protocol CommentRouterInterface {
 protocol CommentPresenterInterface {
     func setLoadingView(with status: Bool)
     func showError(with error: Error)
-    func update(with comment: CommentBase)
+    func update(with comments: [CommentDisplayModel], nextOffset: Int)
 }
 
 protocol CommentViewControllerInterface: UIViewController {
     func setLoadingView(with status: Bool)
     func showError(with error: Error)
-    func update(with comments: [CommentTableViewCell.ViewData], nextOffset: Int)
+    func update(with comments: [CommentDisplayModel], nextOffset: Int)
 }

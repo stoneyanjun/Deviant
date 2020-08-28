@@ -46,6 +46,5 @@ class TagCollectionViewCell: UICollectionViewCell, Reusable {
 extension TagCollectionViewCell {
     func setupAccessibility(row: Int) {
         setAccessibilityIdentifier(.tagCollectionViewCell, row: row)
-        print(accessibilityIdentifier)
     }
 }

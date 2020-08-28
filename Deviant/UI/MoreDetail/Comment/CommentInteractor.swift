@@ -42,16 +42,18 @@ extension CommentInteractor {
                                    commentid: nil,
                                    maxdepth: nil,
                                    offset: offset,
-                                   limit: NetworkConst.limit)
+                                   limit: NetworkConst.commentLimit)
         NetworkManager<DeviantService>().networkRequest(target: .   fetchComment(params: params)) { result in
             switch result {
             case .success(let json):
+//                print(json.description)
                 guard let comment = JSONDeserializer<CommentBase>.deserializeFrom(json: json.description)
                     else {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)
                         return
                 }
-                self.presenter?.update(with: comment)
+                self.presenter?.update(with: comment.thread?.map { $0.toDisplayModel() } ?? [],
+                                       nextOffset: comment.nextOffset ?? 0)
             case .failure(let error):
                 self.presenter?.showError(with: error)
             }

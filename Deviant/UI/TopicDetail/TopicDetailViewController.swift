@@ -68,6 +68,17 @@ extension TopicDetailViewController {
         collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
     }
 
+    private func updateCollectionView() {
+        guard let collectionView = topicDetailCollectionView else {
+            return
+        }
+        if results.isEmpty {
+            collectionView.emptyDataSetDelegate = self
+            collectionView.emptyDataSetSource = self
+        }
+        collectionView.reloadData()
+    }
+
     private func setupPullToRefresh() {
         guard let collectionView = topicDetailCollectionView else {
             return
@@ -83,17 +94,6 @@ extension TopicDetailViewController {
         }
         collectionView.es.stopPullToRefresh()
         collectionView.es.stopLoadingMore()
-    }
-
-    private func updateCollectionView() {
-        guard let collectionView = topicDetailCollectionView else {
-            return
-        }
-        if results.isEmpty {
-            collectionView.emptyDataSetDelegate = self
-            collectionView.emptyDataSetSource = self
-        }
-        collectionView.reloadData()
     }
 }
 

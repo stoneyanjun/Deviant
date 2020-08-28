@@ -21,15 +21,7 @@ extension CommentPresenter: CommentPresenterInterface {
         viewController?.showError(with: error)
     }
 
-    func update(with comment: CommentBase) {
-        guard let threads = comment.thread else {
-            return
-        }
-        var comments: [CommentTableViewCell.ViewData] = []
-        for thread in threads {
-            comments.append(thread.toDisplayModel())
-        }
-
-        viewController?.update(with: comments, nextOffset: (comment.nextOffset ?? 0))
+    func update(with comments: [CommentDisplayModel], nextOffset: Int) {
+        viewController?.update(with: comments, nextOffset: nextOffset)
     }
 }

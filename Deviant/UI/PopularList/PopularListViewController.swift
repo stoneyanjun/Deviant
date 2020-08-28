@@ -65,6 +65,17 @@ extension PopularListViewController {
         collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
     }
 
+    private func updateCollectionView() {
+        guard let collectionView = popularListCollectionView else {
+            return
+        }
+        if displayModels.isEmpty {
+            collectionView.emptyDataSetDelegate = self
+            collectionView.emptyDataSetSource = self
+        }
+        collectionView.reloadData()
+    }
+    
     private func setupESRefresh() {
         guard let collectionView = popularListCollectionView else {
             return
@@ -86,17 +97,6 @@ extension PopularListViewController {
         }
         collectionView.es.stopPullToRefresh()
         collectionView.es.stopLoadingMore()
-    }
-
-    private func updateCollectionView() {
-        guard let collectionView = popularListCollectionView else {
-            return
-        }
-        if displayModels.isEmpty {
-            collectionView.emptyDataSetDelegate = self
-            collectionView.emptyDataSetSource = self
-        }
-        collectionView.reloadData()
     }
 }
 

@@ -36,40 +36,6 @@ class TopicListViewController: DeviantBaseViewController {
 }
 
 extension TopicListViewController {
-    private func setupESRefresh() {
-        guard let collectionView = topicListCollectionView else {
-            return
-        }
-        collectionView.es.addPullToRefresh {
-            self.offset = 0
-            self.interactor?.tryFetchTopicList(with: self.offset)
-        }
-        collectionView.es.addInfiniteScrolling {
-            self.interactor?.tryFetchTopicList(with: self.offset)
-        }
-    }
-
-    private func stopES() {
-        guard let collectionView = topicListCollectionView else {
-            return
-        }
-        collectionView.es.stopPullToRefresh()
-        collectionView.es.stopLoadingMore()
-    }
-
-    private func updateCollectionView() {
-        guard let collectionView = topicListCollectionView else {
-            return
-        }
-        if displayModels.isEmpty {
-            collectionView.emptyDataSetDelegate = self
-            collectionView.emptyDataSetSource = self
-        }
-        collectionView.reloadData()
-    }
-}
-
-extension TopicListViewController {
     func setupCollectionView() {
         let layout = CHTCollectionViewWaterfallLayout()
         layout.minimumColumnSpacing = Const.minColumnSpace
@@ -98,6 +64,41 @@ extension TopicListViewController {
                                 withReuseIdentifier: TopicListHeadView.reuseIdentifier)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
     }
+
+    private func updateCollectionView() {
+        guard let collectionView = topicListCollectionView else {
+            return
+        }
+        if displayModels.isEmpty {
+            collectionView.emptyDataSetDelegate = self
+            collectionView.emptyDataSetSource = self
+        }
+        collectionView.reloadData()
+    }
+
+    private func setupESRefresh() {
+        guard let collectionView = topicListCollectionView else {
+            return
+        }
+        collectionView.es.addPullToRefresh {
+            self.offset = 0
+            self.interactor?.tryFetchTopicList(with: self.offset)
+        }
+        collectionView.es.addInfiniteScrolling {
+            self.interactor?.tryFetchTopicList(with: self.offset)
+        }
+    }
+
+    private func stopES() {
+        guard let collectionView = topicListCollectionView else {
+            return
+        }
+        collectionView.es.stopPullToRefresh()
+        collectionView.es.stopLoadingMore()
+    }
+}
+
+extension TopicListViewController {
 }
 
 extension TopicListViewController: UICollectionViewDelegate {

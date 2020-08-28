@@ -10,10 +10,12 @@ import Foundation
 enum NetworkConst {
     #if DEBUG
     static let limit: Int = 10
+    static let commentLimit: Int = 20
     static let numDeviationsPerTopic = 10
     static let defaultExpiredSecond = 3600
     #else
     static let limit: Int = 10
+    static let commentLimit: Int = 10
     static let numDeviationsPerTopic = 10
     static let defaultExpiredSecond = 3600
     #endif

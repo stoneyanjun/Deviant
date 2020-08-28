@@ -22,7 +22,7 @@ class CommentViewController: DeviantBaseViewController {
     var interactor: CommentInteractorInterface?
     private(set) var commentTableView: UITableView!
     private lazy var defaultCell = UITableViewCell()
-    private var results: [CommentTableViewCell.ViewData] = []
+    private var results: [CommentDisplayModel] = []
     private var offset = 0
     private var errorDesc: String?
 
@@ -99,8 +99,8 @@ extension CommentViewController: UITableViewDataSource {
     func tableView(_ commentTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = commentTableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.reuseIdentifier,
                                                            for: indexPath) as? CommentTableViewCell {
-            cell.update(with: results[indexPath.row])
-            cell.setupAccessibility(row: indexPath.row)
+            cell.update(with: results[indexPath.row],
+                        row: indexPath.row)
             return cell
         } else {
             return defaultCell
@@ -118,7 +118,7 @@ extension CommentViewController: CommentViewControllerInterface {
         showError(errorMsg: error.localizedDescription)
     }
 
-    func update(with results: [CommentTableViewCell.ViewData], nextOffset: Int) {
+    func update(with results: [CommentDisplayModel], nextOffset: Int) {
         stopES()
         offset = nextOffset
         self.results = results

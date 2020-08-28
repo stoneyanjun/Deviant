@@ -100,11 +100,7 @@ extension FavorateViewController: UITableViewDataSource {
             FavorateTableViewCell.reuseIdentifier,
                                                     for: indexPath) as? FavorateTableViewCell {
             let displayModel = results[indexPath.row]
-            let viewData = FavorateTableViewCell.ViewData(avatarUrlString: displayModel.avatarUrlString,
-                                                          username: displayModel.username,
-                                                          favorateDate: displayModel.favorateDate,
-                                                          row: indexPath.row)
-            cell.update(with: viewData)
+            cell.update(with: displayModel, row: indexPath.row)
             return cell
         } else {
             return defaultCell

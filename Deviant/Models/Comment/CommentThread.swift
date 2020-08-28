@@ -28,15 +28,15 @@ struct CommentThread: HandyJSON {
 }
 
 extension CommentThread {
-    func toDisplayModel() -> CommentTableViewCell.ViewData {
+    func toDisplayModel() -> CommentDisplayModel {
         let postedDate = Date.fromatPostedDate(postedDateStr: posted.wrap())
-        let viewDate = CommentTableViewCell.ViewData(avatarUrlString: user?.usericon,
-                                                     username: user?.username ?? "",
-                                                     postedDate: postedDate,
-                                                     comment: getCommentFromBody(),
-                                                     commentId: commentid)
+        let displayModel = CommentDisplayModel(avatarUrlString: user?.usericon,
+                                               username: user?.username ?? "",
+                                               postedDate: postedDate,
+                                               comment: getCommentFromBody(),
+                                               commentId: commentid)
 
-        return viewDate
+        return displayModel
     }
 
     func getCommentFromBody() -> String {

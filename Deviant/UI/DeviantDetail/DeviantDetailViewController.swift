@@ -115,6 +115,14 @@ extension DeviantDetailViewController: DeviantDetailViewControllerInterface {
 }
 
 extension DeviantDetailViewController {
+    @objc
+    func infoAction(_ sender: UIButton) {
+        guard let deviantDetail = self.deviantDetail else {
+            return
+        }
+        interactor?.showMoreDetail(with: deviantDetail, tag: sender.tag)
+    }
+
     func updateUI() {
         guard let detail = deviantDetail else { return }
         if let url = URL(string: (detail.src ?? "")) {
@@ -131,19 +139,7 @@ extension DeviantDetailViewController {
             starsButton.setTitle(" \(favourites)", for: .normal)
         }
     }
-}
 
-extension DeviantDetailViewController {
-    @objc
-    func infoAction(_ sender: UIButton) {
-        guard let deviantDetail = self.deviantDetail else {
-            return
-        }
-        interactor?.showMoreDetail(with: deviantDetail, tag: sender.tag)
-    }
-}
-
-extension DeviantDetailViewController {
     private func setupAccessibility() {
         infoButton.accessibilityIdentifier = AccessibilityIdentifier.moreInfoButton.accessibilityIdentifier()
         commentButton.accessibilityIdentifier = AccessibilityIdentifier.commentButton.accessibilityIdentifier()

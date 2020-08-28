@@ -41,17 +41,17 @@ class FavorateTableViewCell: UITableViewCell, Reusable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func update(with data: ViewData) {
-        if let url = URL(string: data.avatarUrlString.wrap()) {
+    func update(with displayModel: FavorateDisplayModel, row: Int) {
+        if let url = URL(string: displayModel.avatarUrlString.wrap()) {
             avatarImageView.kf.setImage(with: url,
                                         placeholder: UIImage(named: "bigLoading"))
         } else {
             avatarImageView.image = UIImage(named: "commentAvatar")
         }
-        nameLabel.text = data.username
-        dateLabel.text = data.favorateDate
+        nameLabel.text = displayModel.username
+        dateLabel.text = displayModel.favorateDate
 
-        setupAccessibility(with: data)
+        setupAccessibility(with: displayModel, row: row)
     }
 
     deinit {
@@ -89,18 +89,9 @@ extension FavorateTableViewCell {
 }
 
 extension FavorateTableViewCell {
-    struct ViewData {
-        var avatarUrlString: String?
-        var username: String
-        var favorateDate: String
-        var row: Int
-    }
-}
-
-extension FavorateTableViewCell {
-    func setupAccessibility(with data: ViewData) {
+    private func setupAccessibility(with displayModel: FavorateDisplayModel, row: Int) {
         accessibilityElements = []
-        setAccessibilityIdentifier(.favorateTableViewCell, row: data.row)
-        accessibilityLabel = "\(data.username) favorated at \(data.favorateDate)"
+        setAccessibilityIdentifier(.favorateTableViewCell, row: row)
+        accessibilityLabel = "\(displayModel.username) favorated at \(displayModel.favorateDate)"
     }
 }
