@@ -159,10 +159,11 @@ extension MetadataViewController {
         creationTimeLabel.snp.makeConstraints { make in
             make.leading.equalTo(titleLabel.snp.leading)
             make.top.equalTo(avatorImageView.snp.bottom).offset(Const.intervalVSpace)
+            make.bottom.equalToSuperview()
         }
 
         eyeImageView.snp.makeConstraints { make in
-            make.leading.equalTo(creationTimeLabel.snp.trailing).offset(Const.intervalHorizonSpace)
+            make.leading.equalTo(creationTimeLabel.snp.trailing).offset(Const.intervalHorizonSpace * 2)
             make.centerY.equalTo(creationTimeLabel.snp.centerY)
             make.width.equalTo(Const.eyeImageWidth)
             make.height.equalTo(Const.eyeImageWidth)
@@ -175,8 +176,8 @@ extension MetadataViewController {
         }
 
         metaCollectionView?.snp.makeConstraints { make in
-            make.leading.equalTo(containerView.snp.leading).offset(Const.leftMargin)
-            make.trailing.equalTo(containerView.snp.trailing).offset(-Const.leftMargin)
+            make.leading.equalToSuperview().offset(Const.leftMargin)
+            make.trailing.equalToSuperview().offset(-Const.leftMargin)
             make.top.equalTo(containerView.snp.bottom).offset(Const.intervalVSpace)
             make.bottom.equalToSuperview().offset(-Const.topMargin)
         }

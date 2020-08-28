@@ -11,7 +11,8 @@ import UIKit
 
 class TagCollectionViewCell: UICollectionViewCell, Reusable {
     private enum Const {
-        static let margin: CGFloat = 8
+        static let upMargin: CGFloat = 8
+        static let leadingMargin: CGFloat = 6
     }
 
     private lazy var tagLabel = UILabel.make(color: .white,
@@ -27,11 +28,12 @@ class TagCollectionViewCell: UICollectionViewCell, Reusable {
         addSubview(tagLabel)
 
         tagLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(Const.margin)
-            make.trailing.equalToSuperview().offset(Const.margin)
-            make.top.equalToSuperview().offset(Const.margin)
-            make.bottom.equalToSuperview().offset(Const.margin)
+            make.leading.equalToSuperview().offset(Const.leadingMargin)
+            make.trailing.equalToSuperview().offset(-Const.leadingMargin)
+            make.top.equalToSuperview().offset(Const.upMargin)
+            make.bottom.equalToSuperview().offset(-Const.upMargin)
         }
+        contentView.backgroundColor = UIColor.tagCellBackground
     }
 
     func update(with tagName: String) {

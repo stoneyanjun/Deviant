@@ -19,6 +19,7 @@ struct ColorPalette {
 
 extension UIColor {
     static var defaultBackground = UIColor(red: 6, green: 7, blue: 12)
+    static var tagCellBackground = UIColor(red: 35, green: 39, blue: 43)
 
     convenience init(red: CGFloat, green: CGFloat, blue: CGFloat) {
         self.init(red: red / 255, green: green / 255, blue: blue / 255, alpha: 1)
