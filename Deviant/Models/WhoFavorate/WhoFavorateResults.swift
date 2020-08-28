@@ -19,11 +19,11 @@ struct WhoFavorateResults: HandyJSON {
 }
 
 extension WhoFavorateResults {
-    func toDisplayModel() -> FavorateTableViewCell.ViewData {
+    func toDisplayModel() -> FavorateDisplayModel {
         let favorateDate = Date.fromatFavorateDate(with: String(time ?? 0))
-        let viewDate = FavorateTableViewCell.ViewData(avatarUrlString: user?.usericon ?? "",
-                                                      username: user?.username ?? "",
-                                                      favorateDate: favorateDate)
-        return viewDate
+        let displayModel = FavorateDisplayModel(avatarUrlString: user?.usericon ?? "",
+                                                username: user?.username ?? "",
+                                                favorateDate: favorateDate)
+        return displayModel
     }
 }

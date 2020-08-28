@@ -1,5 +1,5 @@
 //
-//  ImageUICollectionViewCell.swift
+//  ImageCollectionViewCell.swift
 //  Deviant
 //
 //  Copyright © 2020 Stone. All rights reserved.
@@ -11,7 +11,7 @@ import Reusable
 import SnapKit
 import UIKit
 
-class ImageUICollectionViewCell: UICollectionViewCell, Reusable {
+class ImageCollectionViewCell: UICollectionViewCell, Reusable {
     private enum Const {
         static let fakeImageViewWidth: CGFloat = 32
     }
@@ -36,7 +36,7 @@ class ImageUICollectionViewCell: UICollectionViewCell, Reusable {
     }
 }
 
-extension ImageUICollectionViewCell {
+extension ImageCollectionViewCell {
     func update(with url: URL) {
         srcImageView.kf.setImage(with: url,placeholder: UIImage(named: "bigLoading"))
     }
@@ -64,7 +64,7 @@ extension ImageUICollectionViewCell {
     }
 }
 
-extension ImageUICollectionViewCell {
+extension ImageCollectionViewCell {
     struct ViewData {
         var url: URL
 

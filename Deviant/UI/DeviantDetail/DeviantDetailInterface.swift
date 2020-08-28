@@ -9,22 +9,22 @@ import UIKit
 
 protocol DeviantDetailInteractorInterface {
     func tryFetchDeviantDetail()
-    func showMoreDetail(with deviantDetail: DeviantDetailBase, tag: Int)
+    func showMoreDetail(with deviantDetail: DeviantDetailDisplayModel, tag: Int)
 }
 
 protocol DeviantDetailRouterInterface {
-    func showMoreDetail(with deviantDetail: DeviantDetailBase, tag: Int)
+    func showMoreDetail(with deviantDetail: DeviantDetailDisplayModel, tag: Int)
 }
 
 protocol DeviantDetailPresenterInterface {
     func setLoadingView(with status: Bool)
     func showError(with error: Error)
-    func update(with deviantDetail: DeviantDetailBase)
-    func showMoreDetail(with deviantDetail: DeviantDetailBase, tag: Int)
+    func update(with deviantDetail: DeviantDetailDisplayModel)
+    func showMoreDetail(with deviantDetail: DeviantDetailDisplayModel, tag: Int)
 }
 
 protocol DeviantDetailViewControllerInterface: UIViewController {
     func showError(with error: Error)
     func setLoadingView(with status: Bool)
-    func update(with deviantDetail: DeviantDetailBase)
+    func update(with deviantDetail: DeviantDetailDisplayModel)
 }

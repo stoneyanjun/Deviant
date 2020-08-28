@@ -50,6 +50,8 @@ class FavorateTableViewCell: UITableViewCell, Reusable {
         }
         nameLabel.text = data.username
         dateLabel.text = data.favorateDate
+
+        setupAccessibility(with: data)
     }
 
     deinit {
@@ -91,12 +93,14 @@ extension FavorateTableViewCell {
         var avatarUrlString: String?
         var username: String
         var favorateDate: String
+        var row: Int
     }
 }
 
 extension FavorateTableViewCell {
-    func setupAccessibility(row: Int) {
-        setAccessibilityIdentifier(.favorateTableViewCell, row: row)
-        print(accessibilityIdentifier)
+    func setupAccessibility(with data: ViewData) {
+        accessibilityElements = []
+        setAccessibilityIdentifier(.favorateTableViewCell, row: data.row)
+        accessibilityLabel = "\(data.username) favorated at \(data.favorateDate)"
     }
 }

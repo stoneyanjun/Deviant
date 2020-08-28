@@ -62,7 +62,7 @@ extension PopularListViewController {
         collectionView.alwaysBounceVertical = true
         collectionView.collectionViewLayout = layout
 
-        collectionView.register(ImageUICollectionViewCell.self, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
+        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
     }
 
     private func setupESRefresh() {
@@ -114,13 +114,13 @@ extension PopularListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let displayModel = displayModels[indexPath.row]
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier,
-                                                            for: indexPath) as? ImageUICollectionViewCell,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.reuseIdentifier,
+                                                            for: indexPath) as? ImageCollectionViewCell,
             let src = displayModel.src,
             let url = URL(string: src) else {
             return UICollectionViewCell()
         }
-        let viewDate = ImageUICollectionViewCell.ViewData(url: url,
+        let viewDate = ImageCollectionViewCell.ViewData(url: url,
                                                           title: displayModel.title,
                                                           username: displayModel.username,
                                                           identifier: .popularListCollectionCell,

@@ -21,11 +21,11 @@ extension TopicDetailPresenter: TopicDetailPresenterInterface {
         viewController?.showError(with: error)
     }
 
-    func update(with results: [DeviantDetailBase], nextOffset: Int) {
+    func update(with results: [DeviantDetailDisplayModel], nextOffset: Int) {
         viewController?.update(with: results, nextOffset: nextOffset)
     }
-    
-    func showDeviation(with topicDetail: DeviantDetailBase) {
+
+    func showDeviation(with topicDetail: DeviantDetailDisplayModel) {
         router?.showDeviation(with: topicDetail)
     }
 }

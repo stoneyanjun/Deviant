@@ -21,7 +21,7 @@ extension MoreLikePresenter: MoreLikePresenterInterface {
         viewController?.showError(with: error)
     }
 
-    func update(with moreFromArtist: [DeviantDetailBase], moreFromDa: [DeviantDetailBase]) {
+    func update(with moreFromArtist: [DeviantDetailDisplayModel], moreFromDa: [DeviantDetailDisplayModel]) {
         viewController?.update(with: moreFromArtist, moreFromDa: moreFromDa)
     }
 }

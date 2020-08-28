@@ -35,7 +35,7 @@ extension DeviantDetailInteractor: DeviantDetailInteractorInterface {
         }
     }
 
-    func showMoreDetail(with deviantDetail: DeviantDetailBase, tag: Int) {
+    func showMoreDetail(with deviantDetail: DeviantDetailDisplayModel, tag: Int) {
         presenter?.showMoreDetail(with: deviantDetail, tag: tag)
     }
 }
@@ -46,12 +46,12 @@ extension DeviantDetailInteractor {
         .fetchDeviantDetail(deviationid: config.detailParams.deviationid)) { result in
             switch result {
             case .success(let json):
-                guard let deviantDetailBase = JSONDeserializer<DeviantDetailBase>.deserializeFrom(json: json.description)
+                guard let detailBase = JSONDeserializer<DeviantDetailBase>.deserializeFrom(json: json.description)
                     else {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)
                         return
                 }
-                self.presenter?.update(with: deviantDetailBase)
+                self.presenter?.update(with: detailBase.toDisplayModel())
             case .failure(let error):
                 self.presenter?.showError(with: error)
             }

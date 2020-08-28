@@ -21,14 +21,7 @@ extension FavoratePresenter: FavoratePresenterInterface {
         viewController?.showError(with: error)
     }
 
-    func update(with favorate: WhoFavorateBase) {
-        guard let results = favorate.results else {
-            return
-        }
-        var favorateViewDatas: [FavorateTableViewCell.ViewData] = []
-        for whoFavorate in results {
-            favorateViewDatas.append(whoFavorate.toDisplayModel())
-        }
-        viewController?.update(with: favorateViewDatas, nextOffset: (favorate.nextOffset ?? 0))
+    func update(with favorates: [FavorateDisplayModel], nextOffset: Int) {
+        viewController?.update(with: favorates, nextOffset: nextOffset)
     }
 }

@@ -38,10 +38,7 @@ extension FavorateInteractor: FavorateInteractorInterface {
 
 extension FavorateInteractor {
     private func fetchWhoFavorate(offset: Int) {
-        guard let deviationid = config.deviantDetail?.deviationid else {
-            return
-        }
-        let params = WhoFavedParams(deviationid: deviationid,
+        let params = WhoFavedParams(deviationid: config.deviationid ,
                                     limit: NetworkConst.limit,
                                     offset: offset)
         NetworkManager<DeviantService>().networkRequest(target: .   whoFaved(params: params)) { result in
@@ -52,7 +49,8 @@ extension FavorateInteractor {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)
                         return
                 }
-                self.presenter?.update(with: favorateBase)
+                self.presenter?.update(with: favorateBase.results?.map { $0.toDisplayModel() } ?? [],
+                                       nextOffset: favorateBase.nextOffset ?? 0)
             case .failure(let error):
                 self.presenter?.showError(with: error)
             }

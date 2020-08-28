@@ -50,14 +50,14 @@ extension TopicDetailInteractor {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)
                         return
                 }
-                self.presenter?.update(with: results, nextOffset: topicDetailBase.nextOffset ?? offset)
+                self.presenter?.update(with: results.map { $0.toDisplayModel() }, nextOffset: topicDetailBase.nextOffset ?? offset)
             case .failure(let error):
                 self.presenter?.showError(with: error)
             }
         }
     }
 
-    func showDeviation(with topicDetail: DeviantDetailBase) {
+    func showDeviation(with topicDetail: DeviantDetailDisplayModel) {
         presenter?.showDeviation(with: topicDetail)
     }
 }

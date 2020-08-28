@@ -39,7 +39,7 @@ extension MoreLikeInteractor: MoreLikeInteractorInterface {
 extension MoreLikeInteractor {
     private func fetchMoreLike() {
         NetworkManager<DeviantService>().networkRequest(target:
-        .fetchMoreLikeThisPreview(seed: config.deviantDetail?.deviationid ?? "")) { result in
+        .fetchMoreLikeThisPreview(seed: config.deviationid)) { result in
             switch result {
             case .success(let json):
                 guard let moreLikeThis = JSONDeserializer<MoreLikeThisPreview>.deserializeFrom(json: json.description),
@@ -49,7 +49,8 @@ extension MoreLikeInteractor {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)
                         return
                 }
-                self.presenter?.update(with: moreFromArtist, moreFromDa: moreFromDa)
+                self.presenter?.update(with: moreFromArtist.map { $0.toDisplayModel() },
+                                       moreFromDa: moreFromDa.map { $0.toDisplayModel() })
             case .failure(let error):
                 self.presenter?.showError(with: error)
             }

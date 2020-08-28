@@ -21,11 +21,11 @@ extension DeviantDetailPresenter: DeviantDetailPresenterInterface {
         viewController?.showError(with: error)
     }
 
-    func update(with deviantDetail: DeviantDetailBase) {
+    func update(with deviantDetail: DeviantDetailDisplayModel) {
         viewController?.update(with: deviantDetail)
     }
 
-    func showMoreDetail(with deviantDetail: DeviantDetailBase, tag: Int) {
+    func showMoreDetail(with deviantDetail: DeviantDetailDisplayModel, tag: Int) {
         router?.showMoreDetail(with: deviantDetail, tag: tag)
     }
 }

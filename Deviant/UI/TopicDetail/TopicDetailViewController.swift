@@ -17,12 +17,13 @@ class TopicDetailViewController: DeviantBaseViewController {
         static let minColumnSpace: CGFloat = 1.0
         static let minItemSpace: CGFloat = 1.0
         static let minSpace: CGFloat = 1.0
+        static let margin: CGFloat = 16
     }
 
     private var topicDetailCollectionView: UICollectionView?
     var interactor: TopicDetailInteractorInterface?
     private lazy var defaultCell = UICollectionViewCell()
-    private var results: [DeviantDetailBase] = []
+    private var results: [DeviantDetailDisplayModel] = []
     private var offset = 0
 
     // MARK: View lifecycle
@@ -50,8 +51,9 @@ extension TopicDetailViewController {
         }
 
         view.addSubview(collectionView)
+
         collectionView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(Const.margin)
             make.bottom.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
@@ -63,16 +65,12 @@ extension TopicDetailViewController {
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.alwaysBounceVertical = true
 
-        collectionView.register(ImageUICollectionViewCell.self, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
+        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
     }
 
     private func setupPullToRefresh() {
         guard let collectionView = topicDetailCollectionView else {
             return
-        }
-        collectionView.es.addPullToRefresh {
-            self.offset = 0
-            self.interactor?.tryFetchTopic(with: self.offset)
         }
         collectionView.es.addInfiniteScrolling {
             self.interactor?.tryFetchTopic(with: self.offset)
@@ -112,14 +110,19 @@ extension TopicDetailViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier,
-                                                            for: indexPath) as? ImageUICollectionViewCell,
-            let src = results[indexPath.row].preview?.src,
+        let displayModel = results[indexPath.row]
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.reuseIdentifier,
+                                                            for: indexPath) as? ImageCollectionViewCell,
+            let src = displayModel.src,
             let url = URL(string: src) else {
                 return UICollectionViewCell()
         }
-        cell.update(with: url)
-        cell.setupAccessibility(with: .topicDetailCollectionCell, row: indexPath.row)
+        let viewDate = ImageCollectionViewCell.ViewData(url: url,
+                                                          title: displayModel.title,
+                                                          username: displayModel.username,
+                                                          identifier: .topicDetailCollectionCell,
+                                                          row: indexPath.row)
+        cell.update(with: viewDate)
         return cell
     }
 }
@@ -128,13 +131,9 @@ extension TopicDetailViewController: CHTCollectionViewDelegateWaterfallLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var imageSize = CGSize()
-        if let thumb = results[indexPath.row].thumbs?.first {
-            imageSize.width = CGFloat(thumb.width ?? 0)
-            imageSize.height = CGFloat(thumb.height ?? 0)
-        }
-
-        return imageSize
+        let displayModel = results[indexPath.row]
+        return CGSize(width: displayModel.width ?? 0,
+                      height: displayModel.height ?? 0)
     }
 }
 
@@ -148,7 +147,7 @@ extension TopicDetailViewController: TopicDetailViewControllerInterface {
         showError(errorMsg: error.localizedDescription)
     }
 
-    func update(with results: [DeviantDetailBase], nextOffset: Int) {
+    func update(with results: [DeviantDetailDisplayModel], nextOffset: Int) {
         stopES()
         if self.offset <= 0 {
             self.results.removeAll()

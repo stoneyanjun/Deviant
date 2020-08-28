@@ -22,8 +22,9 @@ class MoreDetailContainerVC: DeviantBaseViewController, PanModalPresentable {
         return self.prepareViewControllers()
     }()
 
-    var deviantDetail: DeviantDetailBase?
+    var deviationid: String = ""
     var focusIndex: Int = 0
+
     private var offset = 0
     var panScrollable: UIScrollView? {
         return scrollView
@@ -46,16 +47,16 @@ extension MoreDetailContainerVC {
     private func prepareViewControllers() -> [UIViewController] {
         let metadataVC = MetadataConfigurator(config:
             MetadataConfiguration(navigationController: navigationController,
-                                  deviantDetail: deviantDetail)).createViewController()
+                                  deviationid: deviationid)).createViewController()
         let commentVC = CommentConfigurator(config:
             CommentConfiguration(navigationController: navigationController,
-                                 deviantDetail: deviantDetail)).createViewController()
+                                 deviationid: deviationid)).createViewController()
         let moreLikjeVC = MoreLikeConfigurator(config:
             MoreLikeConfiguration(navigationController: navigationController,
-                                  deviantDetail: deviantDetail)).createViewController()
+                                  deviationid: deviationid)).createViewController()
         let favorateVC = FavorateConfigurator(config:
             FavorateConfiguration(navigationController: navigationController,
-                                  deviantDetail: deviantDetail)).createViewController()
+                                  deviationid: deviationid)).createViewController()
 
         return [metadataVC, commentVC, favorateVC, moreLikjeVC]
     }

@@ -38,10 +38,7 @@ extension CommentInteractor: CommentInteractorInterface {
 
 extension CommentInteractor {
     private func fetchComment(offset: Int) {
-        guard let deviationid = config.deviantDetail?.deviationid else {
-            return
-        }
-        let params = CommentParams(deviationid: deviationid,
+        let params = CommentParams(deviationid: config.deviationid,
                                    commentid: nil,
                                    maxdepth: nil,
                                    offset: offset,
@@ -49,9 +46,6 @@ extension CommentInteractor {
         NetworkManager<DeviantService>().networkRequest(target: .   fetchComment(params: params)) { result in
             switch result {
             case .success(let json):
-                #if DEBUG
-                print(#function + " json\r\n\(json.description)")
-                #endif
                 guard let comment = JSONDeserializer<CommentBase>.deserializeFrom(json: json.description)
                     else {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)

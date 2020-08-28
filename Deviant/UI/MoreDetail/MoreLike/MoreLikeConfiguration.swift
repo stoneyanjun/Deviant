@@ -9,5 +9,5 @@ import UIKit
 
 struct MoreLikeConfiguration {
     var navigationController: UINavigationController?
-    var deviantDetail: DeviantDetailBase?
+    var deviationid: String
 }

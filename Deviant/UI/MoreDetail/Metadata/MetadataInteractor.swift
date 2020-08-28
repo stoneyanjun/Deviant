@@ -38,11 +38,7 @@ extension MetadataInteractor: MetadataInteractorInterface {
 
 extension MetadataInteractor {
     private func fetchMetadata() {
-        guard let deviationid = config.deviantDetail?.deviationid,
-            !deviationid.isEmpty else {
-            return
-        }
-        let params = MetadataParams(deviationids: [deviationid],
+        let params = MetadataParams(deviationids: [config.deviationid],
                                     extSubmission: true,
                                     extCamera: true,
                                     extStats: true,

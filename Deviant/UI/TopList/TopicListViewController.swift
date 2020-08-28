@@ -92,7 +92,7 @@ extension TopicListViewController {
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.alwaysBounceVertical = true
 
-        collectionView.register(ImageUICollectionViewCell.self, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
+        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
         collectionView.register(TopicListHeadView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: TopicListHeadView.reuseIdentifier)
@@ -122,13 +122,13 @@ extension TopicListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let displayModel = displayModels[indexPath.section].deviantDetails?[indexPath.row]
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier,
-                                                            for: indexPath) as? ImageUICollectionViewCell,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.reuseIdentifier,
+                                                            for: indexPath) as? ImageCollectionViewCell,
             let src = displayModel?.src,
             let url = URL(string: src) else {
                 return UICollectionViewCell()
         }
-        let viewDate = ImageUICollectionViewCell.ViewData(url: url,
+        let viewDate = ImageCollectionViewCell.ViewData(url: url,
                                                           title: displayModel?.title,
                                                           username: displayModel?.username,
                                                           identifier: .topicListCollectionCell,

@@ -56,7 +56,7 @@ class CommentTableViewCell: UITableViewCell, Reusable {
         postDateLabel.text = viewData.postedDate
         commentLabel.text = viewData.comment
     }
-    
+
     deinit {
         print(#function)
     }
@@ -109,6 +109,5 @@ extension CommentTableViewCell {
 extension CommentTableViewCell {
     func setupAccessibility(row: Int) {
         setAccessibilityIdentifier(.commentTableViewCell, row: row)
-        print(accessibilityIdentifier)
     }
 }

@@ -22,7 +22,7 @@ class FavorateViewController: DeviantBaseViewController {
     var interactor: FavorateInteractorInterface?
     private(set) var tableView: UITableView!
     private lazy var defaultCell = UITableViewCell()
-    private var results: [FavorateTableViewCell.ViewData] = []
+    private var results: [FavorateDisplayModel] = []
     private var offset = 0
     private var errorDesc: String?
 
@@ -99,8 +99,12 @@ extension FavorateViewController: UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier:
             FavorateTableViewCell.reuseIdentifier,
                                                     for: indexPath) as? FavorateTableViewCell {
-            cell.update(with: results[indexPath.row])
-            cell.setupAccessibility(row: indexPath.row)
+            let displayModel = results[indexPath.row]
+            let viewData = FavorateTableViewCell.ViewData(avatarUrlString: displayModel.avatarUrlString,
+                                                          username: displayModel.username,
+                                                          favorateDate: displayModel.favorateDate,
+                                                          row: indexPath.row)
+            cell.update(with: viewData)
             return cell
         } else {
             return defaultCell
@@ -118,7 +122,7 @@ extension FavorateViewController: FavorateViewControllerInterface {
         showError(errorMsg: error.localizedDescription)
     }
 
-    func update(with favorates: [FavorateTableViewCell.ViewData], nextOffset: Int) {
+    func update(with favorates: [FavorateDisplayModel], nextOffset: Int) {
         stopES()
         if offset <= 0 {
             results = favorates

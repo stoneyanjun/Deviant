@@ -22,8 +22,8 @@ class MoreLikeViewController: DeviantBaseViewController {
     var interactor: MoreLikeInteractorInterface?
     private lazy var defaultCell = UICollectionViewCell()
     private var moreLikeCollectionView: UICollectionView?
-    private var moreFromArtist: [DeviantDetailBase] = []
-    private var moreFromDa: [DeviantDetailBase] = []
+    private var moreFromArtist: [DeviantDetailDisplayModel] = []
+    private var moreFromDa: [DeviantDetailDisplayModel] = []
     private var offset = 0
 
     // MARK: View lifecycle
@@ -61,8 +61,8 @@ extension MoreLikeViewController {
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.alwaysBounceVertical = true
         collectionView.collectionViewLayout = layout
-        
-        collectionView.register(ImageUICollectionViewCell.self, forCellWithReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier)
+        collectionView.register(ImageCollectionViewCell.self,
+                                forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
         collectionView.register(TopicListHeadView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: TopicListHeadView.reuseIdentifier)
@@ -94,59 +94,25 @@ extension MoreLikeViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return moreFromArtist.count
-        } else {
-            return moreFromDa.count
-        }
+        return section == 0 ? moreFromArtist.count : moreFromDa.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageUICollectionViewCell.reuseIdentifier,
-                                                            for: indexPath) as? ImageUICollectionViewCell else {
-               return collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
+        let displayModel = getDisplayModel(with: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.reuseIdentifier,
+                                                            for: indexPath) as? ImageCollectionViewCell,
+            let src = displayModel.src,
+            let url = URL(string: src) else {
+                return UICollectionViewCell()
         }
-        if let url = getURL(indexPath: indexPath) {
-            cell.update(with: url)
-            cell.setupAccessibility(with: .moreLikeCollectionCell, row: indexPath.row)
-        }
+        let viewDate = ImageCollectionViewCell.ViewData(url: url,
+                                                        title: displayModel.title,
+                                                        username: displayModel.username,
+                                                        identifier: .moreLikeCollectionCell,
+                                                        row: indexPath.row)
+        cell.update(with: viewDate)
         return cell
-    }
-
-    func getURL(indexPath: IndexPath) -> URL? {
-        var urlString = ""
-        if indexPath.section == 0 {
-            if let src = moreFromArtist[indexPath.row].preview?.src {
-                urlString = src
-            } else {
-                urlString = moreFromArtist[indexPath.row].url ?? ""
-            }
-        } else {
-            if let src = moreFromDa[indexPath.row].preview?.src {
-                urlString = src
-            } else {
-                urlString = moreFromDa[indexPath.row].url ?? ""
-            }
-        }
-        return URL(string: urlString)
-    }
-
-    func getImageSize(indexPath: IndexPath) -> CGSize {
-        var size = CGSize()
-        if indexPath.section == 0 {
-            if let preview = moreFromArtist[indexPath.row].preview {
-                size.width = CGFloat(preview.width ?? 0)
-                size.height = CGFloat(preview.height ?? 0)
-            }
-        } else {
-            if let preview = moreFromDa[indexPath.row].preview {
-                size.width = CGFloat(preview.width ?? 0)
-                size.height = CGFloat(preview.height ?? 0)
-            }
-        }
-
-        return size
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -155,25 +121,36 @@ extension MoreLikeViewController: UICollectionViewDataSource {
         return Const.headerHeight
     }
 
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionView.elementKindSectionHeader {
-            if let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                              withReuseIdentifier: TopicListHeadView.reuseIdentifier,
-                                                                              for: indexPath) as? TopicListHeadView {
-                let title = (indexPath.section == 0) ? "MORE BY THIS ARTIST"
-                    : "MORE LIKE THIS"
-                let viewData = TopicListHeadView.ViewData(title: title,
-                                                          row: indexPath.section,
-                                                          identifier: .moreLikeHeadView)
-                headView.update(with: viewData)
-                return headView
-            }
-
-            return UICollectionReusableView()
-        } else {
+        if kind != UICollectionView.elementKindSectionHeader {
             return UICollectionReusableView()
         }
+
+        guard let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                             withReuseIdentifier: TopicListHeadView.reuseIdentifier,
+                                                                             for: indexPath) as? TopicListHeadView else {
+                                                                                return UICollectionReusableView()
+        }
+        let title = (indexPath.section == 0) ? "MORE BY THIS ARTIST" : "MORE LIKE THIS"
+        let viewData = TopicListHeadView.ViewData(title: title,
+                                                  row: indexPath.section,
+                                                  identifier: .moreLikeHeadView)
+        headView.update(with: viewData)
+        return headView
+    }
+}
+
+extension MoreLikeViewController {
+    private func getDisplayModel(with indexPath: IndexPath) -> DeviantDetailDisplayModel {
+        return (indexPath.section == 0) ? moreFromArtist[indexPath.row] : moreFromDa[indexPath.row]
+    }
+
+    private func getImageSize(indexPath: IndexPath) -> CGSize {
+        let displayModel = getDisplayModel(with: indexPath)
+        return CGSize(width: displayModel.width ?? 0,
+                      height: displayModel.height ?? 0)
     }
 }
 
@@ -194,7 +171,7 @@ extension MoreLikeViewController: MoreLikeViewControllerInterface {
         updateCollectionView()
     }
 
-    func update(with moreFromArtist: [DeviantDetailBase], moreFromDa: [DeviantDetailBase]) {
+    func update(with moreFromArtist: [DeviantDetailDisplayModel], moreFromDa: [DeviantDetailDisplayModel]) {
         self.moreFromArtist = moreFromArtist
         self.moreFromDa = moreFromDa
         updateCollectionView()

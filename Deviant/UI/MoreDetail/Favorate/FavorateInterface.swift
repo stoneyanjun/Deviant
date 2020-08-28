@@ -17,11 +17,11 @@ protocol FavorateRouterInterface {
 protocol FavoratePresenterInterface {
     func setLoadingView(with status: Bool)
     func showError(with error: Error)
-    func update(with favorate: WhoFavorateBase)
+    func update(with favorates: [FavorateDisplayModel], nextOffset: Int)
 }
 
 protocol FavorateViewControllerInterface: UIViewController {
     func setLoadingView(with status: Bool)
     func showError(with error: Error)
-    func update(with favorates: [FavorateTableViewCell.ViewData], nextOffset: Int)
+    func update(with favorates: [FavorateDisplayModel], nextOffset: Int)
 }

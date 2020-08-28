@@ -9,5 +9,5 @@ import UIKit
 
 struct FavorateConfiguration {
     var navigationController: UINavigationController?
-    var deviantDetail: DeviantDetailBase?
+    var deviationid: String
 }

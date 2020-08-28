@@ -26,7 +26,7 @@ class DeviantDetailViewController: DeviantBaseViewController {
     private lazy var contentImageView = UIImageView()
 
     var interactor: DeviantDetailInteractorInterface?
-    private var deviantDetail: DeviantDetailBase?
+    private var deviantDetail: DeviantDetailDisplayModel?
 
     // MARK: View lifecycle
     override func viewDidLoad() {
@@ -63,8 +63,6 @@ extension DeviantDetailViewController {
 
         contentImageView.contentMode = .scaleAspectFit
         view.addSubview(contentImageView)
-
-        setAccessibility()
     }
 
     private func applyConstraints() {
@@ -109,7 +107,7 @@ extension DeviantDetailViewController: DeviantDetailViewControllerInterface {
         showError(errorMsg: error.localizedDescription)
     }
 
-    func update(with deviantDetail: DeviantDetailBase) {
+    func update(with deviantDetail: DeviantDetailDisplayModel) {
         self.deviantDetail = deviantDetail
         updateUI()
         setLoadingView(with: false)
@@ -119,15 +117,17 @@ extension DeviantDetailViewController: DeviantDetailViewControllerInterface {
 extension DeviantDetailViewController {
     func updateUI() {
         guard let detail = deviantDetail else { return }
-        if let url = URL(string: (detail.content?.src ?? "")) {
+        if let url = URL(string: (detail.src ?? "")) {
             contentImageView.kf.setImage(with: url,
                                          placeholder: UIImage(named: "bigLoading"))
+        } else {
+            contentImageView.image = UIImage(named: "bigEmpty")
         }
 
-        if let comments = detail.stats?.comments, comments > 0 {
+        if let comments = detail.comments, comments > 0 {
             commentButton.setTitle(" \(comments)", for: .normal)
         }
-        if let favourites = detail.stats?.favourites, favourites > 0 {
+        if let favourites = detail.favourites, favourites > 0 {
             starsButton.setTitle(" \(favourites)", for: .normal)
         }
     }
@@ -144,15 +144,10 @@ extension DeviantDetailViewController {
 }
 
 extension DeviantDetailViewController {
-    private func setAccessibility() {
+    private func setupAccessibility() {
         infoButton.accessibilityIdentifier = AccessibilityIdentifier.moreInfoButton.accessibilityIdentifier()
         commentButton.accessibilityIdentifier = AccessibilityIdentifier.commentButton.accessibilityIdentifier()
         starsButton.accessibilityIdentifier = AccessibilityIdentifier.favorateButton.accessibilityIdentifier()
         moreLikeButton.accessibilityIdentifier = AccessibilityIdentifier.moreLikeButton.accessibilityIdentifier()
-
-        print(infoButton.accessibilityIdentifier)
-        print(commentButton.accessibilityIdentifier)
-        print(starsButton.accessibilityIdentifier)
-        print(moreLikeButton.accessibilityIdentifier)
     }
 }
