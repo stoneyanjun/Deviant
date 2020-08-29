@@ -61,10 +61,9 @@ class FavoratePresenterTests: XCTestCase {
 }
 
 class FavorateViewControllerSpy: UIViewController, FavorateViewControllerInterface {
-
     var called = false
     var showErrorCalled = false
-    var favorates: [FavorateTableViewCell.ViewData] = []
+    var favorates: [FavorateDisplayModel] = []
     var nextOffset = 0
 
     func showError(with error: Error) {
@@ -75,7 +74,7 @@ class FavorateViewControllerSpy: UIViewController, FavorateViewControllerInterfa
         called = true
     }
 
-    func update(with favorates: [FavorateTableViewCell.ViewData], nextOffset: Int) {
+    func update(with favorates: [FavorateDisplayModel], nextOffset: Int) {
         self.favorates = favorates
         self.nextOffset = nextOffset
     }

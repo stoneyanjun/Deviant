@@ -721,19 +721,10 @@
 			children = (
 				8E28769D24ECC49000974E95 /* ScreenModel+Extensions.swift */,
 				8E28769C24ECC49000974E95 /* UITestCase.swift */,
+				8E9D186124F4F5D900A679DB /* XCTestCase+Extension.swift */,
 				8E28769B24ECC49000974E95 /* XCUIElement+Extensions.swift */,
 			);
 			path = helpers;
-			sourceTree = "<group>";
-		};
-		8E2876A124ECCACB00974E95 /* TestSupport */ = {
-			isa = PBXGroup;
-			children = (
-				8E9D185624F4F58800A679DB /* Helpers */,
-				8E9D185724F4F59900A679DB /* SceenModes */,
-				8E9D185824F4F5A500A679DB /* Utils */,
-			);
-			path = TestSupport;
 			sourceTree = "<group>";
 		};
 		8E2876A824ECD74500974E95 /* model */ = {
@@ -786,9 +777,8 @@
 			isa = PBXGroup;
 			children = (
 				8E9D186524F5157B00A679DB /* SnapshotKey.swift */,
-				8E28769A24ECC47300974E95 /* helpers */,
 				8E2876A824ECD74500974E95 /* model */,
-				8E2876A124ECCACB00974E95 /* TestSupport */,
+				8E6850A624F9DB9000607C71 /* Support */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -898,6 +888,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8E6850A624F9DB9000607C71 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				8E28769A24ECC47300974E95 /* helpers */,
+				8E9D185724F4F59900A679DB /* SceenModes */,
+				8E9D185824F4F5A500A679DB /* Utils */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		8E7A0FF824D148FE00C42B29 /* Daily */ = {
 			isa = PBXGroup;
 			children = (
@@ -976,14 +976,6 @@
 				8E9D156B24E8D0980027ECDF /* DeviantServiceTests.swift */,
 			);
 			path = NetworkTest;
-			sourceTree = "<group>";
-		};
-		8E9D185624F4F58800A679DB /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				8E9D186124F4F5D900A679DB /* XCTestCase+Extension.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8E9D185724F4F59900A679DB /* SceenModes */ = {

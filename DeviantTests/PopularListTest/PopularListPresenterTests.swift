@@ -53,23 +53,23 @@ class PopularListPresenterTests: XCTestCase {
 
         //When
         let offset = 1
-        presenter.update(with: [DeviantMockData.detail], nextOffset: offset)
+        presenter.update(with: [DeviantMockData.detail.toDisplayModel()], nextOffset: offset)
 
         //Then
         XCTAssertEqual(viewController.nextOffset, offset)
         XCTAssertEqual(viewController.results.count, 1)
-        XCTAssertEqual(viewController.results.first?.deviationid.wrap(), DeviantMockData.deviantId)
+        XCTAssertEqual(viewController.results.first?.deviationid, DeviantMockData.deviantId)
     }
     func testShowDeviation() {
         //Given
         router.popularResult = nil
 
         //When
-        presenter.showDeviation(with: DeviantMockData.detail)
+        presenter.showDeviation(with: DeviantMockData.detail.toDisplayModel())
 
         //Then
         XCTAssertNotNil(router.popularResult)
-        XCTAssertEqual(router.popularResult?.deviationid.wrap(), DeviantMockData.deviantId)
+        XCTAssertEqual(router.popularResult?.deviationid, DeviantMockData.deviantId)
     }
 }
 
@@ -77,7 +77,7 @@ class PopularListViewControllerSpy: UIViewController, PopularListViewControllerI
     var called = false
     var showErrorCalled = false
     var nextOffset = -1
-    var results: [DeviantDetailBase] = []
+    var results: [DeviantDetailDisplayModel] = []
 
     func showError(with error: Error) {
         showErrorCalled = true
@@ -87,16 +87,16 @@ class PopularListViewControllerSpy: UIViewController, PopularListViewControllerI
         called = true
     }
 
-    func update(with results: [DeviantDetailBase], nextOffset: Int) {
+    func update(with results: [DeviantDetailDisplayModel], nextOffset: Int) {
         self.nextOffset = nextOffset
         self.results.append(contentsOf: results)
     }
 }
 
 class PopularListRouterSpy: PopularListRouterInterface {
-    var popularResult: DeviantDetailBase?
+    var popularResult: DeviantDetailDisplayModel?
 
-    func showDeviation(with popularResult: DeviantDetailBase) {
+    func showDeviation(with popularResult: DeviantDetailDisplayModel) {
         self.popularResult = popularResult
     }
 }

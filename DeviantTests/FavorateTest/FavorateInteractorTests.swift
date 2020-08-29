@@ -16,7 +16,7 @@ class FavorateInteractorTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        let configuration = FavorateConfiguration()
+        let configuration = FavorateConfiguration(deviationid: DeviantMockData.deviantId )
         interactor = FavorateInteractor(config: configuration)
         presenter = FavoratePresenterSpy()
         interactor.presenter = presenter
@@ -34,9 +34,13 @@ class FavorateInteractorTests: XCTestCase {
 }
 
 class FavoratePresenterSpy: FavoratePresenterInterface {
+    func update(with favorates: [FavorateDisplayModel], nextOffset: Int) {
+        self.favorates = favorates
+    }
+
     var called = false
     var showErrorCalled = false
-    var favorate: WhoFavorateBase?
+    var favorates: [FavorateDisplayModel]?
 
     func setLoadingView(with status: Bool) {
         called = true
@@ -44,9 +48,5 @@ class FavoratePresenterSpy: FavoratePresenterInterface {
 
     func showError(with error: Error) {
         showErrorCalled = true
-    }
-
-    func update(with favorate: WhoFavorateBase) {
-        self.favorate = favorate
     }
 }

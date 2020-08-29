@@ -50,22 +50,22 @@ class TopicListInteractorTests: XCTestCase {
         presenter.deviation = nil
 
         //When
-        interactor.showDeviation(with: DeviantMockData.detail)
+        interactor.showDeviation(with: DeviantMockData.detail.toDisplayModel())
 
         //Then
-        XCTAssertEqual(presenter.deviation?.deviationid.wrap(), DeviantMockData.deviantId)
+        XCTAssertEqual(presenter.deviation?.deviationid, DeviantMockData.deviantId)
     }
 }
 
 class TopicListPresenterSpy: TopicListPresenterInterface {
     var called = false
     var showErrorCalled = false
-    var results: [TopicListResult] = []
+    var results: [TopicListDisplay] = []
     var nextOffset = -1
     var topicName = ""
-    var deviation: DeviantDetailBase?
+    var deviation: DeviantDetailDisplayModel?
 
-    func showDeviation(with deviation: DeviantDetailBase) {
+    func showDeviation(with deviation: DeviantDetailDisplayModel) {
         self.deviation = deviation
     }
 
@@ -81,7 +81,7 @@ class TopicListPresenterSpy: TopicListPresenterInterface {
         showErrorCalled = true
     }
 
-    func update(with results: [TopicListResult], nextOffset: Int) {
+    func update(with displayModels: [TopicListDisplay], nextOffset: Int) {
         self.results.append(contentsOf: results)
         self.nextOffset = nextOffset
     }

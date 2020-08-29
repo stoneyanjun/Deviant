@@ -65,7 +65,7 @@ class CommentViewControllerSpy: UIViewController, CommentViewControllerInterface
     var nextOffset = 0
     var called = false
     var showErrorCalled = false
-    var comments: [CommentTableViewCell.ViewData] = []
+    var comments: [CommentDisplayModel] = []
 
     func showError(with error: Error) {
         showErrorCalled = true
@@ -75,7 +75,7 @@ class CommentViewControllerSpy: UIViewController, CommentViewControllerInterface
         called = true
     }
 
-    func update(with comments: [CommentTableViewCell.ViewData], nextOffset: Int) {
+    func update(with comments: [CommentDisplayModel], nextOffset: Int) {
         self.comments = comments
     }
 }

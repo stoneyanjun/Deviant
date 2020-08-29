@@ -39,7 +39,7 @@ class DeviantDetailInteractorTests: XCTestCase {
         presenter.showMoreDetailCalled = false
 
         //When
-        interactor.showMoreDetail(with: DeviantMockData.detail, tag: tag)
+        interactor.showMoreDetail(with: DeviantMockData.detail.toDisplayModel(), tag: tag)
 
         //Then
         XCTAssertTrue(presenter.showMoreDetailCalled)
@@ -49,7 +49,7 @@ class DeviantDetailInteractorTests: XCTestCase {
 class DeviantDetailPresenterSpy: DeviantDetailPresenterInterface {
     var called = false
     var showErrorCalled = false
-    var deviantDetail: DeviantDetailBase?
+    var deviantDetail: DeviantDetailDisplayModel?
     var showMoreDetailCalled = false
 
     func setLoadingView(with status: Bool) {
@@ -60,11 +60,11 @@ class DeviantDetailPresenterSpy: DeviantDetailPresenterInterface {
         showErrorCalled = true
     }
 
-    func update(with deviantDetail: DeviantDetailBase) {
+    func update(with deviantDetail: DeviantDetailDisplayModel) {
         self.deviantDetail = deviantDetail
     }
 
-    func showMoreDetail(with deviantDetail: DeviantDetailBase, tag: Int) {
+    func showMoreDetail(with deviantDetail: DeviantDetailDisplayModel, tag: Int) {
         showMoreDetailCalled = true
     }
 }

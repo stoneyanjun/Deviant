@@ -38,19 +38,27 @@ class DailyListInteractorTests: XCTestCase {
         //Given
 
         //When
-        interactor.showDeviation(with: DeviantMockData.detail)
+        interactor.showDeviation(with: DeviantMockData.detail.toDisplayModel())
 
         //Then
         XCTAssertEqual(DeviantMockData.deviantId,
-                       presenter.dailyResult?.deviationid.wrap())
+                       presenter.dailyResult?.deviationid)
     }
 }
 
 class DailyListPresenterSpy: DailyListPresenterInterface {
+    func update(with results: [DeviantDetailDisplayModel]) {
+        self.results.append(contentsOf: results)
+    }
+
+    func showDeviation(with deviantDetail: DeviantDetailDisplayModel) {
+        self.dailyResult = deviantDetail
+    }
+
     var called = false
     var showErrorCalled = false
-    var results: [DeviantDetailBase] = []
-    var dailyResult: DeviantDetailBase?
+    var results: [DeviantDetailDisplayModel] = []
+    var dailyResult: DeviantDetailDisplayModel?
 
     func setLoadingView(with status: Bool) {
         called = true
@@ -58,13 +66,5 @@ class DailyListPresenterSpy: DailyListPresenterInterface {
 
     func showError(with error: Error) {
         showErrorCalled = true
-    }
-
-    func update(with results: [DeviantDetailBase]) {
-        self.results.append(contentsOf: results)
-    }
-
-    func showDeviation(with dailyResult: DeviantDetailBase) {
-        self.dailyResult = dailyResult
     }
 }

@@ -35,7 +35,7 @@ class PopularListInteractorTests: XCTestCase {
 
     func testShowDeviation() {
         //Given
-        let base = DeviantDetailBase()
+        let base = DeviantDetailDisplayModel(deviationid: DeviantMockData.deviantId)
         presenter.showDeviationCalled = false
 
         //When
@@ -60,11 +60,11 @@ class PopularListPresenterSpy: PopularListPresenterInterface {
         showErrorCalled = true
     }
 
-    func update(with results: [DeviantDetailBase], nextOffset: Int) {
+    func update(with results: [DeviantDetailDisplayModel], nextOffset: Int) {
         updateCalled = true
     }
 
-    func showDeviation(with popularResult: DeviantDetailBase) {
+    func showDeviation(with popularResult: DeviantDetailDisplayModel) {
         showDeviationCalled = true
     }
 }

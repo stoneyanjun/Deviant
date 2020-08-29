@@ -54,11 +54,11 @@ class TopicDetailPresenterTests: XCTestCase {
         viewController.results.removeAll()
 
         //When
-        presenter.update(with: [DeviantMockData.detail], nextOffset: offset)
+        presenter.update(with: [DeviantMockData.detail.toDisplayModel()], nextOffset: offset)
 
         //Then
         XCTAssertEqual(viewController.nextOffset, offset)
-        XCTAssertEqual(viewController.results.first?.deviationid.wrap(),
+        XCTAssertEqual(viewController.results.first?.deviationid,
                        DeviantMockData.deviantId)
     }
 
@@ -67,10 +67,10 @@ class TopicDetailPresenterTests: XCTestCase {
         router.topicDetail = nil
 
         //When
-        presenter.showDeviation(with: DeviantMockData.detail)
+        presenter.showDeviation(with: DeviantMockData.detail.toDisplayModel())
 
         //Then
-        XCTAssertEqual(router.topicDetail?.deviationid.wrap(),
+        XCTAssertEqual(router.topicDetail?.deviationid,
                        DeviantMockData.deviantId)
     }
 }
@@ -78,7 +78,7 @@ class TopicDetailPresenterTests: XCTestCase {
 class TopicDetailViewControllerSpy: UIViewController, TopicDetailViewControllerInterface {
     var called = false
     var showErrorCalled = false
-    var results: [DeviantDetailBase] = []
+    var results: [DeviantDetailDisplayModel] = []
     var nextOffset = 0
 
     func showError(with error: Error) {
@@ -89,17 +89,17 @@ class TopicDetailViewControllerSpy: UIViewController, TopicDetailViewControllerI
         called = true
     }
 
-    func update(with results: [DeviantDetailBase], nextOffset: Int) {
+    func update(with results: [DeviantDetailDisplayModel], nextOffset: Int) {
         self.results.append(contentsOf: results)
         self.nextOffset = nextOffset
     }
 }
 
 class TopicDetailRouterSpy: TopicDetailRouterInterface {
-    var topicDetail: DeviantDetailBase?
+    var topicDetail: DeviantDetailDisplayModel?
     var navigationController: UINavigationController?
 
-    func showDeviation(with topicDetail: DeviantDetailBase) {
+    func showDeviation(with topicDetail: DeviantDetailDisplayModel) {
         self.topicDetail = topicDetail
     }
 }

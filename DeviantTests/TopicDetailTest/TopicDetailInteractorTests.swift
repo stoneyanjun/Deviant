@@ -38,19 +38,19 @@ class TopicDetailInteractorTests: XCTestCase {
         //Given
 
         //When
-        interactor.showDeviation(with: DeviantMockData.detail)
+        interactor.showDeviation(with: DeviantMockData.detail.toDisplayModel())
 
         //Then
         XCTAssertEqual(DeviantMockData.deviantId,
-                       presenter.topicDetail?.deviationid.wrap())
+                       presenter.topicDetail?.deviationid)
     }
 }
 
 class TopicDetailPresenterSpy: TopicDetailPresenterInterface {
     var called = false
     var showErrorCalled = false
-    var results: [DeviantDetailBase] = []
-    var topicDetail: DeviantDetailBase?
+    var results: [DeviantDetailDisplayModel] = []
+    var topicDetail: DeviantDetailDisplayModel?
     var nextOffset = -1
 
     func setLoadingView(with status: Bool) {
@@ -61,12 +61,12 @@ class TopicDetailPresenterSpy: TopicDetailPresenterInterface {
         showErrorCalled = true
     }
 
-    func update(with results: [DeviantDetailBase], nextOffset: Int) {
+    func update(with results: [DeviantDetailDisplayModel], nextOffset: Int) {
         self.results.append(contentsOf: results)
         self.nextOffset = nextOffset
     }
 
-    func showDeviation(with topicDetail: DeviantDetailBase) {
+    func showDeviation(with topicDetail: DeviantDetailDisplayModel) {
         self.topicDetail = topicDetail
     }
 }

@@ -16,7 +16,7 @@ class CommentInteractorTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        let configuration = CommentConfiguration()
+        let configuration = CommentConfiguration(deviationid: DeviantMockData.deviantId)
         interactor = CommentInteractor(config: configuration)
         presenter = CommentPresenterSpy()
         interactor.presenter = presenter
@@ -34,9 +34,13 @@ class CommentInteractorTests: XCTestCase {
 }
 
 class CommentPresenterSpy: CommentPresenterInterface {
+    func update(with comments: [CommentDisplayModel], nextOffset: Int) {
+        self.comments = comments
+    }
+
     var called = false
     var showErrorCalled = false
-    var comment: CommentBase?
+    var comments: [CommentDisplayModel] = []
 
     func setLoadingView(with status: Bool) {
         called = true
@@ -44,9 +48,5 @@ class CommentPresenterSpy: CommentPresenterInterface {
 
     func showError(with error: Error) {
         showErrorCalled = true
-    }
-
-    func update(with comment: CommentBase) {
-        self.comment = comment
     }
 }

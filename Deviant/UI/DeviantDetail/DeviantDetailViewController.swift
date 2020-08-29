@@ -35,6 +35,7 @@ class DeviantDetailViewController: DeviantBaseViewController {
         applyConstraints()
         customLeftBarButton()
         interactor?.tryFetchDeviantDetail()
+        setupNavigationBar()
     }
 }
 
@@ -96,6 +97,13 @@ extension DeviantDetailViewController {
             make.leading.equalTo(starsButton.snp.trailing).offset(Const.intervalVSpace)
             make.trailing.equalTo(contentImageView.snp.trailing)
         }
+    }
+
+    private func setupNavigationBar() {
+        let standardAppearance = navigationController?.navigationBar.standardAppearance
+        standardAppearance?.configureWithOpaqueBackground()
+        standardAppearance?.backgroundColor = UIColor.defaultBackground
+        navigationItem.standardAppearance = standardAppearance
     }
 }
 

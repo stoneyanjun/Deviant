@@ -16,7 +16,7 @@ class MetadataInteractorTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        let configuration = MetadataConfiguration()
+        let configuration = MetadataConfiguration(deviationid: DeviantMockData.deviantId )
         interactor = MetadataInteractor(config: configuration)
         presenter = MetadataPresenterSpy()
         interactor.presenter = presenter

@@ -51,11 +51,11 @@ class DailyListPresenterTests: XCTestCase {
         viewController.results.removeAll()
 
         //When
-        presenter.update(with: [DeviantMockData.detail])
+        presenter.update(with: [DeviantMockData.detail.toDisplayModel()])
 
         //Then
         XCTAssertEqual(viewController.results.count, 1)
-        XCTAssertEqual(viewController.results.first?.deviationid.wrap(),
+        XCTAssertEqual(viewController.results.first?.deviationid,
                        DeviantMockData.deviantId)
     }
 
@@ -64,18 +64,22 @@ class DailyListPresenterTests: XCTestCase {
         router.deviation = nil
 
         //When
-        presenter.showDeviation(with: DeviantMockData.detail)
+        presenter.showDeviation(with: DeviantMockData.detail.toDisplayModel())
 
         //Then
-        XCTAssertEqual(router.deviation?.deviationid.wrap(),
+        XCTAssertEqual(router.deviation?.deviationid,
                        DeviantMockData.deviantId)
     }
 }
 
 class DailyListViewControllerSpy: UIViewController, DailyListViewControllerInterface {
+    func update(with results: [DeviantDetailDisplayModel]) {
+        self.results.append(contentsOf: results)
+    }
+
     var called = false
     var showErrorCalled = false
-    var results: [DeviantDetailBase] = []
+    var results: [DeviantDetailDisplayModel] = []
 
     func showError(with error: Error) {
         showErrorCalled = true
@@ -84,17 +88,13 @@ class DailyListViewControllerSpy: UIViewController, DailyListViewControllerInter
     func setLoadingView(with status: Bool) {
         called = true
     }
-
-    func update(with results: [DeviantDetailBase]) {
-        self.results.append(contentsOf: results)
-    }
 }
 
 class DailyListRouterSpy: DailyListRouterInterface {
-    var deviation: DeviantDetailBase?
-    var navigationController: UINavigationController?
-
-    func showDeviation(with dailyResult: DeviantDetailBase) {
-        self.deviation = dailyResult
+    func showDeviation(with deviantDetail: DeviantDetailDisplayModel) {
+        self.deviation = deviantDetail
     }
+
+    var deviation: DeviantDetailDisplayModel?
+    var navigationController: UINavigationController?
 }

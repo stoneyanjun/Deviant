@@ -53,13 +53,13 @@ class TopicListPresenterTests: XCTestCase {
         let offset = 1
 
         //When
-        presenter.update(with: [DeviantMockData.topicListResult], nextOffset: offset)
+        presenter.update(with: [DeviantMockData.topicListResult.toDisplayModel() ], nextOffset: offset)
 
         //Then
         XCTAssertEqual(viewController.nextOffset, offset)
         XCTAssertEqual(viewController.results.count, 1)
-        XCTAssertEqual(viewController.results.first?.exampleDeviations?.first?.deviationid.wrap(),
-                       DeviantMockData.topicListResult.exampleDeviations?.first?.deviationid.wrap())
+        XCTAssertEqual(viewController.results.first?.deviantDetails?.first?.deviationid ,
+                       DeviantMockData.topicListResult.deviations?.first?.deviationid )
     }
 
     func testShowDeviation() {
@@ -67,10 +67,10 @@ class TopicListPresenterTests: XCTestCase {
         router.deviation = nil
 
         //When
-        presenter.showDeviation(with: DeviantMockData.detail)
+        presenter.showDeviation(with: DeviantMockData.detail.toDisplayModel())
 
         //Then
-        XCTAssertEqual(router.deviation?.deviationid.wrap(), DeviantMockData.deviantId)
+        XCTAssertEqual(router.deviation?.deviationid, DeviantMockData.deviantId)
     }
 
     func testShowTopic() {
@@ -89,7 +89,7 @@ class TopicListViewControllerSpy: UIViewController, TopicListViewControllerInter
     var called = false
     var showErrorCalled = false
     var nextOffset = -1
-    var results: [TopicListResult] = []
+    var results: [TopicListDisplay] = []
 
     func showError(with error: Error) {
         showErrorCalled = true
@@ -99,7 +99,7 @@ class TopicListViewControllerSpy: UIViewController, TopicListViewControllerInter
         called = true
     }
 
-    func update(with results: [TopicListResult], nextOffset: Int) {
+    func update(with results: [TopicListDisplay], nextOffset: Int) {
         self.results.append(contentsOf: results)
         self.nextOffset = nextOffset
     }
@@ -107,14 +107,14 @@ class TopicListViewControllerSpy: UIViewController, TopicListViewControllerInter
 
 class TopicListRouterSpy: TopicListRouterInterface {
     var topicName = ""
-    var deviation: DeviantDetailBase?
+    var deviation: DeviantDetailDisplayModel?
     var navigationController: UINavigationController?
 
     func showTopic(with topicName: String) {
         self.topicName = topicName
     }
 
-    func showDeviation(with deviation: DeviantDetailBase) {
+    func showDeviation(with deviation: DeviantDetailDisplayModel) {
         self.deviation = deviation
     }
 }

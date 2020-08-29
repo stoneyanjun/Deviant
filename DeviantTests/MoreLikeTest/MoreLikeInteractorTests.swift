@@ -16,7 +16,7 @@ class MoreLikeInteractorTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        let configuration = MoreLikeConfiguration()
+        let configuration = MoreLikeConfiguration(deviationid: DeviantMockData.deviantId )
         interactor = MoreLikeInteractor(config: configuration)
         presenter = MoreLikePresenterSpy()
         interactor.presenter = presenter
@@ -36,8 +36,8 @@ class MoreLikeInteractorTests: XCTestCase {
 class MoreLikePresenterSpy: MoreLikePresenterInterface {
     var called = false
     var showErrorCalled = false
-    var moreFromArtist: [DeviantDetailBase] = []
-    var moreFromDa: [DeviantDetailBase] = []
+    var moreFromArtist: [DeviantDetailDisplayModel] = []
+    var moreFromDa: [DeviantDetailDisplayModel] = []
 
     func setLoadingView(with status: Bool) {
         called = true
@@ -47,7 +47,7 @@ class MoreLikePresenterSpy: MoreLikePresenterInterface {
         showErrorCalled = true
     }
 
-    func update(with moreFromArtist: [DeviantDetailBase], moreFromDa: [DeviantDetailBase]) {
+    func update(with moreFromArtist: [DeviantDetailDisplayModel], moreFromDa: [DeviantDetailDisplayModel]) {
         self.moreFromArtist = moreFromArtist
         self.moreFromDa = moreFromDa
     }

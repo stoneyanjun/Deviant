@@ -54,21 +54,26 @@ class MoreLikePresenterTests: XCTestCase {
         let moreFromDa = [DeviantMockData.secondDetail]
 
         //When
-        viewController.update(with: moreFromArtist, moreFromDa: moreFromDa)
+        viewController.update(with: moreFromArtist.map { $0.toDisplayModel() }, moreFromDa: moreFromDa.map { $0.toDisplayModel() })
 
         //Then
-        XCTAssertEqual(viewController.moreFromArtist.first?.deviationid.wrap(),
+        XCTAssertEqual(viewController.moreFromArtist.first?.deviationid,
                        DeviantMockData.deviantId)
-        XCTAssertEqual(viewController.moreFromDa.first?.deviationid.wrap(),
+        XCTAssertEqual(viewController.moreFromDa.first?.deviationid,
                        DeviantMockData.secondDeviantId)
     }
 }
 
 class MoreLikeViewControllerSpy: UIViewController, MoreLikeViewControllerInterface {
+    func update(with moreFromArtist: [DeviantDetailDisplayModel], moreFromDa: [DeviantDetailDisplayModel]) {
+        self.moreFromArtist = moreFromArtist
+        self.moreFromDa = moreFromDa
+    }
+
     var called = false
     var showErrorCalled = false
-    var moreFromArtist: [DeviantDetailBase] = []
-    var moreFromDa: [DeviantDetailBase] = []
+    var moreFromArtist: [DeviantDetailDisplayModel] = []
+    var moreFromDa: [DeviantDetailDisplayModel] = []
 
     func showError(with error: Error) {
         showErrorCalled = true
@@ -76,11 +81,6 @@ class MoreLikeViewControllerSpy: UIViewController, MoreLikeViewControllerInterfa
 
     func setLoadingView(with status: Bool) {
         called = true
-    }
-
-    func update(with moreFromArtist: [DeviantDetailBase], moreFromDa: [DeviantDetailBase]) {
-        self.moreFromArtist = moreFromArtist
-        self.moreFromDa = moreFromDa
     }
 }
 
