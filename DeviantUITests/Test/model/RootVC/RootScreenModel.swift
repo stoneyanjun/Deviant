@@ -33,7 +33,7 @@ final class RootSceenModel: BaseScreenModel {
     }
 
     func openFirstTopic() -> RootSceenModel {
-        app.collectionViews.children(matching: .cell)["topic_list_collection_cell_0"].firstMatch.tap()
+        app.collectionViews.children(matching: .any)["topic_list_head_view_0"].firstMatch.forceTapElement()
         return self
     }
 

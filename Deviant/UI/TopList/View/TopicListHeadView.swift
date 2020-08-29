@@ -55,5 +55,6 @@ extension TopicListHeadView {
         self.tapHandle = viewData.tapHandle
         setAccessibilityIdentifier(viewData.identifier, row: viewData.row)
         accessibilityTraits = .header
+        print(accessibilityIdentifier)
     }
 }
