@@ -161,6 +161,14 @@
 		8EE5B65124F63C2F0095683C /* DeviantDetailScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5B65024F63C2F0095683C /* DeviantDetailScreenModel.swift */; };
 		8EE5B65324F646600095683C /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5B65224F646600095683C /* AccessibilityIdentifier.swift */; };
 		8EE5B65924F64EA20095683C /* TopicDetailScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5B65824F64EA20095683C /* TopicDetailScreenModel.swift */; };
+		8EF4B08124FB0A860097AC8E /* CommonListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B07A24FB0A860097AC8E /* CommonListPresenter.swift */; };
+		8EF4B08224FB0A860097AC8E /* CommonListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B07B24FB0A860097AC8E /* CommonListConfigurator.swift */; };
+		8EF4B08324FB0A860097AC8E /* CommonListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B07C24FB0A860097AC8E /* CommonListInteractor.swift */; };
+		8EF4B08424FB0A860097AC8E /* CommonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B07D24FB0A860097AC8E /* CommonListViewController.swift */; };
+		8EF4B08524FB0A860097AC8E /* CommonListConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B07E24FB0A860097AC8E /* CommonListConfiguration.swift */; };
+		8EF4B08624FB0A860097AC8E /* CommonListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B07F24FB0A860097AC8E /* CommonListInterface.swift */; };
+		8EF4B08724FB0A860097AC8E /* CommonListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B08024FB0A860097AC8E /* CommonListRouter.swift */; };
+		8EF4B08C24FB0ACC0097AC8E /* CommonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B08B24FB0ACC0097AC8E /* CommonCollectionViewCell.swift */; };
 		8EFB599424C66F6A005DE580 /* PopularListConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB598D24C66F6A005DE580 /* PopularListConfiguration.swift */; };
 		8EFB599524C66F6A005DE580 /* PopularListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB598E24C66F6A005DE580 /* PopularListPresenter.swift */; };
 		8EFB599624C66F6A005DE580 /* PopularListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB598F24C66F6A005DE580 /* PopularListRouter.swift */; };
@@ -360,6 +368,14 @@
 		8EE5B65024F63C2F0095683C /* DeviantDetailScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantDetailScreenModel.swift; sourceTree = "<group>"; };
 		8EE5B65224F646600095683C /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
 		8EE5B65824F64EA20095683C /* TopicDetailScreenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailScreenModel.swift; sourceTree = "<group>"; };
+		8EF4B07A24FB0A860097AC8E /* CommonListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonListPresenter.swift; sourceTree = "<group>"; };
+		8EF4B07B24FB0A860097AC8E /* CommonListConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonListConfigurator.swift; sourceTree = "<group>"; };
+		8EF4B07C24FB0A860097AC8E /* CommonListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonListInteractor.swift; sourceTree = "<group>"; };
+		8EF4B07D24FB0A860097AC8E /* CommonListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonListViewController.swift; sourceTree = "<group>"; };
+		8EF4B07E24FB0A860097AC8E /* CommonListConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonListConfiguration.swift; sourceTree = "<group>"; };
+		8EF4B07F24FB0A860097AC8E /* CommonListInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonListInterface.swift; sourceTree = "<group>"; };
+		8EF4B08024FB0A860097AC8E /* CommonListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonListRouter.swift; sourceTree = "<group>"; };
+		8EF4B08B24FB0ACC0097AC8E /* CommonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonCollectionViewCell.swift; sourceTree = "<group>"; };
 		8EFB598D24C66F6A005DE580 /* PopularListConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListConfiguration.swift; sourceTree = "<group>"; };
 		8EFB598E24C66F6A005DE580 /* PopularListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListPresenter.swift; sourceTree = "<group>"; };
 		8EFB598F24C66F6A005DE580 /* PopularListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListRouter.swift; sourceTree = "<group>"; };
@@ -560,6 +576,7 @@
 		8E1B801A24C0A56D008C059C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8EF4B07924FAB0D30097AC8E /* CommonList */,
 				8E66AC1724D63FDF00A384AE /* MoreDetail */,
 				8E1B801D24C0A5AD008C059C /* Daily */,
 				8E1B801F24C0A5C4008C059C /* DeviantDetail */,
@@ -1126,6 +1143,29 @@
 			path = TopicDetail;
 			sourceTree = "<group>";
 		};
+		8EF4B07924FAB0D30097AC8E /* CommonList */ = {
+			isa = PBXGroup;
+			children = (
+				8EF4B08824FB0A990097AC8E /* View */,
+				8EF4B07E24FB0A860097AC8E /* CommonListConfiguration.swift */,
+				8EF4B07B24FB0A860097AC8E /* CommonListConfigurator.swift */,
+				8EF4B07C24FB0A860097AC8E /* CommonListInteractor.swift */,
+				8EF4B07F24FB0A860097AC8E /* CommonListInterface.swift */,
+				8EF4B07A24FB0A860097AC8E /* CommonListPresenter.swift */,
+				8EF4B08024FB0A860097AC8E /* CommonListRouter.swift */,
+				8EF4B07D24FB0A860097AC8E /* CommonListViewController.swift */,
+			);
+			path = CommonList;
+			sourceTree = "<group>";
+		};
+		8EF4B08824FB0A990097AC8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8EF4B08B24FB0ACC0097AC8E /* CommonCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8EFB599D24C69035005DE580 /* Segmentio */ = {
 			isa = PBXGroup;
 			children = (
@@ -1467,7 +1507,9 @@
 				8EBB91EF24C3E81400223F51 /* String+Extension.swift in Sources */,
 				8EA310CC24D10C58008813B7 /* DailyListConfigurator.swift in Sources */,
 				8E944EB024C88DF40050B76B /* ImageCollectionViewCell.swift in Sources */,
+				8EF4B08624FB0A860097AC8E /* CommonListInterface.swift in Sources */,
 				8E66AC4924D679B200A384AE /* MetadataInterface.swift in Sources */,
+				8EF4B08124FB0A860097AC8E /* CommonListPresenter.swift in Sources */,
 				8EAED41E24D52547004E8AC3 /* TopicDetailPresenter.swift in Sources */,
 				8E259BBF24F799F100648451 /* DeviantDetailDisplayModel.swift in Sources */,
 				8EAED45624D55289004E8AC3 /* DeviantDetailStats.swift in Sources */,
@@ -1491,6 +1533,7 @@
 				8EFC857724D8E5FA00EA8023 /* CommentThread.swift in Sources */,
 				8E5F844D24DA5447002E6E47 /* MetadataMetadata.swift in Sources */,
 				8E66AC6A24D68C1D00A384AE /* TagCollectionViewCell.swift in Sources */,
+				8EF4B08324FB0A860097AC8E /* CommonListInteractor.swift in Sources */,
 				8E81334324EA130A009887C9 /* FavorateRouter.swift in Sources */,
 				8EBB91F324C3FB0900223F51 /* NetworkDefines.swift in Sources */,
 				8E4C18A624D84D030001186F /* CommentInteractor.swift in Sources */,
@@ -1506,6 +1549,7 @@
 				8E5F844224DA4715002E6E47 /* DeviantDetailThumb.swift in Sources */,
 				8E66AC4B24D679B200A384AE /* MetadataInteractor.swift in Sources */,
 				8E4C18A424D84D030001186F /* CommentInterface.swift in Sources */,
+				8EF4B08524FB0A860097AC8E /* CommonListConfiguration.swift in Sources */,
 				8E4FA46A24CFB8B000742432 /* TopicListHeadView.swift in Sources */,
 				8EAED42124D52547004E8AC3 /* TopicDetailConfiguration.swift in Sources */,
 				8EFB599724C66F6A005DE580 /* PopularListInterface.swift in Sources */,
@@ -1515,6 +1559,7 @@
 				8EA310C624D10C58008813B7 /* DailyListConfiguration.swift in Sources */,
 				8E938E7624D9285A0063B79D /* MoreLikeViewController.swift in Sources */,
 				8EAED45324D55289004E8AC3 /* DeviantDetailAuthor.swift in Sources */,
+				8EF4B08224FB0A860097AC8E /* CommonListConfigurator.swift in Sources */,
 				8E944EE024C89F330050B76B /* TopicListConfiguration.swift in Sources */,
 				8E81334624EA130A009887C9 /* FavorateConfigurator.swift in Sources */,
 				8E5F843E24DA3EED002E6E47 /* MoreLikeThisPreview.swift in Sources */,
@@ -1535,6 +1580,7 @@
 				8E40969424C0CEF400AE8D35 /* TokenManager.swift in Sources */,
 				8EA310C824D10C58008813B7 /* DailyListRouter.swift in Sources */,
 				8E81334524EA130A009887C9 /* FavorateConfiguration.swift in Sources */,
+				8EF4B08424FB0A860097AC8E /* CommonListViewController.swift in Sources */,
 				8EA310CB24D10C58008813B7 /* DailyListInteractor.swift in Sources */,
 				8E4C18A124D84D030001186F /* CommentViewController.swift in Sources */,
 				8E938E7924D9285A0063B79D /* MoreLikeInteractor.swift in Sources */,
@@ -1570,12 +1616,14 @@
 				8EAED41F24D52547004E8AC3 /* TopicDetailInterface.swift in Sources */,
 				8E66AC4624D679B200A384AE /* MetadataConfiguration.swift in Sources */,
 				8E944EE224C89F330050B76B /* TopicListRouter.swift in Sources */,
+				8EF4B08C24FB0ACC0097AC8E /* CommonCollectionViewCell.swift in Sources */,
 				8E1B7FED24C0A4C9008C059C /* SceneDelegate.swift in Sources */,
 				8E5F844C24DA5447002E6E47 /* MetadataTags.swift in Sources */,
 				8E938E7A24D9285A0063B79D /* MoreLikeRouter.swift in Sources */,
 				8EA310C924D10C58008813B7 /* DailyListInterface.swift in Sources */,
 				8E81334224EA130A009887C9 /* FavorateViewController.swift in Sources */,
 				8E944EAA24C88C490050B76B /* PopularListViewController.swift in Sources */,
+				8EF4B08724FB0A860097AC8E /* CommonListRouter.swift in Sources */,
 				8E66AC4824D679B200A384AE /* MetadataViewController.swift in Sources */,
 				8E61635F24EBD3100043DB63 /* UIApplication+Extension.swift in Sources */,
 				8EFB59A224C691E2005DE580 /* UIFont+ExampleFonts.swift in Sources */,

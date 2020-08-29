@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 enum AccessibilityIdentifier: String {
+    case commonListCollectionCell
     case popularListCollectionCell
     case moreLikeCollectionCell
     case topicListCollectionCell
