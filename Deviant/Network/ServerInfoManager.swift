@@ -18,7 +18,8 @@ enum UriResource: String {
     case deviationMetadata
     case fetchComment
     case userStatuses
-    case moreLikeThisPreview
+    case browseMorelikethis
+    case browseMorelikethisPreview
     case whoFaved
 }
 

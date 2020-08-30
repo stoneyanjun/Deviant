@@ -45,7 +45,7 @@ extension TopicListInteractor {
             switch result {
             case .success(let json):
                 #if DEBUG
-                print(#function + " json\r\n\(json.description)")
+//                print(#function + " json\r\n\(json.description)")
                 #endif
                 guard let topicListBase = JSONDeserializer<TopicListBase>.deserializeFrom(json: json.description),
                     let results = topicListBase.results

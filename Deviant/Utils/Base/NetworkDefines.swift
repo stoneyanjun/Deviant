@@ -63,6 +63,9 @@ enum RequestParams: String {
     // /browse/morelikethis/preview
     case seed
 
+    // /browse/morelikethis
+    case category
+
     case maxdepth
     case username
 }

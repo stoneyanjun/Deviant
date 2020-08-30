@@ -47,7 +47,7 @@ extension MetadataInteractor {
             switch result {
             case .success(let json):
                 #if DEBUG
-                print(#function + " json\r\n\(json.description)")
+//                print(#function + " json\r\n\(json.description)")
                 #endif
                 guard let metadataBase = JSONDeserializer<MetadataBase>.deserializeFrom(json: json.description)
                     else {
@@ -56,7 +56,6 @@ extension MetadataInteractor {
                 }
                 self.presenter?.update(with: metadataBase)
             case .failure(let error):
-                print(#function + "\r\n\(error.localizedDescription )")
                 self.presenter?.showError(with: error)
             }
         }

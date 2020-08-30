@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>moreLikeThisPreview</key>
-	<string>browse/morelikethis/preview</string>
 	<key>userStatuses</key>
 	<string>user/statuses</string>
 	<key>fetchComment</key>

@@ -63,7 +63,7 @@ extension DeviantService: TargetType {
         case .fetchUserStatuses:
             return ServerInfoManager.shared.getUri(with: UriResource.userStatuses).wrap()
         case .fetchMoreLikeThisPreview:
-            return ServerInfoManager.shared.getUri(with: UriResource.moreLikeThisPreview).wrap()
+            return ServerInfoManager.shared.getUri(with: UriResource.browseMorelikethisPreview).wrap()
         case .whoFaved:
             return ServerInfoManager.shared.getUri(with: UriResource.whoFaved).wrap()
         }
@@ -164,14 +164,3 @@ extension DeviantService: TargetType {
         return ["Content-type": "application/json"]
     }
 }
-
-/*
-
- struct CommentParams {
- var deviationid: String
- var commentid: String?
- var maxdepth: Int?
- var offset: Int
- var limit: Int
- }
- */

@@ -48,3 +48,10 @@ struct WhoFavedParams {
     var limit: Int
     var offset: Int
 }
+
+struct MoreLikeParams {
+    var seed: String
+    var category: String?
+    var limit: Int
+    var offset: Int
+}
