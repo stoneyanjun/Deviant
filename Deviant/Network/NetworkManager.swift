@@ -11,13 +11,22 @@ import HandyJSON
 import Moya
 import SwiftyJSON
 
+enum DeviantUITestsMode: String {
+    case deviantUITests
+}
+
 class NetworkManager<Target: TargetType>: NSObject {
     private var isReachable: Bool {
         return NetworkReachabilityManager()?.isReachable ?? false
     }
 
     private var provider: MoyaProvider<Target> = {
-        ServerInfoManager.stubMode ? MoyaProvider<Target>(stubClosure: MoyaProvider<Target>.immediatelyStub) : MoyaProvider<Target>()
+        let arguments = ProcessInfo.processInfo.arguments
+        if arguments.contains(DeviantUITestsMode.deviantUITests.rawValue) {
+            return MoyaProvider<Target>(stubClosure: MoyaProvider<Target>.immediatelyStub)
+        } else {
+            return MoyaProvider<Target>()
+        }
     }()
 
     func networkRequest(target: Target, completion: @escaping DeviantApiCallback<JSON>) {

@@ -12,7 +12,7 @@ import XCTest
 class MPFJourneyUITests: UITestCase {
     override func setUp() {
         super.setUp()
-        launchApp(isRecordModel: true)
+        launchApp(isRecordModel: false)
     }
 
     func testLaunchJourneyTest() {

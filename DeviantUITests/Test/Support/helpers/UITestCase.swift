@@ -23,6 +23,7 @@ class UITestCase: FBSnapshotTestCase, UITestable {
 
         let application = XCUIApplication()
 
+        application.launchArguments.append("deviantUITests")
         application.launch()
 
         _app = application

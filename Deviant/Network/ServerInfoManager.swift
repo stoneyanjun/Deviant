@@ -24,8 +24,6 @@ enum UriResource: String {
 }
 
 class ServerInfoManager {
-    static var stubMode = false
-
     private enum InfoKey: String {
         case clientID = "ClientID"
         case clientSecret = "ClientSecret"
