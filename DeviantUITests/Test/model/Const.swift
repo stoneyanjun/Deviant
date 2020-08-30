@@ -11,5 +11,5 @@ import Foundation
 struct Const {
     static let tolerence: CGFloat = 0.2
     static let waitTime: TimeInterval = 1
-    static let longWaitTime: TimeInterval = 2
+    static let longWaitTime: TimeInterval = 5
 }

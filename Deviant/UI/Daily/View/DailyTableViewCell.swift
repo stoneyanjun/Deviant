@@ -164,7 +164,7 @@ extension DailyTableViewCell {
         starsLabel.text = "\(detail.favourites ?? 0)"
         commentLabel.text = "\(detail.comments ?? 0)"
 
-        if URL(string: detail.previewImage?.src.wrap()) != nil {
+        if URL(string: detail.previewImage?.src ?? "") != nil {
             setupSrcImageView(with: detail)
         } else {
             setImageViewWhenFailure()
@@ -173,7 +173,7 @@ extension DailyTableViewCell {
 
     private func setupSrcImageView(with detail: DeviantDetailDisplayModel) {
         loadingImageView.isHidden = false
-        let url = URL(string: detail.previewImage?.src.wrap())
+        let url = URL(string: detail.previewImage?.src ?? "")
         srcImageView.kf.setImage(with: url) { [weak self] result in
             guard let strongSelf = self else {
                 return
