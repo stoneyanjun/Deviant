@@ -121,7 +121,7 @@
 		8EA756E024E77DD100C282CC /* TopListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA756DE24E77DD100C282CC /* TopListInteractorTests.swift */; };
 		8EA756E124E77DD100C282CC /* TopListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA756DF24E77DD100C282CC /* TopListPresenterTests.swift */; };
 		8EABD03D24FBB07400CEAB31 /* Daily.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EABD03424FBB07400CEAB31 /* Daily.json */; };
-		8EABD03E24FBB07400CEAB31 /* topicDetai.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EABD03524FBB07400CEAB31 /* topicDetai.json */; };
+		8EABD03E24FBB07400CEAB31 /* topicDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EABD03524FBB07400CEAB31 /* topicDetail.json */; };
 		8EABD03F24FBB07400CEAB31 /* Metadata.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EABD03624FBB07400CEAB31 /* Metadata.json */; };
 		8EABD04024FBB07400CEAB31 /* Comment.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EABD03724FBB07400CEAB31 /* Comment.json */; };
 		8EABD04124FBB07400CEAB31 /* MoreLike.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EABD03824FBB07400CEAB31 /* MoreLike.json */; };
@@ -129,6 +129,8 @@
 		8EABD04324FBB07400CEAB31 /* TopicList.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EABD03A24FBB07400CEAB31 /* TopicList.json */; };
 		8EABD04424FBB07400CEAB31 /* WhoFavorate.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EABD03B24FBB07400CEAB31 /* WhoFavorate.json */; };
 		8EABD04524FBB07400CEAB31 /* DeviantDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EABD03C24FBB07400CEAB31 /* DeviantDetail.json */; };
+		8EABD04924FBEA1700CEAB31 /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EABD04824FBEA1700CEAB31 /* MockDataManager.swift */; };
+		8EABD04B24FC3FDA00CEAB31 /* Token.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EABD04A24FC3FDA00CEAB31 /* Token.json */; };
 		8EAED43124D533A2004E8AC3 /* TopicDetailBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED42824D533A2004E8AC3 /* TopicDetailBase.swift */; };
 		8EAED43E24D545C1004E8AC3 /* DeviantDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED43624D545C0004E8AC3 /* DeviantDetailPresenter.swift */; };
 		8EAED43F24D545C1004E8AC3 /* DeviantDetailConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED43724D545C0004E8AC3 /* DeviantDetailConfiguration.swift */; };
@@ -319,7 +321,7 @@
 		8EA756DE24E77DD100C282CC /* TopListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopListInteractorTests.swift; sourceTree = "<group>"; };
 		8EA756DF24E77DD100C282CC /* TopListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopListPresenterTests.swift; sourceTree = "<group>"; };
 		8EABD03424FBB07400CEAB31 /* Daily.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Daily.json; sourceTree = "<group>"; };
-		8EABD03524FBB07400CEAB31 /* topicDetai.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topicDetai.json; sourceTree = "<group>"; };
+		8EABD03524FBB07400CEAB31 /* topicDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topicDetail.json; sourceTree = "<group>"; };
 		8EABD03624FBB07400CEAB31 /* Metadata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Metadata.json; sourceTree = "<group>"; };
 		8EABD03724FBB07400CEAB31 /* Comment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Comment.json; sourceTree = "<group>"; };
 		8EABD03824FBB07400CEAB31 /* MoreLike.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MoreLike.json; sourceTree = "<group>"; };
@@ -327,6 +329,8 @@
 		8EABD03A24FBB07400CEAB31 /* TopicList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TopicList.json; sourceTree = "<group>"; };
 		8EABD03B24FBB07400CEAB31 /* WhoFavorate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WhoFavorate.json; sourceTree = "<group>"; };
 		8EABD03C24FBB07400CEAB31 /* DeviantDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DeviantDetail.json; sourceTree = "<group>"; };
+		8EABD04824FBEA1700CEAB31 /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
+		8EABD04A24FC3FDA00CEAB31 /* Token.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Token.json; sourceTree = "<group>"; };
 		8EAED42824D533A2004E8AC3 /* TopicDetailBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailBase.swift; sourceTree = "<group>"; };
 		8EAED43624D545C0004E8AC3 /* DeviantDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailPresenter.swift; sourceTree = "<group>"; };
 		8EAED43724D545C0004E8AC3 /* DeviantDetailConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailConfiguration.swift; sourceTree = "<group>"; };
@@ -989,15 +993,17 @@
 		8EABD03324FBB06100CEAB31 /* MockData */ = {
 			isa = PBXGroup;
 			children = (
+				8EABD04A24FC3FDA00CEAB31 /* Token.json */,
 				8EABD03724FBB07400CEAB31 /* Comment.json */,
 				8EABD03424FBB07400CEAB31 /* Daily.json */,
 				8EABD03C24FBB07400CEAB31 /* DeviantDetail.json */,
 				8EABD03624FBB07400CEAB31 /* Metadata.json */,
 				8EABD03824FBB07400CEAB31 /* MoreLike.json */,
 				8EABD03924FBB07400CEAB31 /* PopularList.json */,
-				8EABD03524FBB07400CEAB31 /* topicDetai.json */,
+				8EABD03524FBB07400CEAB31 /* topicDetail.json */,
 				8EABD03A24FBB07400CEAB31 /* TopicList.json */,
 				8EABD03B24FBB07400CEAB31 /* WhoFavorate.json */,
+				8EABD04824FBEA1700CEAB31 /* MockDataManager.swift */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -1279,8 +1285,9 @@
 				8E1B803D24C0B42C008C059C /* ServerInfo.plist in Resources */,
 				8EABD04224FBB07400CEAB31 /* PopularList.json in Resources */,
 				8E1B803B24C0B422008C059C /* Request.plist in Resources */,
+				8EABD04B24FC3FDA00CEAB31 /* Token.json in Resources */,
 				8E1B7FF724C0A4CB008C059C /* LaunchScreen.storyboard in Resources */,
-				8EABD03E24FBB07400CEAB31 /* topicDetai.json in Resources */,
+				8EABD03E24FBB07400CEAB31 /* topicDetail.json in Resources */,
 				8E1B7FF424C0A4CB008C059C /* Assets.xcassets in Resources */,
 				8E9D185524F4AB5800A679DB /* MoreDetailContainerVC.xib in Resources */,
 				8EABD04424FBB07400CEAB31 /* WhoFavorate.json in Resources */,
@@ -1493,6 +1500,7 @@
 				8EBB91F324C3FB0900223F51 /* NetworkDefines.swift in Sources */,
 				8E4C18A624D84D030001186F /* CommentInteractor.swift in Sources */,
 				8E40969224C0CAC900AE8D35 /* ServerInfoManager.swift in Sources */,
+				8EABD04924FBEA1700CEAB31 /* MockDataManager.swift in Sources */,
 				8EAED44324D545C1004E8AC3 /* DeviantDetailRouter.swift in Sources */,
 				8E938E7824D9285A0063B79D /* MoreLikePresenter.swift in Sources */,
 				8E7A100724D1493100C42B29 /* DailyBase.swift in Sources */,

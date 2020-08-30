@@ -12,10 +12,13 @@ import Moya
 import SwiftyJSON
 
 class NetworkManager<Target: TargetType>: NSObject {
-    private var provider = MoyaProvider<Target>()
     private var isReachable: Bool {
         return NetworkReachabilityManager()?.isReachable ?? false
     }
+
+    private var provider: MoyaProvider<Target> = {
+        ServerInfoManager.stubMode ? MoyaProvider<Target>(stubClosure: MoyaProvider<Target>.immediatelyStub) : MoyaProvider<Target>()
+    }()
 
     func networkRequest(target: Target, completion: @escaping DeviantApiCallback<JSON>) {
         guard isReachable else { completion(.failure(DeviantFailure.devFailure(DeviantGeneralError.networkError)))

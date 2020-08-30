@@ -34,7 +34,7 @@ extension TokenService: TargetType {
     var sampleData: Data {
         switch self {
         case .fetchToken:
-            return Date().description.utf8Encoded
+            return MockDataManager.shared.getMockData(type: .token)
         }
     }
 

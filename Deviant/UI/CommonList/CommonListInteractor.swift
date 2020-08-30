@@ -80,7 +80,7 @@ extension CommonListInteractor {
             switch result {
             case .success(let json):
                 #if DEBUG
-//                print(#function + " json\r\n\(json.description)")
+                print(#function + " json\r\n\(json.description)")
                 #endif
                 guard let base = JSONDeserializer<PopularBase>.deserializeFrom(json: json.description),
                     let results = base.results

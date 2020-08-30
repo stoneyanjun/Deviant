@@ -14,7 +14,6 @@ enum DeviantService {
     case fetchDeviantDetail(deviationid: String)
     case fetchTopicList(params: TopicListParams)
     case fetchTopicDetail(params: TopicDetailParams)
-    case fetchUserProfile(username: String)
     case fetchMetadata(params: MetadataParams)
     case fetchComment(params: CommentParams)
     case fetchUserStatuses(username: String)
@@ -46,12 +45,6 @@ extension DeviantService: TargetType {
             return ServerInfoManager.shared.getUri(with: UriResource.browseTopics).wrap()
         case .fetchTopicDetail:
             return ServerInfoManager.shared.getUri(with: UriResource.browseTopic).wrap()
-        case .fetchUserProfile(let username):
-            let pathFormat = ServerInfoManager.shared.getUri(with: UriResource.userProfile).wrap()
-            guard !pathFormat.isEmpty else {
-                return pathFormat
-            }
-            return String(format: pathFormat, username)
         case .fetchMetadata:
             return ServerInfoManager.shared.getUri(with: UriResource.deviationMetadata).wrap()
         case .fetchComment(let params):
@@ -75,6 +68,24 @@ extension DeviantService: TargetType {
 
     var sampleData: Data {
         switch self {
+        case .fetchPopular:
+            return MockDataManager.shared.getMockData(type: .popularLlist)
+        case .fetchTopicList:
+            return MockDataManager.shared.getMockData(type: .topicList)
+        case .fetchDaily:
+            return MockDataManager.shared.getMockData(type: .daily)
+        case .fetchTopicDetail:
+            return MockDataManager.shared.getMockData(type: .topicDetail)
+        case .fetchDeviantDetail:
+            return MockDataManager.shared.getMockData(type: .deviantDetail)
+        case .fetchMetadata:
+            return MockDataManager.shared.getMockData(type: .metadata)
+        case .fetchComment:
+            return MockDataManager.shared.getMockData(type: .comment)
+        case .whoFaved:
+            return MockDataManager.shared.getMockData(type: .favorate)
+        case .fetchMoreLikeThisPreview:
+            return MockDataManager.shared.getMockData(type: .moreLike)
         default:
             return Date().description.utf8Encoded
         }
@@ -120,10 +131,6 @@ extension DeviantService: TargetType {
                                              RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? ""]
 
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-        case .fetchUserProfile:
-            let parameters: [String: Any] = [RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? ""]
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-
         case .fetchMetadata(let params):
             let parameters: [String: Any] = [RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? "",
                                              RequestParams.deviationids.rawValue: params.deviationids,
