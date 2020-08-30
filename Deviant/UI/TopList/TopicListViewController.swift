@@ -130,7 +130,7 @@ extension TopicListViewController: UICollectionViewDataSource {
         let displayModel = displayModels[indexPath.section].deviantDetails?[indexPath.row]
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CommonCollectionViewCell.reuseIdentifier,
                                                             for: indexPath) as? CommonCollectionViewCell,
-            let src = displayModel?.src,
+            let src = displayModel?.previewImage?.src,
             let url = URL(string: src) else {
                 return UICollectionViewCell()
         }
@@ -177,8 +177,8 @@ extension TopicListViewController: CHTCollectionViewDelegateWaterfallLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let displayModel = displayModels[indexPath.section].deviantDetails?[indexPath.row]
-        return CGSize(width: displayModel?.width ?? 0,
-                      height: displayModel?.height ?? 0)
+        return CGSize(width: displayModel?.previewImage?.width ?? 0,
+                      height: displayModel?.previewImage?.height ?? 0)
     }
 }
 

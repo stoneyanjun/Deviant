@@ -164,7 +164,7 @@ extension DailyTableViewCell {
         starsLabel.text = "\(detail.favourites ?? 0)"
         commentLabel.text = "\(detail.comments ?? 0)"
 
-        if URL(string: detail.src.wrap()) != nil {
+        if URL(string: detail.previewImage?.src.wrap()) != nil {
             setupSrcImageView(with: detail)
         } else {
             setImageViewWhenFailure()
@@ -173,7 +173,7 @@ extension DailyTableViewCell {
 
     private func setupSrcImageView(with detail: DeviantDetailDisplayModel) {
         loadingImageView.isHidden = false
-        let url = URL(string: detail.src.wrap())
+        let url = URL(string: detail.previewImage?.src.wrap())
         srcImageView.kf.setImage(with: url) { [weak self] result in
             guard let strongSelf = self else {
                 return
@@ -187,8 +187,8 @@ extension DailyTableViewCell {
             }
         }
 
-        if let width = detail.width,
-            let height = detail.height {
+        if let width = detail.previewImage?.width,
+            let height = detail.previewImage?.height {
             let radio = CGFloat(height) / CGFloat(width)
             srcImageView.snp.remakeConstraints { make in
                 make.leading.equalToSuperview().offset(Const.margin)
@@ -199,6 +199,7 @@ extension DailyTableViewCell {
         }
     }
 }
+
 extension DailyTableViewCell {
     private func setupAccessibility(with viewData: ViewData) {
         setAccessibilityIdentifier(viewData.identifier, row: viewData.row)

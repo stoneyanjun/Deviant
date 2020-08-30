@@ -7,15 +7,20 @@
 
 import Foundation
 
+struct ImageInfo {
+    var src: String?
+    var width: Int?
+    var height: Int?
+}
+
 struct DeviantDetailDisplayModel {
     var deviationid: String
     var title: String?
     var category: String?
     var excerpt: String?
     var username: String?
-    var src: String?
-    var width: Int?
-    var height: Int?
+    var previewImage: ImageInfo?
+    var contentImageInfo: ImageInfo?
 
     var usericon: String?
     var publishedTime: String?

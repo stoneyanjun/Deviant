@@ -54,6 +54,9 @@ extension CommonListInteractor {
         NetworkManager<DeviantService>().networkRequest(target: .fetchTopicDetail(params: params)) { result in
             switch result {
             case .success(let json):
+                #if DEBUG
+                print(#function + " json\r\n\(json.description)")
+                #endif
                 guard let base = JSONDeserializer<TopicDetailBase>.deserializeFrom(json: json.description),
                     let results = base.results
                     else {
@@ -76,6 +79,9 @@ extension CommonListInteractor {
         NetworkManager<DeviantService>().networkRequest(target: .fetchPopular(params: params)) { result in
             switch result {
             case .success(let json):
+                #if DEBUG
+                print(#function + " json\r\n\(json.description)")
+                #endif
                 guard let base = JSONDeserializer<PopularBase>.deserializeFrom(json: json.description),
                     let results = base.results
                     else {

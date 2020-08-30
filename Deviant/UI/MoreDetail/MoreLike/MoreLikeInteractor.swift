@@ -42,6 +42,9 @@ extension MoreLikeInteractor {
         .fetchMoreLikeThisPreview(seed: config.deviationid)) { result in
             switch result {
             case .success(let json):
+                #if DEBUG
+                print(#function + " json\r\n\(json.description)")
+                #endif
                 guard let moreLikeThis = JSONDeserializer<MoreLikeThisPreview>.deserializeFrom(json: json.description),
                     let moreFromDa = moreLikeThis.moreFromDa,
                     let moreFromArtist = moreLikeThis.moreFromArtist

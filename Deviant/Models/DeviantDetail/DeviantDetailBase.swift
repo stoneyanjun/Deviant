@@ -65,35 +65,64 @@ struct DeviantDetailBase: HandyJSON {
 }
 
 extension DeviantDetailBase {
-    func toDisplayModel() -> DeviantDetailDisplayModel {
+    private func getPreviewImageInfo() -> ImageInfo {
         var src = ""
         var width: Int?
         var height: Int?
+
         if let previewSrc = preview?.src,
             !previewSrc.isEmpty {
             src = previewSrc
             width = preview?.width
             height = preview?.height
-        } else if let contentSrc = content?.src,
-            !contentSrc.isEmpty {
+        }
+
+        if src.isEmpty,
+            let thumbs = self.thumbs {
+            for thumb in thumbs {
+                if let thumbsSrc = thumb.src,
+                    !thumbsSrc.isEmpty {
+                    src = thumbsSrc
+                    width = thumb.width
+                    height = thumb.height
+                    break
+                }
+            }
+        }
+
+        return ImageInfo(src: src, width: width, height: height)
+    }
+
+    private func getContentImageInfo() -> ImageInfo {
+        var src = ""
+        var width: Int?
+        var height: Int?
+
+        if let contentSrc = content?.src {
             src = contentSrc
             width = content?.width
             height = content?.height
-        } else if let thumbsSrc = thumbs?.first?.src,
-            !thumbsSrc.isEmpty {
-            src = thumbsSrc
-            width = thumbs?.first?.width
-            height = thumbs?.first?.height
         }
 
+        if src.isEmpty,
+            let previewSrc = preview?.src,
+            !previewSrc.isEmpty {
+            src = previewSrc
+            width = preview?.width
+            height = preview?.height
+        }
+
+        return ImageInfo(src: src, width: width, height: height)
+    }
+
+    func toDisplayModel() -> DeviantDetailDisplayModel {
         return DeviantDetailDisplayModel(deviationid: deviationid.wrap(),
                                          title: title,
                                          category: category,
                                          excerpt: excerpt,
                                          username: author?.username,
-                                         src: src,
-                                         width: width ,
-                                         height: height,
+                                         previewImage: getPreviewImageInfo(),
+                                         contentImageInfo: getContentImageInfo(),
                                          usericon: author?.usericon,
                                          publishedTime: publishedTime,
                                          comments: stats?.comments,

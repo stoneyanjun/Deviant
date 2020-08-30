@@ -46,7 +46,9 @@ extension MetadataInteractor {
         NetworkManager<DeviantService>().networkRequest(target: .fetchMetadata(params: params)) { result in
             switch result {
             case .success(let json):
-                print(json.description)
+                #if DEBUG
+                print(#function + " json\r\n\(json.description)")
+                #endif
                 guard let metadataBase = JSONDeserializer<MetadataBase>.deserializeFrom(json: json.description)
                     else {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)

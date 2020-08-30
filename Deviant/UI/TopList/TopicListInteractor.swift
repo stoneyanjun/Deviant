@@ -44,6 +44,9 @@ extension TopicListInteractor {
         NetworkManager<DeviantService>().networkRequest(target: .fetchTopicList(params: params) ) { result in
             switch result {
             case .success(let json):
+                #if DEBUG
+                print(#function + " json\r\n\(json.description)")
+                #endif
                 guard let topicListBase = JSONDeserializer<TopicListBase>.deserializeFrom(json: json.description),
                     let results = topicListBase.results
                     else {

@@ -102,7 +102,7 @@ extension MoreLikeViewController: UICollectionViewDataSource {
         let displayModel = getDisplayModel(with: indexPath)
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CommonCollectionViewCell.reuseIdentifier,
                                                             for: indexPath) as? CommonCollectionViewCell,
-            let src = displayModel.src,
+            let src = displayModel.previewImage?.src,
             let url = URL(string: src) else {
                 return UICollectionViewCell()
         }
@@ -149,8 +149,8 @@ extension MoreLikeViewController {
 
     private func getImageSize(indexPath: IndexPath) -> CGSize {
         let displayModel = getDisplayModel(with: indexPath)
-        return CGSize(width: displayModel.width ?? 0,
-                      height: displayModel.height ?? 0)
+        return CGSize(width: displayModel.previewImage?.width ?? 0,
+                      height: displayModel.previewImage?.height ?? 0)
     }
 }
 

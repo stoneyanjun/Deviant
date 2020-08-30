@@ -46,6 +46,9 @@ extension DailyListInteractor {
         NetworkManager<DeviantService>().networkRequest(target: .fetchDaily(date: date)) { result in
             switch result {
             case .success(let json):
+                #if DEBUG
+                print(#function + " json\r\n\(json.description)")
+                #endif
                 guard let dailyBase = JSONDeserializer<DailyBase>.deserializeFrom(json: json.description),
                     let results = dailyBase.results
                     else {
