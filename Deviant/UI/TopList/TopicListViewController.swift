@@ -33,6 +33,11 @@ class TopicListViewController: DeviantBaseViewController {
         interactor?.tryFetchTopicList(with: offset)
         setupESRefresh()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(#function + " TopicListViewController")
+    }
 }
 
 extension TopicListViewController {

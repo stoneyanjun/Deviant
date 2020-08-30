@@ -32,6 +32,11 @@ class DailyListViewController: DeviantBaseViewController {
             self.interactor?.tryFetchDaily(with: "")
         }
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(#function + " DailyListViewController")
+    }
 }
 
 extension DailyListViewController {

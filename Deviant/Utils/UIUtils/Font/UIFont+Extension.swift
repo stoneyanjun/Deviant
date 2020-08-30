@@ -1,9 +1,8 @@
 //
-//  UIFont+ExampleFonts.swift
-//  Segmentio
+//  UIFont+Extension.swift
+//  Deviant
 //
-//  Created by Dmitriy Demchenko
-//  Copyright © 2016 Yalantis Mobile. All rights reserved.
+//  Copyright © 2020 Stone. All rights reserved.
 //
 
 import UIKit
@@ -13,8 +12,8 @@ extension UIFont {
         return UIFont(name: "Avenir-Book", size: size) ?? UIFont.systemFont(ofSize: size)
     }
 
-    class func exampleAvenirLight(ofSize size: CGFloat) -> UIFont {
-        return UIFont(name: "Avenir-Light", size: size) ?? UIFont.systemFont(ofSize: size)
+    class func titleFont() -> UIFont {
+        return UIFont.preferredFont(forTextStyle: .title3)
     }
 
     class func headlineFont() -> UIFont {

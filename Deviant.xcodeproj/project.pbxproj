@@ -59,7 +59,6 @@
 		8E5F844D24DA5447002E6E47 /* MetadataMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F844624DA5447002E6E47 /* MetadataMetadata.swift */; };
 		8E5F844E24DA5447002E6E47 /* MetadataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F844724DA5447002E6E47 /* MetadataBase.swift */; };
 		8E5F844F24DA5447002E6E47 /* MetadataSubmittedWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F844824DA5447002E6E47 /* MetadataSubmittedWith.swift */; };
-		8E61635F24EBD3100043DB63 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61635E24EBD3100043DB63 /* UIApplication+Extension.swift */; };
 		8E61636224EBE05C0043DB63 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61636124EBE05C0043DB63 /* UILabel+Extension.swift */; };
 		8E66AC1A24D6449800A384AE /* MoreDetailContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC1824D6449800A384AE /* MoreDetailContainerVC.swift */; };
 		8E66AC3424D65EA200A384AE /* TopicListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3224D65EA200A384AE /* TopicListResult.swift */; };
@@ -158,10 +157,11 @@
 		8EF4B08624FB0A860097AC8E /* CommonListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B07F24FB0A860097AC8E /* CommonListInterface.swift */; };
 		8EF4B08724FB0A860097AC8E /* CommonListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B08024FB0A860097AC8E /* CommonListRouter.swift */; };
 		8EF4B08C24FB0ACC0097AC8E /* CommonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B08B24FB0ACC0097AC8E /* CommonCollectionViewCell.swift */; };
+		8EF4B09024FB30170097AC8E /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B08F24FB30170097AC8E /* UITextView+Extension.swift */; };
 		8EFB599C24C68D21005DE580 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB599B24C68D21005DE580 /* UIScreen+Extension.swift */; };
 		8EFB599F24C6905D005DE580 /* SegmentioBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB599E24C6905D005DE580 /* SegmentioBuilder.swift */; };
-		8EFB59A224C691E2005DE580 /* UIFont+ExampleFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB59A124C691E2005DE580 /* UIFont+ExampleFonts.swift */; };
-		8EFB59A524C69436005DE580 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB59A424C69436005DE580 /* ColorPalette.swift */; };
+		8EFB59A224C691E2005DE580 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB59A124C691E2005DE580 /* UIFont+Extension.swift */; };
+		8EFB59A524C69436005DE580 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB59A424C69436005DE580 /* UIColor+Extension.swift */; };
 		8EFB59A824C6A9F6005DE580 /* DeviantBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB59A724C6A9F6005DE580 /* DeviantBaseViewController.swift */; };
 		8EFB6E8424E9E498002A62B5 /* Client.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EFB6E8324E9E498002A62B5 /* Client.plist */; };
 		8EFB6E8924E9F080002A62B5 /* WhoFavorateResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB6E8624E9F080002A62B5 /* WhoFavorateResults.swift */; };
@@ -249,7 +249,6 @@
 		8E5F844624DA5447002E6E47 /* MetadataMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataMetadata.swift; sourceTree = "<group>"; };
 		8E5F844724DA5447002E6E47 /* MetadataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataBase.swift; sourceTree = "<group>"; };
 		8E5F844824DA5447002E6E47 /* MetadataSubmittedWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataSubmittedWith.swift; sourceTree = "<group>"; };
-		8E61635E24EBD3100043DB63 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		8E61636124EBE05C0043DB63 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		8E66AC1824D6449800A384AE /* MoreDetailContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailContainerVC.swift; sourceTree = "<group>"; };
 		8E66AC3224D65EA200A384AE /* TopicListResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListResult.swift; sourceTree = "<group>"; };
@@ -348,10 +347,11 @@
 		8EF4B07F24FB0A860097AC8E /* CommonListInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonListInterface.swift; sourceTree = "<group>"; };
 		8EF4B08024FB0A860097AC8E /* CommonListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonListRouter.swift; sourceTree = "<group>"; };
 		8EF4B08B24FB0ACC0097AC8E /* CommonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonCollectionViewCell.swift; sourceTree = "<group>"; };
+		8EF4B08F24FB30170097AC8E /* UITextView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		8EFB599B24C68D21005DE580 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		8EFB599E24C6905D005DE580 /* SegmentioBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentioBuilder.swift; sourceTree = "<group>"; };
-		8EFB59A124C691E2005DE580 /* UIFont+ExampleFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+ExampleFonts.swift"; sourceTree = "<group>"; };
-		8EFB59A424C69436005DE580 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		8EFB59A124C691E2005DE580 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		8EFB59A424C69436005DE580 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8EFB59A724C6A9F6005DE580 /* DeviantBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantBaseViewController.swift; sourceTree = "<group>"; };
 		8EFB6E8324E9E498002A62B5 /* Client.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Client.plist; sourceTree = "<group>"; };
 		8EFB6E8624E9F080002A62B5 /* WhoFavorateResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhoFavorateResults.swift; sourceTree = "<group>"; };
@@ -780,14 +780,6 @@
 			path = MoreLikeThisPreview;
 			sourceTree = "<group>";
 		};
-		8E61635D24EBD2F60043DB63 /* UIApplication */ = {
-			isa = PBXGroup;
-			children = (
-				8E61635E24EBD3100043DB63 /* UIApplication+Extension.swift */,
-			);
-			path = UIApplication;
-			sourceTree = "<group>";
-		};
 		8E61636024EBE0400043DB63 /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1016,8 +1008,8 @@
 		8EBB91ED24C3E80300223F51 /* UIUtils */ = {
 			isa = PBXGroup;
 			children = (
+				8EF4B08E24FB2FFA0097AC8E /* UITextView */,
 				8E61636024EBE0400043DB63 /* UILabel */,
-				8E61635D24EBD2F60043DB63 /* UIApplication */,
 				8E54E6CE24D1A86E00339EFA /* UIView */,
 				8EFB59A624C6A9CC005DE580 /* BaseUIViewController */,
 				8EFB59A324C693FD005DE580 /* Color */,
@@ -1083,6 +1075,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8EF4B08E24FB2FFA0097AC8E /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				8EF4B08F24FB30170097AC8E /* UITextView+Extension.swift */,
+			);
+			path = UITextView;
+			sourceTree = "<group>";
+		};
 		8EFB599D24C69035005DE580 /* Segmentio */ = {
 			isa = PBXGroup;
 			children = (
@@ -1094,7 +1094,7 @@
 		8EFB59A024C691D3005DE580 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				8EFB59A124C691E2005DE580 /* UIFont+ExampleFonts.swift */,
+				8EFB59A124C691E2005DE580 /* UIFont+Extension.swift */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -1102,7 +1102,7 @@
 		8EFB59A324C693FD005DE580 /* Color */ = {
 			isa = PBXGroup;
 			children = (
-				8EFB59A424C69436005DE580 /* ColorPalette.swift */,
+				8EFB59A424C69436005DE580 /* UIColor+Extension.swift */,
 			);
 			path = Color;
 			sourceTree = "<group>";
@@ -1457,6 +1457,7 @@
 				8E938E7824D9285A0063B79D /* MoreLikePresenter.swift in Sources */,
 				8E7A100724D1493100C42B29 /* DailyBase.swift in Sources */,
 				8E4C18A524D84D030001186F /* CommentRouter.swift in Sources */,
+				8EF4B09024FB30170097AC8E /* UITextView+Extension.swift in Sources */,
 				8E4C18A324D84D030001186F /* CommentConfiguration.swift in Sources */,
 				8E66AC4D24D67DC800A384AE /* ServiceParams.swift in Sources */,
 				8E1B7FEF24C0A4C9008C059C /* RootViewController.swift in Sources */,
@@ -1480,7 +1481,7 @@
 				8E4C18AD24D850B50001186F /* CommentTableViewCell.swift in Sources */,
 				8E259BC124F7A72100648451 /* TopicListDisplayModel.swift in Sources */,
 				8E66AC1A24D6449800A384AE /* MoreDetailContainerVC.swift in Sources */,
-				8EFB59A524C69436005DE580 /* ColorPalette.swift in Sources */,
+				8EFB59A524C69436005DE580 /* UIColor+Extension.swift in Sources */,
 				8E4C18A024D84D030001186F /* CommentPresenter.swift in Sources */,
 				8E5F844E24DA5447002E6E47 /* MetadataBase.swift in Sources */,
 				8EBB91FA24C4430E00223F51 /* NetworkManager.swift in Sources */,
@@ -1527,8 +1528,7 @@
 				8E81334224EA130A009887C9 /* FavorateViewController.swift in Sources */,
 				8EF4B08724FB0A860097AC8E /* CommonListRouter.swift in Sources */,
 				8E66AC4824D679B200A384AE /* MetadataViewController.swift in Sources */,
-				8E61635F24EBD3100043DB63 /* UIApplication+Extension.swift in Sources */,
-				8EFB59A224C691E2005DE580 /* UIFont+ExampleFonts.swift in Sources */,
+				8EFB59A224C691E2005DE580 /* UIFont+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 import Segmentio
+import SwifterSwift
 import UIKit
 
 struct SegmentioBuilder {
@@ -21,7 +22,7 @@ struct SegmentioBuilder {
         segmentioView.addBadge(
             at: index,
             count: 10,
-            color: ColorPalette.coral
+            color: UIColor.coral
         )
     }
 
@@ -75,7 +76,7 @@ struct SegmentioBuilder {
         }
 
         return SegmentioOptions(
-            backgroundColor: ColorPalette.white,
+            backgroundColor: .white,
             segmentPosition: segmentioPosition,
             scrollEnabled: true,
             indicatorOptions: segmentioIndicatorOptions(),
@@ -95,17 +96,17 @@ struct SegmentioBuilder {
             defaultState: segmentioState(
                 backgroundColor: .clear,
                 titleFont: font,
-                titleTextColor: ColorPalette.grayChateau
+                titleTextColor: UIColor.grayChateau
             ),
             selectedState: segmentioState(
                 backgroundColor: .cyan,
                 titleFont: font,
-                titleTextColor: ColorPalette.black
+                titleTextColor: .black
             ),
             highlightedState: segmentioState(
-                backgroundColor: ColorPalette.whiteSmoke,
+                backgroundColor: UIColor.whiteSmoke,
                 titleFont: font,
-                titleTextColor: ColorPalette.grayChateau
+                titleTextColor: UIColor.grayChateau
             )
         )
     }
@@ -125,7 +126,7 @@ struct SegmentioBuilder {
             type: .bottom,
             ratio: Const.ratio,
             height: 5,
-            color: ColorPalette.coral
+            color: UIColor.coral
         )
     }
 
@@ -133,14 +134,14 @@ struct SegmentioBuilder {
         return SegmentioHorizontalSeparatorOptions(
             type: .topAndBottom,
             height: 1,
-            color: ColorPalette.whiteSmoke
+            color: .white
         )
     }
 
     private static func segmentioVerticalSeparatorOptions() -> SegmentioVerticalSeparatorOptions {
         return SegmentioVerticalSeparatorOptions(
             ratio: Const.ratio,
-            color: ColorPalette.whiteSmoke
+            color: UIColor.whiteSmoke
         )
     }
 }

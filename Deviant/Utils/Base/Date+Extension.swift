@@ -17,8 +17,8 @@ extension Date {
         return date.getFormatDateString()
     }
 
+    //yyyy-MM-dd'T'HH:mm:ss-SSSZ
     static func fromatPostedDate(postedDateStr: String) -> String {
-        //yyyy-MM-dd'T'HH:mm:ss-SSSZ
         guard let date = Date(deviantDateString: postedDateStr) else {
             return postedDateStr
         }
@@ -56,7 +56,7 @@ extension Date {
     init?(deviantDateString: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.timeZone = TimeZone.init(abbreviation: "GMT")
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss-SSSS"
         guard let date = dateFormatter.date(from: deviantDateString) else { return nil }
         self = date
