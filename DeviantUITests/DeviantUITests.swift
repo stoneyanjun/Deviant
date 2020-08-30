@@ -12,7 +12,7 @@ import XCTest
 class MPFJourneyUITests: UITestCase {
     override func setUp() {
         super.setUp()
-        launchApp(isRecordModel: false)
+        launchApp(isRecordModel: true)
     }
 
     func testLaunchJourneyTest() {
@@ -20,9 +20,9 @@ class MPFJourneyUITests: UITestCase {
             .showPopularPage().wait()
             .verifyView(snapshotKey: .rootPopularList)
             .openFirstPopularItem().longerWait()
-            .verifyView(snapshotKey: .popularDeviantDetail)
 
             .to(DeviantDetailScreenModel(self))
+            .verifyView(snapshotKey: .popularDeviantDetail)
             .showMoreInfoPage().longerWait()
             .verifyView(snapshotKey: .deviantDetailMoreInfo)
             .showInternalCommentPage().wait()
@@ -39,15 +39,14 @@ class MPFJourneyUITests: UITestCase {
             .showDailyPage().wait()
             .verifyView(snapshotKey: .rootDaily)
             .openFirstDaily().longerWait()
-            .verifyView(snapshotKey: .dailyDeviantDetail)
             .goBack().wait()
 
             .to(RootSceenModel(self))
             .showTopicListPage().wait()
             .verifyView(snapshotKey: .rootTopicList)
             .openFirstTopic().longerWait()
-            .verifyView(snapshotKey: .topicDetail)
             .to(TopicDetailScreenModel(self))
+            .verifyView(snapshotKey: .topicDetail)
             .showDetail().longerWait()
     }
 }
