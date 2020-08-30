@@ -12,8 +12,6 @@
 		8E19CC1724E7BBA3000CAD09 /* DailyPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19CC1524E7BBA3000CAD09 /* DailyPresenterTests.swift */; };
 		8E19CC1824E7BBA3000CAD09 /* DailyInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19CC1624E7BBA3000CAD09 /* DailyInteractorTests.swift */; };
 		8E19CC1A24E7C47E000CAD09 /* DeviantMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19CC1924E7C47E000CAD09 /* DeviantMockData.swift */; };
-		8E19CC1F24E7DC1F000CAD09 /* TopicDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19CC1D24E7DC1F000CAD09 /* TopicDetailInteractorTests.swift */; };
-		8E19CC2024E7DC1F000CAD09 /* TopicDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19CC1E24E7DC1F000CAD09 /* TopicDetailPresenterTests.swift */; };
 		8E19CC2424E7E573000CAD09 /* DeviantDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19CC2224E7E573000CAD09 /* DeviantDetailPresenterTests.swift */; };
 		8E19CC2524E7E573000CAD09 /* DeviantDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19CC2324E7E573000CAD09 /* DeviantDetailInteractorTests.swift */; };
 		8E19CC2924E7E8E0000CAD09 /* MoreLikeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19CC2724E7E8E0000CAD09 /* MoreLikeInteractorTests.swift */; };
@@ -52,7 +50,7 @@
 		8E4FA46A24CFB8B000742432 /* TopicListHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4FA46824CFB8B000742432 /* TopicListHeadView.swift */; };
 		8E54E6D024D1A88000339EFA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E54E6CF24D1A88000339EFA /* UIView+Extension.swift */; };
 		8E5C799024E67B8500DBAE28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E5C798F24E67B8500DBAE28 /* GoogleService-Info.plist */; };
-		8E5C799324E689B400DBAE28 /* PopularListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5C799224E689B400DBAE28 /* PopularListInteractorTests.swift */; };
+		8E5C799324E689B400DBAE28 /* CommonListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5C799224E689B400DBAE28 /* CommonListInteractorTests.swift */; };
 		8E5F843E24DA3EED002E6E47 /* MoreLikeThisPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F843D24DA3EED002E6E47 /* MoreLikeThisPreview.swift */; };
 		8E5F844224DA4715002E6E47 /* DeviantDetailThumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F844124DA4715002E6E47 /* DeviantDetailThumb.swift */; };
 		8E5F844A24DA5447002E6E47 /* MetadataStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F844324DA5447002E6E47 /* MetadataStats.swift */; };
@@ -93,8 +91,6 @@
 		8E938E7824D9285A0063B79D /* MoreLikePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E938E7024D9285A0063B79D /* MoreLikePresenter.swift */; };
 		8E938E7924D9285A0063B79D /* MoreLikeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E938E7124D9285A0063B79D /* MoreLikeInteractor.swift */; };
 		8E938E7A24D9285A0063B79D /* MoreLikeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E938E7224D9285A0063B79D /* MoreLikeRouter.swift */; };
-		8E944EAA24C88C490050B76B /* PopularListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EA824C88C490050B76B /* PopularListViewController.swift */; };
-		8E944EB024C88DF40050B76B /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944EAE24C88DF30050B76B /* ImageCollectionViewCell.swift */; };
 		8E944EDB24C89F330050B76B /* TopicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED324C89F330050B76B /* TopicListViewController.swift */; };
 		8E944EDD24C89F330050B76B /* TopicListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED524C89F330050B76B /* TopicListPresenter.swift */; };
 		8E944EDE24C89F330050B76B /* TopicListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E944ED624C89F330050B76B /* TopicListInterface.swift */; };
@@ -123,16 +119,9 @@
 		8EA310CB24D10C58008813B7 /* DailyListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310C424D10C58008813B7 /* DailyListInteractor.swift */; };
 		8EA310CC24D10C58008813B7 /* DailyListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310C524D10C58008813B7 /* DailyListConfigurator.swift */; };
 		8EA310D024D10CB3008813B7 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA310CE24D10CB3008813B7 /* DailyTableViewCell.swift */; };
-		8EA756DC24E76DA100C282CC /* PopularListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA756DB24E76DA100C282CC /* PopularListPresenterTests.swift */; };
+		8EA756DC24E76DA100C282CC /* CommonListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA756DB24E76DA100C282CC /* CommonListPresenterTests.swift */; };
 		8EA756E024E77DD100C282CC /* TopListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA756DE24E77DD100C282CC /* TopListInteractorTests.swift */; };
 		8EA756E124E77DD100C282CC /* TopListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA756DF24E77DD100C282CC /* TopListPresenterTests.swift */; };
-		8EAED41B24D52547004E8AC3 /* TopicDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED41324D52546004E8AC3 /* TopicDetailRouter.swift */; };
-		8EAED41D24D52547004E8AC3 /* TopicDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED41524D52546004E8AC3 /* TopicDetailInteractor.swift */; };
-		8EAED41E24D52547004E8AC3 /* TopicDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED41624D52546004E8AC3 /* TopicDetailPresenter.swift */; };
-		8EAED41F24D52547004E8AC3 /* TopicDetailInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED41724D52546004E8AC3 /* TopicDetailInterface.swift */; };
-		8EAED42024D52547004E8AC3 /* TopicDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED41824D52546004E8AC3 /* TopicDetailConfigurator.swift */; };
-		8EAED42124D52547004E8AC3 /* TopicDetailConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED41924D52546004E8AC3 /* TopicDetailConfiguration.swift */; };
-		8EAED42224D52547004E8AC3 /* TopicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED41A24D52547004E8AC3 /* TopicDetailViewController.swift */; };
 		8EAED43124D533A2004E8AC3 /* TopicDetailBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED42824D533A2004E8AC3 /* TopicDetailBase.swift */; };
 		8EAED43E24D545C1004E8AC3 /* DeviantDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED43624D545C0004E8AC3 /* DeviantDetailPresenter.swift */; };
 		8EAED43F24D545C1004E8AC3 /* DeviantDetailConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED43724D545C0004E8AC3 /* DeviantDetailConfiguration.swift */; };
@@ -169,12 +158,6 @@
 		8EF4B08624FB0A860097AC8E /* CommonListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B07F24FB0A860097AC8E /* CommonListInterface.swift */; };
 		8EF4B08724FB0A860097AC8E /* CommonListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B08024FB0A860097AC8E /* CommonListRouter.swift */; };
 		8EF4B08C24FB0ACC0097AC8E /* CommonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF4B08B24FB0ACC0097AC8E /* CommonCollectionViewCell.swift */; };
-		8EFB599424C66F6A005DE580 /* PopularListConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB598D24C66F6A005DE580 /* PopularListConfiguration.swift */; };
-		8EFB599524C66F6A005DE580 /* PopularListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB598E24C66F6A005DE580 /* PopularListPresenter.swift */; };
-		8EFB599624C66F6A005DE580 /* PopularListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB598F24C66F6A005DE580 /* PopularListRouter.swift */; };
-		8EFB599724C66F6A005DE580 /* PopularListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB599024C66F6A005DE580 /* PopularListInterface.swift */; };
-		8EFB599924C66F6A005DE580 /* PopularListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB599224C66F6A005DE580 /* PopularListInteractor.swift */; };
-		8EFB599A24C66F6A005DE580 /* PopularListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB599324C66F6A005DE580 /* PopularListConfigurator.swift */; };
 		8EFB599C24C68D21005DE580 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB599B24C68D21005DE580 /* UIScreen+Extension.swift */; };
 		8EFB599F24C6905D005DE580 /* SegmentioBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB599E24C6905D005DE580 /* SegmentioBuilder.swift */; };
 		8EFB59A224C691E2005DE580 /* UIFont+ExampleFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB59A124C691E2005DE580 /* UIFont+ExampleFonts.swift */; };
@@ -213,8 +196,6 @@
 		8E19CC1524E7BBA3000CAD09 /* DailyPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyPresenterTests.swift; sourceTree = "<group>"; };
 		8E19CC1624E7BBA3000CAD09 /* DailyInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyInteractorTests.swift; sourceTree = "<group>"; };
 		8E19CC1924E7C47E000CAD09 /* DeviantMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantMockData.swift; sourceTree = "<group>"; };
-		8E19CC1D24E7DC1F000CAD09 /* TopicDetailInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailInteractorTests.swift; sourceTree = "<group>"; };
-		8E19CC1E24E7DC1F000CAD09 /* TopicDetailPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailPresenterTests.swift; sourceTree = "<group>"; };
 		8E19CC2224E7E573000CAD09 /* DeviantDetailPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailPresenterTests.swift; sourceTree = "<group>"; };
 		8E19CC2324E7E573000CAD09 /* DeviantDetailInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailInteractorTests.swift; sourceTree = "<group>"; };
 		8E19CC2724E7E8E0000CAD09 /* MoreLikeInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikeInteractorTests.swift; sourceTree = "<group>"; };
@@ -259,7 +240,7 @@
 		8E4FA46824CFB8B000742432 /* TopicListHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicListHeadView.swift; sourceTree = "<group>"; };
 		8E54E6CF24D1A88000339EFA /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8E5C798F24E67B8500DBAE28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		8E5C799224E689B400DBAE28 /* PopularListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListInteractorTests.swift; sourceTree = "<group>"; };
+		8E5C799224E689B400DBAE28 /* CommonListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonListInteractorTests.swift; sourceTree = "<group>"; };
 		8E5F843D24DA3EED002E6E47 /* MoreLikeThisPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikeThisPreview.swift; sourceTree = "<group>"; };
 		8E5F844124DA4715002E6E47 /* DeviantDetailThumb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailThumb.swift; sourceTree = "<group>"; };
 		8E5F844324DA5447002E6E47 /* MetadataStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataStats.swift; sourceTree = "<group>"; };
@@ -300,8 +281,6 @@
 		8E938E7024D9285A0063B79D /* MoreLikePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikePresenter.swift; sourceTree = "<group>"; };
 		8E938E7124D9285A0063B79D /* MoreLikeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikeInteractor.swift; sourceTree = "<group>"; };
 		8E938E7224D9285A0063B79D /* MoreLikeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLikeRouter.swift; sourceTree = "<group>"; };
-		8E944EA824C88C490050B76B /* PopularListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListViewController.swift; sourceTree = "<group>"; };
-		8E944EAE24C88DF30050B76B /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E944ED324C89F330050B76B /* TopicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListViewController.swift; sourceTree = "<group>"; };
 		8E944ED524C89F330050B76B /* TopicListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListPresenter.swift; sourceTree = "<group>"; };
 		8E944ED624C89F330050B76B /* TopicListInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListInterface.swift; sourceTree = "<group>"; };
@@ -330,16 +309,9 @@
 		8EA310C424D10C58008813B7 /* DailyListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListInteractor.swift; sourceTree = "<group>"; };
 		8EA310C524D10C58008813B7 /* DailyListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListConfigurator.swift; sourceTree = "<group>"; };
 		8EA310CE24D10CB3008813B7 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
-		8EA756DB24E76DA100C282CC /* PopularListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListPresenterTests.swift; sourceTree = "<group>"; };
+		8EA756DB24E76DA100C282CC /* CommonListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonListPresenterTests.swift; sourceTree = "<group>"; };
 		8EA756DE24E77DD100C282CC /* TopListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopListInteractorTests.swift; sourceTree = "<group>"; };
 		8EA756DF24E77DD100C282CC /* TopListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopListPresenterTests.swift; sourceTree = "<group>"; };
-		8EAED41324D52546004E8AC3 /* TopicDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailRouter.swift; sourceTree = "<group>"; };
-		8EAED41524D52546004E8AC3 /* TopicDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailInteractor.swift; sourceTree = "<group>"; };
-		8EAED41624D52546004E8AC3 /* TopicDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailPresenter.swift; sourceTree = "<group>"; };
-		8EAED41724D52546004E8AC3 /* TopicDetailInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailInterface.swift; sourceTree = "<group>"; };
-		8EAED41824D52546004E8AC3 /* TopicDetailConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailConfigurator.swift; sourceTree = "<group>"; };
-		8EAED41924D52546004E8AC3 /* TopicDetailConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailConfiguration.swift; sourceTree = "<group>"; };
-		8EAED41A24D52547004E8AC3 /* TopicDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailViewController.swift; sourceTree = "<group>"; };
 		8EAED42824D533A2004E8AC3 /* TopicDetailBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailBase.swift; sourceTree = "<group>"; };
 		8EAED43624D545C0004E8AC3 /* DeviantDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailPresenter.swift; sourceTree = "<group>"; };
 		8EAED43724D545C0004E8AC3 /* DeviantDetailConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailConfiguration.swift; sourceTree = "<group>"; };
@@ -376,12 +348,6 @@
 		8EF4B07F24FB0A860097AC8E /* CommonListInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonListInterface.swift; sourceTree = "<group>"; };
 		8EF4B08024FB0A860097AC8E /* CommonListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonListRouter.swift; sourceTree = "<group>"; };
 		8EF4B08B24FB0ACC0097AC8E /* CommonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonCollectionViewCell.swift; sourceTree = "<group>"; };
-		8EFB598D24C66F6A005DE580 /* PopularListConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListConfiguration.swift; sourceTree = "<group>"; };
-		8EFB598E24C66F6A005DE580 /* PopularListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListPresenter.swift; sourceTree = "<group>"; };
-		8EFB598F24C66F6A005DE580 /* PopularListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListRouter.swift; sourceTree = "<group>"; };
-		8EFB599024C66F6A005DE580 /* PopularListInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListInterface.swift; sourceTree = "<group>"; };
-		8EFB599224C66F6A005DE580 /* PopularListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListInteractor.swift; sourceTree = "<group>"; };
-		8EFB599324C66F6A005DE580 /* PopularListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListConfigurator.swift; sourceTree = "<group>"; };
 		8EFB599B24C68D21005DE580 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		8EFB599E24C6905D005DE580 /* SegmentioBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentioBuilder.swift; sourceTree = "<group>"; };
 		8EFB59A124C691E2005DE580 /* UIFont+ExampleFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+ExampleFonts.swift"; sourceTree = "<group>"; };
@@ -457,15 +423,6 @@
 				8E19CC1524E7BBA3000CAD09 /* DailyPresenterTests.swift */,
 			);
 			path = DailyTest;
-			sourceTree = "<group>";
-		};
-		8E19CC1C24E7DBF2000CAD09 /* TopicDetailTest */ = {
-			isa = PBXGroup;
-			children = (
-				8E19CC1D24E7DC1F000CAD09 /* TopicDetailInteractorTests.swift */,
-				8E19CC1E24E7DC1F000CAD09 /* TopicDetailPresenterTests.swift */,
-			);
-			path = TopicDetailTest;
 			sourceTree = "<group>";
 		};
 		8E19CC2124E7E546000CAD09 /* DeviantDetailTest */ = {
@@ -556,8 +513,7 @@
 				8E19CC3024E80021000CAD09 /* MetadataTest */,
 				8E19CC2624E7E7FD000CAD09 /* MoreLikeTest */,
 				8E9D156724E818240027ECDF /* NetworkTest */,
-				8E5C799124E6897F00DBAE28 /* PopularListTest */,
-				8E19CC1C24E7DBF2000CAD09 /* TopicDetailTest */,
+				8E5C799124E6897F00DBAE28 /* CommonListTest */,
 				8EA756DD24E77DAC00C282CC /* TopListTest */,
 			);
 			path = DeviantTests;
@@ -580,27 +536,10 @@
 				8E66AC1724D63FDF00A384AE /* MoreDetail */,
 				8E1B801D24C0A5AD008C059C /* Daily */,
 				8E1B801F24C0A5C4008C059C /* DeviantDetail */,
-				8E1B801B24C0A575008C059C /* PopularList */,
 				8E1B802124C0A5EB008C059C /* RootVC */,
-				8EAED41224D524F6004E8AC3 /* TopicDetail */,
 				8E1B801C24C0A5A4008C059C /* TopList */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		8E1B801B24C0A575008C059C /* PopularList */ = {
-			isa = PBXGroup;
-			children = (
-				8E944EAC24C88DDF0050B76B /* View */,
-				8EFB598D24C66F6A005DE580 /* PopularListConfiguration.swift */,
-				8EFB599324C66F6A005DE580 /* PopularListConfigurator.swift */,
-				8EFB599224C66F6A005DE580 /* PopularListInteractor.swift */,
-				8EFB599024C66F6A005DE580 /* PopularListInterface.swift */,
-				8EFB598E24C66F6A005DE580 /* PopularListPresenter.swift */,
-				8EFB598F24C66F6A005DE580 /* PopularListRouter.swift */,
-				8E944EA824C88C490050B76B /* PopularListViewController.swift */,
-			);
-			path = PopularList;
 			sourceTree = "<group>";
 		};
 		8E1B801C24C0A5A4008C059C /* TopList */ = {
@@ -824,13 +763,13 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
-		8E5C799124E6897F00DBAE28 /* PopularListTest */ = {
+		8E5C799124E6897F00DBAE28 /* CommonListTest */ = {
 			isa = PBXGroup;
 			children = (
-				8E5C799224E689B400DBAE28 /* PopularListInteractorTests.swift */,
-				8EA756DB24E76DA100C282CC /* PopularListPresenterTests.swift */,
+				8E5C799224E689B400DBAE28 /* CommonListInteractorTests.swift */,
+				8EA756DB24E76DA100C282CC /* CommonListPresenterTests.swift */,
 			);
-			path = PopularListTest;
+			path = CommonListTest;
 			sourceTree = "<group>";
 		};
 		8E5F842624DA3BA4002E6E47 /* MoreLikeThisPreview */ = {
@@ -969,14 +908,6 @@
 			path = MoreLike;
 			sourceTree = "<group>";
 		};
-		8E944EAC24C88DDF0050B76B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				8E944EAE24C88DF30050B76B /* ImageCollectionViewCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		8E944EE324C8A14E0050B76B /* TopicList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1045,20 +976,6 @@
 				8EA756DF24E77DD100C282CC /* TopListPresenterTests.swift */,
 			);
 			path = TopListTest;
-			sourceTree = "<group>";
-		};
-		8EAED41224D524F6004E8AC3 /* TopicDetail */ = {
-			isa = PBXGroup;
-			children = (
-				8EAED41924D52546004E8AC3 /* TopicDetailConfiguration.swift */,
-				8EAED41824D52546004E8AC3 /* TopicDetailConfigurator.swift */,
-				8EAED41524D52546004E8AC3 /* TopicDetailInteractor.swift */,
-				8EAED41724D52546004E8AC3 /* TopicDetailInterface.swift */,
-				8EAED41624D52546004E8AC3 /* TopicDetailPresenter.swift */,
-				8EAED41324D52546004E8AC3 /* TopicDetailRouter.swift */,
-				8EAED41A24D52547004E8AC3 /* TopicDetailViewController.swift */,
-			);
-			path = TopicDetail;
 			sourceTree = "<group>";
 		};
 		8EAED42324D5338C004E8AC3 /* TopicDetail */ = {
@@ -1146,7 +1063,6 @@
 		8EF4B07924FAB0D30097AC8E /* CommonList */ = {
 			isa = PBXGroup;
 			children = (
-				8EF4B08824FB0A990097AC8E /* View */,
 				8EF4B07E24FB0A860097AC8E /* CommonListConfiguration.swift */,
 				8EF4B07B24FB0A860097AC8E /* CommonListConfigurator.swift */,
 				8EF4B07C24FB0A860097AC8E /* CommonListInteractor.swift */,
@@ -1154,6 +1070,7 @@
 				8EF4B07A24FB0A860097AC8E /* CommonListPresenter.swift */,
 				8EF4B08024FB0A860097AC8E /* CommonListRouter.swift */,
 				8EF4B07D24FB0A860097AC8E /* CommonListViewController.swift */,
+				8EF4B08824FB0A990097AC8E /* View */,
 			);
 			path = CommonList;
 			sourceTree = "<group>";
@@ -1506,11 +1423,9 @@
 				8E81334024EA130A009887C9 /* FavoratePresenter.swift in Sources */,
 				8EBB91EF24C3E81400223F51 /* String+Extension.swift in Sources */,
 				8EA310CC24D10C58008813B7 /* DailyListConfigurator.swift in Sources */,
-				8E944EB024C88DF40050B76B /* ImageCollectionViewCell.swift in Sources */,
 				8EF4B08624FB0A860097AC8E /* CommonListInterface.swift in Sources */,
 				8E66AC4924D679B200A384AE /* MetadataInterface.swift in Sources */,
 				8EF4B08124FB0A860097AC8E /* CommonListPresenter.swift in Sources */,
-				8EAED41E24D52547004E8AC3 /* TopicDetailPresenter.swift in Sources */,
 				8E259BBF24F799F100648451 /* DeviantDetailDisplayModel.swift in Sources */,
 				8EAED45624D55289004E8AC3 /* DeviantDetailStats.swift in Sources */,
 				8EC5BC4024F8A5D00012E2BF /* FavorateDisplayModel.swift in Sources */,
@@ -1545,15 +1460,11 @@
 				8E4C18A324D84D030001186F /* CommentConfiguration.swift in Sources */,
 				8E66AC4D24D67DC800A384AE /* ServiceParams.swift in Sources */,
 				8E1B7FEF24C0A4C9008C059C /* RootViewController.swift in Sources */,
-				8EAED41B24D52547004E8AC3 /* TopicDetailRouter.swift in Sources */,
 				8E5F844224DA4715002E6E47 /* DeviantDetailThumb.swift in Sources */,
 				8E66AC4B24D679B200A384AE /* MetadataInteractor.swift in Sources */,
 				8E4C18A424D84D030001186F /* CommentInterface.swift in Sources */,
 				8EF4B08524FB0A860097AC8E /* CommonListConfiguration.swift in Sources */,
 				8E4FA46A24CFB8B000742432 /* TopicListHeadView.swift in Sources */,
-				8EAED42124D52547004E8AC3 /* TopicDetailConfiguration.swift in Sources */,
-				8EFB599724C66F6A005DE580 /* PopularListInterface.swift in Sources */,
-				8EAED41D24D52547004E8AC3 /* TopicDetailInteractor.swift in Sources */,
 				8EBB91E924C3E4D900223F51 /* DeviantError.swift in Sources */,
 				8EAED45124D55289004E8AC3 /* DeviantDetailPreview.swift in Sources */,
 				8EA310C624D10C58008813B7 /* DailyListConfiguration.swift in Sources */,
@@ -1573,10 +1484,7 @@
 				8E4C18A024D84D030001186F /* CommentPresenter.swift in Sources */,
 				8E5F844E24DA5447002E6E47 /* MetadataBase.swift in Sources */,
 				8EBB91FA24C4430E00223F51 /* NetworkManager.swift in Sources */,
-				8EAED42024D52547004E8AC3 /* TopicDetailConfigurator.swift in Sources */,
 				8EAED45724D55289004E8AC3 /* DeviantDetailContent.swift in Sources */,
-				8EAED42224D52547004E8AC3 /* TopicDetailViewController.swift in Sources */,
-				8EFB599624C66F6A005DE580 /* PopularListRouter.swift in Sources */,
 				8E40969424C0CEF400AE8D35 /* TokenManager.swift in Sources */,
 				8EA310C824D10C58008813B7 /* DailyListRouter.swift in Sources */,
 				8E81334524EA130A009887C9 /* FavorateConfiguration.swift in Sources */,
@@ -1585,9 +1493,7 @@
 				8E4C18A124D84D030001186F /* CommentViewController.swift in Sources */,
 				8E938E7924D9285A0063B79D /* MoreLikeInteractor.swift in Sources */,
 				8EAED43124D533A2004E8AC3 /* TopicDetailBase.swift in Sources */,
-				8EFB599524C66F6A005DE580 /* PopularListPresenter.swift in Sources */,
 				8EBB91FD24C4461100223F51 /* APIError.swift in Sources */,
-				8EFB599424C66F6A005DE580 /* PopularListConfiguration.swift in Sources */,
 				8E944EDE24C89F330050B76B /* TopicListInterface.swift in Sources */,
 				8E5F844B24DA5447002E6E47 /* MetadataSubmission.swift in Sources */,
 				8EAED45524D55289004E8AC3 /* DeviantDetailDailyDeviation.swift in Sources */,
@@ -1598,7 +1504,6 @@
 				8E944EDD24C89F330050B76B /* TopicListPresenter.swift in Sources */,
 				8E61636224EBE05C0043DB63 /* UILabel+Extension.swift in Sources */,
 				8EFB6E8924E9F080002A62B5 /* WhoFavorateResults.swift in Sources */,
-				8EFB599A24C66F6A005DE580 /* PopularListConfigurator.swift in Sources */,
 				8E81334124EA130A009887C9 /* FavorateInteractor.swift in Sources */,
 				8EBB91F124C3F81800223F51 /* Optional+Extension.swift in Sources */,
 				8E944EDB24C89F330050B76B /* TopicListViewController.swift in Sources */,
@@ -1607,13 +1512,11 @@
 				8EE5B65324F646600095683C /* AccessibilityIdentifier.swift in Sources */,
 				8E66AC3624D65ECC00A384AE /* DeviantService.swift in Sources */,
 				8EA310CA24D10C58008813B7 /* DailyListViewController.swift in Sources */,
-				8EFB599924C66F6A005DE580 /* PopularListInteractor.swift in Sources */,
 				8E5F844A24DA5447002E6E47 /* MetadataStats.swift in Sources */,
 				8E944EE124C89F330050B76B /* TopicListInteractor.swift in Sources */,
 				8EAED43F24D545C1004E8AC3 /* DeviantDetailConfiguration.swift in Sources */,
 				8E277D1024C587260003798A /* PopularBase.swift in Sources */,
 				8EBB91F824C426D100223F51 /* TokenBase.swift in Sources */,
-				8EAED41F24D52547004E8AC3 /* TopicDetailInterface.swift in Sources */,
 				8E66AC4624D679B200A384AE /* MetadataConfiguration.swift in Sources */,
 				8E944EE224C89F330050B76B /* TopicListRouter.swift in Sources */,
 				8EF4B08C24FB0ACC0097AC8E /* CommonCollectionViewCell.swift in Sources */,
@@ -1622,7 +1525,6 @@
 				8E938E7A24D9285A0063B79D /* MoreLikeRouter.swift in Sources */,
 				8EA310C924D10C58008813B7 /* DailyListInterface.swift in Sources */,
 				8E81334224EA130A009887C9 /* FavorateViewController.swift in Sources */,
-				8E944EAA24C88C490050B76B /* PopularListViewController.swift in Sources */,
 				8EF4B08724FB0A860097AC8E /* CommonListRouter.swift in Sources */,
 				8E66AC4824D679B200A384AE /* MetadataViewController.swift in Sources */,
 				8E61635F24EBD3100043DB63 /* UIApplication+Extension.swift in Sources */,
@@ -1638,19 +1540,17 @@
 				8EA756E024E77DD100C282CC /* TopListInteractorTests.swift in Sources */,
 				8EA756E124E77DD100C282CC /* TopListPresenterTests.swift in Sources */,
 				8E9D156924E818730027ECDF /* TokenManagerTests.swift in Sources */,
-				8E5C799324E689B400DBAE28 /* PopularListInteractorTests.swift in Sources */,
+				8E5C799324E689B400DBAE28 /* CommonListInteractorTests.swift in Sources */,
 				8E19CC3324E8005E000CAD09 /* MetadataInteractorTests.swift in Sources */,
 				8E19CC2424E7E573000CAD09 /* DeviantDetailPresenterTests.swift in Sources */,
 				8E19CC2524E7E573000CAD09 /* DeviantDetailInteractorTests.swift in Sources */,
 				8E19CC2A24E7E8E0000CAD09 /* MoreLikePresenterTests.swift in Sources */,
-				8EA756DC24E76DA100C282CC /* PopularListPresenterTests.swift in Sources */,
+				8EA756DC24E76DA100C282CC /* CommonListPresenterTests.swift in Sources */,
 				8E19CC2F24E7FBCF000CAD09 /* CommentInteractorTests.swift in Sources */,
-				8E19CC2024E7DC1F000CAD09 /* TopicDetailPresenterTests.swift in Sources */,
 				8E19CC1824E7BBA3000CAD09 /* DailyInteractorTests.swift in Sources */,
 				8E1B800224C0A4CB008C059C /* DeviantTests.swift in Sources */,
 				8E19CC3424E8005E000CAD09 /* MetadataPresenterTests.swift in Sources */,
 				8E81334C24EA7582009887C9 /* FavorateInteractorTests.swift in Sources */,
-				8E19CC1F24E7DC1F000CAD09 /* TopicDetailInteractorTests.swift in Sources */,
 				8E19CC2924E7E8E0000CAD09 /* MoreLikeInteractorTests.swift in Sources */,
 				8E19CC1A24E7C47E000CAD09 /* DeviantMockData.swift in Sources */,
 				8E19CC2E24E7FBCF000CAD09 /* CommentPresenterTests.swift in Sources */,

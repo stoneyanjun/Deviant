@@ -61,8 +61,8 @@ extension MoreLikeViewController {
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.alwaysBounceVertical = true
         collectionView.collectionViewLayout = layout
-        collectionView.register(ImageCollectionViewCell.self,
-                                forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier)
+        collectionView.register(CommonCollectionViewCell.self,
+                                forCellWithReuseIdentifier: CommonCollectionViewCell.reuseIdentifier)
         collectionView.register(TopicListHeadView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: TopicListHeadView.reuseIdentifier)
@@ -100,13 +100,13 @@ extension MoreLikeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let displayModel = getDisplayModel(with: indexPath)
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.reuseIdentifier,
-                                                            for: indexPath) as? ImageCollectionViewCell,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CommonCollectionViewCell.reuseIdentifier,
+                                                            for: indexPath) as? CommonCollectionViewCell,
             let src = displayModel.src,
             let url = URL(string: src) else {
                 return UICollectionViewCell()
         }
-        let viewDate = ImageCollectionViewCell.ViewData(url: url,
+        let viewDate = CommonCollectionViewCell.ViewData(url: url,
                                                         title: displayModel.title,
                                                         username: displayModel.username,
                                                         identifier: .moreLikeCollectionCell,

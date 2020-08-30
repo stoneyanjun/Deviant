@@ -1,5 +1,5 @@
 //
-//  PopularListPresenterTests.swift
+//  CommonListPresenterTests.swift
 //  DeviantTests
 //
 //  Copyright © 2020 Stone. All rights reserved.
@@ -9,16 +9,16 @@
 import Foundation
 import XCTest
 
-class PopularListPresenterTests: XCTestCase {
-    var presenter: PopularListPresenter!
-    var viewController: PopularListViewControllerSpy!
-    var router: PopularListRouterSpy!
+class CommonListPresenterTests: XCTestCase {
+    var presenter: CommonListPresenter!
+    var viewController: CommonListViewControllerSpy!
+    var router: CommonListRouterSpy!
 
     override func setUp() {
         super.setUp()
-        presenter = PopularListPresenter()
-        viewController = PopularListViewControllerSpy()
-        router = PopularListRouterSpy()
+        presenter = CommonListPresenter()
+        viewController = CommonListViewControllerSpy()
+        router = CommonListRouterSpy()
 
         presenter.viewController = viewController
         presenter.router = router
@@ -62,18 +62,18 @@ class PopularListPresenterTests: XCTestCase {
     }
     func testShowDeviation() {
         //Given
-        router.popularResult = nil
+        router.deviantDetail = nil
 
         //When
         presenter.showDeviation(with: DeviantMockData.detail.toDisplayModel())
 
         //Then
-        XCTAssertNotNil(router.popularResult)
-        XCTAssertEqual(router.popularResult?.deviationid, DeviantMockData.deviantId)
+        XCTAssertNotNil(router.deviantDetail)
+        XCTAssertEqual(router.deviantDetail?.deviationid, DeviantMockData.deviantId)
     }
 }
 
-class PopularListViewControllerSpy: UIViewController, PopularListViewControllerInterface {
+class CommonListViewControllerSpy: UIViewController, CommonListViewControllerInterface {
     var called = false
     var showErrorCalled = false
     var nextOffset = -1
@@ -93,10 +93,10 @@ class PopularListViewControllerSpy: UIViewController, PopularListViewControllerI
     }
 }
 
-class PopularListRouterSpy: PopularListRouterInterface {
-    var popularResult: DeviantDetailDisplayModel?
+class CommonListRouterSpy: CommonListRouterInterface {
+    var deviantDetail: DeviantDetailDisplayModel?
 
-    func showDeviation(with popularResult: DeviantDetailDisplayModel) {
-        self.popularResult = popularResult
+    func showDeviation(with deviantDetail: DeviantDetailDisplayModel) {
+        self.deviantDetail = deviantDetail
     }
 }
