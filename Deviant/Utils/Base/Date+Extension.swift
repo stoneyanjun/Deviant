@@ -31,7 +31,7 @@ extension Date {
     }
 
     func getFormatDateString() -> String {
-        let minutes = -(self.timeIntervalSinceNow / 60)
+        let minutes = -(timeIntervalSinceNow / 60)
 
         if minutes < 10 {
             return "Just now"
@@ -39,16 +39,16 @@ extension Date {
             return "\(Int(minutes)) minutes ago"
         } else if minutes < (60 * 10) {
             return "\(Int(minutes / 60)) hours ago"
-        } else if self.isInToday {
+        } else if isInToday {
             return "Today"
-        } else if self.isInYesterday {
+        } else if isInYesterday {
             return "Yesterday"
         } else {
             let days = minutes / (60 * 24)
             if days < 10 {
                 return "\(Int(days)) days ago"
             } else {
-                return self.formatString(dateFormat: "MMMM dd, yyyy")
+                return formatString(dateFormat: "MMMM dd, yyyy")
             }
         }
     }

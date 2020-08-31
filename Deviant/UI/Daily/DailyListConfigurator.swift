@@ -16,7 +16,7 @@ struct DailyListConfigurator {
 
     func createViewController() -> UIViewController {
         let viewController = DailyListViewController()
-        let interactor = DailyListInteractor(config: configuration)
+        let interactor = DailyListInteractor(with: configuration)
         let presenter = DailyListPresenter()
         let router = DailyListRouter()
 

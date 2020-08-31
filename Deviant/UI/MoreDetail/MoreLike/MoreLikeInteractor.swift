@@ -13,8 +13,8 @@ class MoreLikeInteractor {
     var presenter: MoreLikePresenterInterface?
     private(set) var config: MoreLikeConfiguration
 
-    init(config: MoreLikeConfiguration) {
-        self.config = config
+    init(with configuration: MoreLikeConfiguration) {
+        config = configuration
     }
 }
 

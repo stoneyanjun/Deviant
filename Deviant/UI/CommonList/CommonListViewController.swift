@@ -43,14 +43,14 @@ class CommonListViewController: DeviantBaseViewController {
         print(#file + " " + #function)
     }
 
-    func setListType(with listType: ListType) {
-        self.listType = listType
+    func setListType(with type: ListType) {
+        listType = type
     }
 
     private func setupTitle() {
         switch listType {
         case .topicDetail(let topicName) :
-            self.title = topicName
+            title = topicName
         default:
             break
         }
@@ -63,7 +63,7 @@ extension CommonListViewController {
         layout.minimumColumnSpacing = Const.minColumnSpace
         layout.minimumInteritemSpacing = Const.minItemSpace
         listCollectionView = UICollectionView(
-            frame: self.view.frame,
+            frame: view.frame,
             collectionViewLayout: layout
         )
         guard let collectionView = listCollectionView else {
@@ -190,7 +190,7 @@ extension CommonListViewController: CommonListViewControllerInterface {
 
     func showError(with error: Error) {
         stopES()
-        self.errorDesc = error.localizedDescription
+        errorDesc = error.localizedDescription
         showError(errorMsg: error.localizedDescription)
         updateCollectionView()
     }

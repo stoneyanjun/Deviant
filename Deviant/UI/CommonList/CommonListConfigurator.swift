@@ -16,7 +16,7 @@ struct CommonListConfigurator {
 
     func createViewController() -> UIViewController {
         let viewController = CommonListViewController()
-        let interactor = CommonListInteractor(config: configuration)
+        let interactor = CommonListInteractor(with: configuration)
         let presenter = CommonListPresenter()
         let router = CommonListRouter()
 

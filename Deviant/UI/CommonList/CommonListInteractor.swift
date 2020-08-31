@@ -13,8 +13,8 @@ class CommonListInteractor {
     var presenter: CommonListPresenterInterface?
     private(set) var config: CommonListConfiguration
 
-    init(config: CommonListConfiguration) {
-        self.config = config
+    init(with configuration: CommonListConfiguration) {
+        config = configuration
     }
 }
 

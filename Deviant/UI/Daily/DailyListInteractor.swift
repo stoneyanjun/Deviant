@@ -13,8 +13,8 @@ class DailyListInteractor {
     var presenter: DailyListPresenterInterface?
     private(set) var config: DailyListConfiguration
 
-    init(config: DailyListConfiguration) {
-        self.config = config
+    init(with configuration: DailyListConfiguration) {
+        config = configuration
     }
 }
 

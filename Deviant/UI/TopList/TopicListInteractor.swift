@@ -13,8 +13,8 @@ class TopicListInteractor {
     var presenter: TopicListPresenterInterface?
     private(set) var config: TopicListConfiguration
 
-    init(config: TopicListConfiguration) {
-        self.config = config
+    init(with configuration: TopicListConfiguration) {
+        self.config = configuration
     }
 }
 

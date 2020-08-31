@@ -16,7 +16,7 @@ struct TopicListConfigurator {
 
     func createViewController() -> UIViewController {
         let viewController = TopicListViewController()
-        let interactor = TopicListInteractor(config: configuration)
+        let interactor = TopicListInteractor(with: configuration)
         let presenter = TopicListPresenter()
         let router = TopicListRouter()
 

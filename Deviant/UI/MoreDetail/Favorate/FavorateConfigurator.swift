@@ -16,7 +16,7 @@ struct FavorateConfigurator {
 
     func createViewController() -> UIViewController {
         let viewController = FavorateViewController()
-        let interactor = FavorateInteractor(config: configuration)
+        let interactor = FavorateInteractor(with: configuration)
         let presenter = FavoratePresenter()
         let router = FavorateRouter()
 

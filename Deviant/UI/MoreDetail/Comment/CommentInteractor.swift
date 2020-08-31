@@ -13,8 +13,8 @@ class CommentInteractor {
     var presenter: CommentPresenterInterface?
     private(set) var config: CommentConfiguration
 
-    init(config: CommentConfiguration) {
-        self.config = config
+    init(with configuration: CommentConfiguration) {
+        config = configuration
     }
 }
 

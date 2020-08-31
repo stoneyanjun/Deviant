@@ -46,7 +46,7 @@ extension MoreLikeViewController {
         layout.minimumInteritemSpacing = Const.minItemSpace
 
         moreLikeCollectionView = UICollectionView(
-            frame: self.view.frame,
+            frame: view.frame,
             collectionViewLayout: layout
         )
         guard let collectionView = moreLikeCollectionView else {
@@ -54,7 +54,7 @@ extension MoreLikeViewController {
         }
         collectionView.backgroundColor = UIColor.defaultBackground
         view.addSubview(collectionView)
-        collectionView.frame = self.view.frame
+        collectionView.frame = view.frame
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

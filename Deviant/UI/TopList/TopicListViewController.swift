@@ -50,7 +50,7 @@ extension TopicListViewController {
         layout.minimumColumnSpacing = Const.minColumnSpace
         layout.minimumInteritemSpacing = Const.minItemSpace
         topicListCollectionView = UICollectionView(
-            frame: self.view.frame,
+            frame: view.frame,
             collectionViewLayout: layout
         )
         guard let collectionView = topicListCollectionView else {

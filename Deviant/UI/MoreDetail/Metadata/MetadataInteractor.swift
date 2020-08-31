@@ -13,8 +13,8 @@ class MetadataInteractor {
     var presenter: MetadataPresenterInterface?
     private(set) var config: MetadataConfiguration
 
-    init(config: MetadataConfiguration) {
-        self.config = config
+    init(with configuration: MetadataConfiguration) {
+        self.config = configuration
     }
 }
 

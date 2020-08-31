@@ -18,12 +18,12 @@ class TokenManager: NetworkManager<TokenService> {
     private var tokenExpiredDate: Date?
 
     var currentToken: String? {
-        guard let accessToken = self.tokenBase?.accessToken,
-            !accessToken.isEmpty,
+        guard let token = tokenBase?.accessToken,
+            !token.isEmpty,
             !isTokenExpried() else {
                 return nil
         }
-        return accessToken
+        return token
     }
 
     override private init() {
@@ -73,10 +73,10 @@ extension TokenManager {
     }
 
     private func isTokenExpried() -> Bool {
-        guard let tokenExpiredDate = self.tokenExpiredDate else {
+        guard let expiredDate = tokenExpiredDate else {
             return true
         }
 
-        return Date() > tokenExpiredDate
+        return Date() > expiredDate
     }
 }

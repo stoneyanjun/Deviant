@@ -26,10 +26,10 @@ extension TopicListPresenter: TopicListPresenterInterface {
     }
 
     func showTopic(with topicName: String) {
-        self.router?.showTopic(with: topicName)
+        router?.showTopic(with: topicName)
     }
 
     func showDeviation(with deviantDetail: DeviantDetailDisplayModel) {
-        self.router?.showDeviation(with: deviantDetail)
+        router?.showDeviation(with: deviantDetail)
     }
 }

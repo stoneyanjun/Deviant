@@ -55,8 +55,8 @@ extension Error {
 
 extension DeviantGeneralError {
     var localizedDescription: String {
-        if let errorDescription = self.errorDescription {
-            return errorDescription
+        if let errorDesc = errorDescription {
+            return errorDesc
         }
         return defaultDescription()
     }

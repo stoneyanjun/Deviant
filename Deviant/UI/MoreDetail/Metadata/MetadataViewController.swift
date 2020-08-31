@@ -191,7 +191,7 @@ extension MetadataViewController {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         metaCollectionView = UICollectionView(
-            frame: self.view.frame,
+            frame: view.frame,
             collectionViewLayout: layout
         )
 

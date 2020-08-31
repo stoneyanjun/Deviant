@@ -13,8 +13,8 @@ class DeviantDetailInteractor {
     var presenter: DeviantDetailPresenterInterface?
     private(set) var config: DeviantDetailConfiguration
 
-    init(config: DeviantDetailConfiguration) {
-        self.config = config
+    init(with configuration: DeviantDetailConfiguration) {
+        config = configuration
     }
 }
 

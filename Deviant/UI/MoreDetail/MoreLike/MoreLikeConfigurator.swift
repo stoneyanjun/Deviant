@@ -16,7 +16,7 @@ struct MoreLikeConfigurator {
 
     func createViewController() -> UIViewController {
         let viewController = MoreLikeViewController()
-        let interactor = MoreLikeInteractor(config: configuration)
+        let interactor = MoreLikeInteractor(with: configuration)
         let presenter = MoreLikePresenter()
         let router = MoreLikeRouter()
 

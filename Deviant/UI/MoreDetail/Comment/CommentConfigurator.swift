@@ -16,7 +16,7 @@ struct CommentConfigurator {
 
     func createViewController() -> UIViewController {
         let viewController = CommentViewController()
-        let interactor = CommentInteractor(config: configuration)
+        let interactor = CommentInteractor(with: configuration)
         let presenter = CommentPresenter()
         let router = CommentRouter()
 

@@ -13,8 +13,8 @@ class FavorateInteractor {
     var presenter: FavoratePresenterInterface?
     private(set) var config: FavorateConfiguration
 
-    init(config: FavorateConfiguration) {
-        self.config = config
+    init(with configuration: FavorateConfiguration) {
+        config = configuration
     }
 }
 

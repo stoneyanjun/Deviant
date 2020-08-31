@@ -18,13 +18,13 @@ class RootViewController: UIViewController {
     @IBOutlet private weak var containView: UIView!
     @IBOutlet private weak var scrollView: UIScrollView!
     private lazy var viewControllers: [UIViewController] = {
-        return self.prepareViewControllers()
+        return prepareViewControllers()
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.defaultBackground
-        self.title = "DeviantArt"
+        title = "DeviantArt"
     }
 
     override func viewDidAppear(_ animated: Bool) {

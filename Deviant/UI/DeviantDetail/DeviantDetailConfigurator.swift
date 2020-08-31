@@ -16,7 +16,7 @@ struct DeviantDetailConfigurator {
 
     func createViewController() -> UIViewController {
         let viewController = DeviantDetailViewController()
-        let interactor = DeviantDetailInteractor(config: configuration)
+        let interactor = DeviantDetailInteractor(with: configuration)
         let presenter = DeviantDetailPresenter()
         let router = DeviantDetailRouter()
 

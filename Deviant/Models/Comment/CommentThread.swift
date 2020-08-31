@@ -40,11 +40,11 @@ extension CommentThread {
     }
 
     func getCommentFromBody() -> String {
-        guard let body = self.body else {
+        guard let commentBody = body else {
             return ""
         }
         do {
-            let doc: Document = try parse(body)
+            let doc: Document = try parse(commentBody)
             return try doc.text()
         } catch {
             print(error.localizedDescription)

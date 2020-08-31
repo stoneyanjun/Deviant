@@ -16,7 +16,7 @@ struct MetadataConfigurator {
 
     func createViewController() -> UIViewController {
         let viewController = MetadataViewController()
-        let interactor = MetadataInteractor(config: configuration)
+        let interactor = MetadataInteractor(with: configuration)
         let presenter = MetadataPresenter()
         let router = MetadataRouter()
 
