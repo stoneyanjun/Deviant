@@ -17,7 +17,7 @@ class CommentInteractorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         let configuration = CommentConfiguration(deviationid: DeviantMockData.deviantId)
-        interactor = CommentInteractor(config: configuration)
+        interactor = CommentInteractor(with: configuration)
         presenter = CommentPresenterSpy()
         interactor.presenter = presenter
     }

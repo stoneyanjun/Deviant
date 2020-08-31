@@ -17,7 +17,7 @@ class DailyListInteractorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         let configuration = DailyListConfiguration()
-        interactor = DailyListInteractor(config: configuration)
+        interactor = DailyListInteractor(with: configuration)
         presenter = DailyListPresenterSpy()
         interactor.presenter = presenter
     }

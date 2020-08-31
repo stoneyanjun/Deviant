@@ -32,11 +32,6 @@ open class ScreenModel {
         return self
     }
 
-//    public func reportBDD(_ scenario: BDDScenario) -> Self {
-//        test.report(function: scenario.description)
-//        return self
-//    }
-
     @discardableResult func waitForViewToAppear(file: StaticString,
                                                 function: StaticString,
                                                 line: Int) -> Self {

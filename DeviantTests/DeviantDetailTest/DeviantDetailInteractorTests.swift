@@ -17,7 +17,7 @@ class DeviantDetailInteractorTests: XCTestCase {
         super.setUp()
         let detailParams = DeviantDetailParams(deviationid: DeviantMockData.deviantId)
         let configuration = DeviantDetailConfiguration(navigationController: nil, detailParams: detailParams)
-        interactor = DeviantDetailInteractor(config: configuration)
+        interactor = DeviantDetailInteractor(with: configuration)
         presenter = DeviantDetailPresenterSpy()
         interactor.presenter = presenter
     }

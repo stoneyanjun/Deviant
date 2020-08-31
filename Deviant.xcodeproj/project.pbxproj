@@ -100,7 +100,6 @@
 		8E9D156924E818730027ECDF /* TokenManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D156824E818730027ECDF /* TokenManagerTests.swift */; };
 		8E9D156C24E8D0980027ECDF /* DeviantServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D156B24E8D0980027ECDF /* DeviantServiceTests.swift */; };
 		8E9D185524F4AB5800A679DB /* MoreDetailContainerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D185424F4AB5800A679DB /* MoreDetailContainerVC.xib */; };
-		8E9D185A24F4F5CC00A679DB /* BDDScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D185924F4F5CC00A679DB /* BDDScenario.swift */; };
 		8E9D185E24F4F5D300A679DB /* SnapshotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D185B24F4F5D300A679DB /* SnapshotModel.swift */; };
 		8E9D185F24F4F5D300A679DB /* ScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D185C24F4F5D300A679DB /* ScreenModel.swift */; };
 		8E9D186024F4F5D300A679DB /* UITestableCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D185D24F4F5D300A679DB /* UITestableCase.swift */; };
@@ -300,7 +299,6 @@
 		8E9D156824E818730027ECDF /* TokenManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenManagerTests.swift; sourceTree = "<group>"; };
 		8E9D156B24E8D0980027ECDF /* DeviantServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantServiceTests.swift; sourceTree = "<group>"; };
 		8E9D185424F4AB5800A679DB /* MoreDetailContainerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreDetailContainerVC.xib; sourceTree = "<group>"; };
-		8E9D185924F4F5CC00A679DB /* BDDScenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDDScenario.swift; sourceTree = "<group>"; };
 		8E9D185B24F4F5D300A679DB /* SnapshotModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotModel.swift; sourceTree = "<group>"; };
 		8E9D185C24F4F5D300A679DB /* ScreenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenModel.swift; sourceTree = "<group>"; };
 		8E9D185D24F4F5D300A679DB /* UITestableCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestableCase.swift; sourceTree = "<group>"; };
@@ -951,7 +949,6 @@
 		8E9D185824F4F5A500A679DB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				8E9D185924F4F5CC00A679DB /* BDDScenario.swift */,
 				8E9D186324F4FB6400A679DB /* TestReporter.swift */,
 			);
 			path = Utils;
@@ -1615,7 +1612,6 @@
 				8E9D186624F5157B00A679DB /* SnapshotKey.swift in Sources */,
 				8E9D186424F4FB6400A679DB /* TestReporter.swift in Sources */,
 				8E2876A024ECC49000974E95 /* ScreenModel+Extensions.swift in Sources */,
-				8E9D185A24F4F5CC00A679DB /* BDDScenario.swift in Sources */,
 				8EE5B65124F63C2F0095683C /* DeviantDetailScreenModel.swift in Sources */,
 				8E9D186C24F5168300A679DB /* BaseModels.swift in Sources */,
 				8E28769F24ECC49000974E95 /* UITestCase.swift in Sources */,

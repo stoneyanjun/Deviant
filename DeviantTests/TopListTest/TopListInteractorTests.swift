@@ -17,7 +17,7 @@ class TopicListInteractorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         let configuration = TopicListConfiguration()
-        interactor = TopicListInteractor(config: configuration)
+        interactor = TopicListInteractor(with: configuration)
         presenter = TopicListPresenterSpy()
         interactor.presenter = presenter
     }

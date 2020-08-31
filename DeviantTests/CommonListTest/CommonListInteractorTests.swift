@@ -21,7 +21,7 @@ class CommonListInteractorTests: XCTestCase {
     func testTryFetchPopular() {
         //Given
         let configuration = CommonListConfiguration(listType: .popularList)
-        interactor = CommonListInteractor(config: configuration)
+        interactor = CommonListInteractor(with: configuration)
         presenter = CommonListPresenterSpy()
         interactor.presenter = presenter
 
@@ -38,7 +38,7 @@ class CommonListInteractorTests: XCTestCase {
         //Given
         let topicName = DeviantMockData.topicName
         let configuration = CommonListConfiguration(listType: .topicDetail(topicName))
-        interactor = CommonListInteractor(config: configuration)
+        interactor = CommonListInteractor(with: configuration)
         presenter = CommonListPresenterSpy()
         interactor.presenter = presenter
 
@@ -54,7 +54,7 @@ class CommonListInteractorTests: XCTestCase {
     func testShowDeviation() {
         //Given
         let configuration = CommonListConfiguration(listType: .popularList)
-        interactor = CommonListInteractor(config: configuration)
+        interactor = CommonListInteractor(with: configuration)
         presenter = CommonListPresenterSpy()
         interactor.presenter = presenter
 

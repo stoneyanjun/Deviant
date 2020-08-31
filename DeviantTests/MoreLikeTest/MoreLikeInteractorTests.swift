@@ -17,7 +17,7 @@ class MoreLikeInteractorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         let configuration = MoreLikeConfiguration(deviationid: DeviantMockData.deviantId )
-        interactor = MoreLikeInteractor(config: configuration)
+        interactor = MoreLikeInteractor(with: configuration)
         presenter = MoreLikePresenterSpy()
         interactor.presenter = presenter
     }

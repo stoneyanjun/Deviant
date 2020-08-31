@@ -17,7 +17,7 @@ class FavorateInteractorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         let configuration = FavorateConfiguration(deviationid: DeviantMockData.deviantId )
-        interactor = FavorateInteractor(config: configuration)
+        interactor = FavorateInteractor(with: configuration)
         presenter = FavoratePresenterSpy()
         interactor.presenter = presenter
     }
