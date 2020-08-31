@@ -8,10 +8,6 @@
 import UIKit
 import FBSnapshotTestCase
 
-public struct ScreenModelConstants {
-    public static let defaultToleranceForBlinkingCursor: CGFloat = 0.01
-}
-
 public protocol SnapshotModel {
     var snapshotTestCase: FBSnapshotTestCase { get }
 }

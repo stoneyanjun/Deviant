@@ -11,7 +11,7 @@ class DeviantDetailScreenModel: BaseScreenModel {
     func showMoreInfoPage() -> DeviantDetailScreenModel {
         app.buttons["more_info_button"]
             .firstMatch
-            .forceTapElement()
+            .forceTap()
         return self
     }
     

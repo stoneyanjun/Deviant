@@ -12,18 +12,18 @@ import XCTest
 class MPFJourneyUITests: UITestCase {
     override func setUp() {
         super.setUp()
-        launchApp(isRecordModel: true)
+        launchApp(isRecordModel: false)
     }
 
     func testLaunchJourneyTest() {
-        _ = RootSceenModel(self).longerWait()
+        _ = RootSceenModel(self).wait(for: Const.longWaitTime)
             .showPopularPage().wait()
             .verifyView(snapshotKey: .rootPopularList)
-            .openFirstPopularItem().longerWait()
+            .openFirstPopularItem().wait(for: Const.longWaitTime)
             .to(DeviantDetailScreenModel(self))
             .verifyView(snapshotKey: .popularDeviantDetail)
 
-            .showMoreInfoPage().longerWait()
+            .showMoreInfoPage().wait(for: Const.longWaitTime)
             .verifyView(snapshotKey: .deviantDetailMoreInfo)
             .showInternalCommentPage().wait()
             .verifyView(snapshotKey: .deviantDetailComment)
@@ -31,14 +31,14 @@ class MPFJourneyUITests: UITestCase {
             .verifyView(snapshotKey: .deviantDetailFavorate)
             .showInternalMoreLikePage().wait()
             .verifyView(snapshotKey: .deviantDetailMoreLike)
-            .swipeDownVC()
+            .dismissPanModalViewController()
 
             .goBack().wait()
 
             .to(RootSceenModel(self))
             .showDailyPage().wait()
             .verifyView(snapshotKey: .rootDaily)
-            .openFirstDaily().longerWait()
+            .openFirstDaily().wait(for: Const.longWaitTime)
             .to(DeviantDetailScreenModel(self))
             .verifyView(snapshotKey: .dailyDeviantDetail)
             .goBack().wait()
@@ -46,10 +46,10 @@ class MPFJourneyUITests: UITestCase {
             .to(RootSceenModel(self))
             .showTopicListPage().wait()
             .verifyView(snapshotKey: .rootTopicList)
-            .openFirstTopic().longerWait()
+            .openFirstTopic().wait(for: Const.longWaitTime)
             .to(TopicDetailScreenModel(self))
             .verifyView(snapshotKey: .topicDetail)
-            .showDetail().longerWait()
+            .showDetail().wait(for: Const.longWaitTime)
             .to(DeviantDetailScreenModel(self))
             .verifyView(snapshotKey: .topicDeviantDetail)
     }

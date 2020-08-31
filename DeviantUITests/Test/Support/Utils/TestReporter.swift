@@ -61,6 +61,6 @@ public class TestReporter {
 
 public extension XCTestCase {
     func report(function: String) {
-        TestReporter.report(testFile: NSStringFromClass(classForCoder), message: function)
+//        TestReporter.report(testFile: NSStringFromClass(classForCoder), message: function)
     }
 }
