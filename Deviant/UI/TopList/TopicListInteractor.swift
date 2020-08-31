@@ -53,7 +53,8 @@ extension TopicListInteractor {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)
                         return
                 }
-                self.presenter?.update(with: results.map{ $0.toDisplayModel() } , nextOffset: topicListBase.nextOffset ?? offset)
+                self.presenter?.update(with: results.map { $0.toDisplayModel() },
+                                       nextOffset: topicListBase.nextOffset ?? offset)
             case .failure(let error):
                 self.presenter?.showError(with: error)
             }

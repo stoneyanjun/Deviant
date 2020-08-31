@@ -8,7 +8,6 @@ import Foundation
 import HandyJSON
 
 struct WhoFavorateBase: HandyJSON {
-
     enum CodingKeys: String, CodingKey {
         case hasMore = "has_more"
         case results

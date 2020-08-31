@@ -54,7 +54,8 @@ class MoreLikePresenterTests: XCTestCase {
         let moreFromDa = [DeviantMockData.secondDetail]
 
         //When
-        viewController.update(with: moreFromArtist.map { $0.toDisplayModel() }, moreFromDa: moreFromDa.map { $0.toDisplayModel() })
+        viewController.update(with: moreFromArtist.map { $0.toDisplayModel() },
+                              moreFromDa: moreFromDa.map { $0.toDisplayModel() })
 
         //Then
         XCTAssertEqual(viewController.moreFromArtist.first?.deviationid,

@@ -8,8 +8,7 @@ import Foundation
 import HandyJSON
 
 struct WhoFavorateResults: HandyJSON {
-
-  enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
     case time
     case user
   }

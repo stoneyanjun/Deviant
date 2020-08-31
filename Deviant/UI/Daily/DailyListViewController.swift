@@ -130,4 +130,3 @@ extension DailyListViewController: DZNEmptyDataSetDelegate {
         interactor?.tryFetchDaily(with: "")
     }
 }
-

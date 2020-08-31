@@ -9,8 +9,7 @@ import Foundation
 import HandyJSON
 
 struct DeviantDetailThumb: HandyJSON {
-
-  enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
     case transparency
     case width
     case src

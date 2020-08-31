@@ -40,8 +40,8 @@ class RootViewController: UIViewController {
 
 extension RootViewController {
     private func prepareViewControllers() -> [UIViewController] {
-        let popularVC = CommonListConfigurator(config:
-            CommonListConfiguration(navigationController: navigationController, listType: .popularList)).createViewController()
+        let config = CommonListConfiguration(navigationController: navigationController, listType: .popularList)
+        let popularVC = CommonListConfigurator(config: config).createViewController()
         let topicListVC = TopicListConfigurator(config:
             TopicListConfiguration(navigationController: navigationController)).createViewController()
         let dailyVC = DailyListConfigurator(config:

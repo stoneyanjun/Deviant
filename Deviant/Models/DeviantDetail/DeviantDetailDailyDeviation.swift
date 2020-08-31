@@ -9,8 +9,7 @@ import Foundation
 import HandyJSON
 
 struct DeviantDetailDailyDeviation: HandyJSON {
-
-  enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
     case time
     case giver
     case body

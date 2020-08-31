@@ -11,12 +11,11 @@ import XCTest
 
 class DeviantTests: XCTestCase {
     override func setUp() {
+        super.setUp()
     }
 
     override func tearDown() {
-    }
-
-    func testExample() {
+        super.tearDown()
     }
 
     func testPerformanceExample() {

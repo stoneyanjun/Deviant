@@ -141,10 +141,10 @@ extension TopicListViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
         }
         let viewDate = CommonCollectionViewCell.ViewData(url: url,
-                                                          title: displayModel?.title,
-                                                          username: displayModel?.username,
-                                                          identifier: .topicListCollectionCell,
-                                                          row: indexPath.row)
+                                                         title: displayModel?.title,
+                                                         username: displayModel?.username,
+                                                         identifier: .topicListCollectionCell,
+                                                         row: indexPath.row)
         cell.update(with: viewDate)
         return cell
     }
