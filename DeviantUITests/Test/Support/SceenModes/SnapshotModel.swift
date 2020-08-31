@@ -12,15 +12,6 @@ protocol SnapshotModel {
     var snapshotTestCase: FBSnapshotTestCase { get }
 }
 
-extension ScreenModel: SnapshotModel {
-    var snapshotTestCase: FBSnapshotTestCase {
-        guard let snapshotTestable = test as? FBSnapshotTestCase else {
-            fatalError("Not a snaphshot model test case")
-        }
-        return snapshotTestable
-    }
-}
-
 extension SnapshotModel where Self: ScreenModel {
     @discardableResult
     func verifyView(snapshotName: String? = nil,
@@ -28,14 +19,14 @@ extension SnapshotModel where Self: ScreenModel {
                     file: StaticString = #file,
                     line: UInt = #line) -> Self {
         guard let device = Device(screenSize: windowSize()) else {
-            fatalError("unsupported device size")
+            fatalError("unsupported device")
         }
 
         guard let croppedImage = screenShot().image.cropForTesting(for: device,
                                                                    skipKeyboard: false,
                                                                    windowSizeFunc: windowSize,
                                                                    keyboardOrignYFunc: keyboradOriginY) else {
-                                                                    XCTFail("Error occurred while cropping the screenshot", file: file, line: line)
+                                                                    XCTFail("fail to cropp the screenshot", file: file, line: line)
                                                                     return self
         }
 

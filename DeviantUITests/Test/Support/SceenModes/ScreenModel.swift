@@ -24,7 +24,7 @@ class ScreenModel {
     }
 
     var identifyingElement: XCUIElement {
-        fatalError("This has to be implemented in a subcall or extension")
+        fatalError("Subclasses or extension must override.")
     }
 
     @discardableResult func waitForViewToAppear(file: StaticString,

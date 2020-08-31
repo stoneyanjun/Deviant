@@ -5,6 +5,7 @@
 //  Copyright © 2020 Stone. All rights reserved.
 //
 
+import FBSnapshotTestCase
 import Foundation
 import XCTest
 
@@ -34,5 +35,14 @@ extension ScreenModel {
     func dismissPanModalViewController() -> Self {
         app.swipeDown()
         return self
+    }
+}
+
+extension ScreenModel: SnapshotModel {
+    var snapshotTestCase: FBSnapshotTestCase {
+        guard let snapshotTestable = test as? FBSnapshotTestCase else {
+            fatalError("Not SnapshotTestCase")
+        }
+        return snapshotTestable
     }
 }
