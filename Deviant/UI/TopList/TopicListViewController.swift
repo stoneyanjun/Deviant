@@ -38,6 +38,10 @@ class TopicListViewController: DeviantBaseViewController {
         super.viewDidAppear(animated)
         print(#function + " TopicListViewController")
     }
+
+    deinit {
+        print(#file + " " + #function)
+    }
 }
 
 extension TopicListViewController {

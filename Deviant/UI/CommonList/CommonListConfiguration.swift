@@ -13,6 +13,6 @@ enum ListType {
 }
 
 struct CommonListConfiguration {
-    var navigationController: UINavigationController?
+    weak var navigationController: UINavigationController?
     var listType: ListType
 }

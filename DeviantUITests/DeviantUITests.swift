@@ -12,7 +12,7 @@ import XCTest
 class MPFJourneyUITests: UITestCase {
     override func setUp() {
         super.setUp()
-        launchApp(isRecordModel: false)
+        launchApp(isRecordModel: true)
     }
 
     func testLaunchJourneyTest() {
@@ -20,9 +20,9 @@ class MPFJourneyUITests: UITestCase {
             .showPopularPage().wait()
             .verifyView(snapshotKey: .rootPopularList)
             .openFirstPopularItem().longerWait()
-
             .to(DeviantDetailScreenModel(self))
             .verifyView(snapshotKey: .popularDeviantDetail)
+
             .showMoreInfoPage().longerWait()
             .verifyView(snapshotKey: .deviantDetailMoreInfo)
             .showInternalCommentPage().wait()
@@ -31,14 +31,16 @@ class MPFJourneyUITests: UITestCase {
             .verifyView(snapshotKey: .deviantDetailFavorate)
             .showInternalMoreLikePage().wait()
             .verifyView(snapshotKey: .deviantDetailMoreLike)
-
             .swipeDownVC()
+
             .goBack().wait()
 
             .to(RootSceenModel(self))
             .showDailyPage().wait()
             .verifyView(snapshotKey: .rootDaily)
             .openFirstDaily().longerWait()
+            .to(DeviantDetailScreenModel(self))
+            .verifyView(snapshotKey: .dailyDeviantDetail)
             .goBack().wait()
 
             .to(RootSceenModel(self))
@@ -48,5 +50,7 @@ class MPFJourneyUITests: UITestCase {
             .to(TopicDetailScreenModel(self))
             .verifyView(snapshotKey: .topicDetail)
             .showDetail().longerWait()
+            .to(DeviantDetailScreenModel(self))
+            .verifyView(snapshotKey: .topicDeviantDetail)
     }
 }

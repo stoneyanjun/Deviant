@@ -19,7 +19,8 @@ class UITestCase: FBSnapshotTestCase, UITestable {
     func launchApp(isRecordModel: Bool = false) {
         // If in recordMode, the test should continue to save all images in the test, otherwise we should stop test to save CI time.
         recordMode = isRecordModel
-        continueAfterFailure = recordMode
+        
+        continueAfterFailure = true
 
         let application = XCUIApplication()
 

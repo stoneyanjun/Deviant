@@ -32,6 +32,10 @@ class RootViewController: UIViewController {
         setupScrollView()
         setupSegment()
     }
+
+    deinit {
+        print(#file + " " + #function)
+    }
 }
 
 extension RootViewController {

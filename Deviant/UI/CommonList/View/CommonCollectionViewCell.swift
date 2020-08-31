@@ -32,7 +32,7 @@ class CommonCollectionViewCell: UICollectionViewCell, Reusable {
     }
 
     deinit {
-        print(#function)
+        print(#file + " " + #function)
     }
 }
 

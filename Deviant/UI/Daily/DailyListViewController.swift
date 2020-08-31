@@ -37,6 +37,10 @@ class DailyListViewController: DeviantBaseViewController {
         super.viewDidAppear(animated)
         print(#function + " DailyListViewController")
     }
+
+    deinit {
+        print(#file + " " + #function)
+    }
 }
 
 extension DailyListViewController {

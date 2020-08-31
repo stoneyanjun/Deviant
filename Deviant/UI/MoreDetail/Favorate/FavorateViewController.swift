@@ -33,6 +33,10 @@ class FavorateViewController: DeviantBaseViewController {
         interactor?.tryFetchFavorates(offset: offset)
         setupPullToRefresh()
     }
+
+    deinit {
+        print(#file + " " + #function)
+    }
 }
 
 extension FavorateViewController {

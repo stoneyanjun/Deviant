@@ -32,6 +32,10 @@ class CommentViewController: DeviantBaseViewController {
         makeView()
         interactor?.tryFetchComments(offset: offset)
     }
+
+    deinit {
+        print(#file + " " + #function)
+    }
 }
 
 extension CommentViewController {

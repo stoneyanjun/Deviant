@@ -39,6 +39,10 @@ class CommonListViewController: DeviantBaseViewController {
         customLeftBarButton()
     }
 
+    deinit {
+        print(#file + " " + #function)
+    }
+
     func setListType(with listType: ListType) {
         self.listType = listType
     }

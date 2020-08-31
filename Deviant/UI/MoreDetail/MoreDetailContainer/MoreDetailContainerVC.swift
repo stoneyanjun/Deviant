@@ -41,6 +41,10 @@ class MoreDetailContainerVC: DeviantBaseViewController, PanModalPresentable {
         setupScrollView()
         setupSegment()
     }
+
+    deinit {
+        print(#file + " " + #function)
+    }
 }
 
 extension MoreDetailContainerVC {

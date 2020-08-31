@@ -15,6 +15,7 @@ enum SnapshotKey: String {
     case popularDeviantDetail
 
     case topicDetail
+    case topicDeviantDetail
 
     case dailyDeviantDetail
 

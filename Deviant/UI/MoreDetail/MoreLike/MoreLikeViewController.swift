@@ -33,6 +33,10 @@ class MoreLikeViewController: DeviantBaseViewController {
         setupCollectionView()
         interactor?.tryFetchMoreLike()
     }
+
+    deinit {
+        print(#file + " " + #function)
+    }
 }
 
 extension MoreLikeViewController {

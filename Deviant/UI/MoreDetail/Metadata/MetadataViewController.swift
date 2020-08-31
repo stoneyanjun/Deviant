@@ -61,6 +61,10 @@ class MetadataViewController: DeviantBaseViewController {
         applyConstraints()
         interactor?.tryFetchMetadata()
     }
+
+    deinit {
+        print(#file + " " + #function)
+    }
 }
 
 extension MetadataViewController: MetadataViewControllerInterface {

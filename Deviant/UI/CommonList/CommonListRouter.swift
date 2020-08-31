@@ -8,7 +8,7 @@
 import UIKit
 
 class CommonListRouter: NSObject {
-    var navigationController: UINavigationController?
+    weak var navigationController: UINavigationController?
     weak var viewController: CommonListViewControllerInterface?
 }
 
