@@ -12,7 +12,7 @@ protocol SnapshotModel {
     var snapshotTestCase: FBSnapshotTestCase { get }
 }
 
-extension SnapshotModel where Self: ScreenModel {
+extension SnapshotModel where Self: UIScreenModel {
     @discardableResult
     func verifyView(snapshotName: String? = nil,
                     tolerence: CGFloat = 0,
@@ -111,7 +111,7 @@ private enum Device {
     }
 }
 
-extension SnapshotModel where Self: ScreenModel {
+extension SnapshotModel where Self: UIScreenModel {
     @discardableResult
     func verifyView(snapshotKey: SnapshotKey,
                     tolerence: CGFloat = Const.tolerence,

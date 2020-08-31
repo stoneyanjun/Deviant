@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopicDetailScreenModel: BaseScreenModel {
+class TopicDetailScreenModel: UIScreenModel {
     func showDetail() -> TopicDetailScreenModel {
         return showCellItem(index: 0)
     }

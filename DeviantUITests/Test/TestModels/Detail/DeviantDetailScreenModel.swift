@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DeviantDetailScreenModel: BaseScreenModel {
+class DeviantDetailScreenModel: UIScreenModel {
     func showMoreInfoPage() -> DeviantDetailScreenModel {
         app.buttons["more_info_button"]
             .firstMatch

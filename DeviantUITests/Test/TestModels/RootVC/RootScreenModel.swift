@@ -8,7 +8,7 @@
 import Foundation
 import XCTest
 
-final class RootSceenModel: BaseScreenModel {
+final class RootSceenModel: UIScreenModel {
     private func showPage(index: Int) -> RootSceenModel {
         let item = cell(at: index)
         item?.tap()

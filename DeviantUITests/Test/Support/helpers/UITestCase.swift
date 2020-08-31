@@ -33,29 +33,29 @@ class UITestCase: FBSnapshotTestCase, UITestable {
 }
 
 extension XCTestCase {
-    static let waitSeconds: TimeInterval = 30.0
+    static let waitTime: TimeInterval = 20.0
 
     func waitForElementToExist(_ element: XCUIElement,
-                               waitSeconds: TimeInterval = waitSeconds,
+                               waitTime: TimeInterval = waitTime,
                                file: StaticString = #file,
                                line: Int = #line) {
-        evaluateAssertion("exists == true",
+        evaluate("exists == true",
                           element: element,
-                          waitSeconds: waitSeconds,
+                          waitTime: waitTime,
                           file: file,
                           line: line)
     }
 
-    private func evaluateAssertion(_ predicateFormat: String,
+    private func evaluate(_ predicateFormat: String,
                                    element: XCUIElement,
-                                   waitSeconds: TimeInterval = waitSeconds,
+                                   waitTime: TimeInterval = waitTime,
                                    file: StaticString = #file,
                                    line: Int = #line) {
         let predicate = NSPredicate(format: predicateFormat)
-        let xpectation = expectation(for: predicate,
+        let currentEpectation = expectation(for: predicate,
                                      evaluatedWith: element,
                                      handler: nil)
-        let result = XCTWaiter().wait(for: [xpectation], timeout: waitSeconds)
+        let result = XCTWaiter().wait(for: [currentEpectation], timeout: waitTime)
 
         guard result == .completed else {
             let message = "Fail to find the element after waiting"

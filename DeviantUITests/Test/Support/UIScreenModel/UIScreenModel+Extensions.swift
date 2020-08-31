@@ -9,7 +9,7 @@ import FBSnapshotTestCase
 import Foundation
 import XCTest
 
-extension ScreenModel {
+extension UIScreenModel {
     @discardableResult
     func wait(for timeout: TimeInterval = Const.waitTime) -> Self {
         _ = app.wait(for: .runningBackground, timeout: timeout)
@@ -38,7 +38,7 @@ extension ScreenModel {
     }
 }
 
-extension ScreenModel: SnapshotModel {
+extension UIScreenModel: SnapshotModel {
     var snapshotTestCase: FBSnapshotTestCase {
         guard let snapshotTestable = test as? FBSnapshotTestCase else {
             fatalError("Not SnapshotTestCase")
