@@ -12,7 +12,7 @@ extension ScreenModel {
     @discardableResult
     func wait(for timeout: TimeInterval = Const.waitTime) -> Self {
         _ = app.wait(for: .runningBackground, timeout: timeout)
-        return reportSelf()
+        return self
     }
 
     func to<T>(_ model: T) -> T {
@@ -29,7 +29,7 @@ extension ScreenModel {
         app.navigationBars.firstMatch.buttons.firstMatch.tap()
         return self
     }
-    
+
     @discardableResult
     func dismissPanModalViewController() -> Self {
         app.swipeDown()

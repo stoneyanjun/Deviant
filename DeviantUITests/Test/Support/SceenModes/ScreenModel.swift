@@ -8,14 +8,14 @@
 import Foundation
 import XCTest
 
-open class ScreenModel {
-    public let test: UITestableCase
+class ScreenModel {
+    let test: UITestableCase
 
-    public var app: XCUIApplication {
+    var app: XCUIApplication {
         return test.app
     }
 
-    public init(_ test: UITestableCase,
+    init(_ test: UITestableCase,
                 file: StaticString = #file,
                 function: StaticString = #function,
                 line: Int = #line) {
@@ -23,13 +23,8 @@ open class ScreenModel {
         waitForViewToAppear(file: file, function: function, line: line)
     }
 
-    open var identifyingElement: XCUIElement {
+    var identifyingElement: XCUIElement {
         fatalError("This has to be implemented in a subcall or extension")
-    }
-
-    public func reportSelf(_ function: StaticString = #function) -> Self {
-        test.report(function: function.description)
-        return self
     }
 
     @discardableResult func waitForViewToAppear(file: StaticString,

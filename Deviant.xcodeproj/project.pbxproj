@@ -102,9 +102,6 @@
 		8E9D185524F4AB5800A679DB /* MoreDetailContainerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E9D185424F4AB5800A679DB /* MoreDetailContainerVC.xib */; };
 		8E9D185E24F4F5D300A679DB /* SnapshotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D185B24F4F5D300A679DB /* SnapshotModel.swift */; };
 		8E9D185F24F4F5D300A679DB /* ScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D185C24F4F5D300A679DB /* ScreenModel.swift */; };
-		8E9D186024F4F5D300A679DB /* UITestableCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D185D24F4F5D300A679DB /* UITestableCase.swift */; };
-		8E9D186224F4F5D900A679DB /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D186124F4F5D900A679DB /* XCTestCase+Extension.swift */; };
-		8E9D186424F4FB6400A679DB /* TestReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D186324F4FB6400A679DB /* TestReporter.swift */; };
 		8E9D186624F5157B00A679DB /* SnapshotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D186524F5157B00A679DB /* SnapshotKey.swift */; };
 		8E9D186C24F5168300A679DB /* BaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D186B24F5168300A679DB /* BaseModels.swift */; };
 		8E9D186E24F5197B00A679DB /* RootScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D186D24F5197B00A679DB /* RootScreenModel.swift */; };
@@ -301,9 +298,6 @@
 		8E9D185424F4AB5800A679DB /* MoreDetailContainerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreDetailContainerVC.xib; sourceTree = "<group>"; };
 		8E9D185B24F4F5D300A679DB /* SnapshotModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotModel.swift; sourceTree = "<group>"; };
 		8E9D185C24F4F5D300A679DB /* ScreenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenModel.swift; sourceTree = "<group>"; };
-		8E9D185D24F4F5D300A679DB /* UITestableCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestableCase.swift; sourceTree = "<group>"; };
-		8E9D186124F4F5D900A679DB /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
-		8E9D186324F4FB6400A679DB /* TestReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReporter.swift; sourceTree = "<group>"; };
 		8E9D186524F5157B00A679DB /* SnapshotKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotKey.swift; sourceTree = "<group>"; };
 		8E9D186B24F5168300A679DB /* BaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModels.swift; sourceTree = "<group>"; };
 		8E9D186D24F5197B00A679DB /* RootScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreenModel.swift; sourceTree = "<group>"; };
@@ -693,9 +687,7 @@
 		8E28769A24ECC47300974E95 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8E28769D24ECC49000974E95 /* ScreenModel+Extensions.swift */,
 				8E28769C24ECC49000974E95 /* UITestCase.swift */,
-				8E9D186124F4F5D900A679DB /* XCTestCase+Extension.swift */,
 				8E28769B24ECC49000974E95 /* XCUIElement+Extensions.swift */,
 			);
 			path = helpers;
@@ -859,7 +851,6 @@
 			children = (
 				8E28769A24ECC47300974E95 /* helpers */,
 				8E9D185724F4F59900A679DB /* SceenModes */,
-				8E9D185824F4F5A500A679DB /* Utils */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -940,18 +931,10 @@
 			isa = PBXGroup;
 			children = (
 				8E9D185C24F4F5D300A679DB /* ScreenModel.swift */,
+				8E28769D24ECC49000974E95 /* ScreenModel+Extensions.swift */,
 				8E9D185B24F4F5D300A679DB /* SnapshotModel.swift */,
-				8E9D185D24F4F5D300A679DB /* UITestableCase.swift */,
 			);
 			path = SceenModes;
-			sourceTree = "<group>";
-		};
-		8E9D185824F4F5A500A679DB /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				8E9D186324F4FB6400A679DB /* TestReporter.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		8E9D186924F5162D00A679DB /* RootVC */ = {
@@ -1610,19 +1593,16 @@
 			files = (
 				8E28769E24ECC49000974E95 /* XCUIElement+Extensions.swift in Sources */,
 				8E9D186624F5157B00A679DB /* SnapshotKey.swift in Sources */,
-				8E9D186424F4FB6400A679DB /* TestReporter.swift in Sources */,
 				8E2876A024ECC49000974E95 /* ScreenModel+Extensions.swift in Sources */,
 				8EE5B65124F63C2F0095683C /* DeviantDetailScreenModel.swift in Sources */,
 				8E9D186C24F5168300A679DB /* BaseModels.swift in Sources */,
 				8E28769F24ECC49000974E95 /* UITestCase.swift in Sources */,
 				8EE5B65924F64EA20095683C /* TopicDetailScreenModel.swift in Sources */,
-				8E9D186224F4F5D900A679DB /* XCTestCase+Extension.swift in Sources */,
 				8E1B800D24C0A4CB008C059C /* DeviantUITests.swift in Sources */,
 				8E9D185F24F4F5D300A679DB /* ScreenModel.swift in Sources */,
 				8E9D186E24F5197B00A679DB /* RootScreenModel.swift in Sources */,
 				8E9D185E24F4F5D300A679DB /* SnapshotModel.swift in Sources */,
 				8E2876AA24ECD75D00974E95 /* Const.swift in Sources */,
-				8E9D186024F4F5D300A679DB /* UITestableCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

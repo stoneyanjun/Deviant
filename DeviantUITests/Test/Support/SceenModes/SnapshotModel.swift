@@ -8,12 +8,12 @@
 import UIKit
 import FBSnapshotTestCase
 
-public protocol SnapshotModel {
+protocol SnapshotModel {
     var snapshotTestCase: FBSnapshotTestCase { get }
 }
 
 extension ScreenModel: SnapshotModel {
-    public var snapshotTestCase: FBSnapshotTestCase {
+    var snapshotTestCase: FBSnapshotTestCase {
         guard let snapshotTestable = test as? FBSnapshotTestCase else {
             fatalError("Not a snaphshot model test case")
         }
@@ -21,7 +21,7 @@ extension ScreenModel: SnapshotModel {
     }
 }
 
-public extension SnapshotModel where Self: ScreenModel {
+extension SnapshotModel where Self: ScreenModel {
     @discardableResult
     func verifyView(snapshotName: String? = nil,
                     tolerence: CGFloat = 0,
@@ -31,14 +31,12 @@ public extension SnapshotModel where Self: ScreenModel {
             fatalError("unsupported device size")
         }
 
-        test.report(function: "\(#function)_\(snapshotName ?? "")")
-
         guard let croppedImage = screenShot().image.cropForTesting(for: device,
                                                                    skipKeyboard: false,
                                                                    windowSizeFunc: windowSize,
                                                                    keyboardOrignYFunc: keyboradOriginY) else {
                                                                     XCTFail("Error occurred while cropping the screenshot", file: file, line: line)
-                                                                    return reportSelf()
+                                                                    return self
         }
 
         let imageView = UIImageView(image: croppedImage)
