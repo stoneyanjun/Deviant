@@ -29,7 +29,8 @@ class DailyListViewController: DeviantBaseViewController {
         interactor?.tryFetchDaily(with: "")
 
         dailyTableView.es.addPullToRefresh {
-            self.interactor?.tryFetchDaily(with: "")
+            [weak self] in
+            self?.interactor?.tryFetchDaily(with: "")
         }
     }
 

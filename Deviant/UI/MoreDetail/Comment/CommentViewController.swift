@@ -41,13 +41,15 @@ class CommentViewController: DeviantBaseViewController {
 extension CommentViewController {
     func setupPullToRefresh() {
         commentTableView.es.addPullToRefresh {
-            self.offset = 0
-            self.errorDesc = nil
-            self.interactor?.tryFetchComments(offset: self.offset)
+            [weak self] in
+            self?.offset = 0
+            self?.errorDesc = nil
+            self?.interactor?.tryFetchComments(offset: self?.offset ?? 0)
         }
         commentTableView.es.addInfiniteScrolling {
-            self.errorDesc = nil
-            self.interactor?.tryFetchComments(offset: self.offset)
+            [weak self] in
+            self?.errorDesc = nil
+            self?.interactor?.tryFetchComments(offset: self?.offset ?? 0)
         }
     }
 

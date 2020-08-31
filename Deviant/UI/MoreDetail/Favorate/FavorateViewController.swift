@@ -42,13 +42,15 @@ class FavorateViewController: DeviantBaseViewController {
 extension FavorateViewController {
     func setupPullToRefresh() {
         tableView.es.addPullToRefresh {
-            self.offset = 0
-            self.errorDesc = nil
-            self.interactor?.tryFetchFavorates(offset: self.offset)
+            [weak self] in
+            self?.offset = 0
+            self?.errorDesc = nil
+            self?.interactor?.tryFetchFavorates(offset: self?.offset ?? 0)
         }
         tableView.es.addInfiniteScrolling {
-            self.errorDesc = nil
-            self.interactor?.tryFetchFavorates(offset: self.offset)
+            [weak self] in
+            self?.errorDesc = nil
+            self?.interactor?.tryFetchFavorates(offset: self?.offset ?? 0)
         }
     }
 

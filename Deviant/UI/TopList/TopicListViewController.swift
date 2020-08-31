@@ -90,11 +90,13 @@ extension TopicListViewController {
             return
         }
         collectionView.es.addPullToRefresh {
-            self.offset = 0
-            self.interactor?.tryFetchTopicList(with: self.offset)
+            [weak self] in
+            self?.offset = 0
+            self?.interactor?.tryFetchTopicList(with: self?.offset ?? 0)
         }
         collectionView.es.addInfiniteScrolling {
-            self.interactor?.tryFetchTopicList(with: self.offset)
+            [weak self] in
+            self?.interactor?.tryFetchTopicList(with: self?.offset ?? 0)
         }
     }
 

@@ -106,17 +106,19 @@ extension CommonListViewController {
         switch listType {
         case .popularList:
             collectionView.es.addPullToRefresh {
-                self.offset = 0
-                self.errorDesc = nil
-                self.interactor?.tryFetchList(with: self.offset)
+                [weak self] in
+                self?.offset = 0
+                self?.errorDesc = nil
+                self?.interactor?.tryFetchList(with: self?.offset ?? 0)
             }
         default:
             break
         }
 
         collectionView.es.addInfiniteScrolling {
-            self.errorDesc = nil
-            self.interactor?.tryFetchList(with: self.offset)
+            [weak self] in
+            self?.errorDesc = nil
+            self?.interactor?.tryFetchList(with: self?.offset ?? 0)
         }
     }
 
