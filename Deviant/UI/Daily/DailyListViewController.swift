@@ -33,7 +33,7 @@ class DailyListViewController: DeviantBaseViewController {
             self?.interactor?.tryFetchDaily(with: "")
         }
     }
-    
+
     deinit {
         print(#file + " " + #function)
     }
