@@ -247,7 +247,7 @@ class DeviantServiceTests: XCTestCase {
         let params = WhoFavedParams(deviationid: DeviantMockData.deviantId,
                                     limit: NetworkConst.limit,
                                     offset: offset)
-        NetworkManager<DeviantService>().networkRequest(target: .   whoFaved(params: params)) { result in
+        NetworkManager<DeviantService>().networkRequest(target: .fetchWhoFaved(params: params)) { result in
             switch result {
             case .success(let json):
                 let favorateBase = JSONDeserializer<WhoFavorateBase>.deserializeFrom(json: json.description)

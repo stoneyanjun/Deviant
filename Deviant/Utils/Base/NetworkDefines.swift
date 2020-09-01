@@ -9,18 +9,19 @@ import Foundation
 
 enum NetworkConst {
     #if DEBUG
-    static let limit: Int = 10
-    static let commentLimit: Int = 10
+    static let limit = 10
+    static let commentLimit = 10
     static let numDeviationsPerTopic = 10
     static let defaultExpiredSecond = 3600
     #else
-    static let limit: Int = 10
-    static let commentLimit: Int = 10
+    static let limit = 10
+    static let commentLimit = 10
     static let numDeviationsPerTopic = 10
     static let defaultExpiredSecond = 3600
     #endif
 
     static let testTimeout: TimeInterval = 360
+    static let delayedStubTime: TimeInterval = 0.5
 }
 
 enum RequestParams: String {

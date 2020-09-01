@@ -41,7 +41,7 @@ extension FavorateInteractor {
         let params = WhoFavedParams(deviationid: config.deviationid ,
                                     limit: NetworkConst.limit,
                                     offset: offset)
-        NetworkManager<DeviantService>().networkRequest(target: .   whoFaved(params: params)) { result in
+        NetworkManager<DeviantService>().networkRequest(target: .fetchWhoFaved(params: params)) { result in
             switch result {
             case .success(let json):
                 #if DEBUG

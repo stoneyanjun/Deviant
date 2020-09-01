@@ -18,7 +18,7 @@ enum DeviantService {
     case fetchComment(params: CommentParams)
     case fetchUserStatuses(username: String)
     case fetchMoreLikeThisPreview(seed: String)
-    case whoFaved(params: WhoFavedParams)
+    case fetchWhoFaved(params: WhoFavedParams)
 }
 
 extension DeviantService: TargetType {
@@ -57,7 +57,7 @@ extension DeviantService: TargetType {
             return ServerInfoManager.shared.getUri(with: UriResource.userStatuses).wrap()
         case .fetchMoreLikeThisPreview:
             return ServerInfoManager.shared.getUri(with: UriResource.browseMorelikethisPreview).wrap()
-        case .whoFaved:
+        case .fetchWhoFaved:
             return ServerInfoManager.shared.getUri(with: UriResource.whoFaved).wrap()
         }
     }
@@ -82,7 +82,7 @@ extension DeviantService: TargetType {
             return MockDataManager.shared.getMockData(type: .metadata)
         case .fetchComment:
             return MockDataManager.shared.getMockData(type: .comment)
-        case .whoFaved:
+        case .fetchWhoFaved:
             return MockDataManager.shared.getMockData(type: .favorate)
         case .fetchMoreLikeThisPreview:
             return MockDataManager.shared.getMockData(type: .moreLike)
@@ -133,17 +133,17 @@ extension DeviantService: TargetType {
             parameters = [RequestParams.username.rawValue: username]
         case .fetchMoreLikeThisPreview(let seed):
             parameters = [RequestParams.seed.rawValue: seed ]
-        case .whoFaved(let params):
+        case .fetchWhoFaved(let params):
             parameters = [RequestParams.deviationid.rawValue: params.deviationid,
                           RequestParams.limit.rawValue: params.limit,
                           RequestParams.offset.rawValue: params.offset]
+        case .fetchDeviantDetail:
+            break
         default:
             return nil
         }
 
         parameters[RequestParams.accessToken.rawValue] =  TokenManager.shared.currentToken ?? ""
-        //stonetest
-        parameters[RequestParams.accessToken.rawValue] = "asd"
         return parameters
     }
 

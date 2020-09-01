@@ -26,7 +26,7 @@ class UITestCase: FBSnapshotTestCase, UITestable {
         recordMode = isRecordModel
         continueAfterFailure = true
         let application = XCUIApplication()
-        application.launchArguments.append("deviantUITests")
+        application.launchArguments.append("deviantUITestMode")
         application.launch()
         _app = application
     }

@@ -12,7 +12,7 @@ import Moya
 import SwiftyJSON
 
 enum DeviantUITestsMode: String {
-    case deviantUITests
+    case deviantUITestMode
 }
 
 class NetworkManager<Target: TargetType>: NSObject {
@@ -22,8 +22,8 @@ class NetworkManager<Target: TargetType>: NSObject {
 
     private var provider: MoyaProvider<Target> = {
         let arguments = ProcessInfo.processInfo.arguments
-        if arguments.contains(DeviantUITestsMode.deviantUITests.rawValue) {
-            return MoyaProvider<Target>(stubClosure: MoyaProvider<Target>.immediatelyStub)
+        if arguments.contains(DeviantUITestsMode.deviantUITestMode.rawValue) {
+            return MoyaProvider<Target>(stubClosure: MoyaProvider<Target>.delayedStub(NetworkConst.delayedStubTime))
         } else {
             return MoyaProvider<Target>()
         }
