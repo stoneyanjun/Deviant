@@ -48,7 +48,7 @@ class TokenManager: NetworkManager<TokenService> {
             switch result {
             case .success(let json):
                 #if DEBUG
-                print(#function + " json\r\n\(json.description)")
+//                print(#function + " json\r\n\(json.description)")
                 #endif
                 if let tokenBase = JSONDeserializer<TokenBase>.deserializeFrom(json: json.description ),
                     !tokenBase.accessToken.wrap().isEmpty {

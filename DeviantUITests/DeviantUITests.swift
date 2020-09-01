@@ -19,9 +19,18 @@ class MPFJourneyUITests: UITestCase {
         _ = RootSceenModel(self).wait(for: Const.longWaitTime)
             .showPopularPage().wait()
             .verifyView(snapshotKey: .rootPopularList)
-            .openFirstPopularItem().wait(for: Const.longWaitTime)
+
+            .showDailyPage().wait()
+            .verifyView(snapshotKey: .rootDaily)
+
+            .showTopicListPage().wait()
+            .verifyView(snapshotKey: .rootTopicList)
+            .openFirstTopic().wait(for: Const.longWaitTime)
+            .to(TopicDetailScreenModel(self))
+            .verifyView(snapshotKey: .topicDetail)
+            .showDetail().wait()
             .to(DeviantDetailScreenModel(self))
-            .verifyView(snapshotKey: .popularDeviantDetail)
+            .verifyView(snapshotKey: .deviantDetailOfTopic)
 
             .showMoreInfoPage().wait(for: Const.longWaitTime)
             .verifyView(snapshotKey: .deviantDetailMoreInfo)
@@ -32,25 +41,5 @@ class MPFJourneyUITests: UITestCase {
             .showInternalMoreLikePage().wait()
             .verifyView(snapshotKey: .deviantDetailMoreLike)
             .dismissPanModalViewController()
-
-            .goBack().wait()
-
-            .to(RootSceenModel(self))
-            .showDailyPage().wait()
-            .verifyView(snapshotKey: .rootDaily)
-            .openFirstDaily().wait(for: Const.longWaitTime)
-            .to(DeviantDetailScreenModel(self))
-            .verifyView(snapshotKey: .dailyDeviantDetail)
-            .goBack().wait()
-
-            .to(RootSceenModel(self))
-            .showTopicListPage().wait()
-            .verifyView(snapshotKey: .rootTopicList)
-            .openFirstTopic().wait(for: Const.longWaitTime)
-            .to(TopicDetailScreenModel(self))
-            .verifyView(snapshotKey: .topicDetail)
-            .showDetail().wait(for: Const.longWaitTime)
-            .to(DeviantDetailScreenModel(self))
-            .verifyView(snapshotKey: .topicDeviantDetail)
     }
 }

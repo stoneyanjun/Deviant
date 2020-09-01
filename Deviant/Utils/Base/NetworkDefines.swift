@@ -21,7 +21,7 @@ enum NetworkConst {
     #endif
 
     static let testTimeout: TimeInterval = 360
-    static let delayedStubTime: TimeInterval = 0.5
+    static let delayedStubTime: TimeInterval = 0.1
 }
 
 enum RequestParams: String {

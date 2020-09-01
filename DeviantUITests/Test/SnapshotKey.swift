@@ -15,11 +15,13 @@ enum SnapshotKey: String {
     case popularDeviantDetail
 
     case topicDetail
-    case topicDeviantDetail
 
     case dailyDeviantDetail
 
     case deviantDetail
+    case deviantDetailOfPopular
+    case deviantDetailOfDaily
+    case deviantDetailOfTopic
     case deviantDetailMoreInfo
     case deviantDetailComment
     case deviantDetailFavorate

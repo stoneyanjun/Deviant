@@ -10,6 +10,6 @@ import Foundation
 
 struct Const {
     static let tolerence: CGFloat = 0.2
-    static let waitTime: TimeInterval = 1
+    static let waitTime: TimeInterval = 3
     static let longWaitTime: TimeInterval = 5
 }
