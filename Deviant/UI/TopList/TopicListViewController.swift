@@ -34,11 +34,6 @@ class TopicListViewController: DeviantBaseViewController {
         setupESRefresh()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print(#function + " TopicListViewController")
-    }
-
     deinit {
         print(#file + " " + #function)
     }

@@ -91,18 +91,16 @@ extension DeviantService: TargetType {
         }
     }
 
-    var task: Task {
+    var currentParameters: [String: Any]? {
+        var parameters = [String: Any]()
         switch self {
         case .fetchDaily(let date):
-            var parameters: [String: Any] = [RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? ""]
             if !date.isEmpty {
                 parameters[RequestParams.date.rawValue] = date
             }
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         case .fetchPopular(let params):
-            var parameters: [String: Any] = [RequestParams.limit.rawValue: params.limit,
-                                             RequestParams.offset.rawValue: params.offset,
-                                             RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? ""]
+            parameters = [RequestParams.limit.rawValue: params.limit,
+                          RequestParams.offset.rawValue: params.offset]
             if !params.categoryPath.isEmpty {
                 parameters[RequestParams.categoryPath.rawValue] = params.categoryPath
             }
@@ -112,59 +110,55 @@ extension DeviantService: TargetType {
             if !params.timeRange.isEmpty {
                 parameters[RequestParams.timerange.rawValue] = params.timeRange
             }
-
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-        case .fetchDeviantDetail:
-            let parameters: [String: Any] = [RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? ""]
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         case .fetchTopicList(let params):
-            let parameters: [String: Any] = [RequestParams.numDeviationsPerTopic.rawValue: params.numDeviationsPerTopic,
-                                             RequestParams.limit.rawValue: params.limit,
-                                             RequestParams.offset.rawValue: params.offset,
-                                             RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? ""]
-
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+            parameters = [RequestParams.numDeviationsPerTopic.rawValue: params.numDeviationsPerTopic,
+                          RequestParams.limit.rawValue: params.limit,
+                          RequestParams.offset.rawValue: params.offset]
         case .fetchTopicDetail(let params):
-            let parameters: [String: Any] = [RequestParams.topic.rawValue: params.name,
-                                             RequestParams.limit.rawValue: params.limit,
-                                             RequestParams.offset.rawValue: params.offset,
-                                             RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? ""]
-
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+            parameters = [RequestParams.topic.rawValue: params.name,
+                          RequestParams.limit.rawValue: params.limit,
+                          RequestParams.offset.rawValue: params.offset]
         case .fetchMetadata(let params):
-            let parameters: [String: Any] = [RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? "",
-                                             RequestParams.deviationids.rawValue: params.deviationids,
-                                             RequestParams.extSubmission.rawValue: params.extSubmission,
-                                             RequestParams.extCamera.rawValue: params.extCamera ,
-                                             RequestParams.extStats.rawValue: params.extStats,
-                                             RequestParams.extCollection.rawValue: params.extCollection
-            ]
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-
+            parameters = [RequestParams.deviationids.rawValue: params.deviationids,
+                          RequestParams.extSubmission.rawValue: params.extSubmission,
+                          RequestParams.extCamera.rawValue: params.extCamera ,
+                          RequestParams.extStats.rawValue: params.extStats,
+                          RequestParams.extCollection.rawValue: params.extCollection]
         case .fetchComment(let params):
-            let parameters: [String: Any] = [RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? "",
-                                             RequestParams.deviationid.rawValue: params.deviationid,
-                                             RequestParams.maxdepth.rawValue: params.maxdepth ?? 0,
-                                             RequestParams.offset.rawValue: params.offset,
-                                             RequestParams.limit.rawValue: params.limit
-            ]
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
-
+            parameters = [RequestParams.deviationid.rawValue: params.deviationid,
+                          RequestParams.maxdepth.rawValue: params.maxdepth ?? 0,
+                          RequestParams.offset.rawValue: params.offset,
+                          RequestParams.limit.rawValue: params.limit]
         case .fetchUserStatuses(let username):
-            let parameters: [String: Any] = [RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? "",
-                                             RequestParams.username.rawValue: username ]
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+            parameters = [RequestParams.username.rawValue: username]
         case .fetchMoreLikeThisPreview(let seed):
-            let parameters: [String: Any] = [RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? "",
-                                             RequestParams.seed.rawValue: seed ]
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+            parameters = [RequestParams.seed.rawValue: seed ]
         case .whoFaved(let params):
-            let parameters: [String: Any] = [RequestParams.deviationid.rawValue: params.deviationid,
-                                             RequestParams.limit.rawValue: params.limit,
-                                             RequestParams.offset.rawValue: params.offset,
-                                             RequestParams.accessToken.rawValue: TokenManager.shared.currentToken ?? ""]
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+            parameters = [RequestParams.deviationid.rawValue: params.deviationid,
+                          RequestParams.limit.rawValue: params.limit,
+                          RequestParams.offset.rawValue: params.offset]
+        default:
+            return nil
         }
+
+        parameters[RequestParams.accessToken.rawValue] =  TokenManager.shared.currentToken ?? ""
+        //stonetest
+        parameters[RequestParams.accessToken.rawValue] = "asd"
+        return parameters
+    }
+
+    var task: Task {
+        let encoding: ParameterEncoding
+        switch self.method {
+        case .post:
+            encoding = JSONEncoding.default
+        default:
+            encoding = URLEncoding.queryString
+        }
+        if let requestParameters = currentParameters {
+            return .requestParameters(parameters: requestParameters, encoding: encoding)
+        }
+        return .requestPlain
     }
 
     var headers: [String: String]? {
