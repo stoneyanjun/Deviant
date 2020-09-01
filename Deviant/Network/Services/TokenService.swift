@@ -44,7 +44,6 @@ extension TokenService: TargetType {
         let parameters: [String: Any] = [RequestParams.grantType.rawValue: RequestParams.clientCredentials.rawValue,
                                          RequestParams.clientID.rawValue: clientID,
                                          RequestParams.clientSecret.rawValue: clientSecret]
-
         return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }

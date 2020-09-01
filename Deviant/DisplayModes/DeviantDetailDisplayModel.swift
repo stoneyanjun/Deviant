@@ -21,7 +21,6 @@ struct DeviantDetailDisplayModel {
     var username: String?
     var previewImage: ImageInfo?
     var contentImageInfo: ImageInfo?
-
     var usericon: String?
     var publishedTime: String?
     var comments: Int?

@@ -8,7 +8,6 @@ import Foundation
 import HandyJSON
 
 struct MetadataMetadata: HandyJSON {
-
     enum CodingKeys: String, CodingKey {
         case tags
         case deviationid

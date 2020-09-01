@@ -15,7 +15,7 @@ struct WhoFavorateBase: HandyJSON {
     }
 
     var hasMore: Bool?
-    var results: [WhoFavorateResults]?
+    var results: [WhoFavorateModel]?
     var nextOffset: Int?
 
     mutating func mapping(mapper: HelpingMapper) {

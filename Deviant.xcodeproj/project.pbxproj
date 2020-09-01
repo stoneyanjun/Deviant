@@ -135,7 +135,7 @@
 		8EAED44424D545C1004E8AC3 /* DeviantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED43C24D545C0004E8AC3 /* DeviantDetailViewController.swift */; };
 		8EAED44524D545C1004E8AC3 /* DeviantDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED43D24D545C1004E8AC3 /* DeviantDetailConfigurator.swift */; };
 		8EAED45124D55289004E8AC3 /* DeviantDetailPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44924D55288004E8AC3 /* DeviantDetailPreview.swift */; };
-		8EAED45324D55289004E8AC3 /* DeviantDetailAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44B24D55288004E8AC3 /* DeviantDetailAuthor.swift */; };
+		8EAED45324D55289004E8AC3 /* DeviantUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44B24D55288004E8AC3 /* DeviantUser.swift */; };
 		8EAED45524D55289004E8AC3 /* DeviantDetailDailyDeviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44D24D55288004E8AC3 /* DeviantDetailDailyDeviation.swift */; };
 		8EAED45624D55289004E8AC3 /* DeviantDetailStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44E24D55289004E8AC3 /* DeviantDetailStats.swift */; };
 		8EAED45724D55289004E8AC3 /* DeviantDetailContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAED44F24D55289004E8AC3 /* DeviantDetailContent.swift */; };
@@ -148,7 +148,7 @@
 		8EBB91F324C3FB0900223F51 /* NetworkDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91F224C3FB0900223F51 /* NetworkDefines.swift */; };
 		8EBB91F824C426D100223F51 /* TokenBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91F724C426D100223F51 /* TokenBase.swift */; };
 		8EBB91FA24C4430E00223F51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91F924C4430E00223F51 /* NetworkManager.swift */; };
-		8EBB91FD24C4461100223F51 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91FC24C4461100223F51 /* APIError.swift */; };
+		8EBB91FD24C4461100223F51 /* DeviantAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBB91FC24C4461100223F51 /* DeviantAPIError.swift */; };
 		8EC5BC4024F8A5D00012E2BF /* FavorateDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5BC3F24F8A5D00012E2BF /* FavorateDisplayModel.swift */; };
 		8EC5BC4224F8B57C0012E2BF /* CommentDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC5BC4124F8B57C0012E2BF /* CommentDisplayModel.swift */; };
 		8EE5B65124F63C2F0095683C /* DeviantDetailScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5B65024F63C2F0095683C /* DeviantDetailScreenModel.swift */; };
@@ -169,7 +169,7 @@
 		8EFB59A524C69436005DE580 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB59A424C69436005DE580 /* UIColor+Extension.swift */; };
 		8EFB59A824C6A9F6005DE580 /* DeviantBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB59A724C6A9F6005DE580 /* DeviantBaseViewController.swift */; };
 		8EFB6E8424E9E498002A62B5 /* Client.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EFB6E8324E9E498002A62B5 /* Client.plist */; };
-		8EFB6E8924E9F080002A62B5 /* WhoFavorateResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB6E8624E9F080002A62B5 /* WhoFavorateResults.swift */; };
+		8EFB6E8924E9F080002A62B5 /* WhoFavorateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB6E8624E9F080002A62B5 /* WhoFavorateModel.swift */; };
 		8EFB6E8B24E9F080002A62B5 /* WhoFavorateBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFB6E8824E9F080002A62B5 /* WhoFavorateBase.swift */; };
 		8EFC857724D8E5FA00EA8023 /* CommentThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFC857424D8E5F900EA8023 /* CommentThread.swift */; };
 		8EFC857924D8E5FA00EA8023 /* CommentBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFC857624D8E5FA00EA8023 /* CommentBase.swift */; };
@@ -330,7 +330,7 @@
 		8EAED43C24D545C0004E8AC3 /* DeviantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailViewController.swift; sourceTree = "<group>"; };
 		8EAED43D24D545C1004E8AC3 /* DeviantDetailConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailConfigurator.swift; sourceTree = "<group>"; };
 		8EAED44924D55288004E8AC3 /* DeviantDetailPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailPreview.swift; sourceTree = "<group>"; };
-		8EAED44B24D55288004E8AC3 /* DeviantDetailAuthor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailAuthor.swift; sourceTree = "<group>"; };
+		8EAED44B24D55288004E8AC3 /* DeviantUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantUser.swift; sourceTree = "<group>"; };
 		8EAED44D24D55288004E8AC3 /* DeviantDetailDailyDeviation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailDailyDeviation.swift; sourceTree = "<group>"; };
 		8EAED44E24D55289004E8AC3 /* DeviantDetailStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailStats.swift; sourceTree = "<group>"; };
 		8EAED44F24D55289004E8AC3 /* DeviantDetailContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantDetailContent.swift; sourceTree = "<group>"; };
@@ -343,7 +343,7 @@
 		8EBB91F224C3FB0900223F51 /* NetworkDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDefines.swift; sourceTree = "<group>"; };
 		8EBB91F724C426D100223F51 /* TokenBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenBase.swift; sourceTree = "<group>"; };
 		8EBB91F924C4430E00223F51 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		8EBB91FC24C4461100223F51 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		8EBB91FC24C4461100223F51 /* DeviantAPIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantAPIError.swift; sourceTree = "<group>"; };
 		8EC5BC3F24F8A5D00012E2BF /* FavorateDisplayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavorateDisplayModel.swift; sourceTree = "<group>"; };
 		8EC5BC4124F8B57C0012E2BF /* CommentDisplayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDisplayModel.swift; sourceTree = "<group>"; };
 		8EE5B65024F63C2F0095683C /* DeviantDetailScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantDetailScreenModel.swift; sourceTree = "<group>"; };
@@ -364,7 +364,7 @@
 		8EFB59A424C69436005DE580 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8EFB59A724C6A9F6005DE580 /* DeviantBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantBaseViewController.swift; sourceTree = "<group>"; };
 		8EFB6E8324E9E498002A62B5 /* Client.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Client.plist; sourceTree = "<group>"; };
-		8EFB6E8624E9F080002A62B5 /* WhoFavorateResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhoFavorateResults.swift; sourceTree = "<group>"; };
+		8EFB6E8624E9F080002A62B5 /* WhoFavorateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhoFavorateModel.swift; sourceTree = "<group>"; };
 		8EFB6E8824E9F080002A62B5 /* WhoFavorateBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhoFavorateBase.swift; sourceTree = "<group>"; };
 		8EFC857424D8E5F900EA8023 /* CommentThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentThread.swift; sourceTree = "<group>"; };
 		8EFC857624D8E5FA00EA8023 /* CommentBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentBase.swift; sourceTree = "<group>"; };
@@ -988,7 +988,7 @@
 		8EAED44624D54617004E8AC3 /* DeviantDetail */ = {
 			isa = PBXGroup;
 			children = (
-				8EAED44B24D55288004E8AC3 /* DeviantDetailAuthor.swift */,
+				8EAED44B24D55288004E8AC3 /* DeviantUser.swift */,
 				8EAED45024D55289004E8AC3 /* DeviantDetailBase.swift */,
 				8EAED44F24D55289004E8AC3 /* DeviantDetailContent.swift */,
 				8EAED44D24D55288004E8AC3 /* DeviantDetailDailyDeviation.swift */,
@@ -1038,7 +1038,7 @@
 		8EBB91FB24C445EF00223F51 /* ApiError */ = {
 			isa = PBXGroup;
 			children = (
-				8EBB91FC24C4461100223F51 /* APIError.swift */,
+				8EBB91FC24C4461100223F51 /* DeviantAPIError.swift */,
 			);
 			path = ApiError;
 			sourceTree = "<group>";
@@ -1126,7 +1126,7 @@
 			isa = PBXGroup;
 			children = (
 				8EFB6E8824E9F080002A62B5 /* WhoFavorateBase.swift */,
-				8EFB6E8624E9F080002A62B5 /* WhoFavorateResults.swift */,
+				8EFB6E8624E9F080002A62B5 /* WhoFavorateModel.swift */,
 			);
 			path = WhoFavorate;
 			sourceTree = "<group>";
@@ -1487,7 +1487,7 @@
 				8EAED45124D55289004E8AC3 /* DeviantDetailPreview.swift in Sources */,
 				8EA310C624D10C58008813B7 /* DailyListConfiguration.swift in Sources */,
 				8E938E7624D9285A0063B79D /* MoreLikeViewController.swift in Sources */,
-				8EAED45324D55289004E8AC3 /* DeviantDetailAuthor.swift in Sources */,
+				8EAED45324D55289004E8AC3 /* DeviantUser.swift in Sources */,
 				8EF4B08224FB0A860097AC8E /* CommonListConfigurator.swift in Sources */,
 				8E944EE024C89F330050B76B /* TopicListConfiguration.swift in Sources */,
 				8E81334624EA130A009887C9 /* FavorateConfigurator.swift in Sources */,
@@ -1511,7 +1511,7 @@
 				8E4C18A124D84D030001186F /* CommentViewController.swift in Sources */,
 				8E938E7924D9285A0063B79D /* MoreLikeInteractor.swift in Sources */,
 				8EAED43124D533A2004E8AC3 /* TopicDetailBase.swift in Sources */,
-				8EBB91FD24C4461100223F51 /* APIError.swift in Sources */,
+				8EBB91FD24C4461100223F51 /* DeviantAPIError.swift in Sources */,
 				8E944EDE24C89F330050B76B /* TopicListInterface.swift in Sources */,
 				8E5F844B24DA5447002E6E47 /* MetadataSubmission.swift in Sources */,
 				8EAED45524D55289004E8AC3 /* DeviantDetailDailyDeviation.swift in Sources */,
@@ -1521,7 +1521,7 @@
 				8E5F844F24DA5447002E6E47 /* MetadataSubmittedWith.swift in Sources */,
 				8E944EDD24C89F330050B76B /* TopicListPresenter.swift in Sources */,
 				8E61636224EBE05C0043DB63 /* UILabel+Extension.swift in Sources */,
-				8EFB6E8924E9F080002A62B5 /* WhoFavorateResults.swift in Sources */,
+				8EFB6E8924E9F080002A62B5 /* WhoFavorateModel.swift in Sources */,
 				8E81334124EA130A009887C9 /* FavorateInteractor.swift in Sources */,
 				8EBB91F124C3F81800223F51 /* Optional+Extension.swift in Sources */,
 				8E944EDB24C89F330050B76B /* TopicListViewController.swift in Sources */,

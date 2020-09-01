@@ -91,7 +91,7 @@ extension DeviantService: TargetType {
         }
     }
 
-    var currentParameters: [String: Any]? {
+    var requestParameters: [String: Any] {
         var parameters = [String: Any]()
         switch self {
         case .fetchDaily(let date):
@@ -139,8 +139,6 @@ extension DeviantService: TargetType {
                           RequestParams.offset.rawValue: params.offset]
         case .fetchDeviantDetail:
             break
-        default:
-            return nil
         }
 
         parameters[RequestParams.accessToken.rawValue] =  TokenManager.shared.currentToken ?? ""
@@ -155,10 +153,7 @@ extension DeviantService: TargetType {
         default:
             encoding = URLEncoding.queryString
         }
-        if let requestParameters = currentParameters {
-            return .requestParameters(parameters: requestParameters, encoding: encoding)
-        }
-        return .requestPlain
+        return .requestParameters(parameters: requestParameters, encoding: encoding)
     }
 
     var headers: [String: String]? {

@@ -1,5 +1,5 @@
 //
-//  WhoFavorateResults.swift
+//  WhoFavorateModel.swift
 //
 //  Copyright © 2020 Stone. All rights reserved.
 //
@@ -7,7 +7,7 @@
 import Foundation
 import HandyJSON
 
-struct WhoFavorateResults: HandyJSON {
+struct WhoFavorateModel: HandyJSON {
     enum CodingKeys: String, CodingKey {
     case time
     case user
@@ -17,7 +17,7 @@ struct WhoFavorateResults: HandyJSON {
   var user: DeviantUser?
 }
 
-extension WhoFavorateResults {
+extension WhoFavorateModel {
     func toDisplayModel() -> FavorateDisplayModel {
         let favorateDate = Date.fromatFavorateDate(with: String(time ?? 0))
         let displayModel = FavorateDisplayModel(avatarUrlString: user?.usericon ?? "",

@@ -1,5 +1,5 @@
 //
-//  DeviantFailure.swift
+//  DeviantAPIError.swift
 //  Deviant
 //
 //  Copyright © 2020 Stone. All rights reserved.
@@ -8,7 +8,7 @@
 import Foundation
 import HandyJSON
 
-struct APIError: HandyJSON {
+struct DeviantAPIError: HandyJSON {
     enum CodingKeys: String {
         case status
         case errorDescription = "error_description"
