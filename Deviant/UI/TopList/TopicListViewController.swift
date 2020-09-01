@@ -66,7 +66,7 @@ extension TopicListViewController {
         collectionView.register(TopicListHeadView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: TopicListHeadView.reuseIdentifier)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.reuseIdentifier)
     }
 
     private func updateCollectionView() {
@@ -133,7 +133,8 @@ extension TopicListViewController: UICollectionViewDataSource {
                                                             for: indexPath) as? CommonCollectionViewCell,
             let src = displayModel?.previewImage?.src,
             let url = URL(string: src) else {
-                return UICollectionViewCell()
+                return collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.reuseIdentifier,
+                                                          for: indexPath)
         }
         let viewDate = CommonCollectionViewCell.ViewData(url: url,
                                                          title: displayModel?.title,
@@ -166,10 +167,11 @@ extension TopicListViewController: UICollectionViewDataSource {
                 head.update(with: viewData)
                 return head
             }
-            return UICollectionReusableView()
-        } else {
-            return UICollectionReusableView()
         }
+
+        return collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                               withReuseIdentifier: UICollectionReusableView.reuseIdentifier,
+                                                               for: indexPath)
     }
 }
 

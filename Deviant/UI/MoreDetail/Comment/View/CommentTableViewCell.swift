@@ -6,10 +6,9 @@
 //
 
 import Kingfisher
-import Reusable
 import UIKit
 
-class CommentTableViewCell: UITableViewCell, Reusable {
+class CommentTableViewCell: UITableViewCell {
     private enum Const {
         static let imageWidth: CGFloat = 32
         static let leftMargin: CGFloat = 16

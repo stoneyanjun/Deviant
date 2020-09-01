@@ -9,7 +9,6 @@ import CHTCollectionViewWaterfallLayout
 import DZNEmptyDataSet
 import ESPullToRefresh
 import Kingfisher
-import Reusable
 import SnapKit
 import UIKit
 
@@ -84,6 +83,7 @@ extension CommonListViewController {
 
         collectionView.register(CommonCollectionViewCell.self,
                                 forCellWithReuseIdentifier: CommonCollectionViewCell.reuseIdentifier)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.reuseIdentifier)
     }
 
     private func updateCollectionView() {
@@ -150,7 +150,8 @@ extension CommonListViewController: UICollectionViewDataSource {
                                                             for: indexPath) as? CommonCollectionViewCell,
             let src = displayModel.previewImage?.src,
             let url = URL(string: src) else {
-            return UICollectionViewCell()
+                return collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.reuseIdentifier,
+                                                          for: indexPath)
         }
 
         var cellIdentifier: AccessibilityIdentifier = .commonListCollectionCell

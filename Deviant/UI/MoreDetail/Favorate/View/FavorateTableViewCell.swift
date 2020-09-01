@@ -6,11 +6,10 @@
 //
 
 import Kingfisher
-import Reusable
 import SnapKit
 import UIKit
 
-class FavorateTableViewCell: UITableViewCell, Reusable {
+class FavorateTableViewCell: UITableViewCell {
     private enum Const {
         static let margin: CGFloat = 12
         static let imageWith: CGFloat = 32

@@ -8,7 +8,6 @@ import Foundation
 import HandyJSON
 
 struct MetadataSubmission: HandyJSON {
-
     enum CodingKeys: String, CodingKey {
         case resolution
         case submittedWith = "submitted_with"

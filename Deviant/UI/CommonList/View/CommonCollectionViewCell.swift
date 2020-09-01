@@ -7,11 +7,10 @@
 
 import Kingfisher
 import PKHUD
-import Reusable
 import SnapKit
 import UIKit
 
-class CommonCollectionViewCell: UICollectionViewCell, Reusable {
+class CommonCollectionViewCell: UICollectionViewCell {
     private enum Const {
         static let fakeImageViewWidth: CGFloat = 32
     }

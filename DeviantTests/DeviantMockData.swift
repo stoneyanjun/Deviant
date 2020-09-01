@@ -168,5 +168,5 @@ struct DeviantMockData {
     static let metadataBase = MetadataBase(metadata: [metadata])
 
     static let favorate = WhoFavorateModel(time: (timeStamp.int ?? 0),
-                                             user: secondUser)
+                                           user: secondUser)
 }

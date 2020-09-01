@@ -59,6 +59,7 @@
 		8E5F844E24DA5447002E6E47 /* MetadataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F844724DA5447002E6E47 /* MetadataBase.swift */; };
 		8E5F844F24DA5447002E6E47 /* MetadataSubmittedWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5F844824DA5447002E6E47 /* MetadataSubmittedWith.swift */; };
 		8E61636224EBE05C0043DB63 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E61636124EBE05C0043DB63 /* UILabel+Extension.swift */; };
+		8E64006124FF066900D8FD0B /* Reusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64006024FF066900D8FD0B /* Reusable+Extension.swift */; };
 		8E66AC1A24D6449800A384AE /* MoreDetailContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC1824D6449800A384AE /* MoreDetailContainerVC.swift */; };
 		8E66AC3424D65EA200A384AE /* TopicListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3224D65EA200A384AE /* TopicListResult.swift */; };
 		8E66AC3624D65ECC00A384AE /* DeviantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E66AC3524D65ECC00A384AE /* DeviantService.swift */; };
@@ -254,6 +255,7 @@
 		8E5F844724DA5447002E6E47 /* MetadataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataBase.swift; sourceTree = "<group>"; };
 		8E5F844824DA5447002E6E47 /* MetadataSubmittedWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataSubmittedWith.swift; sourceTree = "<group>"; };
 		8E61636124EBE05C0043DB63 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		8E64006024FF066900D8FD0B /* Reusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable+Extension.swift"; sourceTree = "<group>"; };
 		8E66AC1824D6449800A384AE /* MoreDetailContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailContainerVC.swift; sourceTree = "<group>"; };
 		8E66AC3224D65EA200A384AE /* TopicListResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicListResult.swift; sourceTree = "<group>"; };
 		8E66AC3524D65ECC00A384AE /* DeviantService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviantService.swift; sourceTree = "<group>"; };
@@ -796,6 +798,14 @@
 			path = UILabel;
 			sourceTree = "<group>";
 		};
+		8E64005F24FF065600D8FD0B /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				8E64006024FF066900D8FD0B /* Reusable+Extension.swift */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
 		8E66AC1724D63FDF00A384AE /* MoreDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -1015,6 +1025,7 @@
 		8EBB91ED24C3E80300223F51 /* UIUtils */ = {
 			isa = PBXGroup;
 			children = (
+				8E64005F24FF065600D8FD0B /* Reusable */,
 				8EF4B08E24FB2FFA0097AC8E /* UITextView */,
 				8E61636024EBE0400043DB63 /* UILabel */,
 				8E54E6CE24D1A86E00339EFA /* UIView */,
@@ -1475,6 +1486,7 @@
 				8E7A100724D1493100C42B29 /* DailyBase.swift in Sources */,
 				8E4C18A524D84D030001186F /* CommentRouter.swift in Sources */,
 				8EF4B09024FB30170097AC8E /* UITextView+Extension.swift in Sources */,
+				8E64006124FF066900D8FD0B /* Reusable+Extension.swift in Sources */,
 				8E4C18A324D84D030001186F /* CommentConfiguration.swift in Sources */,
 				8E66AC4D24D67DC800A384AE /* ServiceParams.swift in Sources */,
 				8E1B7FEF24C0A4C9008C059C /* RootViewController.swift in Sources */,

@@ -6,11 +6,10 @@
 //
 
 import Kingfisher
-import Reusable
 import SnapKit
 import UIKit
 
-class DailyTableViewCell: UITableViewCell, Reusable {
+class DailyTableViewCell: UITableViewCell {
     private enum Const {
         static let margin: CGFloat = 16
         static let interval: CGFloat = 12

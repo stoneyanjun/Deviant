@@ -8,7 +8,6 @@
 import DZNEmptyDataSet
 import Kingfisher
 import PanModal
-import Reusable
 import SwifterSwift
 import UIKit
 
@@ -204,6 +203,7 @@ extension MetadataViewController {
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(cellType: TagCollectionViewCell.self)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.reuseIdentifier)
     }
 }
 
@@ -222,7 +222,8 @@ extension MetadataViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCollectionViewCell.reuseIdentifier,
                                                             for: indexPath) as? TagCollectionViewCell,
             let tags = meta?.metadata?.first?.tags else {
-                return UICollectionViewCell()
+                return collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.reuseIdentifier,
+                                                          for: indexPath)
         }
         cell.update(with: tags[indexPath.row].tagName.wrap())
         cell.setupAccessibility(row: indexPath.row)

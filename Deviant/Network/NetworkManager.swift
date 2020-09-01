@@ -41,8 +41,6 @@ class NetworkManager<Target: TargetType>: NSObject {
                 if let apiError = JSONDeserializer<DeviantAPIError>.deserializeFrom(json: jsonData.description),
                     let error = apiError.error,
                     !error.isEmpty {
-                    print(error)
-                    print(apiError.errorDescription)
                     let generalError = DeviantGeneralError(errorType: .unknown,
                                                            error: error,
                                                            errorDescription: apiError.errorDescription)

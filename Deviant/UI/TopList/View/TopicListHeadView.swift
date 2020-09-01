@@ -5,16 +5,16 @@
 //  Copyright © 2020 Stone. All rights reserved.
 //
 
-import Reusable
 import SnapKit
 import UIKit
 
-class TopicListHeadView: UICollectionReusableView, Reusable {
+class TopicListHeadView: UICollectionReusableView {
     private enum Const {
         static let margin = 16
     }
 
     typealias TapHandle = (() -> Void)
+
     private var tapHandle: TapHandle?
     private lazy var topicButton = UIButton()
 

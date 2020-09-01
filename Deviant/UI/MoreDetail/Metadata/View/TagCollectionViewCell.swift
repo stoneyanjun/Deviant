@@ -5,11 +5,10 @@
 //  Copyright © 2020 Stone. All rights reserved.
 //
 
-import Reusable
 import SnapKit
 import UIKit
 
-class TagCollectionViewCell: UICollectionViewCell, Reusable {
+class TagCollectionViewCell: UICollectionViewCell {
     private enum Const {
         static let upMargin: CGFloat = 8
         static let leadingMargin: CGFloat = 6

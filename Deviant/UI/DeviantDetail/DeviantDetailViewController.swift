@@ -7,7 +7,6 @@
 
 import Kingfisher
 import PanModal
-import Reusable
 import SnapKit
 import UIKit
 
