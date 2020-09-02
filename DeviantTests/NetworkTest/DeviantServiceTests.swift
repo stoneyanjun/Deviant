@@ -174,7 +174,7 @@ class DeviantServiceTests: XCTestCase {
             .fetchTopicDetail(params: params)) { result in
                                 switch result {
                                 case .success(let json):
-                                    let detail = JSONDeserializer<TopicDetailBase>.deserializeFrom(json: json.description)
+                                    let detail = JSONDeserializer<TopicDetail>.deserializeFrom(json: json.description)
                                     let results = detail?.results
                                     XCTAssertTrue((results?.count ?? 0) > 0)
                                 case .failure(let error):

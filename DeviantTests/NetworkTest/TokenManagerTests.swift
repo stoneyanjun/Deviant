@@ -21,7 +21,7 @@ class TokenManagerTests: XCTestCase {
             switch result {
             case .success(let token):
                 #if DEBUG
-                print(#function + "token: \(token)")
+//                print(#function + "token: \(token)")
                 #endif
                 XCTAssertTrue(!token.isEmpty)
             case .failure(let error):

@@ -43,9 +43,9 @@ class FavorateTableViewCell: UITableViewCell {
     func update(with displayModel: FavorateDisplayModel, row: Int) {
         if let url = URL(string: displayModel.avatarUrlString.wrap()) {
             avatarImageView.kf.setImage(with: url,
-                                        placeholder: UIImage(named: "bigLoading"))
+                                        placeholder: ImageKey.bigLoading.image())
         } else {
-            avatarImageView.image = UIImage(named: "commentAvatar")
+            avatarImageView.image = ImageKey.commentAvatar.image()
         }
         nameLabel.text = displayModel.username
         dateLabel.text = displayModel.favorateDate

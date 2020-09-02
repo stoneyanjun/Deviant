@@ -29,11 +29,11 @@ class DailyTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private lazy var avatarImageView = UIImageView(image: UIImage(named: "commentAvatar"))
+    private lazy var avatarImageView = UIImageView(image: ImageKey.commentAvatar.image())
     private lazy var srcImageView = UIImageView()
-    private lazy var loadingImageView = UIImageView(image: UIImage(named: "bigLoading"))
-    private lazy var starImageView = UIImageView(image: UIImage(named: "starWhite"))
-    private lazy var commentImageView = UIImageView(image: UIImage(named: "commentWhite"))
+    private lazy var loadingImageView = UIImageView(image: ImageKey.bigLoading.image())
+    private lazy var starImageView = UIImageView(image: ImageKey.starWhite.image())
+    private lazy var commentImageView = UIImageView(image: ImageKey.commentWhite.image())
 
     private lazy var usernameLabel = UILabel.make(color: .white,
                                                   font: UIFont.headlineFont(),
@@ -133,7 +133,7 @@ extension DailyTableViewCell {
 
 extension DailyTableViewCell {
     private func setImageViewWhenFailure() {
-        srcImageView.image = UIImage(named: "bigEmpty")
+        srcImageView.image = ImageKey.bigEmpty.image()
     }
 
     struct ViewData {
@@ -151,9 +151,9 @@ extension DailyTableViewCell {
 
         if let usericon = detail.usericon,
             let url = URL(string: usericon) {
-            avatarImageView.kf.setImage(with: url, placeholder: UIImage(named: "bigLoading"))
+            avatarImageView.kf.setImage(with: url, placeholder: ImageKey.bigLoading.image())
         } else {
-            avatarImageView.image = UIImage(named: "commentAvatar")
+            avatarImageView.image = ImageKey.commentAvatar.image()
         }
 
         usernameLabel.text = detail.username

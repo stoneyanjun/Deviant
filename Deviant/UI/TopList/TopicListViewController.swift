@@ -62,11 +62,16 @@ extension TopicListViewController {
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.alwaysBounceVertical = true
 
-        collectionView.register(CommonCollectionViewCell.self, forCellWithReuseIdentifier: CommonCollectionViewCell.reuseIdentifier)
+        collectionView.register(CommonCollectionViewCell.self,
+                                forCellWithReuseIdentifier: CommonCollectionViewCell.reuseIdentifier)
         collectionView.register(TopicListHeadView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: TopicListHeadView.reuseIdentifier)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.reuseIdentifier)
+        collectionView.register(UICollectionViewCell.self,
+                                forCellWithReuseIdentifier: UICollectionViewCell.reuseIdentifier)
+        collectionView.register(UICollectionReusableView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: UICollectionReusableView.reuseIdentifier)
     }
 
     private func updateCollectionView() {

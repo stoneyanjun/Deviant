@@ -15,6 +15,7 @@ class MoreDetailContainerVC: DeviantBaseViewController, PanModalPresentable {
         static let panModalShortHeight = UIScreen.main.bounds.size.height * 0.9
         static let panModalLongHeight = UIScreen.main.bounds.size.height * 0.1
     }
+    
     @IBOutlet private weak var segmentioView: Segmentio!
     @IBOutlet private weak var containView: UIView!
     @IBOutlet private weak var scrollView: UIScrollView!

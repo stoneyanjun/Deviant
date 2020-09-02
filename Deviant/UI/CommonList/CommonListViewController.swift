@@ -83,7 +83,8 @@ extension CommonListViewController {
 
         collectionView.register(CommonCollectionViewCell.self,
                                 forCellWithReuseIdentifier: CommonCollectionViewCell.reuseIdentifier)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.reuseIdentifier)
+        collectionView.register(UICollectionViewCell.self,
+                                forCellWithReuseIdentifier: UICollectionViewCell.reuseIdentifier)
     }
 
     private func updateCollectionView() {

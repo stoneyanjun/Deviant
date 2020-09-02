@@ -37,7 +37,7 @@ class CommonCollectionViewCell: UICollectionViewCell {
 
 extension CommonCollectionViewCell {
     func update(with viewData: ViewData) {
-        srcImageView.kf.setImage(with: viewData.url, placeholder: UIImage(named: "bigLoading"))
+        srcImageView.kf.setImage(with: viewData.url, placeholder: ImageKey.bigLoading.image())
         setupAccessibility(with: viewData)
     }
 

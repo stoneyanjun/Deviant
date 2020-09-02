@@ -9,8 +9,7 @@ import Foundation
 import HandyJSON
 
 struct DeviantUser: HandyJSON {
-
-  enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
     case type
     case usericon
     case userid

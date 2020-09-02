@@ -44,9 +44,8 @@ class MetadataViewController: DeviantBaseViewController {
     private lazy var viewsLabel = UILabel.make(color: .lightText,
                                                font: UIFont.footnoteFont())
 
-    private lazy var avatorImageView = UIImageView(image: UIImage(named: "commentAvatar"))
-    private lazy var eyeImageView = UIImageView(image: UIImage(named: "eyeView"))
-
+    private lazy var avatorImageView = UIImageView(image: ImageKey.commentAvatar.image())
+    private lazy var eyeImageView = UIImageView(image: ImageKey.eyeView.image())
     private lazy var containerView = UIView()
     private var metaCollectionView: UICollectionView?
 
@@ -90,9 +89,9 @@ extension MetadataViewController {
         titleLabel.text = meta?.metadata?.first?.title
         if let usericon = meta?.metadata?.first?.author?.usericon,
             let url = URL(string: usericon) {
-            avatorImageView.kf.setImage(with: url, placeholder: UIImage(named: "bigLoading"))
+            avatorImageView.kf.setImage(with: url, placeholder: ImageKey.bigLoading.image())
         } else {
-            avatorImageView.image = UIImage(named: "commentAvatar")
+            avatorImageView.image = ImageKey.commentAvatar.image()
         }
         userNameLabel.text = meta?.metadata?.first?.author?.username
 
@@ -203,7 +202,8 @@ extension MetadataViewController {
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(cellType: TagCollectionViewCell.self)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.reuseIdentifier)
+        collectionView.register(UICollectionViewCell.self,
+                                forCellWithReuseIdentifier: UICollectionViewCell.reuseIdentifier)
     }
 }
 

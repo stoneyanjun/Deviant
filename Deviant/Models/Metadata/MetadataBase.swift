@@ -8,8 +8,7 @@ import Foundation
 import HandyJSON
 
 struct MetadataBase: HandyJSON {
-
-  enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
     case metadata
   }
 

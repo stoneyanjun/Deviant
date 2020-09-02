@@ -40,22 +40,22 @@ class DeviantDetailViewController: DeviantBaseViewController {
 extension DeviantDetailViewController {
     private func makeViews() {
         view.backgroundColor = UIColor.defaultBackground
-        infoButton.setImageForAllStates(UIImage(named: "bigInfo") ?? UIImage())
+        infoButton.setImageForAllStates(ImageKey.bigInfo.image() ?? UIImage())
         infoButton.tag = 0
         infoButton.addTarget(self, action: #selector(infoAction(_:)), for: .touchUpInside)
         view.addSubview(infoButton)
 
-        commentButton.setImageForAllStates(UIImage(named: "bigCommentWhite") ?? UIImage())
+        commentButton.setImageForAllStates(ImageKey.bigCommentWhite.image() ?? UIImage())
         commentButton.tag = 1
         commentButton.addTarget(self, action: #selector(infoAction(_:)), for: .touchUpInside)
         view.addSubview(commentButton)
 
-        starsButton.setImageForAllStates(UIImage(named: "bigStarWhite") ?? UIImage())
+        starsButton.setImageForAllStates(ImageKey.bigStarWhite.image() ?? UIImage())
         starsButton.tag = 2
         starsButton.addTarget(self, action: #selector(infoAction(_:)), for: .touchUpInside)
         view.addSubview(starsButton)
 
-        moreLikeButton.setImageForAllStates(UIImage(named: "bigMore") ?? UIImage())
+        moreLikeButton.setImageForAllStates(ImageKey.bigMore.image() ?? UIImage())
         moreLikeButton.tag = 3
         moreLikeButton.addTarget(self, action: #selector(infoAction(_:)), for: .touchUpInside)
         view.addSubview(moreLikeButton)
@@ -128,9 +128,9 @@ extension DeviantDetailViewController {
         guard let detail = deviantDetail else { return }
         if let url = URL(string: (detail.contentImageInfo?.src ?? "")) {
             contentImageView.kf.setImage(with: url,
-                                         placeholder: UIImage(named: "bigLoading"))
+                                         placeholder: ImageKey.bigLoading.image())
         } else {
-            contentImageView.image = UIImage(named: "bigEmpty")
+            contentImageView.image = ImageKey.bigEmpty.image()
         }
 
         if let comments = detail.comments, comments > 0 {

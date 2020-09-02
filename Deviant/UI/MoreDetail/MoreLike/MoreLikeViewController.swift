@@ -70,7 +70,11 @@ extension MoreLikeViewController {
         collectionView.register(TopicListHeadView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: TopicListHeadView.reuseIdentifier)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.reuseIdentifier)
+        collectionView.register(UICollectionViewCell.self,
+                                forCellWithReuseIdentifier: UICollectionViewCell.reuseIdentifier)
+        collectionView.register(UICollectionReusableView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: UICollectionReusableView.reuseIdentifier)
     }
 
     private func updateCollectionView() {
@@ -128,14 +132,17 @@ extension MoreLikeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
+        let defaultHead = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                          withReuseIdentifier: UICollectionReusableView.reuseIdentifier,
+                                                                          for: indexPath)
         if kind != UICollectionView.elementKindSectionHeader {
-            return UICollectionReusableView()
+            return defaultHead
         }
 
         guard let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                              withReuseIdentifier: TopicListHeadView.reuseIdentifier,
                                                                              for: indexPath) as? TopicListHeadView else {
-                                                                                return UICollectionReusableView()
+                                                                                return defaultHead
         }
         let title = (indexPath.section == 0) ? "MORE BY THIS ARTIST" : "MORE LIKE THIS"
         let viewData = TopicListHeadView.ViewData(title: title,

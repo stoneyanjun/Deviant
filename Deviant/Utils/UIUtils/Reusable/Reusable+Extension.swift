@@ -5,7 +5,6 @@
 //  Copyright © 2020 JustNow. All rights reserved.
 //
 
-import Foundation
 import Reusable
 import UIKit
 

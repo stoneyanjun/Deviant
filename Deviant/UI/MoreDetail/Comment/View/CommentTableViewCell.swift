@@ -42,9 +42,9 @@ class CommentTableViewCell: UITableViewCell {
     func update(with displayModel: CommentDisplayModel, row: Int) {
         if let avatarUrlString = displayModel.avatarUrlString,
             let url = URL(string: avatarUrlString) {
-            avatarImageView.kf.setImage(with: url, placeholder: UIImage(named: "bigLoading"))
+            avatarImageView.kf.setImage(with: url, placeholder: ImageKey.bigLoading.image())
         } else {
-            avatarImageView.image = UIImage(named: "commentAvatar")
+            avatarImageView.image = ImageKey.commentAvatar.image()
         }
 
         usernameLabel.text = displayModel.username

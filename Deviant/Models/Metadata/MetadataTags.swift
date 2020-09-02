@@ -8,7 +8,6 @@ import Foundation
 import HandyJSON
 
 struct MetadataTags: HandyJSON {
-
     enum CodingKeys: String, CodingKey {
         case sponsor
         case tagName = "tag_name"

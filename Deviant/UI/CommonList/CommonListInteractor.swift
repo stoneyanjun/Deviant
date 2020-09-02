@@ -57,7 +57,7 @@ extension CommonListInteractor {
                 #if DEBUG
 //                print(#function + " json\r\n\(json.description)")
                 #endif
-                guard let base = JSONDeserializer<TopicDetailBase>.deserializeFrom(json: json.description),
+                guard let base = JSONDeserializer<TopicDetail>.deserializeFrom(json: json.description),
                     let results = base.results
                     else {
                         self.presenter?.showError(with: DeviantGeneralError.unknownError)
@@ -80,7 +80,7 @@ extension CommonListInteractor {
             switch result {
             case .success(let json):
                 #if DEBUG
-                    print(#function + " json\r\n\(json.description)")
+//                    print(#function + " json\r\n\(json.description)")
                 #endif
                 guard let base = JSONDeserializer<PopularBase>.deserializeFrom(json: json.description),
                     let results = base.results

@@ -1,5 +1,5 @@
 //
-//  TopicDetailBase.swift
+//  TopicDetail.swift
 //
 //  Copyright © 2020 Stone. All rights reserved.
 //
@@ -7,7 +7,7 @@
 import Foundation
 import HandyJSON
 
-struct TopicDetailBase: HandyJSON {
+struct TopicDetail: HandyJSON {
     enum CodingKeys: String, CodingKey {
         case results
         case hasMore = "has_more"

@@ -44,7 +44,7 @@ extension DeviantBaseViewController {
     }
 
     func customLeftBarButton() {
-        guard let backImage = UIImage(named: "back") else { return }
+        guard let backImage = ImageKey.back.image() else { return }
         let backButton = UIBarButtonItem(image: backImage,
                                          style: .plain,
                                          target: self,
@@ -63,7 +63,7 @@ extension DeviantBaseViewController {
 
 extension DeviantBaseViewController: DZNEmptyDataSetSource {
     func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
-        return UIImage(named: "bigEmpty") ?? UIImage()
+        return ImageKey.bigEmpty.image() ?? UIImage()
     }
 
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
