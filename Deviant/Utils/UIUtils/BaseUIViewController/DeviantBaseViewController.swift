@@ -24,10 +24,6 @@ class DeviantBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    deinit {
-        print(#file + " " + #function)
-    }
 }
 
 extension DeviantBaseViewController {

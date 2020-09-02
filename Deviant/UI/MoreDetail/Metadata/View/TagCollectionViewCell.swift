@@ -38,10 +38,6 @@ class TagCollectionViewCell: UICollectionViewCell {
     func update(with tagName: String) {
         tagLabel.text = tagName
     }
-
-    deinit {
-        print(#function)
-    }
 }
 
 extension TagCollectionViewCell {

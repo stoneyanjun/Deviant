@@ -29,10 +29,6 @@ class CommonCollectionViewCell: UICollectionViewCell {
         }
         srcImageView.accessibilityElementsHidden = true
     }
-
-    deinit {
-        print(#file + " " + #function)
-    }
 }
 
 extension CommonCollectionViewCell {

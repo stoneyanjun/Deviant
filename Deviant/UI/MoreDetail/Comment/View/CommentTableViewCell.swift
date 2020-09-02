@@ -51,10 +51,6 @@ class CommentTableViewCell: UITableViewCell {
         postDateLabel.text = displayModel.postedDate
         commentLabel.text = displayModel.comment
     }
-
-    deinit {
-        print(#function)
-    }
 }
 
 extension CommentTableViewCell {

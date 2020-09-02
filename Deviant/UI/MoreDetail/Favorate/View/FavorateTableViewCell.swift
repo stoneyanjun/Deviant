@@ -52,10 +52,6 @@ class FavorateTableViewCell: UITableViewCell {
 
         setupAccessibility(with: displayModel, row: row)
     }
-
-    deinit {
-        print(#function)
-    }
 }
 
 extension FavorateTableViewCell {
